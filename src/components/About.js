@@ -1,11 +1,9 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import {  FaInstagram, FaLinkedin, FaYoutube,FaEnvelope } from "react-icons/fa"; 
-// FaFacebook, FaTwitter
 import "./About.css";
 import aboutImg from '../assets/images/about-ecell.jpeg';
 
-// Social media icons list
 const socialLinks = [
   // { icon: <FaFacebook />, url: "https://facebook.com/nexovate" },
   { icon: <FaInstagram />, url: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" },
@@ -47,7 +45,6 @@ const About = () => (
               Through events, workshops, and ideation support, CGEC E-Cell equips aspiring entrepreneurs with skills to transform their vision into reality while building leadership, problem-solving, and collaboration abilities.
             </p>
 
-            {/* Social Media Section */}
             <div className="mt-4 d-flex flex-wrap align-items-center">
               <h5 className="me-3 mb-3" style={{ fontWeight: '600', color: '#2c3e50' }}>
                 Follow us:

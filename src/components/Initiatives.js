@@ -126,7 +126,6 @@ const Initiatives = () => {
         </Container>
       </section>
 
-      {/* Modal for detailed view */}
       <Modal show={showModal} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton className="border-0 pb-0">
           <Modal.Title className="fw-bold">{selectedInitiative?.title}</Modal.Title>
@@ -167,5 +166,5 @@ const Initiatives = () => {
     </>
   );
 };
-
+// 
 export default Initiatives;

@@ -12,7 +12,6 @@ import member2 from "../assets/member/2.jpg";
 import member3 from "../assets/member/3.jpg";
 import member4 from "../assets/member/4.jpeg";
 import member5 from "../assets/member/5.jpg";
-import member6 from "../assets/member/6.png";
 import member7 from "../assets/member/7.jpg";
 import member8 from "../assets/member/8.jpg";
 import member9 from "../assets/member/9.jpg";
@@ -84,17 +83,6 @@ const team = [
     linkedin: "https://www.linkedin.com/in/debojit-sarkar",
   },
   {
-    name: "Adityava Gangopadhyay",
-    designation: "Research & Event Coordinator",
-    role: "Research, Content, Event Coordination",
-    year: "2nd",
-    dept: "CSE",
-    image: member7,
-    email: "adityava49cse@gmail.com",
-    insta:"https://www.instagram.com/ganguly_71/",
-    linkedin: "https://www.linkedin.com/in/adityava-gangopadhyay",
-  },
-  {
     name: "Anushka Roy",
     designation: "Event Coordinator",
     role: "Skill development, Event Coordination",
@@ -104,6 +92,17 @@ const team = [
     email: "anushkaaroy34@gmail.com",
     insta:"https://www.instagram.com/_anushh.kaaa/",
     linkedin: "https://linkedin.com/in/anushka-roy34",
+  },
+  {
+    name: "Adityava Gangopadhyay",
+    designation: "Research & Event Coordinator",
+    role: "Research, Content, Event Coordination",
+    year: "2nd",
+    dept: "CSE",
+    image: member7,
+    email: "adityava49cse@gmail.com",
+    insta:"https://www.instagram.com/ganguly_71/",
+    linkedin: "https://www.linkedin.com/in/adityava-gangopadhyay",
   },
   {
     name: "Sk Sahil Akhtar",
@@ -196,7 +195,6 @@ const team = [
   {
     name: "Rishav Prasad ",
     designation: "Content &  Media",
-    
     role: "marketing, media and outreach wing",
     year: "2nd",
     dept: "CSE",

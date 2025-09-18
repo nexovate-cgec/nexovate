@@ -1,6 +1,3 @@
-/* =============================
-   TEAM SECTION STYLING
-============================= */
 
 .team-card {
   background: #fff;
@@ -20,15 +17,12 @@
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
-/* =============================
-   IMAGE WRAPPER
-============================= */
 .team-img-wrapper {
   width: 140px;
   height: 140px;
   overflow: hidden;
   border-radius: 50%;
-  border: 4px solid #ffc107; /* Golden border */
+  border: 4px solid #ffc107; 
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
@@ -44,9 +38,6 @@
   transform: scale(1.1);
 }
 
-/* =============================
-   TEXT STYLING
-============================= */
 .team-card h5 {
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -64,10 +55,6 @@
   font-size: 0.8rem;
   color: #666;
 }
-
-/* =============================
-   SOCIAL ICONS
-============================= */
 .contact-icon {
   display: flex;
   align-items: center;
@@ -86,7 +73,6 @@
   transform: scale(1.2);
 }
 
-/* Specific colors for icons */
 .contact-icon.linkedin {
   color: #0a66c2;
 }
@@ -99,9 +85,6 @@
   color: #ea4335;
 }
 
-/* =============================
-   RESPONSIVE FIX
-============================= */
 @media (max-width: 576px) {
   .team-img-wrapper {
     width: 110px;

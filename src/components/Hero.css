@@ -154,7 +154,6 @@
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-title {
     text-align: center;

@@ -2,30 +2,27 @@ import React from 'react';
 import { Container, Carousel } from 'react-bootstrap';
 
 import member1 from "../assets/member/1.jpg";
+import member2 from "../assets/member/2.jpg";
 import member3 from "../assets/member/3.jpg";
-import member5 from "../assets/member/5.jpg";
 
 const testimonials = [
   {
-    quote:
-      "Being a part of CGEC ECELL helped me turn my ideas into reality. The support and environment were amazing.",
+    quote:"Being a part of CGEC ECELL helped me turn my ideas into reality. The support and environment were amazing.",
     name: "Arya Ghosh",
     position: "Batch of 2023",
     img: member1,
   },
   {
-    quote:
-      "The workshops and networking events organized by ECELL helped me build industry connections early.",
+    quote:"The workshops and networking events organized by ECELL helped me build industry connections early.",
     name: "Satyajit Roy",
     position: "Batch of 2024",
     img: member3,
   },
   {
-    quote:
-      "ECELL taught me how to pitch, build, and lead. It was the most transformative part of my college life.",
-    name: "Debojit Sarkar",
-    position: "Batch of 2024",
-    img: member5,
+    quote:"e-CELL taught me how to pitch, build, and lead. It was the most transformative part of my college life.",
+    name: "Adripta Ghosh",
+    position: "Batch of 2023",
+    img: member2,
   },
 ];
 
@@ -36,9 +33,9 @@ const Testimonials = () => (
         Hear from <span className="text-primary">Our Members</span>
       </h2>
 
-      <Carousel indicators={false} controls={true} interval={6000} fade>
+      <Carousel indicators={false} controls={true} interval={6000}  fade>
         {testimonials.map((item, index) => (
-          <Carousel.Item key={index}>
+          <Carousel.Item style={{color:"red"}} key={index}>
             <div className="d-flex justify-content-center">
               <div
                 className="bg-white rounded-4 shadow p-4 p-md-5 position-relative text-center"
@@ -48,7 +45,6 @@ const Testimonials = () => (
                   borderTop: "5px solid #0d6efd",
                 }}
               >
-                {/* Profile Image */}
                 <div className="mb-4">
                   <img
                     src={item.img}
@@ -63,7 +59,6 @@ const Testimonials = () => (
                   />
                 </div>
 
-                {/* Quote */}
                 <p
                   className="fs-5 fst-italic text-dark mb-4"
                   style={{ lineHeight: "1.75" }}
@@ -71,7 +66,6 @@ const Testimonials = () => (
                   “{item.quote}”
                 </p>
 
-                {/* Name + Position */}
                 <div className="border-top pt-3">
                   <h5 className="fw-semibold mb-0">{item.name}</h5>
                   <small className="text-muted">{item.position}</small>
