@@ -114,7 +114,7 @@ const team = [
     image: member8,
     email: "anushkaaroy34@gmail.com",
     insta:"http://linkedin.com/in/anushka-roy34",
-    linkedin: "lhttp://linkedin.com/in/anushka-roy34",
+    linkedin: "https://linkedin.com/in/anushka-roy34",
   },
   {
     name: "Sk Sahil Akhtar",
