@@ -5,7 +5,7 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import logo from '../assets/images/logo.png';
 import './Navbar.css';
 
-const sections = ['about', 'initiatives', 'events', 'team', 'testimonials', 'gallery', 'contact'];
+const sections = ['about', 'initiatives', 'events','gallery', 'Blog', 'team', 'testimonials', 'contact'];
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);

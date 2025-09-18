@@ -7,7 +7,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Initiatives from "./components/Initiatives";
-import Events from "./components/Events";
+import Events from "./components/Events"; 
+import Blog from "./components/Blog"; 
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
@@ -23,9 +24,10 @@ function App() {
       <About />
       <Initiatives />
       <Events />
+      <Gallery />
+      <Blog/>
       <Team />
       <Testimonials />
-      <Gallery />
       <JoinUs />
       <Contact />
       <Footer />

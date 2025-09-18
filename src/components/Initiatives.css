@@ -1,0 +1,49 @@
+/* Initiatives Section Styles */
+.initiative-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.initiative-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.initiative-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.initiative-image {
+   height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+}
+
+.initiative-card:hover .initiative-image {
+  transform: scale(1.05);
+}
+
+.initiative-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0.7;
+}
+
+.initiative-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 193, 7, 0.1);
+  border-radius: 50%;
+  color: #ffc107;
+}
