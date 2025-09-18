@@ -1,0 +1,35 @@
+.social-icon {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    color: #333;
+  }
+  
+  .social-icon:hover {
+    color: #fff;
+    transform: scale(1.2);
+  }
+  
+  /* Specific brand colors */
+  .social-icon.facebook:hover {
+    background: #1877f2;
+  }
+  
+  .social-icon.instagram:hover {
+    background: #e4405f;
+  }
+  
+  .social-icon.linkedin:hover {
+    background: #0a66c2;
+  }
+  
+  .social-icon.twitter:hover {
+    background: #1da1f2;
+  }
+  

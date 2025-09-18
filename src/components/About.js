@@ -1,22 +1,19 @@
 import React from 'react';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
+import {  FaInstagram, FaLinkedin, FaYoutube,FaEnvelope } from "react-icons/fa"; 
+// FaFacebook, FaTwitter
+import "./About.css";
 import aboutImg from '../assets/images/about-ecell.jpeg';
 
-// Simple arrow icon as SVG component
-const ArrowRight = () => (
-  <svg 
-    width="16" 
-    height="16" 
-    fill="currentColor" 
-    viewBox="0 0 16 16"
-    style={{ marginLeft: '4px' }}
-  >
-    <path 
-      fillRule="evenodd" 
-      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-    />
-  </svg>
-);
+// Social media icons list
+const socialLinks = [
+  // { icon: <FaFacebook />, url: "https://facebook.com/nexovate" },
+  { icon: <FaInstagram />, url: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" },
+  { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+  // { icon: <FaTwitter />, url: "https://twitter.com/nexovate" },
+  { icon: <FaEnvelope />, url: "https://twitter.com/nexovate" },
+  { icon: <FaYoutube />, url: "https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf" },
+];
 
 const About = () => (
   <section id="about" className="py-5 bg-light">
@@ -49,29 +46,43 @@ const About = () => (
             <p>
               Through events, workshops, and ideation support, CGEC E-Cell equips aspiring entrepreneurs with skills to transform their vision into reality while building leadership, problem-solving, and collaboration abilities.
             </p>
-            <div className="mt-4">
-              <Button 
-                variant="primary" 
-                className="me-3 mb-2"
-                style={{ 
-                  borderRadius: '4px',
-                  padding: '10px 20px',
-                  fontWeight: '600'
-                }}
-              >
-                Learn More <ArrowRight />
-              </Button>
-              <Button 
-                variant="outline-primary"
-                className="mb-2"
-                style={{ 
-                  borderRadius: '4px',
-                  padding: '10px 20px',
-                  fontWeight: '600'
-                }}
-              >
-                Upcoming Events
-              </Button>
+
+            {/* Social Media Section */}
+            <div className="mt-4 d-flex flex-wrap align-items-center">
+              <h5 className="me-3 mb-3" style={{ fontWeight: '600', color: '#2c3e50' }}>
+                Follow us:
+              </h5>
+              <div className="d-flex flex-wrap">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="d-flex align-items-center justify-content-center me-3 mb-3"
+                    style={{
+                      width: '45px',
+                      height: '45px',
+                      borderRadius: '50%',
+                      backgroundColor: '#f1f1f1',
+                      color: '#0d6efd',
+                      fontSize: '1.3rem',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.backgroundColor = "#0d6efd";
+                      e.currentTarget.style.color = "#fff";
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.backgroundColor = "#f1f1f1";
+                      e.currentTarget.style.color = "#0d6efd";
+                    }}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </Col>

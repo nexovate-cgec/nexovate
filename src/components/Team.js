@@ -1,17 +1,12 @@
-
-
-
-
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa"; 
+import { FaLinkedin, FaEnvelope, FaInstagram } from "react-icons/fa"; 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Team.css";
-
 import member1 from "../assets/member/1.jpg";
 import member2 from "../assets/member/2.jpg";
 import member3 from "../assets/member/3.jpg";
@@ -28,8 +23,10 @@ import member13 from "../assets/member/13.jpg";
 import member14 from "../assets/member/14.jpg";
 import member15 from "../assets/member/15.jpg";
 import member16 from "../assets/member/16.jpg";
+import member17 from "../assets/member/17.jpg";
+import member18 from "../assets/member/18.jpg";
+import member19 from "../assets/member/19.jpg";
 
-// Example team data (with designation added)
 const team = [
   {
     name: "Arya Ghosh",
@@ -38,8 +35,9 @@ const team = [
     year: "3rd",
     dept: "ECE",
     image: member1,
-    email: "arya@gmail.com",
-    linkedin: "https://linkedin.com/in/arya",
+    email: "ghosharya28@gmail.com",
+    insta:"https://www.instagram.com/mytharya/",
+    linkedin: "https://www.linkedin.com/in/arya-ghosh",
   },
   {
     name: "Adripta Ghosh",
@@ -48,18 +46,20 @@ const team = [
     year: "3rd",
     dept: "ECE",
     image: member2,
-    email: "adripta@gmail.com",
-    linkedin: "https://linkedin.com/in/adripta",
+    email: "adriptaghosh122@gmail.com",
+    insta:"https://www.instagram.com/adripta.ghosh/",
+    linkedin: "https://www.linkedin.com/in/adripta-ghosh",
   },
   {
     name: "Satyajit Roy",
-    designation: "Tech Coordinator",
+    designation: "Tech Head",
     role: "Graphics, Marketing promotions",
     year: "2nd",
     dept: "CSE",
     image: member3,
-    email: "satyajit@gmail.com",
-    linkedin: "https://linkedin.com/in/satyajit",
+    email: "satyajit41cse@gmail.com",
+    insta:"https://www.instagram.com/satyajitan21.official/",
+    linkedin: "https://www.linkedin.com/in/satyajit--roy",
   },
   {
     name: "Ayan Roy",
@@ -68,8 +68,9 @@ const team = [
     year: "2nd",
     dept: "CSE",
     image: member4,
-    email: "ayan@gmail.com",
-    linkedin: "https://linkedin.com/in/ayan",
+    email: "ayan76cse@gmail.com",
+    insta:"https://www.instagram.com/_____ayan__roy____/",
+    linkedin: "https://www.linkedin.com/in/ayan-roy-0853b831b/",
   },
   {
     name: "Debojit Sarkar",
@@ -78,8 +79,9 @@ const team = [
     year: "2nd",
     dept: "CSE",
     image: member5,
-    email: "debojit@gmail.com",
-    linkedin: "https://linkedin.com/in/debojit",
+    email: "debojit64cse@gmail.com",
+    insta:"https://www.instagram.com/__dev432__/",
+    linkedin: "https://www.linkedin.com/in/debojit-sarkar",
   },
   {
     name: "Yasashree Paul",
@@ -89,7 +91,8 @@ const team = [
     dept: "CE",
     image: member6,
     email: "yasashree@gmail.com",
-    linkedin: "https://linkedin.com/in/yasashree",
+    insta:"https://www.instagram.com/_.yasashree._/",
+    linkedin: "https://www.linkedin.com/in/yasashree-paul",
   },
   {
     name: "Adityava Gangopadhyay",
@@ -98,8 +101,9 @@ const team = [
     year: "2nd",
     dept: "CSE",
     image: member7,
-    email: "adityava@gmail.com",
-    linkedin: "https://linkedin.com/in/adityava",
+    email: "adityava49cse@gmail.com",
+    insta:"https://www.instagram.com/ganguly_71/",
+    linkedin: "https://www.linkedin.com/in/adityava-gangopadhyay",
   },
   {
     name: "Anushka Roy",
@@ -108,8 +112,9 @@ const team = [
     year: "3rd",
     dept: "ECE",
     image: member8,
-    email: "anushka@gmail.com",
-    linkedin: "https://linkedin.com/in/anushka",
+    email: "anushkaaroy34@gmail.com",
+    insta:"https://www.instagram.com/_anushh.kaaa/",
+    linkedin: " linkedin.com/in/anushka-roy34",
   },
   {
     name: "Sk Sahil Akhtar",
@@ -118,8 +123,9 @@ const team = [
     year: "2nd",
     dept: "ECE",
     image: member9,
-    email: "sahil@gmail.com",
-    linkedin: "https://linkedin.com/in/sahil",
+    email: "sksahil38ece@gmail.com",
+    insta:"https://www.instagram.com/sksahilakhtar1/",
+    linkedin: "https://www.linkedin.com/in/s-k-sahil-akhtar-69528724a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Sumouli Banerjee",
@@ -128,8 +134,9 @@ const team = [
     year: "2nd",
     dept: "ECE",
     image: member10,
-    email: "sumouli@gmail.com",
-    linkedin: "https://linkedin.com/in/sumouli",
+    email: "sumouli05ece@gmail.com",
+    insta:"https://www.instagram.com/Sumouli_07/",
+    linkedin: "https://www.linkedin.com/in/sumouli-banerjee",
   },
   {
     name: "Trishan Banik",
@@ -138,8 +145,9 @@ const team = [
     year: "2nd",
     dept: "ECE",
     image: member11,
-    email: "trishan@gmail.com",
-    linkedin: "https://linkedin.com/in/trishan",
+    email: "trishanbanik691@gmail.com",
+    insta:"https://www.instagram.com/trishan.banik/",
+    linkedin: "https://www.linkedin.com/in/trishan-banik-84a685303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Pranay Hazra",
@@ -148,8 +156,9 @@ const team = [
     year: "2nd",
     dept: "CE",
     image: member12,
-    email: "pranay@gmail.com",
-    linkedin: "https://linkedin.com/in/pranay",
+    email: "hazrapranaycgec2024@gmail.com",
+    insta:"https://www.instagram.com/_pranayyy_.0/",
+    linkedin: "https://www.linkedin.com/in/pranay-hazra-308913333",
   },
   {
     name: "Chiradeep Mukherjee",
@@ -158,8 +167,9 @@ const team = [
     year: "2nd",
     dept: "ECE",
     image: member13,
-    email: "chiradeep@gmail.com",
-    linkedin: "https://linkedin.com/in/chiradeep",
+    email: "chiradeep88ece@gmail.com",
+    insta:"https://www.instagram.com/_carpediem_here_/",
+    linkedin: "https://www.linkedin.com/in/chiradeep-mukherjee",
   },
   {
     name: "Anupam Dutta",
@@ -168,8 +178,9 @@ const team = [
     year: "3rd",
     dept: "ECE",
     image: member14,
-    email: "anupam@gmail.com",
-    linkedin: "https://linkedin.com/in/anupam",
+    email: "ad4887269@gmail.com",
+    insta:"https://www.instagram.com/anupam_dutta275/",
+    linkedin: "https://www.linkedin.com/in/anupam-dutta-508ba6325",
   },
   {
     name: "Swastik Bal",
@@ -178,8 +189,9 @@ const team = [
     year: "3rd",
     dept: "ECE",
     image: member15,
-    email: "swastik@gmail.com",
-    linkedin: "https://linkedin.com/in/swastik",
+    email: "sumitaparuanokia2@gmail.com",
+    insta:"https://www.instagram.com/sbstikbl/",
+    linkedin: "https://www.linkedin.com/in/swastik-bal-32981632a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Md Ayub",
@@ -188,11 +200,47 @@ const team = [
     year: "2nd",
     dept: "EE",
     image: member16,
-    email: "ayub@gmail.com",
-    linkedin: "https://linkedin.com/in/ayub",
+    email: "mdayub742136@gmail.com",
+    insta:"https://www.instagram.com/md_ayub_70/",
+    linkedin: "https://www.linkedin.com/in/md-ayub-26617434a",
   },
+  {
+    name: "Rishav Prasad ",
+    designation: "Content &  Media",
+    
+    role: "marketing, media and outreach wing",
+    year: "2nd",
+    dept: "CSE",
+    image: member17,
+    email: "mdayub742136@gmail.com",
+    insta:"https://www.instagram.com/____.rishav/",
+    linkedin: "https://www.linkedin.com/in/rishav-prasad-",
+  },
+  {
+    name: "Arayan Prasad",
+    designation: "Content Writer  ",
+    role: "Content Writer ",
+    year: "2nd",
+    dept: "ME",
+    image: member18,
+    email: "aryanprasad2406@gmail.com",
+    insta:"https://www.instagram.com/tecboy_0604/",
+    linkedin: "https://www.linkedin.com/in/arayan-prasad-1bba73237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "Aditya Dey ",
+    designation: "Graphics ",
+    
+    role: "Graphics Wing, Video Editing ",
+    year: "2nd",
+    dept: "ME",
+    image: member19,
+    email: "mdayub742136@gmail.com",
+    insta:"https://www.instagram.com/Adityax141/",
+    linkedin: "https://www.linkedin.com/in/aditya-dey7",
+  },
+  
 ];
-
 
 const Team = () => (
   <section id="team" className="py-5 bg-light">
@@ -217,7 +265,7 @@ const Team = () => (
         {team.map((member, index) => (
           <SwiperSlide key={index}>
             <div
-              className="team-card text-center bg-white p-4 rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-between h-100"
+              className="team-card text-center bg-white p-4 rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-between h-100 transition-card"
             >
               <div className="team-img-wrapper mb-3">
                 <img
@@ -240,11 +288,19 @@ const Team = () => (
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact-icon"
+                  className="contact-icon linkedin"
                 >
                   <FaLinkedin />
                 </a>
-                <a href={`mailto:${member.email}`} className="contact-icon">
+                <a
+                  href={member.insta}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-icon instagram"
+                >
+                  <FaInstagram />
+                </a>
+                <a href={`mailto:${member.email}`} className="contact-icon email">
                   <FaEnvelope />
                 </a>
               </div>

@@ -6,9 +6,9 @@ import Blog1 from "../assets/Blogs/1blog.jpg";
 const blogData = [
   {
     id: 1,
-    title: "E-Cell Alums in Forbes 30 under 30",
+    title: "Nykaa: From a Pharmacy to a Billion-Dollar Beauty Empire",
     img: Blog1,
-    desc: "Two alumni featured in Forbes 30 under 30 list.",
+    desc: "In 2012, Falguni Nayar, a former investment banker in her late 40s, took a bold leap into entrepreneurship by launching Nykaa, an online beauty and wellness platform.",
     link: "https://www.linkedin.com/posts/nexovate-cgec_nykaa-from-a-pharmacy-to-a-billion-dollar-activity-7368829355424239617-NRKj?utm_source=share&utm_medium=member_android&rcm=ACoAAFyQZzEBENoE50hDfGiNDhRm_WitodC4Xeg"
   }, 
 ];
@@ -17,7 +17,9 @@ const BlogSection = () => {
   return (
     <section id="blog" style={{ backgroundColor: "#f8f9fa", padding: "60px 0" }}>
       <Container>
-        <h2 className="text-center mb-5 fw-bold">Latest Blogs</h2>
+      <h2 className="text-center fw-bold mb-5">
+      Latest <span className="text-primary">Blogs</span>
+      </h2>
         <Row>
           {blogData.map((blog) => (
             <Col md={4} className="mb-4" key={blog.id}>
