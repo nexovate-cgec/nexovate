@@ -74,8 +74,8 @@ const team = [
   },
   {
     name: "Debojit Sarkar",
-    designation: "Event & Media Coordinator",
-    role: "Graphics, Video Editing, Event Coordination, Research",
+    designation: "Graphics Head",
+    role: "Graphics, Video Editing",
     year: "2nd",
     dept: "CSE",
     image: member5,
@@ -85,8 +85,8 @@ const team = [
   },
   {
     name: "Yasashree Paul",
-    designation: "Content & Media Coordinator",
-    role: "Graphics, Video Editing, Research, Content",
+    designation: "Graphics & Media ",
+    role: "Graphics, Video Editing",
     year: "2nd",
     dept: "CE",
     image: member6,
@@ -119,7 +119,7 @@ const team = [
   {
     name: "Sk Sahil Akhtar",
     designation: "Marketing & Research",
-    role: "Graphics, Research, Marketing promotions",
+    role: "Research, Marketing promotions",
     year: "2nd",
     dept: "ECE",
     image: member9,
@@ -141,7 +141,7 @@ const team = [
   {
     name: "Trishan Banik",
     designation: "Marketing & Content",
-    role: "Research, Marketing promotions, Content",
+    role: " Marketing promotions, Content",
     year: "2nd",
     dept: "ECE",
     image: member11,
@@ -163,7 +163,7 @@ const team = [
   {
     name: "Chiradeep Mukherjee",
     designation: "Social Media & Marketing",
-    role: "Social Media handling and marketing promotions",
+    role: "Social Media handling",
     year: "2nd",
     dept: "ECE",
     image: member13,
