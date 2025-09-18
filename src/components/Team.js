@@ -113,7 +113,7 @@ const team = [
     dept: "ECE",
     image: member8,
     email: "anushkaaroy34@gmail.com",
-    insta:"https://www.instagram.com/_anushh.kaaa/",
+    insta:"http://linkedin.com/in/anushka-roy34",
     linkedin: " linkedin.com/in/anushka-roy34",
   },
   {
