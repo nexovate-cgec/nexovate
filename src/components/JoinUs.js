@@ -6,7 +6,6 @@ const JoinUs = () => (
     <Container>
       <Row className="align-items-center text-center text-md-start">
         
-        {/* Left Section */}
         <Col md={4} className="mb-4 mb-md-0">
           <h2 className="fw-bold mb-3">
             Ready to <span className="text-warning">Join Entrepreneurship Challenge 2025?</span>
@@ -25,7 +24,6 @@ const JoinUs = () => (
           </Button>
         </Col>
 
-        {/* Middle Section */}
         <Col md={4} className="mb-4 mb-md-0 text-center">
           <h2 className="fw-bold mb-3">
             <span className="text-info">SOCIAL MEDIA EVENT?</span>
@@ -44,7 +42,6 @@ const JoinUs = () => (
           </Button>
         </Col>
 
-        {/* Right Section */}
         <Col md={4}>
           <h2 className="fw-bold mb-3">
             Want to <span className="text-danger">Join E-Cell?</span>

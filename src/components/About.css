@@ -16,7 +16,6 @@
     transform: scale(1.2);
   }
   
-  /* Specific brand colors */
   .social-icon.facebook:hover {
     background: #1877f2;
   }
