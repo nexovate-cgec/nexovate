@@ -84,17 +84,6 @@ const team = [
     linkedin: "https://www.linkedin.com/in/debojit-sarkar",
   },
   {
-    name: "Yasashree Paul",
-    designation: "Graphics & Media ",
-    role: "Graphics, Video Editing",
-    year: "2nd",
-    dept: "CE",
-    image: member6,
-    email: "yasashree@gmail.com",
-    insta:"https://www.instagram.com/_.yasashree._/",
-    linkedin: "https://www.linkedin.com/in/yasashree-paul",
-  },
-  {
     name: "Adityava Gangopadhyay",
     designation: "Research & Event Coordinator",
     role: "Research, Content, Event Coordination",
