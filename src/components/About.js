@@ -11,7 +11,7 @@ const socialLinks = [
   { icon: <FaInstagram />, url: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" },
   { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   // { icon: <FaTwitter />, url: "https://twitter.com/nexovate" },
-  { icon: <FaEnvelope />, url: "https://twitter.com/nexovate" },
+  { icon: <FaEnvelope />, url: "mailto:nexovatecgec@gmail.com" },
   { icon: <FaYoutube />, url: "https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf" },
 ];
 
