@@ -31,8 +31,8 @@ import gallery17 from "../assets/Events/eureka25/17.jpeg";
 import gallery18 from "../assets/Events/eureka25/18.jpeg";
 
 const galleryImages = [
-  { src: gallery2, caption: "Wining Team" },
-  { src: gallery1, caption: "3rd position holder" },
+  { src: gallery2, caption: "Winning Team" },
+  { src: gallery1, caption: "2nd position holder" },
   { src: gallery3, caption: "Prize Distribution" },
   { src: gallery4, caption: "Prize Distribution" },
   { src: gallery5, caption: "Lecture" },

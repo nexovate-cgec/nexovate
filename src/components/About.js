@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import {  FaInstagram, FaLinkedin, FaYoutube,FaEnvelope } from "react-icons/fa"; 
 import "./About.css";
-import aboutImg from '../assets/images/about-ecell.jpeg';
+import aboutImg from '../assets/images/about.png';
 
 const socialLinks = [
   // { icon: <FaFacebook />, url: "https://facebook.com/nexovate" },

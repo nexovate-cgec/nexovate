@@ -8,7 +8,10 @@ import nexovateLogo from '../assets/images/logo.png';
 const Hero = () => {
   return (
     <div className="hero-split d-flex align-items-center">
-      <Container>
+      {/* Background Image Container */}
+      <div className="hero-background"></div>
+      
+      <Container className="position-relative">
         <Row className="align-items-center mb-4">
           <Col xs={6} className="text-start">
             <img 
@@ -69,17 +72,17 @@ const Hero = () => {
               <img src={heroImage} alt="E-Cell Team" className="hero-image rounded shadow" />
               <div className="floating-stats">
                 <div className="stat-item">
-                  <h4>XX</h4>
+                  <h4>5+</h4>
                   <p>Events</p>
                 </div>
                 <div className="stat-item">
                   <h4>18</h4>
                   <p>Members</p>
                 </div>
-                <div className="stat-item">
+                {/* <div className="stat-item">
                   <h4>XX</h4>
                   <p>Startups</p>
-                </div>
+                </div> */}
               </div>
             </div>
           </Col>

@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import logo from '../assets/images/logo.png';
 import './Navbar.css';
 
-const sections = ['about', 'initiatives', 'events','gallery', 'Blog', 'team', 'testimonials', 'contact'];
+// Use consistent casing - all lowercase
+const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', 'contact'];
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -39,6 +39,12 @@ const NavBar = () => {
     };
   }, []);
 
+  // Function to format section names for display
+  const formatSectionName = (id) => {
+    if (id === 'ecell') return 'ECELL';
+    return id.charAt(0).toUpperCase() + id.slice(1);
+  };
+
   return (
     <Navbar expand="lg" fixed="top" className={`main-navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <Container>
@@ -56,7 +62,7 @@ const NavBar = () => {
                 href={`#${id}`}
                 className={`nav-link-custom ${activeSection === id ? 'active-section' : ''}`}
               >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+                {formatSectionName(id)}
               </Nav.Link>
             ))}
             <Button
