@@ -10,7 +10,7 @@ const Contact = () => (
         <Col md={6} className="mb-4">
           <h5 className="fw-bold">Get in Touch</h5>
           <p><strong>Email:</strong> nexovatecgec@gmail.com</p>
-          <p><strong>Phone:</strong> +91 XXX3091268</p>
+          <p><strong>Phone:</strong> +91 8240309052</p>
           <p><strong>Address:</strong> Cooch Behar Government Engineering College, West Bengal, India</p>
         </Col>
 
