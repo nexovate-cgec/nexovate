@@ -1,49 +1,76 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import logo from '../assets/images/logo.png';
 import './Navbar.css';
 
-// Use consistent casing - all lowercase
-const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', 'contact'];
-
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+    if (location.pathname === '/') {
+      window.addEventListener('scroll', handleScroll);
 
-    sections.forEach((id) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
+      const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', 'contact'];
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
+          });
+        },
+        { threshold: 0.6 }
+      );
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
-    };
-  }, []);
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
+      });
 
-  // Function to format section names for display
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        observer.disconnect();
+      };
+    } else {
+      // Reset active section when not on home page
+      setActiveSection('');
+    }
+  }, [location.pathname]);
+
+  const handleSectionClick = (sectionId) => {
+    if (location.pathname !== '/') {
+      // Navigate to home page and then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Smooth scroll on home page
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   const formatSectionName = (id) => {
     if (id === 'ecell') return 'ECELL';
     return id.charAt(0).toUpperCase() + id.slice(1);
   };
+
+  const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', 'contact'];
 
   return (
     <Navbar expand="lg" fixed="top" className={`main-navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -56,19 +83,21 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto align-items-center gap-2">
-            {sections.map((id, index) => (
+            {sections.map((id) => (
               <Nav.Link
-                key={index}
-                href={`#${id}`}
+                key={id}
+                onClick={() => handleSectionClick(id)}
                 className={`nav-link-custom ${activeSection === id ? 'active-section' : ''}`}
+                style={{ cursor: 'pointer' }}
               >
                 {formatSectionName(id)}
               </Nav.Link>
             ))}
             <Button
-              href="#join"
+              onClick={() => handleSectionClick('join')}
               variant="warning"
               className="ms-2 px-3 fw-semibold rounded-pill"
+              style={{ cursor: 'pointer' }}
             >
               Join Us
             </Button>
