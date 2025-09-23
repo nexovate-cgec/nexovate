@@ -13,55 +13,160 @@ import {
 } from "react-bootstrap-icons";
 
 // Image imports
-import Blog1 from "../assets/Blogs/1blog.jpg";
-import Blog2 from "../assets/Blogs/blog2.jpeg";
 import logo from "../assets/images/logo.png";
+import Blog11 from "../assets/Blogs/blog11.jpg";
+import Blog12 from "../assets/Blogs/blog12.jpg";
+import Blog13 from "../assets/Blogs/blog13.jpg";
+import Blog21 from "../assets/Blogs/blog21.png";
 
 const blogData = [
   {
     id: 1,
-    title: "Nykaa: From a Pharmacy to a Billion-Dollar Beauty Empire",
-    img: Blog1,
-    desc: "In 2012, Falguni Nayar, a former investment banker in her late 40s, took a bold leap into entrepreneurship by launching Nykaa, an online beauty and wellness platform.",
+    title: "The Rise of Solopreneurs: Building a Business of One",
+    img: Blog11,
+    desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs is reshaping the startup landscape worldwide.",
     fullContent: `
-      <p>In 2012, Falguni Nayar, a former investment banker in her late 40s, took a bold leap into entrepreneurship by launching Nykaa, an online beauty and wellness platform.</p>
+      <p>Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.</p>
       
-      <p>At a time when e-commerce in India was still nascent and beauty products were largely sold through physical stores, Nykaa stood out by offering a wide range of genuine products with a focus on customer experience.</p>
+      <h3>Why Solopreneurship is Booming</h3>
+      <p>Three forces are driving this shift:</p>
+      <ul>
+        <li><strong>Digital tools:</strong> Affordable, user-friendly platforms for payments, marketing, and customer support mean you don't need a full staff to look professional.</li>
+        <li><strong>Remote work culture:</strong> Clients and collaborators are comfortable working virtually, lowering the barrier for solo operators.</li>
+        <li><strong>Lifestyle flexibility:</strong> Many professionals crave autonomy over schedules, projects, and income rather than traditional corporate hierarchies.</li>
+      </ul>
       
-      <h3>The Early Days</h3>
-      <p>What started as an online marketplace soon expanded into a multi-brand retail chain, with Nykaa opening physical stores across the country. The company's omni-channel approach, combined with its private label offerings, helped it build a loyal customer base.</p>
+      <h3>Advantages of Going Solo</h3>
+      <p>Operating alone offers unique benefits:</p>
+      <ul>
+        <li><strong>Speed and agility:</strong> Decisions are quick because you are the decision-maker.</li>
+        <li><strong>Low overhead:</strong> With no payroll or office lease, expenses stay lean.</li>
+        <li><strong>Creative freedom:</strong> You can pivot your product or service without internal negotiations.</li>
+      </ul>
       
-      <h3>The IPO Success</h3>
-      <p>In 2021, Nykaa went public with a blockbuster IPO, making Falguni Nayar one of India's richest self-made women. The company's valuation crossed $13 billion, cementing its position as a beauty and fashion powerhouse.</p>
+      <h3>Key Challenges</h3>
+      <p>Of course, being a one-person startup is not effortless. Solopreneurs juggle marketing, finances, customer service, and strategy themselves. Burnout and isolation can creep in if boundaries aren't set. Building a network of mentors, freelancers, or peer communities helps maintain balance.</p>
       
-      <p>Nykaa's success story demonstrates the power of identifying market gaps, building a strong brand, and adapting to changing consumer preferences.</p>
+      <h3>Tips for Aspiring Solopreneurs</h3>
+      <ol>
+        <li><strong>Validate your idea:</strong> Run small tests—landing pages, pre-orders, or pilot projects—to confirm real demand.</li>
+        <li><strong>Automate and outsource:</strong> Use tools for accounting, scheduling, and email marketing; delegate specialized tasks to freelancers.</li>
+        <li><strong>Protect your business:</strong> Choose the right legal structure (sole proprietorship, LLP, or private limited), register trademarks, and keep contracts in writing.</li>
+        <li><strong>Invest in yourself:</strong> Continuous learning—new skills, emerging tech, market trends—keeps you competitive.</li>
+      </ol>
+      
+      <h3>Real-World Inspiration</h3>
+      <p>From independent app developers to single-founder consultancies and boutique e-commerce brands, solopreneurs are proving that one person with the right systems can compete with traditional startups. Many intentionally stay small, enjoying high profit margins and personal freedom over rapid scaling.</p>
+      
+      <p><strong>Bottom line:</strong> The one-person startup isn't just a stopgap before hiring—it's a legitimate, sustainable business model. With digital infrastructure and global markets at your fingertips, building a business of one may be the most entrepreneurial move of all.</p>
     `,
     author: "Nexovate Team",
-    date: "2024-01-15",
-    readTime: "5 min read",
-    category: "Success Stories",
-    tags: ["E-commerce", "Beauty", "Entrepreneurship"]
+    date: "2025-09-23",
+    readTime: "6 min read",
+    category: "Entrepreneurship",
+    tags: ["Solopreneurs", "Startup", "Digital Business", "Remote Work"],
+    additionalImages: [Blog12, Blog13]
   },
   {
     id: 2,
-    title: "Scalability vs. Sustainability: The Entrepreneur's Dilemma",
-    img: Blog2,
-    desc: "One of the biggest challenges every entrepreneur faces is deciding between scaling fast and building sustainably.",
+    title: "Legal Basics for First-Time Founders: Start Your Business on Solid Ground",
+    img: Blog21,
+    desc: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Learn the essential legal steps every first-time founder must take to protect your business.",
     fullContent: `
-      <p>One of the biggest challenges every entrepreneur faces is deciding between scaling fast and building sustainably. Scalability is about rapid expansion with minimal additional cost.</p>
+      <p class="lead">Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you're opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build.</p>
+
+      <h3>1. Choose the Right Business Structure</h3>
+      <p>Your legal identity determines taxes, liability, and funding options. This is one of the most critical decisions you'll make as a founder.</p>
       
-      <h3>Understanding the Balance</h3>
-      <p>While scalability focuses on growth, sustainability emphasizes long-term viability. Finding the right balance between these two is crucial for business success.</p>
-      
-      <h3>Key Strategies</h3>
-      <p>Successful entrepreneurs often adopt a phased approach, focusing on sustainability in the early stages and scaling once a solid foundation is established.</p>
+      <div class="legal-points">
+        <h5>✓ Sole Proprietorship</h5>
+        <p><strong>Best for:</strong> Solo entrepreneurs testing ideas with minimal risk<br>
+        <strong>Pros:</strong> Easiest to start, minimal paperwork<br>
+        <strong>Cons:</strong> Your personal assets are exposed to business debts</p>
+      </div>
+
+      <div class="legal-points">
+        <h5>✓ Partnership/LLP</h5>
+        <p><strong>Best for:</strong> Businesses with multiple founders<br>
+        <strong>Pros:</strong> Limited Liability Partnership shields personal assets while keeping compliance moderate<br>
+        <strong>Cons:</strong> Requires partnership agreement and formal registration</p>
+      </div>
+
+      <div class="legal-points">
+        <h5>✓ Private Limited Company</h5>
+        <p><strong>Best for:</strong> Startups planning to raise venture capital or scale rapidly<br>
+        <strong>Pros:</strong> Best liability protection, easier to attract investors<br>
+        <strong>Cons:</strong> Demands more reporting, compliance, and higher costs</p>
+      </div>
+
+      <h3>2. Register Your Business Properly</h3>
+      <p>After selecting a structure, complete these essential filings:</p>
+      <ul>
+        <li><strong>Name Approval:</strong> Reserve a unique business name through your country's corporate affairs ministry</li>
+        <li><strong>PAN/GST/Tax IDs:</strong> Apply for Permanent Account Number, GST registration, and other required tax numbers</li>
+        <li><strong>Local Permits:</strong> Shops & Establishments license, trade license, or sector-specific approvals</li>
+      </ul>
+
+      <h3>3. Protect Your Intellectual Property</h3>
+      <p>Your brand and creations are valuable assets worth protecting from day one.</p>
+      <ul>
+        <li><strong>Trademarks:</strong> Secure your logo, business name, and taglines to prevent copycats</li>
+        <li><strong>Copyrights:</strong> Protect original content, website copy, marketing materials, and software code</li>
+        <li><strong>Patents:</strong> Safeguard unique inventions or proprietary technology</li>
+      </ul>
+      <p><em>Filing early ensures you own what you create and prevents costly legal battles later.</em></p>
+
+      <h3>4. Draft Solid Contracts and Agreements</h3>
+      <p>Handshake deals can lead to serious disputes. Always use clear, written agreements for:</p>
+      <ul>
+        <li>Client projects and payment terms</li>
+        <li>Employee or freelancer engagements</li>
+        <li>Vendor relationships and service-level expectations</li>
+        <li>Co-founder agreements and equity distribution</li>
+      </ul>
+
+      <h3>5. Maintain Accurate Business Records</h3>
+      <p>Proper documentation is not just good practice—it's often legally required.</p>
+      <ul>
+        <li>Keep updated financial statements and tax records</li>
+        <li>Maintain organized invoices and expense tracking</li>
+        <li>Use digital bookkeeping tools to simplify tax filing</li>
+        <li>Stay audit-ready with proper documentation</li>
+      </ul>
+
+      <h3>6. Understand Your Ongoing Legal Obligations</h3>
+      <p>Compliance doesn't end with registration. Stay informed about:</p>
+      <ul>
+        <li>Labour laws and employee rights</li>
+        <li>Data protection and privacy regulations</li>
+        <li>Industry-specific regulations and licensing requirements</li>
+        <li>Tax filing deadlines and compliance requirements</li>
+      </ul>
+      <p><strong>Remember:</strong> Penalties for non-compliance can be steep and potentially business-ending for startups.</p>
+
+      <div class="key-takeaway">
+        <h4>🎯 Key Takeaway</h4>
+        <p>Legal work may not feel as exciting as product development or marketing, but it's the safety net that lets you focus on growth. Investing a little time and money in these foundational steps early on:</p>
+        <ul>
+          <li>Protects your personal assets from business liabilities</li>
+          <li>Builds credibility with customers and investors</li>
+          <li>Prevents costly legal disputes down the road</li>
+          <li>Creates a solid foundation for sustainable growth</li>
+        </ul>
+      </div>
+
+      <div class="pro-tip">
+        <h5>💡 Professional Tip</h5>
+        <p>Consider consulting with a business attorney for at least an initial consultation. Many offer startup packages at reduced rates, and this small investment can save you from major legal headaches later.</p>
+      </div>
     `,
-    author: "Nexovate Team",
-    date: "2024-01-10",
-    readTime: "4 min read",
-    category: "Business Strategy",
-    tags: ["Growth", "Sustainability", "Planning"]
-  },
+    author: "Legal Team @ CGEC ECELL",
+    date: "2024-01-25",
+    readTime: "7 min read",
+    category: "Legal Guide",
+    tags: ["Legal", "Startup", "Compliance", "Business Law", "IP Protection"],
+    additionalImages: [Blog12, Blog13]
+  }
 ];
 
 const BlogDetails = () => {
@@ -70,6 +175,8 @@ const BlogDetails = () => {
   const blog = blogData.find(b => b.id === parseInt(id));
 
   const shareBlog = (platform) => {
+    if (!blog) return;
+    
     const url = window.location.href;
     const title = blog.title;
     
@@ -173,6 +280,22 @@ const BlogDetails = () => {
               }}
             />
 
+            {/* Additional Images for any blog that has them */}
+            {blog.additionalImages && blog.additionalImages.length > 0 && (
+              <Row className="mb-4">
+                {blog.additionalImages.slice(0, 2).map((image, index) => (
+                  <Col md={6} key={index}>
+                    <img
+                      src={image}
+                      alt={`Visual content for ${blog.title}`}
+                      className="rounded-3 shadow-sm w-100 mb-3"
+                      style={{ height: '250px', objectFit: 'cover' }}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            )}
+
             {/* Share Buttons */}
             <div className="d-flex justify-content-between align-items-center mb-5 p-3 bg-light rounded-3">
               <div className="d-flex align-items-center gap-2">
@@ -220,6 +343,21 @@ const BlogDetails = () => {
                 fontFamily: 'Georgia, serif'
               }}
             />
+
+            {/* Additional single image if available */}
+            {blog.additionalImages && blog.additionalImages.length > 2 && (
+              <div className="text-center mb-5">
+                <img
+                  src={blog.additionalImages[2]}
+                  alt={`Additional content for ${blog.title}`}
+                  className="rounded-4 shadow-sm"
+                  style={{ maxWidth: '600px', height: '300px', objectFit: 'cover', width: '100%' }}
+                />
+                <p className="text-muted mt-2">
+                  <small>Visual content related to {blog.title}</small>
+                </p>
+              </div>
+            )}
 
             {/* Tags */}
             <div className="mb-5">
@@ -296,6 +434,59 @@ const BlogDetails = () => {
           </Row>
         </Container>
       </footer>
+
+      {/* Custom CSS for blog content */}
+      <style>
+        {`
+          .blog-content h3 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #007bff;
+            padding-left: 1rem;
+          }
+          
+          .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+          }
+          
+          .blog-content li {
+            margin-bottom: 0.5rem;
+          }
+          
+          .legal-points {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+          }
+          
+          .key-takeaway {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            border: 1px solid #ffeaa7;
+          }
+          
+          .pro-tip {
+            background: #d1ecf1;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #17a2b8;
+          }
+          
+          .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #495057;
+          }
+        `}
+      </style>
     </>
   );
 };
