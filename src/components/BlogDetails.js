@@ -9,163 +9,123 @@ import {
   Share, 
   Facebook, 
   Twitter, 
-  Linkedin 
+  Linkedin,
 } from "react-bootstrap-icons";
 
 // Image imports
 import logo from "../assets/images/logo.png";
-import Blog11 from "../assets/Blogs/blog11.jpg";
-import Blog12 from "../assets/Blogs/blog12.jpg";
-import Blog13 from "../assets/Blogs/blog13.jpg";
-import Blog21 from "../assets/Blogs/blog21.png";
+
+// New images for Remote Work blog (you need to add these images to your assets)
+import RemoteWork1 from "../assets/Blogs/blog11.png";
+import RemoteWork2 from "../assets/Blogs/blog12.png";
+import RemoteWork3 from "../assets/Blogs/blog13.png";
 
 const blogData = [
+  
   {
     id: 1,
-    title: "The Rise of Solopreneurs: Building a Business of One",
-    img: Blog11,
-    desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs is reshaping the startup landscape worldwide.",
+    title: "The Future of Remote Work: Redefining How We Live and Work",
+    img: RemoteWork1,
+    desc: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution to a long-term, mainstream way of working.",
     fullContent: `
-      <p>Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.</p>
+      <p class="lead">The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution during the pandemic to a long-term, mainstream way of working. Around the world, companies and individuals are embracing flexibility, productivity, and balance in new ways.</p>
+
+      <h3>🌍 Why Remote Work is Here to Stay</h3>
+      <p>Three major forces are cementing this trend:</p>
       
-      <h3>Why Solopreneurship is Booming</h3>
-      <p>Three forces are driving this shift:</p>
-      <ul>
-        <li><strong>Digital tools:</strong> Affordable, user-friendly platforms for payments, marketing, and customer support mean you don't need a full staff to look professional.</li>
-        <li><strong>Remote work culture:</strong> Clients and collaborators are comfortable working virtually, lowering the barrier for solo operators.</li>
-        <li><strong>Lifestyle flexibility:</strong> Many professionals crave autonomy over schedules, projects, and income rather than traditional corporate hierarchies.</li>
-      </ul>
+      <div class="feature-point">
+        <h5><Laptop className="me-2" /> Technology Upgrades</h5>
+        <p>Video conferencing, project management apps, and cloud collaboration tools make working from anywhere seamless. Platforms like Zoom, Slack, and Asana have become essential workplace infrastructure.</p>
+      </div>
+
+      <div class="feature-point">
+        <h5><Globe className="me-2" /> Global Talent Pool</h5>
+        <p>Companies are tapping into diverse, international talent without relocation costs. This allows businesses to hire the best people regardless of geographical boundaries.</p>
+      </div>
+
+      <div class="feature-point">
+        <h5><House className="me-2" /> Work-Life Priorities</h5>
+        <p>Employees value time, mental health, and flexibility more than traditional office perks. The modern workforce prioritizes autonomy and work-life integration.</p>
+      </div>
+
+      <h3>✅ Advantages of Remote Work</h3>
+      <p>This model offers clear benefits to both companies and workers:</p>
       
-      <h3>Advantages of Going Solo</h3>
-      <p>Operating alone offers unique benefits:</p>
-      <ul>
-        <li><strong>Speed and agility:</strong> Decisions are quick because you are the decision-maker.</li>
-        <li><strong>Low overhead:</strong> With no payroll or office lease, expenses stay lean.</li>
-        <li><strong>Creative freedom:</strong> You can pivot your product or service without internal negotiations.</li>
-      </ul>
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>Flexibility</h5>
+          <p>Choose when and where to work, aligning professional and personal life. No more rigid 9-to-5 schedules.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>Cost Savings</h5>
+          <p>Lower expenses on commuting, office rent, and relocation. Employees save money while companies reduce overhead.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>Increased Productivity</h5>
+          <p>Many professionals report higher focus when given autonomy. Fewer office distractions lead to better output.</p>
+        </div>
+      </div>
+
+      <h3>⚠️ Challenges to Address</h3>
+      <p>Remote work isn't perfect—there are pitfalls to watch for:</p>
       
-      <h3>Key Challenges</h3>
-      <p>Of course, being a one-person startup is not effortless. Solopreneurs juggle marketing, finances, customer service, and strategy themselves. Burnout and isolation can creep in if boundaries aren't set. Building a network of mentors, freelancers, or peer communities helps maintain balance.</p>
+      <div class="challenge-item">
+        <h5>Isolation</h5>
+        <p>Limited social interaction can affect mental health. Virtual water cooler chats and regular team building are essential.</p>
+      </div>
+
+      <div class="challenge-item">
+        <h5>Blurred Boundaries</h5>
+        <p>Work hours often spill into personal time. Setting clear start and end times helps maintain balance.</p>
+      </div>
+
+      <div class="challenge-item">
+        <h5>Team Cohesion</h5>
+        <p>Building culture and collaboration virtually requires extra effort. Regular video calls and virtual events foster connection.</p>
+      </div>
+
+      <h3>💡 Tips for Thriving Remotely</h3>
       
-      <h3>Tips for Aspiring Solopreneurs</h3>
-      <ol>
-        <li><strong>Validate your idea:</strong> Run small tests—landing pages, pre-orders, or pilot projects—to confirm real demand.</li>
-        <li><strong>Automate and outsource:</strong> Use tools for accounting, scheduling, and email marketing; delegate specialized tasks to freelancers.</li>
-        <li><strong>Protect your business:</strong> Choose the right legal structure (sole proprietorship, LLP, or private limited), register trademarks, and keep contracts in writing.</li>
-        <li><strong>Invest in yourself:</strong> Continuous learning—new skills, emerging tech, market trends—keeps you competitive.</li>
-      </ol>
-      
-      <h3>Real-World Inspiration</h3>
-      <p>From independent app developers to single-founder consultancies and boutique e-commerce brands, solopreneurs are proving that one person with the right systems can compete with traditional startups. Many intentionally stay small, enjoying high profit margins and personal freedom over rapid scaling.</p>
-      
-      <p><strong>Bottom line:</strong> The one-person startup isn't just a stopgap before hiring—it's a legitimate, sustainable business model. With digital infrastructure and global markets at your fingertips, building a business of one may be the most entrepreneurial move of all.</p>
+      <div class="tip-section">
+        <h5>1. Set Clear Boundaries</h5>
+        <p>Define your workspace and working hours. Create physical and mental separation between work and personal life.</p>
+      </div>
+
+      <div class="tip-section">
+        <h5>2. Leverage Digital Tools</h5>
+        <p>Use platforms for time tracking, communication, and collaboration. Tools like Trello, Notion, and Google Workspace streamline workflows.</p>
+      </div>
+
+      <div class="tip-section">
+        <h5>3. Prioritize Communication</h5>
+        <p>Regular check-ins help maintain connection and clarity. Over-communicate rather than under-communicate in virtual settings.</p>
+      </div>
+
+      <div class="tip-section">
+        <h5>4. Invest in Ergonomics</h5>
+        <p>A good chair, desk, and internet setup enhance productivity. Don't underestimate the importance of a comfortable workspace.</p>
+      </div>
+
+      <h3>🚀 Real-World Inspiration</h3>
+      <p>From startups hiring across continents to freelancers building global client bases, remote work is empowering millions. Entire companies now operate without physical offices, proving that productivity isn't tied to location.</p>
+
+      <div class="success-story">
+        <h5>Case Study: GitLab</h5>
+        <p>GitLab, with over 1,300 employees across 65+ countries, has been fully remote since its inception. Their success demonstrates that distributed teams can outperform traditional office-based organizations.</p>
+      </div>
+
+      <div class="conclusion">
+        <h4>🎯 Bottom Line</h4>
+        <p><strong>Remote work is not just a temporary trend—it's the blueprint for the modern workplace.</strong> For many, the future of work is already here, and it's happening at home, in cafés, and across borders.</p>
+        <p>The companies that embrace this shift will attract top talent, reduce costs, and build more resilient organizations. The future of work is flexible, distributed, and human-centric.</p>
+      </div>
     `,
-    author: "Nexovate Team",
+    author: "Future of Work Team",
     date: "2025-09-23",
-    readTime: "6 min read",
-    category: "Entrepreneurship",
-    tags: ["Solopreneurs", "Startup", "Digital Business", "Remote Work"],
-    additionalImages: [Blog12, Blog13]
-  },
-  {
-    id: 2,
-    title: "Legal Basics for First-Time Founders: Start Your Business on Solid Ground",
-    img: Blog21,
-    desc: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Learn the essential legal steps every first-time founder must take to protect your business.",
-    fullContent: `
-      <p class="lead">Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you're opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build.</p>
-
-      <h3>1. Choose the Right Business Structure</h3>
-      <p>Your legal identity determines taxes, liability, and funding options. This is one of the most critical decisions you'll make as a founder.</p>
-      
-      <div class="legal-points">
-        <h5>✓ Sole Proprietorship</h5>
-        <p><strong>Best for:</strong> Solo entrepreneurs testing ideas with minimal risk<br>
-        <strong>Pros:</strong> Easiest to start, minimal paperwork<br>
-        <strong>Cons:</strong> Your personal assets are exposed to business debts</p>
-      </div>
-
-      <div class="legal-points">
-        <h5>✓ Partnership/LLP</h5>
-        <p><strong>Best for:</strong> Businesses with multiple founders<br>
-        <strong>Pros:</strong> Limited Liability Partnership shields personal assets while keeping compliance moderate<br>
-        <strong>Cons:</strong> Requires partnership agreement and formal registration</p>
-      </div>
-
-      <div class="legal-points">
-        <h5>✓ Private Limited Company</h5>
-        <p><strong>Best for:</strong> Startups planning to raise venture capital or scale rapidly<br>
-        <strong>Pros:</strong> Best liability protection, easier to attract investors<br>
-        <strong>Cons:</strong> Demands more reporting, compliance, and higher costs</p>
-      </div>
-
-      <h3>2. Register Your Business Properly</h3>
-      <p>After selecting a structure, complete these essential filings:</p>
-      <ul>
-        <li><strong>Name Approval:</strong> Reserve a unique business name through your country's corporate affairs ministry</li>
-        <li><strong>PAN/GST/Tax IDs:</strong> Apply for Permanent Account Number, GST registration, and other required tax numbers</li>
-        <li><strong>Local Permits:</strong> Shops & Establishments license, trade license, or sector-specific approvals</li>
-      </ul>
-
-      <h3>3. Protect Your Intellectual Property</h3>
-      <p>Your brand and creations are valuable assets worth protecting from day one.</p>
-      <ul>
-        <li><strong>Trademarks:</strong> Secure your logo, business name, and taglines to prevent copycats</li>
-        <li><strong>Copyrights:</strong> Protect original content, website copy, marketing materials, and software code</li>
-        <li><strong>Patents:</strong> Safeguard unique inventions or proprietary technology</li>
-      </ul>
-      <p><em>Filing early ensures you own what you create and prevents costly legal battles later.</em></p>
-
-      <h3>4. Draft Solid Contracts and Agreements</h3>
-      <p>Handshake deals can lead to serious disputes. Always use clear, written agreements for:</p>
-      <ul>
-        <li>Client projects and payment terms</li>
-        <li>Employee or freelancer engagements</li>
-        <li>Vendor relationships and service-level expectations</li>
-        <li>Co-founder agreements and equity distribution</li>
-      </ul>
-
-      <h3>5. Maintain Accurate Business Records</h3>
-      <p>Proper documentation is not just good practice—it's often legally required.</p>
-      <ul>
-        <li>Keep updated financial statements and tax records</li>
-        <li>Maintain organized invoices and expense tracking</li>
-        <li>Use digital bookkeeping tools to simplify tax filing</li>
-        <li>Stay audit-ready with proper documentation</li>
-      </ul>
-
-      <h3>6. Understand Your Ongoing Legal Obligations</h3>
-      <p>Compliance doesn't end with registration. Stay informed about:</p>
-      <ul>
-        <li>Labour laws and employee rights</li>
-        <li>Data protection and privacy regulations</li>
-        <li>Industry-specific regulations and licensing requirements</li>
-        <li>Tax filing deadlines and compliance requirements</li>
-      </ul>
-      <p><strong>Remember:</strong> Penalties for non-compliance can be steep and potentially business-ending for startups.</p>
-
-      <div class="key-takeaway">
-        <h4>🎯 Key Takeaway</h4>
-        <p>Legal work may not feel as exciting as product development or marketing, but it's the safety net that lets you focus on growth. Investing a little time and money in these foundational steps early on:</p>
-        <ul>
-          <li>Protects your personal assets from business liabilities</li>
-          <li>Builds credibility with customers and investors</li>
-          <li>Prevents costly legal disputes down the road</li>
-          <li>Creates a solid foundation for sustainable growth</li>
-        </ul>
-      </div>
-
-      <div class="pro-tip">
-        <h5>💡 Professional Tip</h5>
-        <p>Consider consulting with a business attorney for at least an initial consultation. Many offer startup packages at reduced rates, and this small investment can save you from major legal headaches later.</p>
-      </div>
-    `,
-    author: "Legal Team @ CGEC ECELL",
-    date: "2024-01-25",
-    readTime: "7 min read",
-    category: "Legal Guide",
-    tags: ["Legal", "Startup", "Compliance", "Business Law", "IP Protection"],
-    additionalImages: [Blog12, Blog13]
+    readTime: "8 min read",
+    category: "Future of Work",
+    tags: ["Remote Work", "Future", "Productivity", "Flexibility", "Digital Nomad"],
+    additionalImages: [RemoteWork1, RemoteWork2, RemoteWork3]
   }
 ];
 
@@ -209,16 +169,12 @@ const BlogDetails = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
         <Container>
           <Link to="/" className="navbar-brand d-flex align-items-center">
-            <img src={logo} alt="ECELL Logo" height="40" className="me-2" />
-            <span className="fw-bold text-dark">CGEC ECELL</span>
+            
           </Link>
           
           <div className="navbar-nav ms-auto">
-            <Link to="/#blog" className="nav-link">
-              <Button variant="outline-primary" className="d-flex align-items-center gap-2">
-                <ArrowLeft size={18} />
-                Back to Blogs
-              </Button>
+            <Link>
+            
             </Link>
           </div>
         </Container>
@@ -229,14 +185,22 @@ const BlogDetails = () => {
           <Col lg={9}>
             {/* Breadcrumb */}
             <nav aria-label="breadcrumb" className="mb-4">
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
+              <ol className="breadcrumb" style={{display:"flex", justifyContent:"space-between"}}>
+                <ol className="breadcrumb">
+                  <li className="breadcrumb-item">
                   <Link to="/" className="text-decoration-none">Home</Link>
                 </li>
                 <li className="breadcrumb-item">
                   <Link to="/#blog" className="text-decoration-none">Blogs</Link>
                 </li>
                 <li className="breadcrumb-item active">{blog.title.substring(0, 30)}...</li>
+                </ol>
+
+
+                <Link to="/" className="navbar-brand d-flex align-items-center">
+            <img src={logo} alt="ECELL Logo" height="40" className="me-2" />
+            <span className="fw-bold text-dark">NEXOVATE</span>
+          </Link>
               </ol>
             </nav>
 
@@ -280,16 +244,16 @@ const BlogDetails = () => {
               }}
             />
 
-            {/* Additional Images for any blog that has them */}
+            {/* Additional Images Grid */}
             {blog.additionalImages && blog.additionalImages.length > 0 && (
               <Row className="mb-4">
-                {blog.additionalImages.slice(0, 2).map((image, index) => (
-                  <Col md={6} key={index}>
+                {blog.additionalImages.map((image, index) => (
+                  <Col md={4} key={index}>
                     <img
                       src={image}
-                      alt={`Visual content for ${blog.title}`}
+                      alt={`Visual content ${index + 1} for ${blog.title}`}
                       className="rounded-3 shadow-sm w-100 mb-3"
-                      style={{ height: '250px', objectFit: 'cover' }}
+                      style={{ height: '200px', objectFit: 'cover' }}
                     />
                   </Col>
                 ))}
@@ -343,21 +307,6 @@ const BlogDetails = () => {
                 fontFamily: 'Georgia, serif'
               }}
             />
-
-            {/* Additional single image if available */}
-            {blog.additionalImages && blog.additionalImages.length > 2 && (
-              <div className="text-center mb-5">
-                <img
-                  src={blog.additionalImages[2]}
-                  alt={`Additional content for ${blog.title}`}
-                  className="rounded-4 shadow-sm"
-                  style={{ maxWidth: '600px', height: '300px', objectFit: 'cover', width: '100%' }}
-                />
-                <p className="text-muted mt-2">
-                  <small>Visual content related to {blog.title}</small>
-                </p>
-              </div>
-            )}
 
             {/* Tags */}
             <div className="mb-5">
@@ -440,10 +389,22 @@ const BlogDetails = () => {
         {`
           .blog-content h3 {
             color: #2c3e50;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
             border-left: 4px solid #007bff;
             padding-left: 1rem;
+          }
+          
+          .blog-content h4 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+          }
+          
+          .blog-content h5 {
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
           }
           
           .blog-content ul, .blog-content ol {
@@ -461,6 +422,60 @@ const BlogDetails = () => {
             border-radius: 0.5rem;
             margin: 1rem 0;
             border-left: 4px solid #28a745;
+          }
+          
+          .feature-point {
+            background: #e8f4fd;
+            padding: 1.2rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #17a2b8;
+          }
+          
+          .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+          }
+          
+          .benefit-item {
+            background: #f0f8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #28a745;
+          }
+          
+          .challenge-item {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+          }
+          
+          .tip-section {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #6c757d;
+          }
+          
+          .success-story {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            border: 1px solid #28a745;
+          }
+          
+          .conclusion {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid #ffc107;
           }
           
           .key-takeaway {
@@ -484,6 +499,10 @@ const BlogDetails = () => {
             font-weight: 300;
             line-height: 1.7;
             color: #495057;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #007bff;
           }
         `}
       </style>

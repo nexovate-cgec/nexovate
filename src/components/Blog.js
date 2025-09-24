@@ -5,29 +5,19 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Change this import
 import logo from '../assets/images/logo.png';
 // import Blog1 from "../assets/Blogs/1blog.jpg";
-import Blog2 from "../assets/Blogs/blog11.jpg";
-import Blog21 from "../assets/Blogs/blog21.png";
+import Blog1 from "../assets/Blogs/blog11.png";
 // import Blog3 from "../assets/Blogs/blog3.jpeg";
 // import Blog4 from "../assets/Blogs/blog4.jpeg";
 
 const blogData = [
   {
     id: 1,
-    title: "The Rise of Solopreneurs: Building a Business of One ",
-    img: Blog2,
-    desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
-    fullContent: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
+    title: "The Future of Remote Work: Redefining How We Live and Work",
+    img: Blog1,
+    desc: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution during the pandemic to a long-term, mainstream way of working. Around the world, companies and individuals are embracing flexibility, productivity, and balance in new ways. ",
+    fullContent: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution during the pandemic to a long-term, mainstream way of working. Around the world, companies and individuals are embracing flexibility, productivity, and balance in new ways. ",
     author: "Author Name", 
-    date: "2025-09-23"
-  },
-  {
-    id: 2,
-    title: "Legal Basics for First-Time Founders: Start Your Business on Solid Ground ",
-    img: Blog21,
-    desc: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you’re opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build.",
-    fullContent: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you’re opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build.",
-    author: "Author Name", 
-    date: "2025-09-23"
+    date: "2025-09-24"
   },
   
 ];

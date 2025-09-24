@@ -8,9 +8,10 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Initiatives from "./components/Initiatives";
 import Events from "./components/Events";
-import EventDetails from "./components/EventDetails"; // নতুন কম্পোনেন্ট
-import Gallery from "./components/Gallery";
+import EventDetails from "./components/EventDetails";
 import Blog from "./components/Blog";
+import BlogDetails from "./components/BlogDetails"; // Add this import
+import Gallery from "./components/Gallery";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import JoinUs from "./components/JoinUs";
@@ -41,6 +42,9 @@ function App() {
         
         {/* ইভেন্ট ডিটেইলস পেজ রাউট */}
         <Route path="/events/:eventId" element={<EventDetails />} />
+        
+        {/* ব্লগ ডিটেইলস পেজ রাউট - ADD THIS LINE */}
+        <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
     </Router>
   );
