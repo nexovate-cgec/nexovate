@@ -14,14 +14,11 @@ import {
 
 // Image imports
 import logo from "../assets/images/logo.png";
-
-// New images for Remote Work blog (you need to add these images to your assets)
 import RemoteWork1 from "../assets/Blogs/blog11.png";
 import RemoteWork2 from "../assets/Blogs/blog12.png";
 import RemoteWork3 from "../assets/Blogs/blog13.png";
 
 const blogData = [
-  
   {
     id: 1,
     title: "The Future of Remote Work: Redefining How We Live and Work",
@@ -30,22 +27,37 @@ const blogData = [
     fullContent: `
       <p class="lead">The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution during the pandemic to a long-term, mainstream way of working. Around the world, companies and individuals are embracing flexibility, productivity, and balance in new ways.</p>
 
+      <div class="text-center my-5">
+        <img src="${RemoteWork1}" alt="Remote work lifestyle" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>The new era of remote work - working from anywhere</small></p>
+      </div>
+
       <h3>🌍 Why Remote Work is Here to Stay</h3>
       <p>Three major forces are cementing this trend:</p>
       
       <div class="feature-point">
-        <h5><Laptop className="me-2" /> Technology Upgrades</h5>
+        <h5>💻 Technology Upgrades</h5>
         <p>Video conferencing, project management apps, and cloud collaboration tools make working from anywhere seamless. Platforms like Zoom, Slack, and Asana have become essential workplace infrastructure.</p>
       </div>
 
+      <div class="text-center my-5">
+        <img src="${RemoteWork2}" alt="Remote work technology" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Essential tools for remote collaboration</small></p>
+      </div>
+
       <div class="feature-point">
-        <h5><Globe className="me-2" /> Global Talent Pool</h5>
+        <h5>🌐 Global Talent Pool</h5>
         <p>Companies are tapping into diverse, international talent without relocation costs. This allows businesses to hire the best people regardless of geographical boundaries.</p>
       </div>
 
       <div class="feature-point">
-        <h5><House className="me-2" /> Work-Life Priorities</h5>
+        <h5>🏠 Work-Life Priorities</h5>
         <p>Employees value time, mental health, and flexibility more than traditional office perks. The modern workforce prioritizes autonomy and work-life integration.</p>
+      </div>
+
+      <div class="text-center my-5">
+        <img src="${RemoteWork3}" alt="Work-life balance" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Achieving perfect work-life integration</small></p>
       </div>
 
       <h3>✅ Advantages of Remote Work</h3>
@@ -146,7 +158,9 @@ const BlogDetails = () => {
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
     };
 
-    window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+    if (shareUrls[platform]) {
+      window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+    }
   };
 
   if (!blog) {
@@ -165,16 +179,20 @@ const BlogDetails = () => {
 
   return (
     <>
-      {/* Enhanced Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+      {/* Fixed Navbar */}
+      <nav className="navbar navbar-light bg-white border-bottom py-3">
         <Container>
-          <Link to="/" className="navbar-brand d-flex align-items-center">
+          <div className="d-flex justify-content-between w-100 align-items-center">
+            <Link to="/" className="navbar-brand d-flex align-items-center">
+              <img src={logo} alt="NEXOVATE Logo" height="40" className="me-2" />
+              <span className="fw-bold text-dark">NEXOVATE</span>
+            </Link>
             
-          </Link>
-          
-          <div className="navbar-nav ms-auto">
-            <Link>
-            
+            <Link to="/#blog" className="text-decoration-none">
+              <Button variant="outline-primary" className="d-flex align-items-center gap-2">
+                <ArrowLeft size={18} />
+                Back to Blogs
+              </Button>
             </Link>
           </div>
         </Container>
@@ -183,24 +201,16 @@ const BlogDetails = () => {
       <Container className="my-5">
         <Row className="justify-content-center">
           <Col lg={9}>
-            {/* Breadcrumb */}
+            {/* Fixed Breadcrumb */}
             <nav aria-label="breadcrumb" className="mb-4">
-              <ol className="breadcrumb" style={{display:"flex", justifyContent:"space-between"}}>
-                <ol className="breadcrumb">
-                  <li className="breadcrumb-item">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
                   <Link to="/" className="text-decoration-none">Home</Link>
                 </li>
                 <li className="breadcrumb-item">
                   <Link to="/#blog" className="text-decoration-none">Blogs</Link>
                 </li>
                 <li className="breadcrumb-item active">{blog.title.substring(0, 30)}...</li>
-                </ol>
-
-
-                <Link to="/" className="navbar-brand d-flex align-items-center">
-            <img src={logo} alt="ECELL Logo" height="40" className="me-2" />
-            <span className="fw-bold text-dark">NEXOVATE</span>
-          </Link>
               </ol>
             </nav>
 
@@ -231,34 +241,20 @@ const BlogDetails = () => {
               </div>
             </div>
 
-            {/* Featured Image */}
-            <Card.Img
-              variant="top"
-              src={blog.img}
-              alt={blog.title}
-              className="rounded-4 mb-4 shadow-sm"
-              style={{ 
-                width: '100%', 
-                height: '450px', 
-                objectFit: 'cover' 
-              }}
-            />
-
-            {/* Additional Images Grid */}
-            {blog.additionalImages && blog.additionalImages.length > 0 && (
-              <Row className="mb-4">
-                {blog.additionalImages.map((image, index) => (
-                  <Col md={4} key={index}>
-                    <img
-                      src={image}
-                      alt={`Visual content ${index + 1} for ${blog.title}`}
-                      className="rounded-3 shadow-sm w-100 mb-3"
-                      style={{ height: '200px', objectFit: 'cover' }}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            )}
+            {/* Featured Image - Fixed with proper styling */}
+            <div className="text-center mb-5">
+              <img
+                src={blog.img}
+                alt={blog.title}
+                className="rounded-4 shadow-sm img-fluid"
+                style={{ 
+                  maxHeight: '500px',
+                  width: 'auto',
+                  maxWidth: '100%',
+                  objectFit: 'contain'
+                }}
+              />
+            </div>
 
             {/* Share Buttons */}
             <div className="d-flex justify-content-between align-items-center mb-5 p-3 bg-light rounded-3">
@@ -297,7 +293,7 @@ const BlogDetails = () => {
               </div>
             </div>
 
-            {/* Blog Content */}
+            {/* Blog Content Section */}
             <div 
               className="blog-content mb-5"
               dangerouslySetInnerHTML={{ __html: blog.fullContent }}
@@ -368,8 +364,8 @@ const BlogDetails = () => {
           <Row>
             <Col md={6}>
               <div className="d-flex align-items-center mb-3">
-                <img src={logo} alt="ECELL Logo" height="30" className="me-2" />
-                <span className="fw-bold">CGEC ECELL</span>
+                <img src={logo} alt="NEXOVATE Logo" height="30" className="me-2" />
+                <span className="fw-bold">NEXOVATE - CGEC ECELL</span>
               </div>
               <p className="text-light mb-0">
                 Empowering entrepreneurs and fostering innovation in the community.
@@ -377,7 +373,7 @@ const BlogDetails = () => {
             </Col>
             <Col md={6} className="text-md-end">
               <p className="text-light mb-0">
-                &copy; 2024 CGEC ECELL. All rights reserved.
+                &copy; 2024 NEXOVATE. All rights reserved.
               </p>
             </Col>
           </Row>
@@ -414,14 +410,6 @@ const BlogDetails = () => {
           
           .blog-content li {
             margin-bottom: 0.5rem;
-          }
-          
-          .legal-points {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin: 1rem 0;
-            border-left: 4px solid #28a745;
           }
           
           .feature-point {
@@ -478,22 +466,6 @@ const BlogDetails = () => {
             border-left: 4px solid #ffc107;
           }
           
-          .key-takeaway {
-            background: #fff3cd;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-            border: 1px solid #ffeaa7;
-          }
-          
-          .pro-tip {
-            background: #d1ecf1;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid #17a2b8;
-          }
-          
           .lead {
             font-size: 1.25rem;
             font-weight: 300;
@@ -503,6 +475,21 @@ const BlogDetails = () => {
             padding: 1.5rem;
             border-radius: 0.5rem;
             border-left: 4px solid #007bff;
+          }
+          
+          .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+          }
+          
+          .text-center.my-5 {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
           }
         `}
       </style>

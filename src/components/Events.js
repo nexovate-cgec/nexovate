@@ -26,7 +26,7 @@ const events = [
   },
   {
     id:3,
-    title: "Entrepreneurship Challenge 2025 🧠✨",
+    title: "Entrepreneurship Challenge 2025 🧠",
     date: "Sept 3, 2025",
     description: "🚀 Got ideas? Let’s solve big problems together!",
     image: Entrepreneurship,
@@ -43,6 +43,13 @@ const events = [
   },
   
 ];
+
+const truncateWords = (text, wordLimit) => {
+  const words = text.split(" ");
+  return words.length > wordLimit
+    ? words.slice(0, wordLimit).join(" ") + "..."
+    : text;
+};
 
 const Events = () => (
   <section id="events" className="py-5 bg-light">
@@ -76,7 +83,7 @@ const Events = () => (
                   {event.date}
                 </Card.Subtitle>
                 <Card.Text style={{ fontSize: "0.85rem" }}>
-                  {event.description}
+                  {truncateWords(event.description, 15)}
                 </Card.Text>
                 
                 {/* বাটনটি লিংক দিয়ে পরিবর্তন করুন */}

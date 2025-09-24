@@ -18,147 +18,143 @@ import Entrepreneurship from "../assets/images/Entrepreneurship.jpg";
 import social from "../assets/images/social.png";
 
 const eventsData = [
-  {
-    id: 1,
-    title: "NEC 2025",
-    date: "July 27, 2025",
-    description: "A tech-based ideation competition to bring ideas into action.",
-    image: Nec,
-    fullDescription: `
-      <p><strong>NEC 2025</strong> is our flagship tech-based ideation competition designed to transform innovative ideas into actionable solutions. This event brings together the brightest minds to tackle real-world challenges through technology.</p>
-      
-      <h5>Event Highlights:</h5>
-      <ul>
-        <li>Ideation workshops and mentoring sessions</li>
-        <li>Prototype development guidance</li>
-        <li>Networking with industry experts</li>
-        <li>Prize distribution for top innovations</li>
-      </ul>
-      
-      <h5>Who should participate?</h5>
-      <p>Students, aspiring entrepreneurs, and tech enthusiasts who want to bring their ideas to life.</p>
-    `,
-    venue: "CGEC Campus Auditorium",
-    time: "",
-    category: "Tech Competition",
-    socialLinks: {
-      instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
-      linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
-      
-    },
-    hashtags: ["#NEC2025", "#TechCompetition", "#Innovation"]
-  },
-  {
-    id: 2,
-    title: "EUREKA 2025",
-    date: "Aug 16, 2025",
-    description: "Eureca is conducted by CGEC",
-    image: Eureca,
-    src: "https://www.instagram.com/p/DNA86MbS093/?igsh=MTdxMnpzamVycXVrdg==",
-    fullDescription: `
-      <p><strong>EUREKA 2025</strong> is an annual innovation fest conducted by CGEC that celebrates creativity and problem-solving.</p>
-      
-      <h5>Event Features:</h5>
-      <ul>
-        <li>Innovation challenges across multiple domains</li>
-        <li>Expert keynote sessions</li>
-        <li>Hands-on workshops</li>
-        <li>Project exhibition and demo sessions</li>
-      </ul>
-    `,
-    venue: "Main Conference Hall",
-    time: "9:00 AM - 6:00 PM",
-    category: "Innovation Fest",
-    socialLinks: {
-      instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
-      linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
-    },
-    hashtags: ["#EUREKA2025", "#InnovationFest", "#CGEC"]
-  },
-  {
-    id: 3,
-    title: "Solving Entrepreneurship Challenge 2025 🧠✨",
-    date: "September 3, 2025",
-    description: "💡 Aspiring entrepreneurs, innovators & problem solvers—this is YOUR stage! Let's solve big problems together.",
-    image: Entrepreneurship, // Make sure to import this image
-    src: "https://forms.gle/JL5ax48J78r8JUkg7", // Registration form link
-    fullDescription: `
-      <p><strong>Got ideas? Let’s solve big problems together!</strong> This challenge is the stage for aspiring entrepreneurs, innovators, and problem solvers from CGEC. It's your opportunity to transform ideas into actionable solutions and make a real impact.</p>
-      
-      <h5>What to Expect:</h5>
-      <ul>
-        <li>Showcase your innovative ideas to a panel of experts</li>
-        <li>Connect with like-minded problem solvers and potential co-founders</li>
-        <li>Receive valuable feedback to refine your startup concept</li>
-        <li>Learn how to take the first steps in your entrepreneurial journey</li>
-      </ul>
-      
-      <p>This event is perfect for student founders looking to make their mark. Whether you have a fully-formed business plan or just a spark of an idea, this challenge will help you take the next step.</p>
-    `,
-    venue: "CGEC Campus, Academic Building",
-    time: "1:30 PM – 3:00 PM",
-    category: "Entrepreneurship Challenge",
-    socialLinks: {
-      instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
-      linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
-    },
-    hashtags: ["#Entrepreneurship", "#Innovation", "#StartupChallenge", "#ProblemSolvers", "#StudentFounders", "#CGEC", "#Nexovate", "#NEC2025", "#CampusEvents", "#IdeasIntoAction"],
-    contacts: [
-      { name: "Trishan Banik", number: "8293545101" },
-      { name: "Adityava Gangopadhyay", number: "8240309052" }
-    ]
-  },
-  {
-    id: 4, 
-    title: "SOCIAL MEDIA EVENT: 3 Random Words to Startup Chaos 🚀",
-    date: "September 6, 2025",
-    description: "Who knew 3 random words could make you the next Elon Musk? 🤯 Drop your wildest startup mashups & let the madness begin!",
-    image: social, // Make sure to import this image
-    src: "https://forms.gle/JL5ax48J78r8JUkg7", 
-    fullDescription: `
-      <p><strong>Who knew 3 random words could make you the next Elon Musk? 🤯✨</strong> This unique social media event turns creativity into entrepreneurship in the most chaotic and fun way possible!</p>
-      
-      <h5>Event Concept:</h5>
-      <ul>
-        <li>Combine 3 random words to create outrageous startup ideas</li>
-        <li>Pitch your wildest business mashups in a fast-paced, high-energy environment</li>
-        <li>Compete for the most innovative, hilarious, and potentially brilliant concepts</li>
-        <li>Engage with the community through social media challenges and polls</li>
-      </ul>
-      
-      <p>This event is all about thinking outside the box, breaking conventional rules, and discovering how creativity can lead to serious innovation. No experience needed—just bring your imagination and sense of humor!</p>
-    `,
-    venue: "Academic Building",
-    time: "11:00 AM to 2:00 PM",
-    category: "Social Media Challenge",
-    socialLinks: {
-      instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
-      linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
-    },
-    hashtags: ["#StartupChaos", "#NEC2025", "#Nexovate", "#3RandomWords", "#Entrepreneurship"],
-    contacts: [
-      { name: "Trishan Banik", number: "8293545101" },
-      { name: "Adityava Gangopadhyay", number: "8240309052" }
-    ]
-  }
-];
+                          {
+                            id: 1,
+                            title: "NEC 2025",
+                            date: "July 27, 2025",
+                            description: "A tech-based ideation competition to bring ideas into action.",
+                            image: Nec,
+                            src: "",
+                            fullDescription: `
+                              <p><strong>NEC 2025</strong> is our flagship tech-based ideation competition designed to transform innovative ideas into actionable solutions. This event brings together the brightest minds to tackle real-world challenges through technology.</p>
+                              
+                              <h5>Event Highlights:</h5>
+                              <ul>
+                                <li>Ideation workshops and mentoring sessions</li>
+                                <li>Prototype development guidance</li>
+                                <li>Networking with industry experts</li>
+                                <li>Prize distribution for top innovations</li>
+                              </ul>
+                              
+                              <h5>Who should participate?</h5>
+                              <p>Students, aspiring entrepreneurs, and tech enthusiasts who want to bring their ideas to life.</p>
+                            `,
+                            venue: "CGEC Campus Auditorium",
+                            time: "",
+                            category: "Tech Competition",
+                            socialLinks: {
+                              instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
+                              linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                              youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
+                              
+                            },
+                            hashtags: ["#NEC2025", "#TechCompetition", "#Innovation"]
+                          },
+                          {
+                            id: 2,
+                            title: "EUREKA 2025",
+                            date: "Aug 16, 2025",
+                            description: "Eureca is conducted by CGEC",
+                            image: Eureca,
+                            src: "",
+                            fullDescription: `
+                              <p><strong>EUREKA 2025</strong> is an annual innovation fest conducted by CGEC that celebrates creativity and problem-solving.</p>
+                              
+                              <h5>Event Features:</h5>
+                              <ul>
+                                <li>Innovation challenges across multiple domains</li>
+                                <li>Expert keynote sessions</li>
+                                <li>Hands-on workshops</li>
+                                <li>Project exhibition and demo sessions</li>
+                              </ul>
+                            `,
+                            venue: "Main Conference Hall",
+                            time: "9:00 AM - 6:00 PM",
+                            category: "Innovation Fest",
+                            socialLinks: {
+                              instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
+                              linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                              youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
+                            },
+                            hashtags: ["#EUREKA2025", "#InnovationFest", "#CGEC"]
+                          },
+                          {
+                            id: 3,
+                            title: "Solving Entrepreneurship Challenge 2025 🧠✨",
+                            date: "September 3, 2025",
+                            description: "💡 Aspiring entrepreneurs, innovators & problem solvers—this is YOUR stage! Let's solve big problems together.",
+                            image: Entrepreneurship,
+                            src: "", 
+                            fullDescription: `
+                              <p><strong>Got ideas? Let’s solve big problems together!</strong> This challenge is the stage for aspiring entrepreneurs, innovators, and problem solvers from CGEC. It's your opportunity to transform ideas into actionable solutions and make a real impact.</p>
+                              
+                              <h5>What to Expect:</h5>
+                              <ul>
+                                <li>Showcase your innovative ideas to a panel of experts</li>
+                                <li>Connect with like-minded problem solvers and potential co-founders</li>
+                                <li>Receive valuable feedback to refine your startup concept</li>
+                                <li>Learn how to take the first steps in your entrepreneurial journey</li>
+                              </ul>
+                              
+                              <p>This event is perfect for student founders looking to make their mark. Whether you have a fully-formed business plan or just a spark of an idea, this challenge will help you take the next step.</p>
+                            `,
+                            venue: "CGEC Campus, Academic Building",
+                            time: "1:30 PM – 3:00 PM",
+                            category: "Entrepreneurship Challenge",
+                            socialLinks: {
+                              instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
+                              linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                              youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
+                            },
+                            hashtags: ["#Entrepreneurship", "#Innovation", "#StartupChallenge", "#ProblemSolvers", "#StudentFounders", "#CGEC", "#Nexovate", "#NEC2025", "#CampusEvents", "#IdeasIntoAction"],
+                            contacts: [
+                              { name: "Trishan Banik", number: "8293545101" },
+                              { name: "Adityava Gangopadhyay", number: "8240309052" }
+                            ]
+                          },
+                          {
+                            id: 4, 
+                            title: "SOCIAL MEDIA EVENT: 3 Random Words to Startup Chaos 🚀",
+                            date: "September 6, 2025",
+                            description: "Who knew 3 random words could make you the next Elon Musk? 🤯 Drop your wildest startup mashups & let the madness begin!",
+                            image: social, 
+                            src: "", 
+                            fullDescription: `
+                              <p><strong>Who knew 3 random words could make you the next Elon Musk? 🤯✨</strong> This unique social media event turns creativity into entrepreneurship in the most chaotic and fun way possible!</p>
+                              
+                              <h5>Event Concept:</h5>
+                              <ul>
+                                <li>Combine 3 random words to create outrageous startup ideas</li>
+                                <li>Pitch your wildest business mashups in a fast-paced, high-energy environment</li>
+                                <li>Compete for the most innovative, hilarious, and potentially brilliant concepts</li>
+                                <li>Engage with the community through social media challenges and polls</li>
+                              </ul>
+                              
+                              <p>This event is all about thinking outside the box, breaking conventional rules, and discovering how creativity can lead to serious innovation. No experience needed—just bring your imagination and sense of humor!</p>
+                            `,
+                            venue: "Academic Building",
+                            time: "11:00 AM to 2:00 PM",
+                            category: "Social Media Challenge",
+                            socialLinks: {
+                              instagram: "https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#",
+                              linkedin: "https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                              youtube:"https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf"
+                            },
+                            hashtags: ["#StartupChaos", "#NEC2025", "#Nexovate", "#3RandomWords", "#Entrepreneurship"],
+                            contacts: [
+                              { name: "Trishan Banik", number: "8293545101" },
+                              { name: "Adityava Gangopadhyay", number: "8240309052" }
+                            ]
+                          }
+                        ];
 
 const EventDetails = () => {
   const { eventId } = useParams();
   const event = eventsData.find(e => e.id === parseInt(eventId));
 
-  // Social media sharing functions
-
-
-const shareOnYoutube = () => {
-    
-    // YouTube video creation page e niye jabe
+  const shareOnYoutube = () => {
     window.open('https://www.youtube.com/upload', '_blank');
-};
+  };
 
   const shareOnLinkedIn = () => {
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
@@ -171,7 +167,7 @@ const shareOnYoutube = () => {
 
   if (!event) {
     return (
-      <Container className="my-5" >   
+      <Container className="my-5">   
         <div className="text-center" style={{marginTop:"10rem"}}>
           <h2>Event not found!</h2>
           <Link to="/">
@@ -187,7 +183,7 @@ const shareOnYoutube = () => {
       {/* Enhanced Header with Social Media */}
       <nav className="navbar navbar-light bg-light">
         <Container>
-          <div className="d-flex justify-content-between w-100 align-items-center ">
+          <div className="d-flex justify-content-between w-100 align-items-center">
             <Link to="/" className="navbar-brand">
               <ArrowLeft className="me-2" />
               Back to Home
@@ -195,7 +191,6 @@ const shareOnYoutube = () => {
             
             {/* Social Media Links */}
             <div className="d-flex gap-3">
-              
               <a href={event.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-dark">
                 <Instagram size={20} />
               </a>
@@ -230,7 +225,6 @@ const shareOnYoutube = () => {
                     Share Event
                   </Button>
                   <ul className="dropdown-menu">
-                   =
                     <li>
                       <button className="dropdown-item" onClick={shareOnYoutube}>
                         <Youtube className="me-2" />
@@ -274,16 +268,31 @@ const shareOnYoutube = () => {
                 </div>
               </div>
 
-              {/* Event Image */}
-              <Card.Img
-                variant="top"
-                src={event.image}
-                alt={event.title}
-                className="rounded-3 mb-4 shadow"
-                style={{ width: '100%', height: '450px', objectFit: 'cover' }}
-              />
+              {/* Fixed Event Image - Full Image Show */}
+              <div className="text-center mb-5">
+                <div className="event-image-container" style={{
+                  maxWidth: '800px',
+                  margin: '0 auto',
+                  backgroundColor: '#f8f9fa',
+                  borderRadius: '1rem',
+                  padding: '1rem',
+                  boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.15)'
+                }}>
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="img-fluid rounded-2"
+                    style={{
+                      maxHeight: '400px',
+                      width: 'auto',
+                      maxWidth: '100%',
+                      objectFit: 'contain'
+                    }}
+                  />
+                </div>
+              </div>
 
-              {/* Event Details */}
+              {/* Rest of your code remains same */}
               <Row className="mb-5">
                 <Col lg={8}>
                   <div 
@@ -324,7 +333,6 @@ const shareOnYoutube = () => {
                       <div className="text-center">
                         <p className="text-muted small mb-2">Share this event:</p>
                         <div className="d-flex justify-content-center gap-3">
-                         
                           <Button variant="outline-danger" size="sm" onClick={shareOnYoutube}>
                             <Youtube />
                           </Button>
@@ -347,7 +355,6 @@ const shareOnYoutube = () => {
                   <h5>Follow us on social media</h5>
                   <p className="text-muted">Stay updated with our latest events and announcements</p>
                   <div className="d-flex justify-content-center gap-4">
-                    
                     <a href={event.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="btn btn-outline-danger">
                       <Instagram className="me-2" />
                       Instagram
@@ -372,3 +379,4 @@ const shareOnYoutube = () => {
 };
 
 export default EventDetails;
+                        
