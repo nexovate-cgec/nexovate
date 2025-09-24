@@ -133,7 +133,7 @@ const blogData = [
       </div>
     `,
     author: "Future of Work Team",
-    date: "2025-09-23",
+    date: "2025-09-24",
     readTime: "8 min read",
     category: "Future of Work",
     tags: ["Remote Work", "Future", "Productivity", "Flexibility", "Digital Nomad"],
