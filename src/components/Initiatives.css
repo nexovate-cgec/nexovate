@@ -47,3 +47,124 @@
   border-radius: 50%;
   color: #ffc107;
 }
+
+
+
+
+
+
+
+
+
+
+/* Initiatives.css */
+
+.initiative-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.initiative-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.initiative-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.initiative-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.initiative-card:hover .initiative-image {
+  transform: scale(1.05);
+}
+
+.initiative-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.initiative-card:hover .initiative-overlay {
+  opacity: 0.9;
+}
+
+.initiative-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Digital Initiatives Cards */
+.digital-initiative-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  border-left: 4px solid #ffc107;
+}
+
+.digital-initiative-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Modal Enhancements */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 15px 15px 0 0 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .initiative-img-container {
+    height: 180px;
+  }
+  
+  .digital-initiative-card .row > .col-sm-6 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Button Enhancements */
+.btn-warning {
+  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+.btn-outline-warning {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+  transform: translateY(-2px);
+}
