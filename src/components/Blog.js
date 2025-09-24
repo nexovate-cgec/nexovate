@@ -19,6 +19,24 @@ const blogData = [
     author: "Author Name", 
     date: "2025-09-24"
   },
+  // {
+  //   id: 2,
+  //   title: "From Spark to Startup: Validating Your Idea and Getting the Legal Basics Right",
+  //   img: Blog1,
+  //   desc: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
+  //   fullContent: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
+  //   author: "Author Name", 
+  //   date: "2025-09-24"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Legal Basics for First-Time Founders: Start Your Business on Solid Ground ",
+  //   img: Blog1,
+  //   desc: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you’re opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build. ",
+  //   fullContent: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you’re opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build. ",
+  //   author: "Author Name", 
+  //   date: "2025-09-24"
+  // },
   
 ];
 
