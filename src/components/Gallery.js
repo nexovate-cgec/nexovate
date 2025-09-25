@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "yet-another-react-lightbox/styles.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,7 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 import "./Gallery.css";
-import "react-image-lightbox/style.css";
 
 import gallery1 from "../assets/Events/eureka25/1.jpeg";
 import gallery2 from "../assets/Events/eureka25/2.jpeg";
