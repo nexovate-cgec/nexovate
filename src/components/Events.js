@@ -86,7 +86,6 @@ const Events = () => (
                   {truncateWords(event.description, 15)}
                 </Card.Text>
                 
-                {/* বাটনটি লিংক দিয়ে পরিবর্তন করুন */}
                 <Link to={`/events/${event.id}`}>
                   <Button
                     variant="primary"

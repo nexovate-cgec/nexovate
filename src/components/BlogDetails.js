@@ -21,10 +21,10 @@ import RemoteWork1 from "../assets/Blogs/blog11.png";
 import RemoteWork2 from "../assets/Blogs/blog12.png";
 import RemoteWork3 from "../assets/Blogs/blog13.png";
 
-// import Startup1 from "../assets/Blogs/blog11.png";
-// import Startup2 from "../assets/Blogs/blog12.png";
-// import Startup3 from "../assets/Blogs/blog13.png";
-// import Startup4 from "../assets/Blogs/blog11.png";
+import Startup1 from "../assets/Blogs/2.jpg";
+import Startup2 from "../assets/Blogs/2.jpg";
+import Startup3 from "../assets/Blogs/2.jpg";
+import Startup4 from "../assets/Blogs/2.jpg";
 
 // import Legal1 from "../assets/Blogs/blog11.png";
 // import Legal2 from "../assets/Blogs/blog12.png";
@@ -148,132 +148,120 @@ const blogData = [
    tags: ["Remote Work", "Future", "Productivity", "Flexibility", "Digital Nomad"],
    additionalImages: [RemoteWork1, RemoteWork2, RemoteWork3]
  },
-  // {
-  //   id: 2,
-  //   title: "The Future of Remote Work: Redefining How We Live and Work",
-  //   img: Startup1, // Using first startup image as featured
-  //   desc: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution to a long-term, mainstream way of working.",
-  //   fullContent: `
-  //     <p class="lead">Great businesses don't begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you're planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases.</p>
+  {
+    id: 2,
+    title: "The Future of Remote Work: Redefining How We Live and Work",
+    img: Startup1, // Using first startup image as featured
+    desc: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution to a long-term, mainstream way of working.",
+    fullContent: `
+      <p class="lead">Great businesses don't begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you're planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases.</p>
 
-  //     <div class="text-center my-5">
-  //       <img src="${Startup1}" alt="Startup validation process" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-  //       <p class="text-muted mt-2"><small>From idea to validated business concept</small></p>
-  //     </div>
+    
 
-  //     <h3>1. Validate Before You Invest</h3>
-  //     <p>A brilliant concept means little unless customers actually pay for it.</p>
+      <h3>1. Validate Before You Invest</h3>
+      <p>A brilliant concept means little unless customers actually pay for it.</p>
       
-  //     <div class="feature-point">
-  //       <h5>💡 Talk to Real Users</h5>
-  //       <p>Skip the friends-and-family echo chamber. Interview potential buyers about their pain points and willingness to pay. Conduct surveys, one-on-one interviews, and focus groups to gather genuine feedback.</p>
-  //     </div>
+      <div class="feature-point">
+        <h5>💡 Talk to Real Users</h5>
+        <p>Skip the friends-and-family echo chamber. Interview potential buyers about their pain points and willingness to pay. Conduct surveys, one-on-one interviews, and focus groups to gather genuine feedback.</p>
+      </div>
 
-  //     <div class="text-center my-5">
-  //       <img src="${Startup2}" alt="Customer validation process" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
-  //       <p class="text-muted mt-2"><small>Gathering real customer feedback is crucial</small></p>
-  //     </div>
+     
 
-  //     <div class="feature-point">
-  //       <h5>🚀 Build a Minimum Viable Product (MVP)</h5>
-  //       <p>This could be a simple landing page, a prototype, or a pilot service. Track sign-ups, pre-orders, or paid trials to gauge real interest before building the full product.</p>
-  //     </div>
+      <div class="feature-point">
+        <h5>🚀 Build a Minimum Viable Product (MVP)</h5>
+        <p>This could be a simple landing page, a prototype, or a pilot service. Track sign-ups, pre-orders, or paid trials to gauge real interest before building the full product.</p>
+      </div>
 
-  //     <div class="feature-point">
-  //       <h5>📊 Measure Behavior, Not Compliments</h5>
-  //       <p>Likes and verbal praise aren't proof; only actions—clicks, purchases, subscriptions—show true demand. Use analytics tools to track user behavior and conversion rates.</p>
-  //     </div>
+      <div class="feature-point">
+        <h5>📊 Measure Behavior, Not Compliments</h5>
+        <p>Likes and verbal praise aren't proof; only actions—clicks, purchases, subscriptions—show true demand. Use analytics tools to track user behavior and conversion rates.</p>
+      </div>
 
-  //     <div class="text-center my-5">
-  //       <img src="${Startup3}" alt="MVP development process" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
-  //       <p class="text-muted mt-2"><small>Building and testing your minimum viable product</small></p>
-  //     </div>
-
-  //     <p class="highlight-box">This lean approach prevents you from sinking savings into something the market doesn't want.</p>
-
-  //     <h3>2. Choose the Right Business Structure</h3>
-  //     <p>Once your idea shows traction, give it a legal identity. The structure you pick affects taxes, liability, and funding options.</p>
       
-  //     <div class="benefit-grid">
-  //       <div class="benefit-item">
-  //         <h5>🏢 Sole Proprietorship</h5>
-  //         <p><strong>Easiest to start</strong> with minimal compliance, but personal assets are exposed to business risks. Best for low-risk businesses and solo entrepreneurs.</p>
-  //       </div>
-  //       <div class="benefit-item">
-  //         <h5>🤝 Partnership/LLP</h5>
-  //         <p><strong>Good for multiple founders</strong>, offers liability protection with moderate paperwork. Ideal for professional services and small teams.</p>
-  //       </div>
-  //       <div class="benefit-item">
-  //         <h5>🏛️ Private Limited Company</h5>
-  //         <p><strong>Preferred if you plan to raise venture capital</strong>; more compliance but higher credibility. Best for growth-focused startups seeking investment.</p>
-  //       </div>
-  //     </div>
 
-  //     <div class="text-center my-5">
-  //       <img src="${Startup4}" alt="Business structure options" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
-  //       <p class="text-muted mt-2"><small>Choosing the right legal structure for your business</small></p>
-  //     </div>
+      <p class="highlight-box">This lean approach prevents you from sinking savings into something the market doesn't want.</p>
 
-  //     <h3>3. Register and Protect</h3>
-  //     <p>Proper registration and protection are essential for long-term success.</p>
+      <h3>2. Choose the Right Business Structure</h3>
+      <p>Once your idea shows traction, give it a legal identity. The structure you pick affects taxes, liability, and funding options.</p>
       
-  //     <div class="tip-section">
-  //       <h5>📋 Licences & GST</h5>
-  //       <p>Depending on turnover and industry, you may need GST registration, local trade licences, or sector-specific permits. Research your industry requirements thoroughly.</p>
-  //     </div>
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>🏢 Sole Proprietorship</h5>
+          <p><strong>Easiest to start</strong> with minimal compliance, but personal assets are exposed to business risks. Best for low-risk businesses and solo entrepreneurs.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🤝 Partnership/LLP</h5>
+          <p><strong>Good for multiple founders</strong>, offers liability protection with moderate paperwork. Ideal for professional services and small teams.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🏛️ Private Limited Company</h5>
+          <p><strong>Preferred if you plan to raise venture capital</strong>; more compliance but higher credibility. Best for growth-focused startups seeking investment.</p>
+        </div>
+      </div>
 
-  //     <div class="tip-section">
-  //       <h5>📝 Contracts</h5>
-  //       <p>Draft clear agreements with suppliers, clients, and freelancers to avoid disputes. Well-drafted contracts protect your interests and set clear expectations.</p>
-  //     </div>
+     
 
-  //     <div class="tip-section">
-  //       <h5>🛡️ Intellectual Property</h5>
-  //       <p>File trademarks or copyrights to protect your brand, product designs, or content. IP protection prevents others from copying your unique assets.</p>
-  //     </div>
-
-  //     <h3>4. Keep It Lean and Compliant</h3>
-  //     <p>Use affordable digital tools for bookkeeping, invoicing, and tax filing. Staying organised early prevents legal or financial headaches as you scale.</p>
+      <h3>3. Register and Protect</h3>
+      <p>Proper registration and protection are essential for long-term success.</p>
       
-  //     <div class="compliance-tips">
-  //       <div class="compliance-item">
-  //         <h5>💻 Digital Tools</h5>
-  //         <p>Leverage cloud-based accounting software, project management tools, and automated compliance solutions to streamline operations.</p>
-  //       </div>
-  //       <div class="compliance-item">
-  //         <h5>📈 Regular Audits</h5>
-  //         <p>Conduct periodic legal and financial reviews to ensure ongoing compliance as your business grows and regulations change.</p>
-  //       </div>
-  //       <div class="compliance-item">
-  //         <h5>🔍 Stay Updated</h5>
-  //         <p>Keep abreast of changing regulations in your industry and location to maintain compliance and avoid penalties.</p>
-  //       </div>
-  //     </div>
+      <div class="tip-section">
+        <h5>📋 Licences & GST</h5>
+        <p>Depending on turnover and industry, you may need GST registration, local trade licences, or sector-specific permits. Research your industry requirements thoroughly.</p>
+      </div>
 
-  //     <div class="conclusion">
-  //       <h4>🎯 Takeaway</h4>
-  //       <p><strong>Validate first, legalise next.</strong> Testing market demand before investing heavily saves money; building the right legal framework protects what you create.</p>
-  //       <p>Combine these two steps and you'll launch not just a business, but a business that's built to last. Remember, successful entrepreneurship is about smart validation and solid foundations.</p>
-  //     </div>
+      <div class="tip-section">
+        <h5>📝 Contracts</h5>
+        <p>Draft clear agreements with suppliers, clients, and freelancers to avoid disputes. Well-drafted contracts protect your interests and set clear expectations.</p>
+      </div>
 
-  //     <div class="key-points">
-  //       <h5>💡 Key Success Factors:</h5>
-  //       <ul>
-  //         <li><strong>Customer validation</strong> before major investment</li>
-  //         <li><strong>Appropriate legal structure</strong> for your goals</li>
-  //         <li><strong>Proper registration</strong> and compliance</li>
-  //         <li><strong>IP protection</strong> for your unique assets</li>
-  //         <li><strong>Lean operations</strong> with digital tools</li>
-  //       </ul>
-  //     </div>
-  //   `,
-  //   author: "Startup Legal Team",
-  //   date: "2025-09-24",
-  //   readTime: "6 min read",
-  //   category: "Startup Guide",
-  //   tags: ["Startup", "Validation", "Legal", "Business Structure", "MVP", "Compliance"],
-  //   additionalImages: [Startup1, Startup2, Startup3, Startup4]
-  // },
+      <div class="tip-section">
+        <h5>🛡️ Intellectual Property</h5>
+        <p>File trademarks or copyrights to protect your brand, product designs, or content. IP protection prevents others from copying your unique assets.</p>
+      </div>
+
+      <h3>4. Keep It Lean and Compliant</h3>
+      <p>Use affordable digital tools for bookkeeping, invoicing, and tax filing. Staying organised early prevents legal or financial headaches as you scale.</p>
+      
+      <div class="compliance-tips">
+        <div class="compliance-item">
+          <h5>💻 Digital Tools</h5>
+          <p>Leverage cloud-based accounting software, project management tools, and automated compliance solutions to streamline operations.</p>
+        </div>
+        <div class="compliance-item">
+          <h5>📈 Regular Audits</h5>
+          <p>Conduct periodic legal and financial reviews to ensure ongoing compliance as your business grows and regulations change.</p>
+        </div>
+        <div class="compliance-item">
+          <h5>🔍 Stay Updated</h5>
+          <p>Keep abreast of changing regulations in your industry and location to maintain compliance and avoid penalties.</p>
+        </div>
+      </div>
+
+      <div class="conclusion">
+        <h4>🎯 Takeaway</h4>
+        <p><strong>Validate first, legalise next.</strong> Testing market demand before investing heavily saves money; building the right legal framework protects what you create.</p>
+        <p>Combine these two steps and you'll launch not just a business, but a business that's built to last. Remember, successful entrepreneurship is about smart validation and solid foundations.</p>
+      </div>
+
+      <div class="key-points">
+        <h5>💡 Key Success Factors:</h5>
+        <ul>
+          <li><strong>Customer validation</strong> before major investment</li>
+          <li><strong>Appropriate legal structure</strong> for your goals</li>
+          <li><strong>Proper registration</strong> and compliance</li>
+          <li><strong>IP protection</strong> for your unique assets</li>
+          <li><strong>Lean operations</strong> with digital tools</li>
+        </ul>
+      </div>
+    `,
+    author: "Startup Legal Team",
+    date: "2025-09-24",
+    readTime: "6 min read",
+    category: "Startup Guide",
+    tags: ["Startup", "Validation", "Legal", "Business Structure", "MVP", "Compliance"],
+    additionalImages: [Startup1, Startup2, Startup3, Startup4]
+  },
 
   //   {
   //   id: 3,

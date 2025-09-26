@@ -25,6 +25,8 @@ const eventsData = [
     description:
       "A tech-based ideation competition to bring ideas into action.",
     image: Nec,
+    status:"Event Finished !",
+    color:"danger",
     src: "",
     fullDescription: `
                               <p><strong>NEC 2025</strong> is our flagship tech-based ideation competition designed to transform innovative ideas into actionable solutions. This event brings together the brightest minds to tackle real-world challenges through technology.</p>
@@ -57,6 +59,8 @@ const eventsData = [
     title: "EUREKA 2025",
     date: "Aug 16, 2025",
     description: "Eureca is conducted by CGEC",
+    status:"Event Finished !",
+    color:"danger",
     image: Eureca,
     src: "",
     fullDescription: `
@@ -88,6 +92,8 @@ const eventsData = [
     date: "September 3, 2025",
     description:
       "💡 Aspiring entrepreneurs, innovators & problem solvers—this is YOUR stage! Let's solve big problems together.",
+      status:"Event Finished !",
+    color:"danger",
     image: Entrepreneurship,
     src: "",
     fullDescription: `
@@ -136,6 +142,8 @@ const eventsData = [
     date: "September 6, 2025",
     description:
       "Who knew 3 random words could make you the next Elon Musk? 🤯 Drop your wildest startup mashups & let the madness begin!",
+      status:"Event Finished !",
+    color:"danger",
     image: social,
     src: "",
     fullDescription: `
@@ -402,13 +410,13 @@ const EventDetails = () => {
                       </div>
 
                       <Button
-                        variant="primary"
+                        variant={event.color}
                         href={event.src}
                         target="_blank"
                         className="w-100 mb-3"
                         size="lg"
                       >
-                        Register Now
+                        {event.status}
                       </Button>
 
                       {/* Quick Social Links */}
