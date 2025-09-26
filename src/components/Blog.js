@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"; // Change this import
 import logo from '../assets/images/logo.png';
 // import Blog1 from "../assets/Blogs/1blog.jpg";
 import Blog1 from "../assets/Blogs/blog11.png";
-import Blog1 from "../assets/Blogs/2.jpg";
+import Blog2 from "../assets/Blogs/2.jpg";
 // import Blog3 from "../assets/Blogs/blog3.jpeg";
 // import Blog4 from "../assets/Blogs/blog4.jpeg";
 
@@ -23,7 +23,7 @@ const blogData = [
   {
     id: 2,
     title: "From Spark to Startup: Validating Your Idea and Getting the Legal Basics Right",
-    img: Blog1,
+    img: Blog2,
     desc: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
     fullContent: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
     author: "Author Name", 
