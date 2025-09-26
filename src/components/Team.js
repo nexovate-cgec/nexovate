@@ -222,7 +222,7 @@ const team = [
     year: "2nd",
     dept: "ME",
     image: member19,
-    email: "mdayub742136@gmail.com",
+    email: "adityax141@gmail.com",
     insta:"https://www.instagram.com/Adityax141/",
     linkedin: "https://www.linkedin.com/in/aditya-dey7",
   },

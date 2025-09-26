@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"; // Change this import
 import logo from '../assets/images/logo.png';
 // import Blog1 from "../assets/Blogs/1blog.jpg";
 import Blog1 from "../assets/Blogs/blog11.png";
+import Blog1 from "../assets/Blogs/2.jpg";
 // import Blog3 from "../assets/Blogs/blog3.jpeg";
 // import Blog4 from "../assets/Blogs/blog4.jpeg";
 
