@@ -256,7 +256,7 @@ const blogData = [
       </div>
     `,
     author: "Startup Legal Team",
-    date: "2025-09-24",
+    date: "2025-09-27",
     readTime: "6 min read",
     category: "Startup Guide",
     tags: ["Startup", "Validation", "Legal", "Business Structure", "MVP", "Compliance"],
