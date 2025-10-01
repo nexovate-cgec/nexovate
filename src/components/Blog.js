@@ -7,7 +7,7 @@ import logo from '../assets/images/logo.png';
 // import Blog1 from "../assets/Blogs/1blog.jpg";
 import Blog1 from "../assets/Blogs/blog11.png";
 import Blog2 from "../assets/Blogs/2.jpg";
-// import Blog3 from "../assets/Blogs/blog3.jpeg";
+import Blog3 from "../assets/Blogs/blog31.png";
 // import Blog4 from "../assets/Blogs/blog4.jpeg";
 
 const blogData = [
@@ -28,6 +28,15 @@ const blogData = [
     fullContent: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
     author: "Author Name", 
     date: "2025-09-24"
+  },
+  {
+    id: 3,
+    title: "The Rise of Solopreneurs: Building a Business of One",
+    img: Blog3,
+    desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
+    fullContent: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
+    author: "Author Name", 
+    date: "2025-10-01"
   },
   // {
   //   id: 3,
