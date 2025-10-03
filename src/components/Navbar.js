@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import logo from '../assets/images/logo.png';
 import './Navbar.css';
 
@@ -70,7 +70,7 @@ const NavBar = () => {
     return id.charAt(0).toUpperCase() + id.slice(1);
   };
 
-  const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', 'contact'];
+  const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', ];
 
   return (
     <Navbar expand="lg" fixed="top" className={`main-navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -93,14 +93,7 @@ const NavBar = () => {
                 {formatSectionName(id)}
               </Nav.Link>
             ))}
-            <Button
-              onClick={() => handleSectionClick('join')}
-              variant="warning"
-              className="ms-2 px-3 fw-semibold rounded-pill"
-              style={{ cursor: 'pointer' }}
-            >
-              Join Us
-            </Button>
+           
           </Nav>
         </Navbar.Collapse>
       </Container>

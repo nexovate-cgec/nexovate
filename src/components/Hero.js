@@ -58,9 +58,7 @@ const Hero = () => {
             </div>
             
             <div className="d-flex flex-wrap gap-3">
-              <Button variant="warning" size="lg" href="#join" className="hero-button px-4 py-2">
-                Join Now
-              </Button>
+            
               <Button variant="outline-light" size="lg" href="#about" className="px-4 py-2">
                 Learn More
               </Button>

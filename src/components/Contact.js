@@ -32,7 +32,7 @@ const Contact = () => (
             </Form.Group>
 
             <Button variant="primary" type="submit" disabled>
-              Send Message (Inactive)
+               (Inactive)
             </Button>
           </Form>
         </Col>
