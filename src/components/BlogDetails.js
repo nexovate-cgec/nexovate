@@ -14,9 +14,6 @@ import {
 
 // Image imports - using your existing images
 import logo from "../assets/images/logo.png";
-import RemoteWork1 from "../assets/Blogs/blog11.png";
-import RemoteWork2 from "../assets/Blogs/blog12.png";
-import RemoteWork3 from "../assets/Blogs/blog13.png";
 import Startup1 from "../assets/Blogs/2.jpg";
 import Startup2 from "../assets/Blogs/2.jpg";
 import Startup3 from "../assets/Blogs/2.jpg";
@@ -25,127 +22,16 @@ import blog31 from "../assets/Blogs/blog31.png";
 import blog32 from "../assets/Blogs/blog32.png";
 import blog33 from "../assets/Blogs/blog33.png";
 import blog34 from "../assets/Blogs/blog34.png";
+import blog41 from "../assets/Blogs/blog41.png";
+import blog42 from "../assets/Blogs/blog42.png";
+import blog43 from "../assets/Blogs/blog43.png";
+import blog44 from "../assets/Blogs/blog44.png";
 
 
 const blogData = [
-   {
-               id: 1,
-               title: "The Future of Remote Work: Redefining How We Live and Work",
-               img: RemoteWork1,
-               desc: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution to a long-term, mainstream way of working.",
-               fullContent: `
-                 <p class="lead">The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution during the pandemic to a long-term, mainstream way of working. Around the world, companies and individuals are embracing flexibility, productivity, and balance in new ways.</p>
-            
-                 <div class="text-center my-5">
-                   <img src="${RemoteWork1}" alt="Remote work lifestyle" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-                   <p class="text-muted mt-2"><small>The new era of remote work - working from anywhere</small></p>
-                 </div>
-            
-                 <h3>🌍 Why Remote Work is Here to Stay</h3>
-                 <p>Three major forces are cementing this trend:</p>  
-                 <div class="feature-point">
-                   <h5>💻 Technology Upgrades</h5>
-                   <p>Video conferencing, project management apps, and cloud collaboration tools make working from anywhere seamless. Platforms like Zoom, Slack, and Asana have become essential workplace infrastructure.</p>
-                 </div>
-            
-                 <div class="text-center my-5">
-                   <img src="${RemoteWork2}" alt="Remote work technology" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
-                   <p class="text-muted mt-2"><small>Essential tools for remote collaboration</small></p>
-                 </div>
-            
-                 <div class="feature-point">
-                   <h5>🌐 Global Talent Pool</h5>
-                   <p>Companies are tapping into diverse, international talent without relocation costs. This allows businesses to hire the best people regardless of geographical boundaries.</p>
-                 </div>
-            
-                 <div class="feature-point">
-                   <h5>🏠 Work-Life Priorities</h5>
-                   <p>Employees value time, mental health, and flexibility more than traditional office perks. The modern workforce prioritizes autonomy and work-life integration.</p>
-                 </div>
-            
-                 <div class="text-center my-5">
-                   <img src="${RemoteWork3}" alt="Work-life balance" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
-                   <p class="text-muted mt-2"><small>Achieving perfect work-life integration</small></p>
-                 </div>
-            
-                 <h3>✅ Advantages of Remote Work</h3>
-                 <p>This model offers clear benefits to both companies and workers:</p>  
-                 <div class="benefit-grid">
-                   <div class="benefit-item">
-                     <h5>Flexibility</h5>
-                     <p>Choose when and where to work, aligning professional and personal life. No more rigid 9-to-5 schedules.</p>
-                   </div>
-                   <div class="benefit-item">
-                     <h5>Cost Savings</h5>
-                     <p>Lower expenses on commuting, office rent, and relocation. Employees save money while companies reduce overhead.</p>
-                   </div>
-                   <div class="benefit-item">
-                     <h5>Increased Productivity</h5>
-                     <p>Many professionals report higher focus when given autonomy. Fewer office distractions lead to better output.</p>
-                   </div>
-                 </div>
-            
-                 <h3>⚠️ Challenges to Address</h3>
-                 <p>Remote work isn't perfect—there are pitfalls to watch for:</p>  
-                 <div class="challenge-item">
-                   <h5>Isolation</h5>
-                   <p>Limited social interaction can affect mental health. Virtual water cooler chats and regular team building are essential.</p>
-                 </div>
-            
-                 <div class="challenge-item">
-                   <h5>Blurred Boundaries</h5>
-                   <p>Work hours often spill into personal time. Setting clear start and end times helps maintain balance.</p>
-                 </div>
-            
-                 <div class="challenge-item">
-                   <h5>Team Cohesion</h5>
-                   <p>Building culture and collaboration virtually requires extra effort. Regular video calls and virtual events foster connection.</p>
-                 </div>
-            
-                 <h3>💡 Tips for Thriving Remotely</h3>  
-                 <div class="tip-section">
-                   <h5>1. Set Clear Boundaries</h5>
-                   <p>Define your workspace and working hours. Create physical and mental separation between work and personal life.</p>
-                 </div>
-            
-                 <div class="tip-section">
-                   <h5>2. Leverage Digital Tools</h5>
-                   <p>Use platforms for time tracking, communication, and collaboration. Tools like Trello, Notion, and Google Workspace streamline workflows.</p>
-                 </div>
-            
-                 <div class="tip-section">
-                   <h5>3. Prioritize Communication</h5>
-                   <p>Regular check-ins help maintain connection and clarity. Over-communicate rather than under-communicate in virtual settings.</p>
-                 </div>
-            
-                 <div class="tip-section">
-                   <h5>4. Invest in Ergonomics</h5>
-                   <p>A good chair, desk, and internet setup enhance productivity. Don't underestimate the importance of a comfortable workspace.</p>
-                 </div>
-            
-                 <h3>🚀 Real-World Inspiration</h3>
-                 <p>From startups hiring across continents to freelancers building global client bases, remote work is empowering millions. Entire companies now operate without physical offices, proving that productivity isn't tied to location.</p>
-            
-                 <div class="success-story">
-                   <h5>Case Study: GitLab</h5>
-                   <p>GitLab, with over 1,300 employees across 65+ countries, has been fully remote since its inception. Their success demonstrates that distributed teams can outperform traditional office-based organizations.</p>
-                 </div>
-            
-                 <div class="conclusion">
-                   <h4>🎯 Bottom Line</h4>
-                   <p><strong>Remote work is not just a temporary trend—it's the blueprint for the modern workplace.</strong> For many, the future of work is already here, and it's happening at home, in cafés, and across borders.</p>
-                   <p>The companies that embrace this shift will attract top talent, reduce costs, and build more resilient organizations. The future of work is flexible, distributed, and human-centric.</p>
-                 </div>
-               `,
-               author: "Future of Work Team",
-               date: "2025-09-24",
-               readTime: "8 min read",
-               category: "Future of Work",
-               tags: ["Remote Work", "Future", "Productivity", "Flexibility", "Digital Nomad"],
-               additionalImages: [RemoteWork1, RemoteWork2, RemoteWork3]
-             },
+
   {
-    id: 2,
+    id: 1,
     title: "From Spark to Startup: Validating Your Idea and Getting the Legal Basics Right",
     img: Startup1,
     desc: "Great businesses don't begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you're planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases.",
@@ -225,7 +111,7 @@ const blogData = [
     additionalImages: [Startup1, Startup2, Startup3, Startup4]
   },
 {
-  id: 3,
+  id: 2,
   title: "The Rise of Solopreneurs: Building a Business of One",
   img: blog31, // This is your main featured image
   desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
@@ -343,6 +229,138 @@ const blogData = [
   category: "Entrepreneurship",
   tags: ["Solopreneur", "Startup", "Digital Nomad", "Business", "Remote Work", "Automation"],
   additionalImages: [blog31, blog32, blog33, blog34]
+},
+{
+  id: 3,
+  title: "Building a Business Plan That Investors Will Actually Read",
+  img: blog44,
+  desc: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
+  fullContent: `
+    <p class="lead">A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.</p>
+
+   
+ 
+
+    <h3>1. Start with a Clear, One-Page Executive Summary</h3>
+    <p>Investors often read only the first page before deciding whether to continue.</p>
+    
+    <div class="feature-point">
+      <h5>📝 Key Elements</h5>
+      <p>State the problem and your solution in plain language.</p>
+      <p>Highlight market size, traction (if any), and the funding you seek.</p>
+      <p>Include a crisp call to action: the amount of capital and how you'll use it.</p>
+    </div>
+      <div class="text-center my-5">
+      <img src="${blog41}" alt="Financial projections chart showing revenue growth and milestones" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Realistic financial projections demonstrate business viability</small></p>
+    </div>
+
+    <h3>2. Define the Market Opportunity</h3>
+    <p>Show you've done your homework.</p>
+    
+    <div class="feature-point">
+      <h5>📊 Market Research</h5>
+      <p>Provide credible data on total addressable market (TAM) and target segments.</p>
+      <p>Identify trends or pain points that make this the right time for your product.</p>
+      <p>Keep charts simple and sources reputable.</p>
+    </div>
+
+    <!-- IMAGE 2: Market Analysis Visual -->
+    <div class="text-center my-5">
+      <img src="${blog42}" alt="Market analysis charts showing TAM and growth trends" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Clear market data builds credibility and shows opportunity size</small></p>
+    </div>
+
+    <h3>3. Present a Differentiated Solution</h3>
+    <p>Explain what sets you apart.</p>
+    
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>Unique Value Proposition</h5>
+        <p>Technology, brand, or business model that differentiates you.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>Competitive Landscape</h5>
+        <p>Who else is solving this problem and why you'll win.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>Proof of Traction</h5>
+        <p>Early customers, pilots, or partnerships that validate your approach.</p>
+      </div>
+    </div>
+       <div class="text-center my-5">
+      <img src="${blog43}" alt="Executive summary example with clear problem-solution structure" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>A compelling executive summary grabs investor attention immediately</small></p>
+    </div>
+
+    <h3>4. Detail Your Business Model</h3>
+    <p>Investors care about how you make money.</p>
+    
+    <div class="tip-section">
+      <h5>💰 Revenue Strategy</h5>
+      <p>Pricing strategy and revenue streams.</p>
+      <p>Customer acquisition plans and key channels.</p>
+      <p>Basic unit economics: cost to acquire a customer (CAC) vs. lifetime value (LTV).</p>
+    </div>
+
+   
+
+
+    <h3>5. Introduce the Team</h3>
+    <p>People fund people.</p>
+    
+    <div class="feature-point">
+      <h5>👥 Team Highlights</h5>
+      <p>Highlight founders' relevant skills and past successes.</p>
+      <p>Mention advisors or key hires who strengthen credibility.</p>
+    </div>
+
+    <h3>6. Show a Realistic Financial Roadmap</h3>
+    <p>Three- to five-year projections with clear assumptions.</p>
+    
+    <div class="tip-section">
+      <h5>📈 Financial Planning</h5>
+      <p>Break-even point and anticipated milestones.</p>
+      <p>Funding ask: amount, use of funds, and runway it provides.</p>
+    </div>
+
+    <!-- IMAGE 4: Financial Projections Visual -->
+  
+
+    <h3>7. Keep the Design Investor-Friendly</h3>
+    <p>Make your plan easy to digest.</p>
+    
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>📄 Concise Format</h5>
+        <p>Limit the main plan to 15–20 pages.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>🎨 Visual Appeal</h5>
+        <p>Use visuals—charts, infographics, product screenshots—over dense text.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>📁 Organized Structure</h5>
+        <p>Provide an appendix for deeper details so the main story stays concise.</p>
+      </div>
+      
+    </div>
+        <div class="text-center my-5">
+      <img src="${blog44}" alt="Business model canvas showing revenue streams and cost structure" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>A clear business model shows how you'll generate revenue and profit</small></p>
+    </div>
+
+    <div class="conclusion">
+      <h4>🎯 Key Takeaway</h4>
+      <p><strong>A great business plan is focused, data-backed, and easy to skim.</strong> Investors don't need a novel; they need proof that you understand the market, can execute, and will generate returns. Nail the executive summary, highlight traction, and make every section earn its place.</p>
+    </div>
+  `,
+  author: "Investment Strategy Team",
+  date: "2025-10-08",
+  readTime: "6 min read",
+  category: "Business Planning",
+  tags: ["Business Plan", "Investors", "Funding", "Startup", "Pitching", "Executive Summary"],
+  additionalImages: [blog41, blog42, blog43, blog44]
 }
 ];
 

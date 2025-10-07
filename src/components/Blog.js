@@ -5,48 +5,39 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Change this import
 import logo from '../assets/images/logo.png';
 // import Blog1 from "../assets/Blogs/1blog.jpg";
-import Blog1 from "../assets/Blogs/blog11.png";
-import Blog2 from "../assets/Blogs/2.jpg";
-import Blog3 from "../assets/Blogs/blog31.png";
-// import Blog4 from "../assets/Blogs/blog4.jpeg";
+import Blog1 from "../assets/Blogs/2.jpg";
+import Blog2 from "../assets/Blogs/blog31.png";
+import Blog3 from "../assets/Blogs/blog44.png";
 
 const blogData = [
+
   {
     id: 1,
-    title: "The Future of Remote Work: Redefining How We Live and Work",
-    img: Blog1,
-    desc: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution during the pandemic to a long-term, mainstream way of working. Around the world, companies and individuals are embracing flexibility, productivity, and balance in new ways. ",
-    fullContent: "The workplace is no longer tied to cubicles, long commutes, or fixed hours. Remote work has shifted from being a temporary solution during the pandemic to a long-term, mainstream way of working. Around the world, companies and individuals are embracing flexibility, productivity, and balance in new ways. ",
-    author: "Author Name", 
-    date: "2025-09-24"
-  },
-  {
-    id: 2,
     title: "From Spark to Startup: Validating Your Idea and Getting the Legal Basics Right",
-    img: Blog2,
+    img: Blog1,
     desc: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
     fullContent: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
     author: "Author Name", 
     date: "2025-09-24"
   },
   {
-    id: 3,
+    id: 2,
     title: "The Rise of Solopreneurs: Building a Business of One",
-    img: Blog3,
+    img: Blog2,
     desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
     fullContent: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
     author: "Author Name", 
     date: "2025-10-01"
   },
-  // {
-  //   id: 3,
-  //   title: "Legal Basics for First-Time Founders: Start Your Business on Solid Ground ",
-  //   img: Blog1,
-  //   desc: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you’re opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build. ",
-  //   fullContent: "Many startups fail not because of weak ideas but because they overlook the legal groundwork. Whether you’re opening an online shop or launching a tech venture, these steps will help you stay compliant and protect what you build. ",
-  //   author: "Author Name", 
-  //   date: "2025-09-24"
-  // },
+  {
+    id: 3,
+    title: "Building a Business Plan That Investors Will Actually Read",
+    img: Blog3,
+    desc: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
+    fullContent: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
+    author: "Author Name", 
+    date: "2025-09-24"
+  },
   
 ];
 
