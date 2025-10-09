@@ -181,6 +181,7 @@ const JoinUs = () => {
                         className="w-100 py-2 fw-bold bg-danger"
                         style={{ cursor: 'not-allowed' }}
                         size="lg"
+                        disabled={true}
                       >
                         opps..................!
                       </Button>
