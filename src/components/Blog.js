@@ -37,15 +37,15 @@ const blogData = [
     author: "Author Name", 
     date: "2025-10-09"
   },
-  {
-    id: 4,
-    title: "Building a Business Plan That Investors Will Actually Read",
-    img: Blog3,
-    desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
-    fullContent: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
-    author: "Author Name", 
-    date: "2025-10-11"
-  },
+  // {
+  //   id: 4,
+  //   title: "Building a Business Plan That Investors Will Actually Read",
+  //   img: Blog3,
+  //   desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
+  //   fullContent: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
+  //   author: "Author Name", 
+  //   date: "2025-10-11"
+  // },
   
 ];
 
