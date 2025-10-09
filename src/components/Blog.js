@@ -2,9 +2,8 @@
 
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Change this import
+import { Link } from "react-router-dom"; 
 import logo from '../assets/images/logo.png';
-// import Blog1 from "../assets/Blogs/1blog.jpg";
 import Blog1 from "../assets/Blogs/2.jpg";
 import Blog2 from "../assets/Blogs/blog31.png";
 import Blog3 from "../assets/Blogs/blog44.png";
@@ -36,7 +35,16 @@ const blogData = [
     desc: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
     fullContent: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
     author: "Author Name", 
-    date: "2025-09-24"
+    date: "2025-10-09"
+  },
+  {
+    id: 4,
+    title: "Building a Business Plan That Investors Will Actually Read",
+    img: Blog3,
+    desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
+    fullContent: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
+    author: "Author Name", 
+    date: "2025-10-11"
   },
   
 ];
@@ -89,7 +97,6 @@ const BlogSection = () => {
                   <Card.Title className="fw-semibold">{blog.title}</Card.Title>
                   <Card.Text>{truncateWords(blog.desc, 15)}</Card.Text>
                   
-                  {/* Change Button to Link */}
                   <Link to={`/blog/${blog.id}`}>
                     <Button variant="dark" className="rounded-pill">
                       Read More

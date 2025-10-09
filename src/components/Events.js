@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom"; // লিংক ইম্পোর্ট করুন
+import { Link } from "react-router-dom"; 
 import Eureca from "../assets/images/eurecaa.jpg";
 import Nec from "../assets/images/nec.jpeg";
 import Entrepreneurship from "../assets/images/Entrepreneurship.jpg";

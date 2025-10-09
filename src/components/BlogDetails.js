@@ -12,7 +12,6 @@ import {
   Linkedin,
 } from "react-bootstrap-icons";
 
-// Image imports - using your existing images
 import logo from "../assets/images/logo.png";
 import Startup1 from "../assets/Blogs/2.jpg";
 import Startup2 from "../assets/Blogs/2.jpg";
@@ -361,10 +360,133 @@ const blogData = [
   category: "Business Planning",
   tags: ["Business Plan", "Investors", "Funding", "Startup", "Pitching", "Executive Summary"],
   additionalImages: [blog41, blog42, blog43, blog44]
+},
+{
+  id: 4,
+  title: "Micro-Entrepreneurship: The Big Impact of Small Ventures",
+  img: Startup1, // Main featured image
+  desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focused businesses with minimal staff and capital—are quietly transforming local economies.",
+  fullContent: `
+    <p class="lead">Gone are the days when "entrepreneur" meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focused businesses with minimal staff and capital—are quietly transforming local economies.</p>
+
+    <!-- IMAGE 1: What Is Micro-Entrepreneurship -->
+    <div class="text-center my-5">
+      <img src="${Startup2}" alt="Micro-entrepreneur working from small home-based setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Micro-entrepreneurs operate with minimal staff and serve specific markets</small></p>
+    </div>
+
+    <h3>What Is Micro-Entrepreneurship?</h3>
+    <p>A micro-entrepreneur typically operates with one to five employees (often solo) and serves a highly specific market. Think home-based bakers, boutique digital marketers, hyper-local delivery services, or artisans selling via Instagram. Low overhead and targeted offerings let them thrive in niches larger companies overlook.</p>
+
+    <h3>Why It's Growing</h3>
+    <p>Several forces fuel the movement:</p>
+    
+    <div class="feature-point">
+      <h5>💻 Accessible digital tools</h5>
+      <p>Social media, e-commerce platforms, and mobile payment apps make marketing and transactions simple and cheap.</p>
+    </div>
+
+    <div class="feature-point">
+      <h5>🛍️ Changing consumer habits</h5>
+      <p>Customers value personalised, authentic products—whether organic skincare or handcrafted décor.</p>
+    </div>
+
+    <div class="feature-point">
+      <h5>🌍 Pandemic lessons</h5>
+      <p>Remote work and side hustles proved that small, flexible businesses can survive economic shocks.</p>
+    </div>
+
+    <!-- IMAGE 2: Economic Impact -->
+    <div class="text-center my-5">
+      <img src="${Startup3}" alt="Local community market with micro-entrepreneurs" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Micro-enterprises create jobs and support local economies</small></p>
+    </div>
+
+    <h3>Economic and Social Impact</h3>
+    <p>Micro-enterprises generate more than pocket money. They:</p>
+    
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>Create jobs locally</h5>
+        <p>Especially for women and youth.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>Circulate money within communities</h5>
+        <p>Supporting neighbourhood suppliers and services.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>Preserve culture and craft</h5>
+        <p>From regional textiles to traditional foods.</p>
+      </div>
+    </div>
+
+    <p>In countries like India, these ventures collectively contribute billions to GDP while revitalising rural and semi-urban markets.</p>
+
+    <h3>Keys to Success for Micro-Entrepreneurs</h3>
+    
+    <div class="tip-section">
+      <h5>1. Start lean, test fast.</h5>
+      <p>Use small batches or pilot services to gauge demand.</p>
+    </div>
+
+    <div class="tip-section">
+      <h5>2. Leverage digital platforms.</h5>
+      <p>Free tools like Instagram Shops, WhatsApp Business, and UPI payments reduce setup costs.</p>
+    </div>
+
+    <!-- IMAGE 3: Digital Tools -->
+    <div class="text-center my-5">
+      <img src="${Startup4}" alt="Micro-entrepreneur using digital tools and smartphone" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Digital platforms enable micro-entrepreneurs to reach customers efficiently</small></p>
+    </div>
+
+    <div class="tip-section">
+      <h5>3. Focus on customer relationships.</h5>
+      <p>Personalised service and quick responses build loyalty.</p>
+    </div>
+
+    <div class="tip-section">
+      <h5>4. Mind the basics.</h5>
+      <p>Even tiny businesses need proper bookkeeping, necessary licences, and clear contracts.</p>
+    </div>
+
+    <h3>Challenges to Watch</h3>
+    
+    <div class="challenge-item">
+      <h5>Scaling vs. staying niche</h5>
+      <p>Growth may strain the personal touch that makes these ventures unique.</p>
+    </div>
+
+    <div class="challenge-item">
+      <h5>Competition</h5>
+      <p>Low barriers invite imitators. Protect your brand with trademarks and consistent quality.</p>
+    </div>
+
+    <div class="challenge-item">
+      <h5>Access to finance</h5>
+      <p>Micro-loans and government schemes can bridge gaps, but awareness is key.</p>
+    </div>
+
+    <!-- IMAGE 4: Success Story -->
+    <div class="text-center my-5">
+      <img src="${Startup1}" alt="Successful micro-entrepreneur with their products" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Micro-entrepreneurship creates fulfilling livelihoods and community impact</small></p>
+    </div>
+
+    <div class="conclusion">
+      <h4>🎯 Bottom Line</h4>
+      <p><strong>Micro-entrepreneurship proves that "small" can be mighty.</strong> With creativity, digital savvy, and strong community ties, one person or a tiny team can boost local economies—and craft a fulfilling livelihood—without chasing venture capital or building a massive organisation.</p>
+    </div>
+  `,
+  author: "Entrepreneurship Team",
+  date: "2025-10-11",
+  readTime: "6 min read",
+  category: "Micro-Entrepreneurship",
+  tags: ["Micro-Entrepreneurship", "Small Business", "Local Economy", "Digital Tools", "Community"],
+  additionalImages: [Startup1, Startup2, Startup3, Startup4]
 }
 ];
 
-// The rest of your existing BlogDetails component remains exactly the same
 const BlogDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -403,7 +525,6 @@ const BlogDetails = () => {
 
   return (
     <>
-      {/* Fixed Navbar */}
       <nav className="navbar navbar-light bg-white border-bottom py-3">
         <Container>
           <div className="d-flex justify-content-between w-100 align-items-center">
@@ -425,7 +546,6 @@ const BlogDetails = () => {
       <Container className="my-5">
         <Row className="justify-content-center">
           <Col lg={9}>
-            {/* Fixed Breadcrumb */}
             <nav aria-label="breadcrumb" className="mb-4">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
@@ -438,7 +558,6 @@ const BlogDetails = () => {
               </ol>
             </nav>
 
-            {/* Blog Header */}
             <div className="text-center mb-5">
               <Badge bg="light" text="dark" className="mb-3 px-3 py-2">
                 {blog.category}
@@ -465,7 +584,6 @@ const BlogDetails = () => {
               </div>
             </div>
 
-            {/* Featured Image - Fixed with proper styling */}
             <div className="text-center mb-5">
               <img
                 src={blog.img}
@@ -480,7 +598,6 @@ const BlogDetails = () => {
               />
             </div>
 
-            {/* Share Buttons */}
             <div className="d-flex justify-content-between align-items-center mb-5 p-3 bg-light rounded-3">
               <div className="d-flex align-items-center gap-2">
                 <Share size={18} />
@@ -517,7 +634,6 @@ const BlogDetails = () => {
               </div>
             </div>
 
-            {/* Blog Content Section */}
             <div 
               className="blog-content mb-5"
               dangerouslySetInnerHTML={{ __html: blog.fullContent }}
@@ -528,7 +644,6 @@ const BlogDetails = () => {
               }}
             />
 
-            {/* Tags */}
             <div className="mb-5">
               <h5 className="fw-semibold mb-3">Tags:</h5>
               <div className="d-flex flex-wrap gap-2">
@@ -540,7 +655,6 @@ const BlogDetails = () => {
               </div>
             </div>
 
-            {/* Author Info */}
             <Card className="border-0 bg-light rounded-4">
               <Card.Body className="p-4">
                 <Row className="align-items-center">
@@ -561,7 +675,6 @@ const BlogDetails = () => {
               </Card.Body>
             </Card>
 
-            {/* Navigation Buttons */}
             <div className="d-flex justify-content-between mt-5 pt-4 border-top">
               <Button 
                 variant="outline-secondary" 
@@ -582,7 +695,6 @@ const BlogDetails = () => {
         </Row>
       </Container>
 
-      {/* Footer */}
       <footer className="bg-dark text-light py-4 mt-5">
         <Container>
           <Row>
@@ -604,7 +716,6 @@ const BlogDetails = () => {
         </Container>
       </footer>
 
-      {/* Custom CSS for blog content */}
       <style>
         {`
           .blog-content h3 {

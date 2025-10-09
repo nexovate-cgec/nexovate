@@ -41,14 +41,13 @@ const NavBar = () => {
         observer.disconnect();
       };
     } else {
-      // Reset active section when not on home page
+     
       setActiveSection('');
     }
   }, [location.pathname]);
 
   const handleSectionClick = (sectionId) => {
     if (location.pathname !== '/') {
-      // Navigate to home page and then scroll to section
       navigate('/');
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -57,7 +56,6 @@ const NavBar = () => {
         }
       }, 100);
     } else {
-      // Smooth scroll on home page
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });

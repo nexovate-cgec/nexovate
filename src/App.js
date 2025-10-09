@@ -32,14 +32,12 @@ function App() {
             <Blog/>
             <Team />
             <Testimonials />
-            <JoinUs />
             <Footer />
           </>
         } />
-        
         <Route path="/events/:eventId" element={<EventDetails />} />
-        
         <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="/join" element={<JoinUs />} />
       </Routes>
     </Router>
   );

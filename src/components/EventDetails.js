@@ -222,7 +222,6 @@ const EventDetails = () => {
 
   return (
     <>
-      {/* Enhanced Header with Social Media */}
       <nav className="navbar navbar-light bg-light">
         <Container>
           <div className="d-flex justify-content-between w-100 align-items-center">
@@ -231,7 +230,6 @@ const EventDetails = () => {
               Back to Home
             </Link>
 
-            {/* Social Media Links */}
             <div className="d-flex gap-3">
               <a
                 href={event.socialLinks.instagram}
@@ -266,7 +264,6 @@ const EventDetails = () => {
         <Row className="justify-content-center">
           <Col lg={10}>
             <article>
-              {/* Header Section */}
               <div className="d-flex justify-content-between align-items-start mb-4">
                 <Link to="/#events" className="text-decoration-none">
                   <Button variant="outline-primary">
@@ -275,7 +272,6 @@ const EventDetails = () => {
                   </Button>
                 </Link>
 
-                {/* Share Button */}
                 <div className="dropdown">
                   <Button
                     variant="outline-secondary"
@@ -317,7 +313,6 @@ const EventDetails = () => {
                 </div>
               </div>
 
-              {/* Event Header */}
               <div className="text-center mb-5">
                 <Badge bg="primary" className="mb-3 fs-6">
                   {event.category}
@@ -335,7 +330,6 @@ const EventDetails = () => {
                   <span>⏰ {event.time}</span>
                 </div>
 
-                {/* Hashtags */}
                 <div className="mt-3">
                   {event.hashtags.map((tag, index) => (
                     <Badge
@@ -349,7 +343,6 @@ const EventDetails = () => {
                 </div>
               </div>
 
-              {/* Fixed Event Image - Full Image Show */}
               <div className="text-center mb-5">
                 <div
                   className="event-image-container"
@@ -376,7 +369,6 @@ const EventDetails = () => {
                 </div>
               </div>
 
-              {/* Rest of your code remains same */}
               <Row className="mb-5">
                 <Col lg={8}>
                   <div
@@ -419,7 +411,6 @@ const EventDetails = () => {
                         {event.status}
                       </Button>
 
-                      {/* Quick Social Links */}
                       <div className="text-center">
                         <p className="text-muted small mb-2">
                           Share this event:
@@ -453,7 +444,6 @@ const EventDetails = () => {
                 </Col>
               </Row>
 
-              {/* Social Media Footer */}
               <Card className="bg-light border-0">
                 <Card.Body className="text-center">
                   <h5>Follow us on social media</h5>

@@ -1,17 +1,16 @@
 
 
-import React from 'react';
+import React from 'react';import { Link } from 'react-router-dom';
+
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaLinkedin, FaInstagram, FaEnvelope, FaRocket, FaHeart, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => (
   <footer className="footer-wrapper">
-    {/* Main Footer Section */}
     <div className="footer-main py-5">
       <Container>
         <Row className="g-4">
-          {/* Brand Section */}
           <Col lg={4} md={6} className="mb-4">
             <div className="footer-brand">
               <div className="brand-logo mb-3">
@@ -49,7 +48,6 @@ const Footer = () => (
             </div>
           </Col>
 
-          {/* Quick Links */}
           <Col lg={2} md={6} className="mb-4">
             <h5 className="footer-heading">Quick Links</h5>
             <ul className="footer-links">
@@ -60,8 +58,6 @@ const Footer = () => (
               <li><a href="#blog">Blog</a></li>
             </ul>
           </Col>
-
-          {/* Resources */}
           <Col lg={2} md={6} className="mb-4">
             <h5 className="footer-heading">Resources</h5>
             <ul className="footer-links">
@@ -71,7 +67,6 @@ const Footer = () => (
             </ul>
           </Col>
 
-          {/* Contact Info */}
           <Col lg={4} md={6} className="mb-4">
             <h5 className="footer-heading">Get In Touch</h5>
             <div className="contact-info">
@@ -89,7 +84,6 @@ const Footer = () => (
               </div>
             </div>
             
-            {/* Newsletter Subscription */}
             <div className="newsletter mt-4">
               <h6 className="newsletter-title">Stay Updated</h6>
               <div className="subscribe-form">
@@ -111,7 +105,6 @@ const Footer = () => (
       </Container>
     </div>
 
-    {/* Bottom Footer */}
     <div className="footer-bottom py-3">
       <Container>
         <Row className="align-items-center">
@@ -129,10 +122,14 @@ const Footer = () => (
       </Container>
     </div>
 
-    {/* Floating CTA Button */}
     <Button className="footer-cta" variant="warning">
       <FaRocket className="me-2" />
-      Join Our Community
+     <Link 
+  to="/join" 
+  className="btn btn-warning ms-2 px-3 fw-semibold rounded-pill"
+>
+  Join Our Community
+</Link>
     </Button>
   </footer>
 );
