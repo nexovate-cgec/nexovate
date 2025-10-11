@@ -36,11 +36,20 @@ const JoinUs = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will contact you soon.');
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    await fetch("https://formspree.io/f/xanppake", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    alert("✅ Form submitted successfully!");
+  } catch (error) {
+    alert("❌ Failed to submit the form.");
+  }
+};
+
 
   return (
     <section id="join" className="py-5 bg-light">
@@ -181,9 +190,8 @@ const JoinUs = () => {
                         className="w-100 py-2 fw-bold bg-danger"
                         style={{ cursor: 'not-allowed' }}
                         size="lg"
-                        disabled={true}
                       >
-                        opps..................!
+                       Submit
                       </Button>
                     </Form>
 
