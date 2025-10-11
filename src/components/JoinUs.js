@@ -1,55 +1,66 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 
 const JoinUs = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    year: '',
-    department: '',
-    interests: []
+    name: "",
+    email: "",
+    year: "",
+    department: "",
+    interests: [],
   });
 
   const interestsList = [
-    'Startup Incubation',
-    'Technical Workshops', 
-    'Business Planning',
-    'Marketing & Networking',
-    'Competitions & Events',
-    'Mentorship Programs'
+    "Startup Incubation",
+    "Technical Workshops",
+    "Business Planning",
+    "Marketing & Networking",
+    "Competitions & Events",
+    "Mentorship Programs",
   ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleInterestToggle = (interest) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       interests: prev.interests.includes(interest)
-        ? prev.interests.filter(i => i !== interest)
-        : [...prev.interests, interest]
+        ? prev.interests.filter((i) => i !== interest)
+        : [...prev.interests, interest],
     }));
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    await fetch("https://formspree.io/f/xanppake", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    alert("✅ Form submitted successfully!");
-  } catch (error) {
-    alert("❌ Failed to submit the form.");
-  }
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://formspree.io/f/xanppake", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
 
+      if (response.ok) {
+        alert("✅ Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          year: "",
+          department: "",
+          interests: [],
+        });
+      } else {
+        alert("❌ Failed to submit the form. Try again later.");
+      }
+    } catch (error) {
+      alert("⚠️ Something went wrong. Please check your connection.");
+    }
+  };
 
   return (
     <section id="join" className="py-5 bg-light">
@@ -62,8 +73,8 @@ const handleSubmit = async (e) => {
                 <div className="text-center mb-5">
                   <h1 className="display-5 fw-bold text-primary">Join CGEC E-Cell</h1>
                   <p className="lead text-muted">
-                    Be part of the innovation revolution at Cooch Behar Government Engineering College. 
-                    Let's build the future together!
+                    Be part of the innovation revolution at Cooch Behar Government
+                    Engineering College. Let's build the future together!
                   </p>
                 </div>
 
@@ -93,7 +104,6 @@ const handleSubmit = async (e) => {
                       </li>
                     </ul>
 
-                    {/* Social Proof */}
                     <div className="mt-4 p-3 bg-primary text-white rounded">
                       <p className="mb-2">
                         "E-Cell transformed my college experience and helped launch my startup!"
@@ -146,6 +156,7 @@ const handleSubmit = async (e) => {
                             </Form.Select>
                           </Form.Group>
                         </Col>
+
                         <Col sm={6}>
                           <Form.Group className="mb-3">
                             <Form.Label>Department</Form.Label>
@@ -157,7 +168,7 @@ const handleSubmit = async (e) => {
                             >
                               <option value="">Select Department</option>
                               <option value="CSE">Computer Science and Engineering</option>
-                              <option value="ECE">Electronic and communication Engineering</option>
+                              <option value="ECE">Electronics and Communication Engineering</option>
                               <option value="EE">Electrical Engineering</option>
                               <option value="ME">Mechanical Engineering</option>
                               <option value="CE">Civil Engineering</option>
@@ -183,26 +194,38 @@ const handleSubmit = async (e) => {
                         </div>
                       </Form.Group>
 
-                      <Button 
-                        variant="danger" 
-                        type="submit" 
-                        
+                      <Button
+                        variant="danger"
+                        type="submit"
                         className="w-100 py-2 fw-bold bg-danger"
-                        style={{ cursor: 'not-allowed' }}
+                        style={{ cursor: "pointer" }}
                         size="lg"
                       >
-                       Submit
+                        Submit
                       </Button>
                     </Form>
 
-                    <div className="text-center mt-3">
+                    <div className="text-center mt-4">
                       <p className="text-muted mb-3">Or connect with us</p>
                       <div className="d-flex justify-content-center gap-3">
-                        <Button variant="outline-primary" size="sm">
-                          <i className="fab fa-linkedin me-2"></i>  <a  href="https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" >LinkedIn</a>
+                        <Button
+                          as="a"
+                          href="https://www.linkedin.com/in/nexovate-ecell-041104374"
+                          target="_blank"
+                          variant="outline-primary"
+                          size="sm"
+                        >
+                          <i className="fab fa-linkedin me-2"></i> LinkedIn
                         </Button>
-                        <Button variant="outline-danger" size="sm">
-                          <i className="fab fa-google me-2"></i><a href="https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" >Instagram</a>
+
+                        <Button
+                          as="a"
+                          href="https://www.instagram.com/_nexovate_ecell/"
+                          target="_blank"
+                          variant="outline-danger"
+                          size="sm"
+                        >
+                          <i className="fab fa-instagram me-2"></i> Instagram
                         </Button>
                       </div>
                     </div>
