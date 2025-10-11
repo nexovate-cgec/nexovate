@@ -25,6 +25,9 @@ import blog41 from "../assets/Blogs/blog41.png";
 import blog42 from "../assets/Blogs/blog42.png";
 import blog43 from "../assets/Blogs/blog43.png";
 import blog44 from "../assets/Blogs/blog44.png";
+import blog51 from "../assets/Blogs/blog51.png";
+import blog52 from "../assets/Blogs/blog52.png";
+import blog53 from "../assets/Blogs/blog53.png";
 
 
 const blogData = [
@@ -364,19 +367,20 @@ const blogData = [
 {
   id: 4,
   title: "Micro-Entrepreneurship: The Big Impact of Small Ventures",
-  img: Startup1, // Main featured image
+  img: blog51, 
   desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focused businesses with minimal staff and capital—are quietly transforming local economies.",
   fullContent: `
     <p class="lead">Gone are the days when "entrepreneur" meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focused businesses with minimal staff and capital—are quietly transforming local economies.</p>
 
-    <!-- IMAGE 1: What Is Micro-Entrepreneurship -->
-    <div class="text-center my-5">
-      <img src="${Startup2}" alt="Micro-entrepreneur working from small home-based setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-      <p class="text-muted mt-2"><small>Micro-entrepreneurs operate with minimal staff and serve specific markets</small></p>
-    </div>
+   
 
     <h3>What Is Micro-Entrepreneurship?</h3>
     <p>A micro-entrepreneur typically operates with one to five employees (often solo) and serves a highly specific market. Think home-based bakers, boutique digital marketers, hyper-local delivery services, or artisans selling via Instagram. Low overhead and targeted offerings let them thrive in niches larger companies overlook.</p>
+     <!-- IMAGE 1: What Is Micro-Entrepreneurship -->
+    <div class="text-center my-5">
+      <img src="${blog51}" alt="Micro-entrepreneur working from small home-based setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Micro-entrepreneurs operate with minimal staff and serve specific markets</small></p>
+    </div>
 
     <h3>Why It's Growing</h3>
     <p>Several forces fuel the movement:</p>
@@ -398,7 +402,7 @@ const blogData = [
 
     <!-- IMAGE 2: Economic Impact -->
     <div class="text-center my-5">
-      <img src="${Startup3}" alt="Local community market with micro-entrepreneurs" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <img src="${blog52}" alt="Local community market with micro-entrepreneurs" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
       <p class="text-muted mt-2"><small>Micro-enterprises create jobs and support local economies</small></p>
     </div>
 
@@ -419,6 +423,10 @@ const blogData = [
         <p>From regional textiles to traditional foods.</p>
       </div>
     </div>
+       <div class="text-center my-5">
+      <img src="${blog53}" alt="Micro-entrepreneur using digital tools and smartphone" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Digital platforms enable micro-entrepreneurs to reach customers efficiently</small></p>
+    </div>
 
     <p>In countries like India, these ventures collectively contribute billions to GDP while revitalising rural and semi-urban markets.</p>
 
@@ -434,11 +442,7 @@ const blogData = [
       <p>Free tools like Instagram Shops, WhatsApp Business, and UPI payments reduce setup costs.</p>
     </div>
 
-    <!-- IMAGE 3: Digital Tools -->
-    <div class="text-center my-5">
-      <img src="${Startup4}" alt="Micro-entrepreneur using digital tools and smartphone" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-      <p class="text-muted mt-2"><small>Digital platforms enable micro-entrepreneurs to reach customers efficiently</small></p>
-    </div>
+ 
 
     <div class="tip-section">
       <h5>3. Focus on customer relationships.</h5>
@@ -467,11 +471,7 @@ const blogData = [
       <p>Micro-loans and government schemes can bridge gaps, but awareness is key.</p>
     </div>
 
-    <!-- IMAGE 4: Success Story -->
-    <div class="text-center my-5">
-      <img src="${Startup1}" alt="Successful micro-entrepreneur with their products" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-      <p class="text-muted mt-2"><small>Micro-entrepreneurship creates fulfilling livelihoods and community impact</small></p>
-    </div>
+ 
 
     <div class="conclusion">
       <h4>🎯 Bottom Line</h4>
@@ -483,7 +483,7 @@ const blogData = [
   readTime: "6 min read",
   category: "Micro-Entrepreneurship",
   tags: ["Micro-Entrepreneurship", "Small Business", "Local Economy", "Digital Tools", "Community"],
-  additionalImages: [Startup1, Startup2, Startup3, Startup4]
+  additionalImages: [blog51, blog52, blog53]
 }
 ];
 

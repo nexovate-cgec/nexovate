@@ -7,6 +7,7 @@ import logo from '../assets/images/logo.png';
 import Blog1 from "../assets/Blogs/2.jpg";
 import Blog2 from "../assets/Blogs/blog31.png";
 import Blog3 from "../assets/Blogs/blog44.png";
+import Blog4 from "../assets/Blogs/blog51.png";
 
 const blogData = [
 
@@ -37,15 +38,15 @@ const blogData = [
     author: "Author Name", 
     date: "2025-10-09"
   },
-  // {
-  //   id: 4,
-  //   title: "Building a Business Plan That Investors Will Actually Read",
-  //   img: Blog3,
-  //   desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
-  //   fullContent: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
-  //   author: "Author Name", 
-  //   date: "2025-10-11"
-  // },
+  {
+    id: 4,
+    title: "Building a Business Plan That Investors Will Actually Read",
+    img: Blog4,
+    desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
+    fullContent: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
+    author: "Author Name", 
+    date: "2025-10-11"
+  },
   
 ];
 
