@@ -1,5 +1,6 @@
-import { Container } from "react-bootstrap";
-
+import { Container, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "yet-another-react-lightbox/styles.css";
@@ -10,86 +11,83 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 import "./Gallery.css";
+import { getFeaturedEvents, getAllEvents } from "../data/gallery";
 
-import gallery1 from "../assets/Events/eureka25/1.jpeg";
-import gallery2 from "../assets/Events/eureka25/2.jpeg";
-import gallery3 from "../assets/Events/eureka25/3.jpeg";
-import gallery4 from "../assets/Events/eureka25/4.jpeg";
-import gallery5 from "../assets/Events/eureka25/15.jpeg";
-import gallery6 from "../assets/Events/eureka25/6.jpeg";
-import gallery7 from "../assets/Events/eureka25/7.jpeg";
-import gallery8 from "../assets/Events/eureka25/8.jpeg";
-import gallery9 from "../assets/Events/eureka25/9.jpeg";
-import gallery10 from "../assets/Events/eureka25/10.jpeg";
-import gallery11 from "../assets/Events/eureka25/11.jpeg";
-import gallery12 from "../assets/Events/eureka25/12.jpeg";
-import gallery13 from "../assets/Events/eureka25/13.jpeg";
-import gallery14 from "../assets/Events/eureka25/14.jpeg";
-// import gallery15 from "../assets/Events/eureka25/5.jpeg";
-import gallery16 from "../assets/Events/eureka25/16.jpeg";
-import gallery17 from "../assets/Events/eureka25/17.jpeg";
-import gallery18 from "../assets/Events/eureka25/18.jpeg";
+const Gallery = () => {
+  const { isDark } = useTheme();
+  const featuredEvent = getFeaturedEvents(1)[0]; // Show only 1 featured event
+  const allEvents = getAllEvents();
 
-const galleryImages = [
-  { src: gallery2, caption: "Winning Team" },
-  { src: gallery1, caption: "2nd position holder" },
-  { src: gallery3, caption: "Prize Distribution" },
-  { src: gallery4, caption: "Prize Distribution" },
-  { src: gallery5, caption: "Lecture" },
-  { src: gallery6, caption: "Lecture" },
-  { src: gallery7, caption: "Lecture" },
-  { src: gallery11, caption: "Judges" },
-  { src: gallery18, caption: "Team 1" },
-  { src: gallery17, caption: "Team 2" },
-  { src: gallery16, caption: "Team 3" },
-  //  { src: gallery15, caption: "Team 4" },
-  { src: gallery14, caption: "Team 4" },
-  { src: gallery13, caption: "Team 5 " },
-  { src: gallery12, caption: "Team 6" },
-  { src: gallery10, caption: "Team 7" },
-  { src: gallery9, caption: "Team 8" },
-  { src: gallery8, caption: "Team 9" },
-];
+  return (
+    <section id="gallery" className="py-5" style={{
+      backgroundColor: "var(--section-bg)",
+      color: "var(--text-color)"
+    }}>
+      <Container>
+        {/* Header Section - Middle Aligned */}
+        <div className="text-center mb-5">
+          <h2 className="fw-bold mb-3" style={{ color: "var(--text-color)" }}>
+            Our <span style={{ color: "var(--primary-color)" }}>Event Gallery</span>
+          </h2>
+          <p className="lead mb-4" style={{ color: "var(--secondary-color)" }}>
+            Explore our event memories and moments
+          </p>
+          
+          {/* View All Button - Also centered */}
+          <Link to="/gallery" className="text-decoration-none">
+            <Button
+              variant={isDark ? "outline-light" : "outline-primary"}
+              size="sm"
+              className="rounded-pill px-4"
+            >
+              View All Gallery ({allEvents.length} Events)
+            </Button>
+          </Link>
+        </div>
 
-const Gallery = () => (
-  <section id="gallery" className="py-5">
-    <Container>
-      <h2 className="text-center fw-bold mb-5">
-        Our <span className="text-primary ">Event gallery</span>
-      </h2>
-      <h2 className="text-center fw-bold mb-5 gallery-heading">
-        <span className="text-warning">
-          <u>EUREKA-2K25</u>
-        </span>
-      </h2>
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        spaceBetween={20}
-        breakpoints={{
-          320: { slidesPerView: 1 },
-          576: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          992: { slidesPerView: 4 },
-        }}
-      >
-        {galleryImages.map((img, index) => (
-          <SwiperSlide key={index}>
-            <div className="gallery-card">
-              <img
-                src={img.src}
-                alt={`Event ${index + 1}`}
-                className="gallery-img"
-              />
-              <p className="caption">{img.caption}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </Container>
-  </section>
-);
+        {/* Single Event Swiper */}
+        {featuredEvent && (
+          <div>
+            <h3 className="text-center fw-bold mb-4 gallery-heading">
+              <span className="text-warning">
+                <u>{featuredEvent.name}</u>
+              </span>
+              <small className="text-muted ms-2" style={{ fontSize: "0.8rem" }}>
+                ({featuredEvent.totalImages} photos)
+              </small>
+            </h3>
+            
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              spaceBetween={20}
+              breakpoints={{
+                320: { slidesPerView: 1 },
+                576: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                992: { slidesPerView: 4 },
+              }}
+            >
+              {featuredEvent.data.map((image) => (
+                <SwiperSlide key={image.id}>
+                  <div className="gallery-card">
+                    <img
+                      src={image.src}
+                      alt={image.caption}
+                      className="gallery-img"
+                    />
+                    <p className="caption">{image.caption}</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+      </Container>
+    </section>
+  );
+};
 
 export default Gallery;

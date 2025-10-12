@@ -113,7 +113,7 @@ const Footer = () => (
   to="/join" 
   className="btn btn-warning ms-2 px-3 fw-semibold rounded-pill"
 >
-  Join Our Community
+  Join Our Team
 </Link>
     </Button>
   </footer>

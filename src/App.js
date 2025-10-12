@@ -4,19 +4,25 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+// Components
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Initiatives from "./components/Initiatives";
 import Events from "./components/Events";
-import EventDetails from "./components/EventDetails";
 import Blog from "./components/Blog";
-import BlogDetails from "./components/BlogDetails"; 
 import Gallery from "./components/Gallery";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
+
+// Pages
+import AllEvents from "./pages/AllEvents";
+import EventDetail from "./pages/EventDetail";
+import AllBlogs from "./pages/AllBlogs";
+import BlogDetails from "./pages/BlogDetails";
+import GalleryPage from "./pages/GalleryPage"; // Add this import
 
 function App() {
   return (
@@ -24,6 +30,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
+          {/* Home Page Route */}
           <Route path="/" element={
             <>
               <Hero />
@@ -31,14 +38,25 @@ function App() {
               <Initiatives />
               <Events />
               <Gallery />
-              <Blog/>
+              <Blog />
               <Team />
               <Testimonials />
               <Footer />
             </>
           } />
-          <Route path="/events/:eventId" element={<EventDetails />} />
+          
+          {/* Events Routes */}
+          <Route path="/events" element={<AllEvents />} />
+          <Route path="/events/:id" element={<EventDetail />} />
+          
+          {/* Blog Routes */}
+          <Route path="/blogs" element={<AllBlogs />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
+          
+          {/* Gallery Route - Add this */}
+          <Route path="/gallery" element={<GalleryPage />} />
+          
+          {/* Join Us Route */}
           <Route path="/join" element={<JoinUs />} />
         </Routes>
       </Router>

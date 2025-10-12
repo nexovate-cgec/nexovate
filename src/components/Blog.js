@@ -3,60 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"; 
 import { useTheme } from "../contexts/ThemeContext"; 
 import logo from '../assets/images/logo.png';
-import Blog1 from "../assets/Blogs/2.jpg";
-import Blog2 from "../assets/Blogs/blog31.png";
-import Blog3 from "../assets/Blogs/blog44.png";
-import Blog4 from "../assets/Blogs/blog51.png";
-
-const blogData = [
-
-  {
-    id: 1,
-    title: "From Spark to Startup: Validating Your Idea and Getting the Legal Basics Right",
-    img: Blog1,
-    desc: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
-    fullContent: "Great businesses don’t begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you’re planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases. ",
-    author: "Author Name", 
-    date: "2025-09-24"
-  },
-  {
-    id: 2,
-    title: "The Rise of Solopreneurs: Building a Business of One",
-    img: Blog2,
-    desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
-    fullContent: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
-    author: "Author Name", 
-    date: "2025-10-01"
-  },
-  {
-    id: 3,
-    title: "Building a Business Plan That Investors Will Actually Read",
-    img: Blog3,
-    desc: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
-    fullContent: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
-    author: "Author Name", 
-    date: "2025-10-09"
-  },
-  {
-    id: 4,
-    title: "Micro-Entrepreneurship: The Big Impact of Small Ventures",
-    img: Blog4,
-    desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
-    fullContent: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
-    author: "Author Name", 
-    date: "2025-10-11"
-  },
-  // {
-  //   id: 5,
-  //   title: "Smart Ways to Build Brand Trust as a New Company",
-  //   img: Blog4,
-  //   desc: "In a crowded marketplace, customers don’t just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here’s how to establish credibility from day one.",
-  //   fullContent: "AIn a crowded marketplace, customers don’t just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here’s how to establish credibility from day one.",
-  //   author: "Author Name", 
-  //   date: "2025-10-15"
-  // },
-  
-];
+import { getRecentBlogs } from "../data/blog";
 
 const truncateWords = (text, wordLimit) => {
   const words = text.split(" ");
@@ -67,6 +14,8 @@ const truncateWords = (text, wordLimit) => {
 
 const BlogSection = () => {
   const { isDark } = useTheme(); 
+  const recentBlogs = getRecentBlogs(3);
+  const allBlogs = getRecentBlogs();
 
   return (
     <section 
@@ -78,60 +27,101 @@ const BlogSection = () => {
       }}
     >
       <Container>
-        <h2 className="text-center fw-bold mb-5" style={{ color: "var(--text-color)" }}>
-          Latest <span style={{ color: "var(--primary-color)" }}>Blogs</span>
-        </h2>
+        {/* Header Section - Centered */}
+        <div className="text-center mb-5">
+          <h2 className="fw-bold mb-3" style={{ color: "var(--text-color)" }}>
+            Latest <span style={{ color: "var(--primary-color)" }}>Blogs</span>
+          </h2>
+          <p className="lead mb-4" style={{ color: "var(--secondary-color)" }}>
+            Discover our most recent articles and insights
+          </p>
+          
+          {/* View All Button - Also centered */}
+          <Link to="/blogs" className="text-decoration-none">
+            <Button
+              variant={isDark ? "outline-light" : "outline-primary"}
+              size="sm"
+              className="rounded-pill px-4"
+            >
+              View All Blogs ({allBlogs.length})
+            </Button>
+          </Link>
+        </div>
+        
         <Row>
-          {blogData.map((blog) => (
-            <Col md={4} className="mb-4" key={blog.id}>
+          {recentBlogs.map((blog) => (
+            <Col lg={4} md={6} className="mb-4" key={blog.id}>
               <Card 
-                className="h-100 shadow-sm border-0 rounded-4 position-relative"
+                className="h-100 shadow-sm border-0"
                 style={{ 
                   backgroundColor: "var(--card-bg)",
-                  color: "var(--text-color)"
+                  color: "var(--text-color)",
+                  transition: "transform 0.2s ease-in-out",
+                  borderRadius: "12px"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                <img
-                  src={logo}
-                  alt="Logo"
-                  style={{
-                    position: "absolute",
-                    borderRadius: "50%",
-                    top: "12px",
-                    right: "12px",
-                    width: "40px",
-                    height: "40px",
-                    objectFit: "contain",
-                    opacity: 0.9,
-                  }}
-                />
-
-                <Card.Img
-                  variant="top"
-                  src={blog.img}
-                  alt={blog.title}
-                  style={{
-                    borderTopLeftRadius: "1rem",
-                    borderTopRightRadius: "1rem",
-                    height: "200px",
-                    objectFit: "cover",
-                  }}
-                />
-                <Card.Body>
+                <div className="position-relative">
+                  <Card.Img
+                    variant="top"
+                    src={blog.img}
+                    alt={blog.title}
+                    style={{
+                      borderTopLeftRadius: "12px",
+                      borderTopRightRadius: "12px",
+                      height: "200px",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    style={{
+                      position: "absolute",
+                      borderRadius: "50%",
+                      top: "12px",
+                      right: "12px",
+                      width: "40px",
+                      height: "40px",
+                      objectFit: "contain",
+                      backgroundColor: "white",
+                      padding: "4px",
+                    }}
+                  />
+                </div>
+                
+                <Card.Body className="p-4 d-flex flex-column">
+                  <div className="mb-2">
+                    <small className="text-muted">{blog.date} • {blog.readTime}</small>
+                  </div>
+                  
                   <Card.Title 
-                    className="fw-semibold" 
+                    className="fw-semibold h5" 
                     style={{ color: "var(--text-color)" }}
                   >
                     {blog.title}
                   </Card.Title>
-                  <Card.Text style={{ color: "var(--text-color)" }}>
-                    {truncateWords(blog.desc, 15)}
+                  
+                  <div className="mb-2">
+                    <span className="badge bg-primary">{blog.category}</span>
+                  </div>
+                  
+                  <Card.Text 
+                    style={{ color: "var(--text-color)" }}
+                    className="flex-grow-1"
+                  >
+                    {truncateWords(blog.desc, 20)}
                   </Card.Text>
                   
                   <Link to={`/blog/${blog.id}`}>
                     <Button 
-                      variant={isDark ? "outline-light" : "dark"} 
-                      className="rounded-pill"
+                      variant={isDark ? "outline-light" : "primary"} 
+                      className="rounded-pill px-4"
                     >
                       Read More
                     </Button>

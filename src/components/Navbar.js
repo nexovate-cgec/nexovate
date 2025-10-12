@@ -20,7 +20,7 @@ const NavBar = () => {
     if (location.pathname === '/') {
       window.addEventListener('scroll', handleScroll);
 
-      const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', 'contact'];
+      const sections = ['home', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials'];
       
       const observer = new IntersectionObserver(
         (entries) => {
@@ -64,12 +64,25 @@ const NavBar = () => {
     }
   };
 
+  // নতুন function: Specific pages এ navigate করার জন্য
+  const handlePageNavigation = (page) => {
+    if (page === 'events') {
+      navigate('/events');
+    } else if (page === 'gallery') {
+      navigate('/gallery');
+    } else if (page === 'blog') {
+      navigate('/blogs');
+    }
+  };
+
   const formatSectionName = (id) => {
+    if (id === 'home') return 'Home';
     if (id === 'ecell') return 'ECELL';
     return id.charAt(0).toUpperCase() + id.slice(1);
   };
 
-  const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials'];
+  // Requested sequence: Home → Initiatives → Events → Gallery → Blog → Team → Testimonials
+  const sections = ['home', 'initiatives', 'team', 'testimonials'];
 
   return (
     <Navbar expand="lg" fixed="top" className={`main-navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -77,34 +90,83 @@ const NavBar = () => {
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2">
           <img src={logo} alt="ECELL Logo" height="36" />
           <span className="fw-bold" style={{ color: 'var(--text-color)' }}>CGEC ECELL</span>
-            <button 
-              className="btn btn-outline-secondary ms-2"
-              onClick={toggleTheme}
-              style={{
-                borderColor: 'var(--primary-color)',
-                color: 'var(--text-color)'
-              }}
-            >
-              {isDark ? '☀️Bright' : '🌙Dark'}
-            </button>
+          <button 
+            className="btn btn-outline-secondary ms-2"
+            onClick={toggleTheme}
+            style={{
+              borderColor: 'var(--primary-color)',
+              color: 'var(--text-color)'
+            }}
+          >
+            {isDark ? '☀️Bright' : '🌙Dark'}
+          </button>
         </Navbar.Brand>
-        
 
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto align-items-center gap-2">
-            {sections.map((id) => (
-              <Nav.Link
-                key={id}
-                onClick={() => handleSectionClick(id)}
-                className={`nav-link-custom ${activeSection === id ? 'active-section' : ''}`}
-                style={{ cursor: 'pointer' }}
-              >
-                {formatSectionName(id)}
-              </Nav.Link>
-            ))}
-            
-           
+            {/* Home */}
+            <Nav.Link
+              onClick={() => handleSectionClick('home')}
+              className={`nav-link-custom ${activeSection === 'home' ? 'active-section' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Home
+            </Nav.Link>
+
+            {/* Initiatives */}
+            <Nav.Link
+              onClick={() => handleSectionClick('initiatives')}
+              className={`nav-link-custom ${activeSection === 'initiatives' ? 'active-section' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Initiatives
+            </Nav.Link>
+
+            {/* Events - All Events page এ navigate করবে */}
+            <Nav.Link
+              onClick={() => handlePageNavigation('events')}
+              className={`nav-link-custom ${location.pathname === '/events' ? 'active-section' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Events
+            </Nav.Link>
+
+            {/* Gallery - Gallery page এ navigate করবে */}
+            <Nav.Link
+              onClick={() => handlePageNavigation('gallery')}
+              className={`nav-link-custom ${location.pathname === '/gallery' ? 'active-section' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Gallery
+            </Nav.Link>
+
+            {/* Blog - All Blogs page এ navigate করবে */}
+            <Nav.Link
+              onClick={() => handlePageNavigation('blog')}
+              className={`nav-link-custom ${location.pathname === '/blogs' ? 'active-section' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Blog
+            </Nav.Link>
+
+            {/* Team */}
+            <Nav.Link
+              onClick={() => handleSectionClick('team')}
+              className={`nav-link-custom ${activeSection === 'team' ? 'active-section' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Team
+            </Nav.Link>
+
+            {/* Testimonials */}
+            <Nav.Link
+              onClick={() => handleSectionClick('testimonials')}
+              className={`nav-link-custom ${activeSection === 'testimonials' ? 'active-section' : ''}`}
+              style={{ cursor: 'pointer' }}
+            >
+              Testimonials
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
