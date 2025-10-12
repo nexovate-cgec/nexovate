@@ -75,15 +75,6 @@ const NavBar = () => {
     }
   };
 
-  const formatSectionName = (id) => {
-    if (id === 'home') return 'Home';
-    if (id === 'ecell') return 'ECELL';
-    return id.charAt(0).toUpperCase() + id.slice(1);
-  };
-
-  // Requested sequence: Home → Initiatives → Events → Gallery → Blog → Team → Testimonials
-  const sections = ['home', 'initiatives', 'team', 'testimonials'];
-
   return (
     <Navbar expand="lg" fixed="top" className={`main-navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <Container>
