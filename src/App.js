@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -19,27 +20,29 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Hero />
-            <About />
-            <Initiatives />
-            <Events />
-            <Gallery />
-            <Blog/>
-            <Team />
-            <Testimonials />
-            <Footer />
-          </>
-        } />
-        <Route path="/events/:eventId" element={<EventDetails />} />
-        <Route path="/blog/:id" element={<BlogDetails />} />
-        <Route path="/join" element={<JoinUs />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <About />
+              <Initiatives />
+              <Events />
+              <Gallery />
+              <Blog/>
+              <Team />
+              <Testimonials />
+              <Footer />
+            </>
+          } />
+          <Route path="/events/:eventId" element={<EventDetails />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/join" element={<JoinUs />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

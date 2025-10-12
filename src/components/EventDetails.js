@@ -12,6 +12,7 @@ import {
   Link45deg,
   Clipboard,
 } from "react-bootstrap-icons";
+import { useTheme } from "../contexts/ThemeContext"; 
 import Eureca from "../assets/images/eurecaa.jpg";
 import Nec from "../assets/images/nec.jpeg";
 import Entrepreneurship from "../assets/images/Entrepreneurship.jpg";
@@ -185,8 +186,8 @@ const eventsData = [
 
 const EventDetails = () => {
   const { eventId } = useParams();
+  const { isDark } = useTheme(); 
   const event = eventsData.find((e) => e.id === parseInt(eventId));
-
   const shareOnYoutube = () => {
     window.open("https://www.youtube.com/upload", "_blank");
   };
@@ -205,83 +206,114 @@ const EventDetails = () => {
     alert("Event link copied to clipboard!");
   };
 
-  if (!event) {
-    return (
-      <Container className="my-5">
-        <div className="text-center" style={{ marginTop: "10rem" }}>
-          <h2>Event not found!</h2>
-          <Link to="/">
-            <Button variant="primary" className="mt-3">
-              Back to Home
-            </Button>
+ if (!event) {
+  return (
+    <Container 
+      className="my-5 py-5"
+      style={{ 
+        backgroundColor: "var(--bg-color)",
+        color: "var(--text-color)"
+      }}
+    >
+      <div className="text-center py-5">
+        <h2 className="fw-bold mb-3" style={{ color: "var(--text-color)" }}>
+          Event not found!
+        </h2>
+        <p className="mb-4" style={{ color: "var(--text-color)" }}>
+          The event you're looking for doesn't exist.
+        </p>
+        <Link to="/">
+          <Button variant={isDark ? "outline-light" : "primary"} className="mt-3">
+            Back to Home
+          </Button>
+        </Link>
+      </div>
+    </Container>
+  );
+}
+
+return (
+  <>
+    <nav 
+      className="navbar"
+      style={{ 
+        backgroundColor: "var(--navbar-bg)",
+        borderColor: "var(--border-color)"
+      }}
+    >
+      <Container>
+        <div className="d-flex justify-content-between w-100 align-items-center">
+          <Link to="/" className="navbar-brand" style={{ color: "var(--text-color)" }}>
+            <ArrowLeft className="me-2" />
+            Back to Home
           </Link>
+
+          <div className="d-flex gap-3">
+            <a
+              href={event.socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--text-color)" }}
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href={event.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--text-color)" }}
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href={event.socialLinks.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--text-color)" }}
+            >
+              <Youtube size={20} />
+            </a>
+          </div>
         </div>
       </Container>
-    );
-  }
+    </nav>
 
-  return (
-    <>
-      <nav className="navbar navbar-light bg-light">
-        <Container>
-          <div className="d-flex justify-content-between w-100 align-items-center">
-            <Link to="/" className="navbar-brand">
+      <Container 
+  className="my-5"
+  style={{ 
+    backgroundColor: "var(--bg-color)",
+    color: "var(--text-color)"
+  }}
+>
+  <Row className="justify-content-center">
+    <Col lg={10}>
+      <article>
+        <div className="d-flex justify-content-between align-items-start mb-4">
+          <Link to="/#events" className="text-decoration-none">
+            <Button 
+              variant={isDark ? "outline-light" : "outline-primary"}
+            >
               <ArrowLeft className="me-2" />
-              Back to Home
-            </Link>
+              Back to Events
+            </Button>
+          </Link>
 
-            <div className="d-flex gap-3">
-              <a
-                href={event.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-dark"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href={event.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-dark"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href={event.socialLinks.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-dark"
-              >
-                <Youtube size={20} />
-              </a>
-            </div>
-          </div>
-        </Container>
-      </nav>
-
-      <Container className="my-5">
-        <Row className="justify-content-center">
-          <Col lg={10}>
-            <article>
-              <div className="d-flex justify-content-between align-items-start mb-4">
-                <Link to="/#events" className="text-decoration-none">
-                  <Button variant="outline-primary">
-                    <ArrowLeft className="me-2" />
-                    Back to Events
-                  </Button>
-                </Link>
-
-                <div className="dropdown">
-                  <Button
-                    variant="outline-secondary"
-                    className="dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                  >
-                    <Share className="me-2" />
-                    Share Event
-                  </Button>
-                  <ul className="dropdown-menu">
+          <div className="dropdown">
+            <Button
+              variant={isDark ? "outline-light" : "outline-secondary"}
+              className="dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              <Share className="me-2" />
+              Share Event
+            </Button>
+            <ul 
+              className="dropdown-menu"
+              style={{ 
+                backgroundColor: "var(--card-bg)",
+                color: "var(--text-color)"
+              }}
+            >
                     <li>
                       <button
                         className="dropdown-item"
@@ -309,178 +341,198 @@ const EventDetails = () => {
                         Copy Event Link
                       </button>
                     </li>
-                  </ul>
-                </div>
-              </div>
+                   </ul>
+          </div>
+        </div>
+
+        <div className="text-center mb-5">
+          <Badge 
+            bg={isDark ? "secondary" : "primary"} 
+            className="mb-3 fs-6"
+          >
+            {event.category}
+          </Badge>
+          <h1 className="fw-bold display-5" style={{ color: "var(--text-color)" }}>
+            {event.title}
+          </h1>
+          <div className="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+            <span style={{ color: "var(--text-color)" }}>
+              <Calendar className="me-2" />
+              {event.date}
+            </span>
+            <span style={{ color: "var(--text-color)" }}>
+              <GeoAlt className="me-2" />
+              {event.venue}
+            </span>
+            <span style={{ color: "var(--text-color)" }}>⏰ {event.time}</span>
+          </div>
+
+          <div className="mt-3">
+            {event.hashtags.map((tag, index) => (
+              <Badge
+                key={index}
+                bg={isDark ? "dark" : "outline-secondary"}
+                text={isDark ? "light" : "dark"}
+                className="me-2 border"
+                style={{ borderColor: "var(--border-color)" }}
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </div>
 
               <div className="text-center mb-5">
-                <Badge bg="primary" className="mb-3 fs-6">
-                  {event.category}
-                </Badge>
-                <h1 className="fw-bold display-5">{event.title}</h1>
-                <div className="text-muted d-flex justify-content-center align-items-center gap-4 flex-wrap">
-                  <span>
-                    <Calendar className="me-2" />
-                    {event.date}
-                  </span>
-                  <span>
-                    <GeoAlt className="me-2" />
-                    {event.venue}
-                  </span>
-                  <span>⏰ {event.time}</span>
-                </div>
+  <div
+    className="event-image-container"
+    style={{
+      maxWidth: "800px",
+      margin: "0 auto",
+      backgroundColor: "var(--card-bg)",
+      borderRadius: "1rem",
+      padding: "1rem",
+      boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+    }}
+  >
+    <img
+      src={event.image}
+      alt={event.title}
+      className="img-fluid rounded-2"
+      style={{
+        maxHeight: "400px",
+        width: "auto",
+        maxWidth: "100%",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+</div>
 
-                <div className="mt-3">
-                  {event.hashtags.map((tag, index) => (
-                    <Badge
-                      key={index}
-                      bg="outline-secondary"
-                      className="me-2 text-dark border"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+<Row className="mb-5">
+  <Col lg={8}>
+    <div
+      className="event-content"
+      dangerouslySetInnerHTML={{ __html: event.fullDescription }}
+      style={{ 
+        lineHeight: "1.8", 
+        fontSize: "1.1rem",
+        color: "var(--text-color)"
+      }}
+    />
+  </Col>
 
-              <div className="text-center mb-5">
-                <div
-                  className="event-image-container"
-                  style={{
-                    maxWidth: "800px",
-                    margin: "0 auto",
-                    backgroundColor: "#f8f9fa",
-                    borderRadius: "1rem",
-                    padding: "1rem",
-                    boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
-                  }}
-                >
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="img-fluid rounded-2"
-                    style={{
-                      maxHeight: "400px",
-                      width: "auto",
-                      maxWidth: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </div>
-              </div>
+  <Col lg={4}>
+    <Card
+      className="shadow-sm sticky-top"
+      style={{ 
+        top: "20px",
+        backgroundColor: "var(--card-bg)",
+        color: "var(--text-color)"
+      }}
+    >
+      <Card.Body>
+        <h5 className="border-bottom pb-2" style={{ color: "var(--text-color)" }}>
+          Event Details
+        </h5>
+        <div className="mb-3">
+          <strong style={{ color: "var(--text-color)" }}>📅 Date:</strong>
+          <br />
+          <span style={{ color: "var(--text-color)" }}>{event.date}</span>
+        </div>
+        <div className="mb-3">
+          <strong style={{ color: "var(--text-color)" }}>⏰ Time:</strong>
+          <br />
+          <span style={{ color: "var(--text-color)" }}>{event.time}</span>
+        </div>
+        <div className="mb-3">
+          <strong style={{ color: "var(--text-color)" }}>📍 Venue:</strong>
+          <br />
+          <span style={{ color: "var(--text-color)" }}>{event.venue}</span>
+        </div>
 
-              <Row className="mb-5">
-                <Col lg={8}>
-                  <div
-                    className="event-content"
-                    dangerouslySetInnerHTML={{ __html: event.fullDescription }}
-                    style={{ lineHeight: "1.8", fontSize: "1.1rem" }}
-                  />
-                </Col>
+        <Button
+          variant={event.color}
+          href={event.src}
+          target="_blank"
+          className="w-100 mb-3"
+          size="lg"
+        >
+          {event.status}
+        </Button>
 
-                <Col lg={4}>
-                  <Card
-                    className="shadow-sm sticky-top"
-                    style={{ top: "20px" }}
-                  >
-                    <Card.Body>
-                      <h5 className="border-bottom pb-2">Event Details</h5>
-                      <div className="mb-3">
-                        <strong>📅 Date:</strong>
-                        <br />
-                        {event.date}
-                      </div>
-                      <div className="mb-3">
-                        <strong>⏰ Time:</strong>
-                        <br />
-                        {event.time}
-                      </div>
-                      <div className="mb-3">
-                        <strong>📍 Venue:</strong>
-                        <br />
-                        {event.venue}
-                      </div>
+        <div className="text-center">
+          <p className="small mb-2" style={{ color: "var(--text-color)" }}>
+            Share this event:
+          </p>
+          <div className="d-flex justify-content-center gap-3">
+            <Button
+              variant={isDark ? "outline-light" : "outline-danger"}
+              size="sm"
+              onClick={shareOnYoutube}
+            >
+              <Youtube />
+            </Button>
+            <Button
+              variant={isDark ? "outline-light" : "outline-primary"}
+              size="sm"
+              onClick={shareOnLinkedIn}
+            >
+              <Linkedin />
+            </Button>
+            <Button
+              variant={isDark ? "outline-light" : "outline-dark"}
+              size="sm"
+              onClick={copyEventLink}
+            >
+              <Link45deg />
+            </Button>
+          </div>
+        </div>
+      </Card.Body>
+    </Card>
+  </Col>
+</Row>
 
-                      <Button
-                        variant={event.color}
-                        href={event.src}
-                        target="_blank"
-                        className="w-100 mb-3"
-                        size="lg"
-                      >
-                        {event.status}
-                      </Button>
-
-                      <div className="text-center">
-                        <p className="text-muted small mb-2">
-                          Share this event:
-                        </p>
-                        <div className="d-flex justify-content-center gap-3">
-                          <Button
-                            variant="outline-danger"
-                            size="sm"
-                            onClick={shareOnYoutube}
-                          >
-                            <Youtube />
-                          </Button>
-                          <Button
-                            variant="outline-primary"
-                            size="sm"
-                            onClick={shareOnLinkedIn}
-                          >
-                            <Linkedin />
-                          </Button>
-                          <Button
-                            variant="outline-dark"
-                            size="sm"
-                            onClick={copyEventLink}
-                          >
-                            <Link45deg />
-                          </Button>
-                        </div>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </Row>
-
-              <Card className="bg-light border-0">
-                <Card.Body className="text-center">
-                  <h5>Follow us on social media</h5>
-                  <p className="text-muted">
-                    Stay updated with our latest events and announcements
-                  </p>
-                  <div className="d-flex justify-content-center gap-4">
-                    <a
-                      href={event.socialLinks.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline-danger"
-                    >
-                      <Instagram className="me-2" />
-                      Instagram
-                    </a>
-                    <a
-                      href={event.socialLinks.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline-primary"
-                    >
-                      <Linkedin className="me-2" />
-                      LinkedIn
-                    </a>
-                    <a
-                      href={event.socialLinks.youtube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline-danger"
-                    >
-                      <Youtube className="me-2" />
-                      Youtube
-                    </a>
-                  </div>
-                </Card.Body>
-              </Card>
+             <Card 
+  className="border-0"
+  style={{ backgroundColor: "var(--section-bg)" }}
+>
+  <Card.Body className="text-center">
+    <h5 style={{ color: "var(--text-color)" }}>Follow us on social media</h5>
+    <p style={{ color: "var(--text-color)" }}>
+      Stay updated with our latest events and announcements
+    </p>
+    <div className="d-flex justify-content-center gap-4">
+      <a
+        href={event.socialLinks.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={isDark ? "btn btn-outline-light" : "btn btn-outline-danger"}
+      >
+        <Instagram className="me-2" />
+        Instagram
+      </a>
+      <a
+        href={event.socialLinks.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={isDark ? "btn btn-outline-light" : "btn btn-outline-primary"}
+      >
+        <Linkedin className="me-2" />
+        LinkedIn
+      </a>
+      <a
+        href={event.socialLinks.youtube}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={isDark ? "btn btn-outline-light" : "btn btn-outline-danger"}
+      >
+        <Youtube className="me-2" />
+        Youtube
+      </a>
+    </div>
+  </Card.Body>
+</Card>
             </article>
           </Col>
         </Row>

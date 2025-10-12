@@ -3,11 +3,6 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import './Initiatives.css';
 
 const Initiatives = () => {
- 
-
-
-
-  
 
   const digitalInitiatives = [
     {
@@ -44,38 +39,80 @@ const Initiatives = () => {
 
   return (
     <>
-      <section id="initiatives" className=" bg-light">
+      <section 
+        id="initiatives" 
+        className="" 
+        style={{ 
+          backgroundColor: "var(--section-bg)",
+          color: "var(--text-color)"
+        }}
+      >
         <Container>
-          
-          {/* Digital Initiatives Section */}
           <Row className="mt-5 pt-5">
             <Col className="text-center">
-              <h3 className="display-6 fw-bold mb-3">Our <span className="text-warning">Initiatives</span></h3>
-              <p className="lead text-muted">Stay connected with our online platforms for continuous learning and inspiration</p>
+              <h3 className="display-6 fw-bold mb-3" style={{ color: "var(--text-color)" }}>
+                Our <span style={{ color: "var(--primary-color)" }}>Initiatives</span>
+              </h3>
+              <p className="lead" style={{ color: "var(--secondary-color)" }}>
+                Stay connected with our online platforms for continuous learning and inspiration
+              </p>
             </Col>
           </Row>
 
           <Row className="g-4 mt-2">
             {digitalInitiatives.map((initiative, index) => (
               <Col lg={6} md={12} key={index}>
-                <Card className="h-100 shadow border-0 digital-initiative-card">
+                <Card 
+                  className="h-100 shadow border-0 digital-initiative-card"
+                  style={{ 
+                    backgroundColor: "var(--card-bg)",
+                    color: "var(--text-color)"
+                  }}
+                >
                   <Card.Body className="p-4">
                     <div className="d-flex align-items-start mb-3">
                       <span className="display-6 me-3">{initiative.icon}</span>
                       <div>
-                        <Card.Title className="h4 fw-bold mb-1">{initiative.title}</Card.Title>
-                        <div className="badge bg-light text-dark mb-2">{initiative.platform}</div>
-                        <Card.Text className="text-muted">{initiative.description}</Card.Text>
+                        <Card.Title 
+                          className="h4 fw-bold mb-1" 
+                          style={{ color: "var(--text-color)" }}
+                        >
+                          {initiative.title}
+                        </Card.Title>
+                        <div 
+                          className="badge mb-2"
+                          style={{ 
+                            backgroundColor: "var(--section-bg)",
+                            color: "var(--text-color)"
+                          }}
+                        >
+                          {initiative.platform}
+                        </div>
+                        <Card.Text style={{ color: "var(--secondary-color)" }}>
+                          {initiative.description}
+                        </Card.Text>
                       </div>
                     </div>
 
-                    <h6 className="fw-bold mt-4 mb-3">What You'll Find:</h6>
+                    <h6 
+                      className="fw-bold mt-4 mb-3" 
+                      style={{ color: "var(--text-color)" }}
+                    >
+                      What You'll Find:
+                    </h6>
                     <Row>
                       {initiative.content.map((item, idx) => (
                         <Col sm={6} key={idx}>
                           <div className="d-flex align-items-center mb-2">
-                            <span className="text-warning me-2">•</span>
-                            <small>{item}</small>
+                            <span 
+                              className="me-2"
+                              style={{ color: "var(--primary-color)" }}
+                            >
+                              •
+                            </span>
+                            <small style={{ color: "var(--text-color)" }}>
+                              {item}
+                            </small>
                           </div>
                         </Col>
                       ))}
@@ -99,8 +136,6 @@ const Initiatives = () => {
           </Row>
         </Container>
       </section>
-
-      
     </>
   );
 };

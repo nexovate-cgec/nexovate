@@ -33,3 +33,21 @@
     
   }
   
+
+#about {
+  background-color: var(--section-bg) !important;
+  color: var(--text-color);
+}
+
+#about h2,
+#about h5,
+#about .lead,
+#about p {
+  color: var(--text-color) !important;
+}
+
+.social-icon {
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color);
+}

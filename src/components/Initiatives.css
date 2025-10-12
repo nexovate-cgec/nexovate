@@ -1,68 +1,24 @@
 
-.initiative-card {
+.digital-initiative-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  border-radius: 12px;
+  border-radius: 15px;
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
-.initiative-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+.digital-initiative-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
 }
 
-.initiative-img-container {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-}
-
-.initiative-image {
-   height: 100%;
-          width: 100%;
-          object-fit: cover;
-          transition: transform 0.4s ease;
-}
-
-.initiative-card:hover .initiative-image {
-  transform: scale(1.05);
-}
-
-.initiative-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-  opacity: 0.7;
-}
-
-.initiative-icon {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 193, 7, 0.1);
-  border-radius: 50%;
-  color: #ffc107;
-}
-
-
-
-
-
-
-
-
-
-
-/* Initiatives.css */
-
+/* Initiative card styles */
 .initiative-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 15px;
   overflow: hidden;
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
 .initiative-card:hover {
@@ -105,7 +61,7 @@
 .initiative-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -113,43 +69,21 @@
   color: white;
 }
 
-/* Digital Initiatives Cards */
-.digital-initiative-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 15px;
-  border-left: 4px solid #ffc107;
-}
-
-.digital-initiative-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Modal Enhancements */
 .modal-content {
   border-radius: 15px;
   border: none;
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
 .modal-header {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: linear-gradient(135deg, var(--section-bg), var(--card-bg));
   border-radius: 15px 15px 0 0 !important;
+  color: var(--text-color);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .initiative-img-container {
-    height: 180px;
-  }
-  
-  .digital-initiative-card .row > .col-sm-6 {
-    margin-bottom: 0.5rem;
-  }
-}
-
-/* Button Enhancements */
 .btn-warning {
-  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   border: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -163,8 +97,34 @@
 .btn-outline-warning {
   font-weight: 600;
   transition: all 0.3s ease;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .btn-outline-warning:hover {
   transform: translateY(-2px);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .initiative-img-container {
+    height: 180px;
+  }
+  
+  .digital-initiative-card .row > .col-sm-6 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+[data-theme="dark"] .digital-initiative-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+[data-theme="dark"] .initiative-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .digital-initiative-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
 }

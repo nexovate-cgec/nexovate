@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+
 import { Container, Row, Col, Button, Card, Badge } from "react-bootstrap";
+
 import { 
   ArrowLeft, 
   Calendar, 
@@ -11,6 +13,7 @@ import {
   Twitter, 
   Linkedin,
 } from "react-bootstrap-icons";
+import { useTheme } from "../contexts/ThemeContext"; 
 
 import logo from "../assets/images/logo.png";
 import Startup1 from "../assets/Blogs/2.jpg";
@@ -28,6 +31,14 @@ import blog44 from "../assets/Blogs/blog44.png";
 import blog51 from "../assets/Blogs/blog51.png";
 import blog52 from "../assets/Blogs/blog52.png";
 import blog53 from "../assets/Blogs/blog53.png";
+// import blog61 from "../assets/Blogs/blog61.png";
+// import blog62 from "../assets/Blogs/blog62.png";
+// import blog63 from "../assets/Blogs/blog63.png";
+// import blog64 from "../assets/Blogs/blog64.png";
+// import blog65 from "../assets/Blogs/blog65.png";
+// import blog66 from "../assets/Blogs/blog66.png";
+// import blog67 from "../assets/Blogs/blog67.png";
+// import blog68 from "../assets/Blogs/blog68.png";
 
 
 const blogData = [
@@ -484,12 +495,136 @@ const blogData = [
   category: "Micro-Entrepreneurship",
   tags: ["Micro-Entrepreneurship", "Small Business", "Local Economy", "Digital Tools", "Community"],
   additionalImages: [blog51, blog52, blog53]
+},
+{
+  id: 5,
+  title: "Smart Ways to Build Brand Trust as a New Company",
+  img: Startup1, 
+  desc: "In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here's how to establish credibility from day one.",
+  fullContent: `
+    <p class="lead">In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here's how to establish credibility from day one.</p>
+
+    <!-- IMAGE 1: Transparency Section -->
+    <div class="text-center my-5">
+      <img src="${Startup2}" alt="Transparent business practices and honest communication" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Honest communication builds the foundation of customer trust</small></p>
+    </div>
+
+    <h3>1. Be Transparent from the Start</h3>
+    <p>Honesty is the quickest path to trust.</p>
+    
+    <div class="feature-point">
+      <h5>Transparency Practices</h5>
+      <p>Share clear pricing with no hidden fees.</p>
+      <p>Communicate openly about timelines, delays, or product limitations.</p>
+      <p>Admit mistakes promptly and show how you're fixing them.</p>
+    </div>
+
+    <p>Transparency signals that you value customers more than short-term gain.</p>
+
+    <h3>2. Deliver Consistently</h3>
+    <p>Promises mean little without follow-through.</p>
+    
+    <div class="feature-point">
+      <h5>Consistency Standards</h5>
+      <p>Maintain product quality even as you scale.</p>
+      <p>Provide timely responses to customer queries.</p>
+      <p>Ensure your website, packaging, and service experience all reflect the same standards.</p>
+    </div>
+
+    <p>Consistency tells customers they can rely on you every time.</p>
+
+    <!-- IMAGE 2: Social Proof Section -->
+    <div class="text-center my-5">
+      <img src="${Startup3}" alt="Customer testimonials and reviews building credibility" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Authentic customer endorsements carry significant weight</small></p>
+    </div>
+
+    <h3>3. Showcase Social Proof</h3>
+    <p>People trust people more than marketing copy.</p>
+    
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>Collect Testimonials</h5>
+        <p>Collect testimonials and reviews from your earliest users.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>Highlight Media Mentions</h5>
+        <p>Highlight media mentions or partnerships.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>Use Case Studies</h5>
+        <p>Use case studies or before-and-after stories to demonstrate results.</p>
+      </div>
+    </div>
+
+    <p>Even a handful of authentic endorsements carries weight.</p>
+
+    <h3>4. Build a Human Brand Voice</h3>
+    <p>Customers connect with people, not faceless entities.</p>
+    
+    <div class="tip-section">
+      <h5>Human Connection Strategies</h5>
+      <p>Use approachable, conversational language in emails and on social media.</p>
+      <p>Share behind-the-scenes content: your team, your process, your mission.</p>
+      <p>Engage in two-way dialogue—reply to comments and messages promptly.</p>
+    </div>
+
+    <p>A relatable personality makes your brand memorable and trustworthy.</p>
+
+    <!-- IMAGE 3: Customer Support Section -->
+    <div class="text-center my-5">
+      <img src="${Startup4}" alt="Excellent customer support and multiple support channels" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Responsive customer service turns buyers into loyal advocates</small></p>
+    </div>
+
+    <h3>5. Prioritise Customer Support</h3>
+    <p>Excellent service can turn a first-time buyer into a loyal advocate.</p>
+    
+    <div class="feature-point">
+      <h5>Support Excellence</h5>
+      <p>Offer multiple support channels (chat, email, phone) and respond quickly.</p>
+      <p>Empower your team to solve problems without excessive bureaucracy.</p>
+      <p>Follow up after issues are resolved to ensure satisfaction.</p>
+    </div>
+
+    <p>A single great support experience often leads to repeat business.</p>
+
+    <h3>6. Secure and Protect Data</h3>
+    <p>In an age of cyber risks, privacy matters.</p>
+    
+    <div class="tip-section">
+      <h5>Data Protection Measures</h5>
+      <p>Use HTTPS, secure payment gateways, and clear data policies.</p>
+      <p>Comply with local data-protection regulations (e.g., GDPR or India's Digital Personal Data Protection Act).</p>
+      <p>Communicate your security practices so customers know their information is safe.</p>
+    </div>
+
+    <!-- IMAGE 4: Brand Trust Conclusion -->
+    <div class="text-center my-5">
+      <img src="${Startup1}" alt="Long-term brand trust and customer relationships" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Building lasting confidence through genuine relationships</small></p>
+    </div>
+
+    <div class="conclusion">
+      <h4>Bottom Line</h4>
+      <p><strong>Brand trust isn't built overnight—it's earned through transparency, reliability, and genuine relationships.</strong> By being open, consistent, and customer-centric from day one, your new company can inspire confidence that lasts for years.</p>
+    </div>
+  `,
+  author: "Brand Strategy Team",
+  date: "2025-10-15",
+  readTime: "6 min read",
+  category: "Brand Building",
+  tags: ["Brand Trust", "Customer Confidence", "Transparency", "Social Proof", "Customer Support", "Data Security"],
+  additionalImages: [Startup1, Startup2, Startup3, Startup4]
 }
 ];
+
 
 const BlogDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { isDark } = useTheme(); 
   const blog = blogData.find(b => b.id === parseInt(id));
 
   const shareBlog = (platform) => {
@@ -523,338 +658,415 @@ const BlogDetails = () => {
     );
   }
 
-  return (
-    <>
-      <nav className="navbar navbar-light bg-white border-bottom py-3">
-        <Container>
-          <div className="d-flex justify-content-between w-100 align-items-center">
-            <Link to="/" className="navbar-brand d-flex align-items-center">
-              <img src={logo} alt="NEXOVATE Logo" height="40" className="me-2" />
-              <span className="fw-bold text-dark">NEXOVATE</span>
+
+      return (
+  <>
+    <nav 
+      className="navbar border-bottom py-3"
+      style={{ 
+        backgroundColor: "var(--navbar-bg)",
+        borderColor: "var(--border-color)"
+      }}
+    >
+      <Container>
+        <div className="d-flex justify-content-between w-100 align-items-center">
+          <Link to="/" className="navbar-brand d-flex align-items-center">
+            <img src={logo} alt="NEXOVATE Logo" height="40" className="me-2" />
+            <span 
+              className="fw-bold" 
+              style={{ color: "var(--text-color)" }}
+            >
+              NEXOVATE
+            </span>
+          </Link>
+          
+          <Link to="/#blog" className="text-decoration-none">
+            <Button 
+              variant={isDark ? "outline-light" : "outline-primary"} 
+              className="d-flex align-items-center gap-2"
+            >
+              <ArrowLeft size={18} />
+              Back to Blogs
+            </Button>
+          </Link>
+        </div>
+      </Container>
+    </nav>
+
+<Container 
+  className="my-5"
+  style={{ 
+    backgroundColor: "var(--bg-color)",
+    color: "var(--text-color)",
+    minHeight: "100vh"
+  }}
+>
+  <Row className="justify-content-center">
+    <Col lg={9}>
+      <nav aria-label="breadcrumb" className="mb-4">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link to="/" className="text-decoration-none" style={{ color: "var(--text-color)" }}>
+              Home
             </Link>
-            
-            <Link to="/#blog" className="text-decoration-none">
-              <Button variant="outline-primary" className="d-flex align-items-center gap-2">
-                <ArrowLeft size={18} />
-                Back to Blogs
-              </Button>
+          </li>
+          <li className="breadcrumb-item">
+            <Link to="/#blog" className="text-decoration-none" style={{ color: "var(--text-color)" }}>
+              Blogs
             </Link>
-          </div>
-        </Container>
+          </li>
+          <li 
+            className="breadcrumb-item active" 
+            style={{ color: "var(--text-color)" }}
+          >
+            {blog.title.substring(0, 30)}...
+          </li>
+        </ol>
       </nav>
 
-      <Container className="my-5">
-        <Row className="justify-content-center">
-          <Col lg={9}>
-            <nav aria-label="breadcrumb" className="mb-4">
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <Link to="/" className="text-decoration-none">Home</Link>
-                </li>
-                <li className="breadcrumb-item">
-                  <Link to="/#blog" className="text-decoration-none">Blogs</Link>
-                </li>
-                <li className="breadcrumb-item active">{blog.title.substring(0, 30)}...</li>
-              </ol>
-            </nav>
+      <div className="text-center mb-5">
+        <Badge 
+          bg={isDark ? "secondary" : "light"} 
+          text={isDark ? "light" : "dark"} 
+          className="mb-3 px-3 py-2"
+        >
+          {blog.category}
+        </Badge>
+        <h1 className="fw-bold display-6 mb-3" style={{ color: "var(--text-color)" }}>
+          {blog.title}
+        </h1>
+        
+        <div className="d-flex justify-content-center align-items-center gap-4 mb-3 flex-wrap">
+          <div className="d-flex align-items-center gap-2" style={{ color: "var(--text-color)" }}>
+            <Person size={16} />
+            <span>By {blog.author}</span>
+          </div>
+          <div className="d-flex align-items-center gap-2" style={{ color: "var(--text-color)" }}>
+            <Calendar size={16} />
+            <span>{new Date(blog.date).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</span>
+          </div>
+          <div className="d-flex align-items-center gap-2" style={{ color: "var(--text-color)" }}>
+            <Clock size={16} />
+            <span>{blog.readTime}</span>
+          </div>
+        </div>
+      </div>
 
-            <div className="text-center mb-5">
-              <Badge bg="light" text="dark" className="mb-3 px-3 py-2">
-                {blog.category}
-              </Badge>
-              <h1 className="fw-bold display-6 mb-3">{blog.title}</h1>
-              
-              <div className="d-flex justify-content-center align-items-center gap-4 text-muted mb-3 flex-wrap">
-                <div className="d-flex align-items-center gap-2">
-                  <Person size={16} />
-                  <span>By {blog.author}</span>
-                </div>
-                <div className="d-flex align-items-center gap-2">
-                  <Calendar size={16} />
-                  <span>{new Date(blog.date).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}</span>
-                </div>
-                <div className="d-flex align-items-center gap-2">
-                  <Clock size={16} />
-                  <span>{blog.readTime}</span>
-                </div>
-              </div>
-            </div>
+      {/* Share section update */}
+      <div 
+        className="d-flex justify-content-between align-items-center mb-5 p-3 rounded-3"
+        style={{ 
+          backgroundColor: "var(--card-bg)",
+          border: "1px solid var(--border-color)"
+        }}
+      >
+        <div className="d-flex align-items-center gap-2">
+          <Share size={18} style={{ color: "var(--text-color)" }} />
+          <span className="fw-semibold" style={{ color: "var(--text-color)" }}>
+            Share this article:
+          </span>
+        </div>
+        <div className="d-flex gap-2">
+          <Button 
+            variant={isDark ? "outline-light" : "outline-primary"} 
+            size="sm"
+            onClick={() => shareBlog('facebook')}
+            className="d-flex align-items-center gap-1"
+          >
+            <Facebook size={16} />
+            Facebook
+          </Button>
+          <Button 
+            variant={isDark ? "outline-light" : "outline-info"} 
+            size="sm"
+            onClick={() => shareBlog('twitter')}
+            className="d-flex align-items-center gap-1"
+          >
+            <Twitter size={16} />
+            Twitter
+          </Button>
+          <Button 
+            variant={isDark ? "outline-light" : "outline-primary"} 
+            size="sm"
+            onClick={() => shareBlog('linkedin')}
+            className="d-flex align-items-center gap-1"
+          >
+            <Linkedin size={16} />
+            LinkedIn
+          </Button>
+        </div>
+      </div>
 
-            <div className="text-center mb-5">
-              <img
-                src={blog.img}
-                alt={blog.title}
-                className="rounded-4 shadow-sm img-fluid"
-                style={{ 
-                  maxHeight: '500px',
-                  width: 'auto',
-                  maxWidth: '100%',
-                  objectFit: 'contain'
-                }}
-              />
-            </div>
+          <div 
+  className="blog-content mb-5"
+  dangerouslySetInnerHTML={{ __html: blog.fullContent }}
+  style={{ 
+    lineHeight: '1.8', 
+    fontSize: '1.15rem',
+    fontFamily: 'Georgia, serif',
+    color: "var(--text-color)"
+  }}
+/>
 
-            <div className="d-flex justify-content-between align-items-center mb-5 p-3 bg-light rounded-3">
-              <div className="d-flex align-items-center gap-2">
-                <Share size={18} />
-                <span className="fw-semibold">Share this article:</span>
-              </div>
-              <div className="d-flex gap-2">
-                <Button 
-                  variant="outline-primary" 
-                  size="sm"
-                  onClick={() => shareBlog('facebook')}
-                  className="d-flex align-items-center gap-1"
-                >
-                  <Facebook size={16} />
-                  Facebook
-                </Button>
-                <Button 
-                  variant="outline-info" 
-                  size="sm"
-                  onClick={() => shareBlog('twitter')}
-                  className="d-flex align-items-center gap-1"
-                >
-                  <Twitter size={16} />
-                  Twitter
-                </Button>
-                <Button 
-                  variant="outline-primary" 
-                  size="sm"
-                  onClick={() => shareBlog('linkedin')}
-                  className="d-flex align-items-center gap-1"
-                >
-                  <Linkedin size={16} />
-                  LinkedIn
-                </Button>
-              </div>
-            </div>
+{/* Tags section update */}
+<div className="mb-5">
+  <h5 className="fw-semibold mb-3" style={{ color: "var(--text-color)" }}>Tags:</h5>
+  <div className="d-flex flex-wrap gap-2">
+    {blog.tags.map((tag, index) => (
+      <Badge 
+        key={index} 
+        bg={isDark ? "dark" : "outline-secondary"} 
+        text={isDark ? "light" : "dark"} 
+        className="px-3 py-2 border"
+        style={{ borderColor: "var(--border-color)" }}
+      >
+        #{tag}
+      </Badge>
+    ))}
+  </div>
+</div>
 
-            <div 
-              className="blog-content mb-5"
-              dangerouslySetInnerHTML={{ __html: blog.fullContent }}
-              style={{ 
-                lineHeight: '1.8', 
-                fontSize: '1.15rem',
-                fontFamily: 'Georgia, serif'
-              }}
-            />
+{/* Author card update */}
+<Card 
+  className="border-0 rounded-4"
+  style={{ backgroundColor: "var(--card-bg)" }}
+>
+  <Card.Body className="p-4">
+    <Row className="align-items-center">
+      <Col xs="auto">
+        <div 
+          className="rounded-circle d-flex align-items-center justify-content-center text-white"
+          style={{ 
+            width: '60px', 
+            height: '60px',
+            backgroundColor: "var(--primary-color)"
+          }}
+        >
+          <Person size={24} />
+        </div>
+      </Col>
+      <Col>
+        <h5 className="fw-bold mb-1" style={{ color: "var(--text-color)" }}>
+          {blog.author}
+        </h5>
+        <p className="mb-0" style={{ color: "var(--secondary-color)" }}>
+          Startup Legal Expert at CGEC ECELL
+        </p>
+        <small style={{ color: "var(--secondary-color)" }}>
+          Specializing in business validation and legal foundations for startups
+        </small>
+      </Col>
+    </Row>
+  </Card.Body>
+</Card>
 
-            <div className="mb-5">
-              <h5 className="fw-semibold mb-3">Tags:</h5>
-              <div className="d-flex flex-wrap gap-2">
-                {blog.tags.map((tag, index) => (
-                  <Badge key={index} bg="outline-secondary" text="dark" className="px-3 py-2 border">
-                    #{tag}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            <Card className="border-0 bg-light rounded-4">
-              <Card.Body className="p-4">
-                <Row className="align-items-center">
-                  <Col xs="auto">
-                    <div 
-                      className="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white"
-                      style={{ width: '60px', height: '60px' }}
-                    >
-                      <Person size={24} />
-                    </div>
-                  </Col>
-                  <Col>
-                    <h5 className="fw-bold mb-1">{blog.author}</h5>
-                    <p className="text-muted mb-0">Startup Legal Expert at CGEC ECELL</p>
-                    <small className="text-muted">Specializing in business validation and legal foundations for startups</small>
-                  </Col>
-                </Row>
-              </Card.Body>
-            </Card>
-
-            <div className="d-flex justify-content-between mt-5 pt-4 border-top">
-              <Button 
-                variant="outline-secondary" 
-                onClick={() => navigate(-1)}
-                className="d-flex align-items-center gap-2"
-              >
-                <ArrowLeft size={16} />
-                Previous
-              </Button>
-              
-              <Link to="/#blog">
-                <Button variant="primary">
-                  Back to All Blogs
-                </Button>
-              </Link>
-            </div>
+<div 
+  className="d-flex justify-content-between mt-5 pt-4"
+  style={{ borderTop: "1px solid var(--border-color)" }}
+>
+  <Button 
+    variant={isDark ? "outline-light" : "outline-secondary"} 
+    onClick={() => navigate(-1)}
+    className="d-flex align-items-center gap-2"
+  >
+    <ArrowLeft size={16} />
+    Previous
+  </Button>
+  
+  <Link to="/#blog">
+    <Button variant={isDark ? "outline-light" : "primary"}>
+      Back to All Blogs
+    </Button>
+  </Link>
+</div>
           </Col>
         </Row>
       </Container>
 
-      <footer className="bg-dark text-light py-4 mt-5">
-        <Container>
-          <Row>
-            <Col md={6}>
-              <div className="d-flex align-items-center mb-3">
-                <img src={logo} alt="NEXOVATE Logo" height="30" className="me-2" />
-                <span className="fw-bold">NEXOVATE - CGEC ECELL</span>
-              </div>
-              <p className="text-light mb-0">
-                Empowering entrepreneurs and fostering innovation in the community.
-              </p>
-            </Col>
-            <Col md={6} className="text-md-end">
-              <p className="text-light mb-0">
-                &copy; 2024 NEXOVATE. All rights reserved.
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </footer>
+     <footer 
+  className="py-4 mt-5"
+  style={{ 
+    backgroundColor: "var(--footer-bg)",
+    color: "var(--footer-text)"
+  }}
+>
+  <Container>
+    <Row>
+      <Col md={6}>
+        <div className="d-flex align-items-center mb-3">
+          <img src={logo} alt="NEXOVATE Logo" height="30" className="me-2" />
+          <span className="fw-bold">NEXOVATE - CGEC ECELL</span>
+        </div>
+        <p className="mb-0">
+          Empowering entrepreneurs and fostering innovation in the community.
+        </p>
+      </Col>
+      <Col md={6} className="text-md-end">
+        <p className="mb-0">
+          &copy; 2024 NEXOVATE. All rights reserved.
+        </p>
+      </Col>
+    </Row>
+  </Container>
+</footer>
 
-      <style>
-        {`
-          .blog-content h3 {
-            color: #2c3e50;
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-            border-left: 4px solid #007bff;
-            padding-left: 1rem;
-          }
-          
-          .blog-content h4 {
-            color: #34495e;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-          }
-          
-          .blog-content h5 {
-            color: #2c3e50;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-          }
-          
-          .blog-content ul, .blog-content ol {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-          }
-          
-          .blog-content li {
-            margin-bottom: 0.5rem;
-          }
-          
-          .feature-point {
-            background: #e8f4fd;
-            padding: 1.2rem;
-            border-radius: 0.5rem;
-            margin: 1rem 0;
-            border-left: 4px solid #17a2b8;
-          }
-          
-          .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-          }
-          
-          .benefit-item {
-            background: #f0f8f0;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid #28a745;
-          }
-          
-          .tip-section {
-            background: #f0f0f0;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin: 1rem 0;
-            border-left: 4px solid #6c757d;
-          }
-          
-          .compliance-tips {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-          }
-          
-          .compliance-item {
-            background: #fff3cd;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid #ffc107;
-          }
-          
-          .conclusion {
-            background: #e8f5e8;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-            border: 1px solid #28a745;
-          }
-          
-          .key-points {
-            background: #e8f4fd;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-            border-left: 4px solid #007bff;
-          }
-          
-          .highlight-box {
-            background: #fff3cd;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid #ffc107;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 2rem 0;
-          }
-          
-          .lead {
-            font-size: 1.25rem;
-            font-weight: 300;
-            line-height: 1.7;
-            color: #495057;
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid #007bff;
-          }
-          
-          .blog-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 1.5rem 0;
-          }
-          
-          .text-center.my-5 {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-          }
-          
-          .blog-content strong {
-            color: #2c3e50;
-            font-weight: 600;
-          }
-        `}
-      </style>
+   <style>
+  {`
+    .blog-content h3 {
+      color: var(--text-color);
+      margin-top: 2.5rem;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 1rem;
+    }
+    
+    .blog-content h4 {
+      color: var(--text-color);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .blog-content h5 {
+      color: var(--text-color);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .blog-content ul, .blog-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      color: var(--text-color);
+    }
+    
+    .blog-content li {
+      margin-bottom: 0.5rem;
+      color: var(--text-color);
+    }
+    
+    .feature-point {
+      background: var(--card-bg);
+      padding: 1.2rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      border-left: 4px solid var(--primary-color);
+      color: var(--text-color);
+    }
+    
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .benefit-item {
+      background: var(--section-bg);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--primary-color);
+      color: var(--text-color);
+    }
+    
+    .tip-section {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      border-left: 4px solid var(--secondary-color);
+      color: var(--text-color);
+    }
+    
+    .compliance-tips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .compliance-item {
+      background: var(--section-bg);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--primary-color);
+      color: var(--text-color);
+    }
+    
+    .conclusion {
+      background: var(--section-bg);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      border: 1px solid var(--primary-color);
+      color: var(--text-color);
+    }
+    
+    .key-points {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--primary-color);
+      color: var(--text-color);
+    }
+    
+    .highlight-box {
+      background: var(--section-bg);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--primary-color);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 2rem 0;
+      color: var(--text-color);
+    }
+    
+    .lead {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-color);
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--primary-color);
+    }
+    
+    .blog-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 1.5rem 0;
+    }
+    
+    .text-center.my-5 {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+    }
+    
+    .blog-content strong {
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    /* Breadcrumb customization */
+    .breadcrumb-item.active {
+      color: var(--text-color) !important;
+    }
+    
+    .breadcrumb-item a {
+      color: var(--primary-color) !important;
+    }
+  `}
+</style>
     </>
   );
 };
 
 export default BlogDetails;
-
-
-
-            

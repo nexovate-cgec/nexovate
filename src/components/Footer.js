@@ -84,22 +84,7 @@ const Footer = () => (
               </div>
             </div>
             
-            <div className="newsletter mt-4">
-              <h6 className="newsletter-title">Stay Updated</h6>
-              <div className="subscribe-form">
-                <input 
-                  type="name" 
-                  placeholder="Enter your name" 
-                  className="subscribe-input"
-                />
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="subscribe-input"
-                />
-              </div>
-                <Button className="my-1 subscribe-btn">Send Message</Button>
-            </div>
+          
           </Col>
         </Row>
       </Container>

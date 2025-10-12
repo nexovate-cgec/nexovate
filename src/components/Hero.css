@@ -1,6 +1,5 @@
 .hero-split {
   min-height: 100vh;
-  /* Gradient color remove kore image add korlam */
   background: url('../assets/images/background.png') center/cover no-repeat;
   padding: 60px 0;
   color: white;
@@ -17,7 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* Background overlay for better text readability */
+
   background: linear-gradient(
     90deg, 
     rgba(0, 0, 0, 0.7) 0%, 
@@ -27,7 +26,6 @@
   z-index: 0;
 }
 
-/* Z-index add korte hobe content gular jonno */
 .hero-title,
 .hero-subtitle,
 .hero-features,
@@ -38,7 +36,6 @@
   z-index: 1;
 }
 
-/* Baki CSS same as before */
 .hero-title {
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;

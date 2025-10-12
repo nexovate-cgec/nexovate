@@ -1,8 +1,7 @@
-
-
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"; 
+import { useTheme } from "../contexts/ThemeContext"; 
 import logo from '../assets/images/logo.png';
 import Blog1 from "../assets/Blogs/2.jpg";
 import Blog2 from "../assets/Blogs/blog31.png";
@@ -40,13 +39,22 @@ const blogData = [
   },
   {
     id: 4,
-    title: "Building a Business Plan That Investors Will Actually Read",
+    title: "Micro-Entrepreneurship: The Big Impact of Small Ventures",
     img: Blog4,
     desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
     fullContent: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focu",
     author: "Author Name", 
     date: "2025-10-11"
   },
+  // {
+  //   id: 5,
+  //   title: "Smart Ways to Build Brand Trust as a New Company",
+  //   img: Blog4,
+  //   desc: "In a crowded marketplace, customers don’t just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here’s how to establish credibility from day one.",
+  //   fullContent: "AIn a crowded marketplace, customers don’t just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here’s how to establish credibility from day one.",
+  //   author: "Author Name", 
+  //   date: "2025-10-15"
+  // },
   
 ];
 
@@ -58,16 +66,31 @@ const truncateWords = (text, wordLimit) => {
 };
 
 const BlogSection = () => {
+  const { isDark } = useTheme(); 
+
   return (
-    <section id="blog" style={{ backgroundColor: "#f8f9fa", padding: "60px 0" }}>
+    <section 
+      id="blog" 
+      style={{ 
+        backgroundColor: "var(--section-bg)", 
+        padding: "60px 0",
+        color: "var(--text-color)"
+      }}
+    >
       <Container>
-        <h2 className="text-center fw-bold mb-5">
-          Latest <span className="text-primary">Blogs</span>
+        <h2 className="text-center fw-bold mb-5" style={{ color: "var(--text-color)" }}>
+          Latest <span style={{ color: "var(--primary-color)" }}>Blogs</span>
         </h2>
         <Row>
           {blogData.map((blog) => (
             <Col md={4} className="mb-4" key={blog.id}>
-              <Card className="h-100 shadow-sm border-0 rounded-4 position-relative">
+              <Card 
+                className="h-100 shadow-sm border-0 rounded-4 position-relative"
+                style={{ 
+                  backgroundColor: "var(--card-bg)",
+                  color: "var(--text-color)"
+                }}
+              >
                 <img
                   src={logo}
                   alt="Logo"
@@ -95,11 +118,21 @@ const BlogSection = () => {
                   }}
                 />
                 <Card.Body>
-                  <Card.Title className="fw-semibold">{blog.title}</Card.Title>
-                  <Card.Text>{truncateWords(blog.desc, 15)}</Card.Text>
+                  <Card.Title 
+                    className="fw-semibold" 
+                    style={{ color: "var(--text-color)" }}
+                  >
+                    {blog.title}
+                  </Card.Title>
+                  <Card.Text style={{ color: "var(--text-color)" }}>
+                    {truncateWords(blog.desc, 15)}
+                  </Card.Text>
                   
                   <Link to={`/blog/${blog.id}`}>
-                    <Button variant="dark" className="rounded-pill">
+                    <Button 
+                      variant={isDark ? "outline-light" : "dark"} 
+                      className="rounded-pill"
+                    >
                       Read More
                     </Button>
                   </Link>

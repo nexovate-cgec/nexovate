@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { useTheme } from '../contexts/ThemeContext'; 
 import logo from '../assets/images/logo.png';
 import './Navbar.css';
 
@@ -9,6 +10,7 @@ const NavBar = () => {
   const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
+  const { isDark, toggleTheme } = useTheme(); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +43,6 @@ const NavBar = () => {
         observer.disconnect();
       };
     } else {
-     
       setActiveSection('');
     }
   }, [location.pathname]);
@@ -68,15 +69,26 @@ const NavBar = () => {
     return id.charAt(0).toUpperCase() + id.slice(1);
   };
 
-  const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials', ];
+  const sections = ['about', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials'];
 
   return (
     <Navbar expand="lg" fixed="top" className={`main-navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2">
           <img src={logo} alt="ECELL Logo" height="36" />
-          <span className="fw-bold text-dark">CGEC ECELL</span>
+          <span className="fw-bold" style={{ color: 'var(--text-color)' }}>CGEC ECELL</span>
+            <button 
+              className="btn btn-outline-secondary ms-2"
+              onClick={toggleTheme}
+              style={{
+                borderColor: 'var(--primary-color)',
+                color: 'var(--text-color)'
+              }}
+            >
+              {isDark ? '☀️Bright' : '🌙Dark'}
+            </button>
         </Navbar.Brand>
+        
 
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
@@ -91,6 +103,7 @@ const NavBar = () => {
                 {formatSectionName(id)}
               </Nav.Link>
             ))}
+            
            
           </Nav>
         </Navbar.Collapse>

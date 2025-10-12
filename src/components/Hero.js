@@ -8,7 +8,6 @@ import nexovateLogo from '../assets/images/logo.png';
 const Hero = () => {
   return (
     <div className="hero-split d-flex align-items-center">
-      {/* Background Image Container */}
       <div className="hero-background"></div>
       
       <Container className="position-relative">
