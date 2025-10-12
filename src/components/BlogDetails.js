@@ -31,14 +31,12 @@ import blog44 from "../assets/Blogs/blog44.png";
 import blog51 from "../assets/Blogs/blog51.png";
 import blog52 from "../assets/Blogs/blog52.png";
 import blog53 from "../assets/Blogs/blog53.png";
-// import blog61 from "../assets/Blogs/blog61.png";
-// import blog62 from "../assets/Blogs/blog62.png";
-// import blog63 from "../assets/Blogs/blog63.png";
-// import blog64 from "../assets/Blogs/blog64.png";
-// import blog65 from "../assets/Blogs/blog65.png";
-// import blog66 from "../assets/Blogs/blog66.png";
-// import blog67 from "../assets/Blogs/blog67.png";
-// import blog68 from "../assets/Blogs/blog68.png";
+import blog61 from "../assets/Blogs/blog61.png";
+import blog62 from "../assets/Blogs/blog62.png";
+import blog63 from "../assets/Blogs/blog63.png";
+import blog64 from "../assets/Blogs/blog64.png";
+import blog65 from "../assets/Blogs/blog65.png";
+import blog66 from "../assets/Blogs/blog66.png";
 
 
 const blogData = [
@@ -50,6 +48,10 @@ const blogData = [
     desc: "Great businesses don't begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you're planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases.",
     fullContent: `
       <p class="lead">Great businesses don't begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you're planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases.</p>
+       <div class="text-center my-5">
+      <img src="${Startup1}" alt="Micro-entrepreneur working from small home-based setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Micro-entrepreneurs operate with minimal staff and serve specific markets</small></p>
+    </div>
 
       <h3>1. Validate Before You Invest</h3>
       <p>A brilliant concept means little unless customers actually pay for it.</p>
@@ -499,16 +501,13 @@ const blogData = [
 {
   id: 5,
   title: "Smart Ways to Build Brand Trust as a New Company",
-  img: Startup1, 
+  img: blog61, 
   desc: "In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here's how to establish credibility from day one.",
   fullContent: `
     <p class="lead">In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here's how to establish credibility from day one.</p>
 
     <!-- IMAGE 1: Transparency Section -->
-    <div class="text-center my-5">
-      <img src="${Startup2}" alt="Transparent business practices and honest communication" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-      <p class="text-muted mt-2"><small>Honest communication builds the foundation of customer trust</small></p>
-    </div>
+  
 
     <h3>1. Be Transparent from the Start</h3>
     <p>Honesty is the quickest path to trust.</p>
@@ -521,6 +520,10 @@ const blogData = [
     </div>
 
     <p>Transparency signals that you value customers more than short-term gain.</p>
+      <div class="text-center my-5">
+      <img src="${blog61}" alt="Transparent business practices and honest communication" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Transparency signals that you value customers more than short-term gain.</small></p>
+    </div>
 
     <h3>2. Deliver Consistently</h3>
     <p>Promises mean little without follow-through.</p>
@@ -533,12 +536,12 @@ const blogData = [
     </div>
 
     <p>Consistency tells customers they can rely on you every time.</p>
-
-    <!-- IMAGE 2: Social Proof Section -->
-    <div class="text-center my-5">
-      <img src="${Startup3}" alt="Customer testimonials and reviews building credibility" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-      <p class="text-muted mt-2"><small>Authentic customer endorsements carry significant weight</small></p>
+      <div class="text-center my-5">
+      <img src="${blog62}" alt="Transparent business practices and honest communication" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Consistency tells customers they can rely on you every time.</small></p>
     </div>
+
+
 
     <h3>3. Showcase Social Proof</h3>
     <p>People trust people more than marketing copy.</p>
@@ -559,6 +562,10 @@ const blogData = [
     </div>
 
     <p>Even a handful of authentic endorsements carries weight.</p>
+      <div class="text-center my-5">
+      <img src="${blog63}" alt="Transparent business practices and honest communication" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Even a handful of authentic endorsements carries weight</small></p>
+    </div>
 
     <h3>4. Build a Human Brand Voice</h3>
     <p>Customers connect with people, not faceless entities.</p>
@@ -574,7 +581,7 @@ const blogData = [
 
     <!-- IMAGE 3: Customer Support Section -->
     <div class="text-center my-5">
-      <img src="${Startup4}" alt="Excellent customer support and multiple support channels" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <img src="${blog64}" alt="Excellent customer support and multiple support channels" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
       <p class="text-muted mt-2"><small>Responsive customer service turns buyers into loyal advocates</small></p>
     </div>
 
@@ -589,6 +596,10 @@ const blogData = [
     </div>
 
     <p>A single great support experience often leads to repeat business.</p>
+     <div class="text-center my-5">
+      <img src="${blog65}" alt="Transparent business practices and honest communication" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>A single great support experience often leads to repeat business.</small></p>
+    </div>
 
     <h3>6. Secure and Protect Data</h3>
     <p>In an age of cyber risks, privacy matters.</p>
@@ -602,7 +613,7 @@ const blogData = [
 
     <!-- IMAGE 4: Brand Trust Conclusion -->
     <div class="text-center my-5">
-      <img src="${Startup1}" alt="Long-term brand trust and customer relationships" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <img src="${blog66}" alt="Long-term brand trust and customer relationships" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
       <p class="text-muted mt-2"><small>Building lasting confidence through genuine relationships</small></p>
     </div>
 
