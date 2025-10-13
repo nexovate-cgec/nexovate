@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -22,43 +23,47 @@ import AllEvents from "./pages/AllEvents";
 import EventDetail from "./pages/EventDetail";
 import AllBlogs from "./pages/AllBlogs";
 import BlogDetails from "./pages/BlogDetails";
-import GalleryPage from "./pages/GalleryPage"; // Add this import
+import GalleryPage from "./pages/GalleryPage";
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
-        <Navbar />
-        <Routes>
-          {/* Home Page Route */}
-          <Route path="/" element={
-            <>
-              <Hero />
-              <About />
-              <Initiatives />
-              <Events />
-              <Gallery />
-              <Blog />
-              <Team />
-              <Testimonials />
-              <Footer />
-            </>
-          } />
-          
-          {/* Events Routes */}
-          <Route path="/events" element={<AllEvents />} />
-          <Route path="/events/:id" element={<EventDetail />} />
-          
-          {/* Blog Routes */}
-          <Route path="/blogs" element={<AllBlogs />} />
-          <Route path="/blog/:id" element={<BlogDetails />} />
-          
-          {/* Gallery Route - Add this */}
-          <Route path="/gallery" element={<GalleryPage />} />
-          
-          {/* Join Us Route */}
-          <Route path="/join" element={<JoinUs />} />
-        </Routes>
+        <div className="App">
+          <Navbar />
+          <main>
+            <Routes>
+              {/* Home Page Route */}
+              <Route path="/" element={
+                <>
+                  <Hero />
+                  <About />
+                  <Initiatives />
+                  <Events />
+                  <Gallery />
+                  <Blog />
+                  <Team />
+                  <Testimonials />
+                  <Footer />
+                </>
+              } />
+              
+              {/* Events Routes */}
+              <Route path="/events" element={<AllEvents />} />
+              <Route path="/events/:id" element={<EventDetail />} />
+              
+              {/* Blog Routes */}
+              <Route path="/blogs" element={<AllBlogs />} />
+              <Route path="/blog/:id" element={<BlogDetails />} />
+              
+              {/* Gallery Route */}
+              <Route path="/gallery" element={<GalleryPage />} />
+              
+              {/* Join Us Route */}
+              <Route path="/join" element={<JoinUs />} />
+            </Routes>
+          </main>
+        </div>
       </Router>
     </ThemeProvider>
   );

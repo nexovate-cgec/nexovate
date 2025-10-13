@@ -10,6 +10,13 @@ const EventDetails = () => {
   const { isDark } = useTheme(); 
   const event = getEventById(id);
 
+  // Dark mode colors
+  const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
+  const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+  const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
+  const goldenColor = "rgb(189, 159, 103)";
+  const borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
+
   const copyEventLink = () => {
     navigator.clipboard.writeText(window.location.href);
     alert("Event link copied to clipboard!");
@@ -17,11 +24,31 @@ const EventDetails = () => {
 
   if (!event) {
     return (
-      <Container className="my-5 py-5 text-center">
+      <Container className="my-5 py-5 text-center" style={{ backgroundColor: sectionBg, color: textColor }}>
         <h2 className="fw-bold mb-3">Event not found!</h2>
         <p className="mb-4">The event you're looking for doesn't exist.</p>
         <Link to="/events">
-          <Button variant={isDark ? "outline-light" : "primary"}>
+          <Button 
+            style={{
+              backgroundColor: goldenColor,
+              borderColor: goldenColor,
+              color: "white",
+              borderRadius: "20px",
+              padding: "8px 20px",
+              fontWeight: "600",
+              transition: "all 0.3s ease"
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+              e.target.style.color = goldenColor;
+              e.target.style.borderColor = goldenColor;
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = goldenColor;
+              e.target.style.color = "white";
+              e.target.style.borderColor = goldenColor;
+            }}
+          >
             Back to Events
           </Button>
         </Link>
@@ -31,14 +58,37 @@ const EventDetails = () => {
 
   return (
     <>
-      <nav className={`navbar border-bottom ${isDark ? 'bg-dark navbar-dark' : 'bg-light navbar-light'}`}>
+      <nav className="navbar border-bottom" style={{ 
+        backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
+        borderColor: borderColor
+      }}>
         <Container>
           <div className="d-flex justify-content-between w-100 align-items-center">
-            <Link to="/events" className="navbar-brand">
+            <Link to="/events" className="navbar-brand" style={{ color: goldenColor }}>
               <ArrowLeft className="me-2" />
               Back to Events
             </Link>
-            <Button variant={isDark ? "outline-light" : "outline-secondary"} size="sm" onClick={copyEventLink}>
+            <Button 
+              style={{
+                backgroundColor: "transparent",
+                borderColor: goldenColor,
+                color: goldenColor,
+                borderRadius: "20px",
+                padding: "6px 16px",
+                fontWeight: "600",
+                transition: "all 0.3s ease"
+              }}
+              size="sm" 
+              onClick={copyEventLink}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = goldenColor;
+                e.target.style.color = "white";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = "transparent";
+                e.target.style.color = goldenColor;
+              }}
+            >
               <Share className="me-2" />
               Share
             </Button>
@@ -46,17 +96,26 @@ const EventDetails = () => {
         </Container>
       </nav>
 
-      <Container className="my-5">
+      <Container className="my-5" style={{ backgroundColor: sectionBg, color: textColor }}>
         <Row className="justify-content-center">
           <Col lg={10}>
             
             <div className="text-center mb-5">
-              <Badge bg="primary" className="mb-3 fs-6">
+              <Badge 
+                style={{
+                  backgroundColor: goldenColor,
+                  color: "white",
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  padding: "8px 16px"
+                }}
+                className="mb-3"
+              >
                 {event.category}
               </Badge>
-              <h1 className="fw-bold display-5 mb-4">{event.title}</h1>
+              <h1 className="fw-bold display-5 mb-4" style={{ color: textColor }}>{event.title}</h1>
               
-              <div className="d-flex justify-content-center gap-4 flex-wrap mb-3">
+              <div className="d-flex justify-content-center gap-4 flex-wrap mb-3" style={{ color: textColor, opacity: "0.8" }}>
                 <span className="d-flex align-items-center">
                   <Calendar className="me-2" />
                   {event.date}
@@ -75,8 +134,12 @@ const EventDetails = () => {
                 {event.hashtags?.map((tag, index) => (
                   <Badge 
                     key={index} 
-                    bg={isDark ? "light" : "secondary"} 
-                    text={isDark ? "dark" : "light"}
+                    style={{
+                      backgroundColor: isDark ? "var(--dark-bg, #121212)" : "#f8f9fa",
+                      color: goldenColor,
+                      border: `1px solid ${goldenColor}`,
+                      fontWeight: "600"
+                    }}
                     className="me-2 mb-1"
                   >
                     {tag}
@@ -90,72 +153,129 @@ const EventDetails = () => {
                 src={event.image}
                 alt={event.title}
                 className="img-fluid rounded-3 shadow"
-                style={{ maxHeight: "400px", width: "auto" }}
+                style={{ 
+                  maxHeight: "400px", 
+                  width: "auto",
+                  border: `3px solid ${goldenColor}`
+                }}
               />
             </div>
 
             <Row className="g-4">
               <Col lg={8}>
-                <Card className={isDark ? "bg-dark text-light" : ""}>
+                <Card style={{ 
+                  backgroundColor: cardBg,
+                  color: textColor,
+                  border: `2px solid ${goldenColor}`,
+                  borderRadius: "15px"
+                }}>
                   <Card.Body className="p-4">
-                    <h4 className="mb-4">About This Event</h4>
+                    <h4 className="mb-4" style={{ color: goldenColor }}>About This Event</h4>
                     <div
                       dangerouslySetInnerHTML={{ __html: event.fullDescription }}
-                      style={{ lineHeight: "1.7" }}
-                      className={isDark ? "text-light" : ""}
+                      style={{ 
+                        lineHeight: "1.7",
+                        color: textColor,
+                        opacity: "0.9"
+                      }}
                     />
                   </Card.Body>
                 </Card>
               </Col>
 
               <Col lg={4}>
-                <Card className={`shadow-sm sticky-top ${isDark ? "bg-dark text-light" : ""}`} style={{ top: "20px" }}>
+                <Card 
+                  style={{ 
+                    backgroundColor: cardBg,
+                    color: textColor,
+                    border: `2px solid ${goldenColor}`,
+                    borderRadius: "15px",
+                    position: "sticky",
+                    top: "20px"
+                  }}
+                >
                   <Card.Body>
-                    <h5 className="border-bottom pb-2 mb-3">Quick Info</h5>
+                    <h5 className="border-bottom pb-2 mb-3" style={{ color: goldenColor, borderColor: borderColor }}>
+                      Quick Info
+                    </h5>
                     
                     <div className="mb-3">
-                      <strong>Event ID:</strong>
-                      <br />#{event.id}
+                      <strong style={{ color: goldenColor }}>Event ID:</strong>
+                      <br />
+                      <span style={{ opacity: "0.8" }}>#{event.id}</span>
                     </div>
                     
                     <div className="mb-3">
-                      <strong>Category:</strong>
-                      <br />{event.category}
+                      <strong style={{ color: goldenColor }}>Category:</strong>
+                      <br />
+                      <span style={{ opacity: "0.8" }}>{event.category}</span>
                     </div>
                     
                     <div className="mb-3">
-                      <strong>Date & Time:</strong>
-                      <br />{event.date} at {event.time}
+                      <strong style={{ color: goldenColor }}>Date & Time:</strong>
+                      <br />
+                      <span style={{ opacity: "0.8" }}>{event.date} at {event.time}</span>
                     </div>
                     
                     <div className="mb-3">
-                      <strong>Venue:</strong>
-                      <br />{event.venue}
+                      <strong style={{ color: goldenColor }}>Venue:</strong>
+                      <br />
+                      <span style={{ opacity: "0.8" }}>{event.venue}</span>
                     </div>
 
                     <div className="mb-4">
-                      <strong>Status:</strong>
+                      <strong style={{ color: goldenColor }}>Status:</strong>
                       <br />
-                      <Badge  className="mt-1">
+                      <Badge 
+                        style={{
+                          backgroundColor: event.status === "Completed" ? "#28a745" : goldenColor,
+                          color: "white",
+                          fontWeight: "600",
+                          marginTop: "4px"
+                        }}
+                      >
                         {event.status}
                       </Badge>
                     </div>
 
                     <Button
-                      variant={event.color}
+                      style={{
+                        backgroundColor: goldenColor,
+                        borderColor: goldenColor,
+                        color: "white",
+                        borderRadius: "20px",
+                        padding: "10px",
+                        fontWeight: "600",
+                        transition: "all 0.3s ease",
+                        width: "100%",
+                        marginBottom: "12px"
+                      }}
                       href={event.src}
                       target="_blank"
-                      className="w-100 mb-3"
                       disabled={!event.src}
+                      onMouseOver={(e) => {
+                        if (event.src) {
+                          e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                          e.target.style.color = goldenColor;
+                          e.target.style.borderColor = goldenColor;
+                        }
+                      }}
+                      onMouseOut={(e) => {
+                        if (event.src) {
+                          e.target.style.backgroundColor = goldenColor;
+                          e.target.style.color = "white";
+                          e.target.style.borderColor = goldenColor;
+                        }
+                      }}
                     >
                       {event.compleOrNot}
                     </Button>
 
                     {event.contacts && event.contacts.length > 0 && (
                       <div className="mt-4">
-                        <h6>Contact:</h6>
+                        <h6 style={{ color: goldenColor }}>Contact:</h6>
                         {event.contacts.map((contact, index) => (
-                          <div key={index} className="small">
+                          <div key={index} className="small" style={{ opacity: "0.8" }}>
                             <strong>{contact.name}:</strong> {contact.number}
                           </div>
                         ))}
@@ -166,16 +286,42 @@ const EventDetails = () => {
               </Col>
             </Row>
 
-            <Card className={`border-0 mt-4 text-center ${isDark ? "bg-secondary text-light" : "bg-light"}`}>
-              <Card.Body className="p-4">
-                <h5>Follow Us</h5>
-                <p className="mb-3">Stay updated with our latest events</p>
+            <Card 
+              style={{ 
+                backgroundColor: cardBg,
+                color: textColor,
+                border: `2px solid ${goldenColor}`,
+                borderRadius: "15px",
+                marginTop: "2rem"
+              }}
+            >
+              <Card.Body className="p-4 text-center">
+                <h5 style={{ color: goldenColor }}>Follow Us</h5>
+                <p className="mb-3" style={{ opacity: "0.8" }}>Stay updated with our latest events</p>
                 <div className="d-flex justify-content-center gap-3 flex-wrap">
                   <a 
                     href="https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className={`btn ${isDark ? "btn-outline-light" : "btn-outline-danger"}`}
+                    style={{
+                      backgroundColor: "transparent",
+                      borderColor: goldenColor,
+                      color: goldenColor,
+                      borderRadius: "20px",
+                      padding: "8px 20px",
+                      fontWeight: "600",
+                      transition: "all 0.3s ease",
+                      textDecoration: "none",
+                      border: "1px solid"
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.backgroundColor = goldenColor;
+                      e.target.style.color = "white";
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.backgroundColor = "transparent";
+                      e.target.style.color = goldenColor;
+                    }}
                   >
                     Instagram
                   </a>
@@ -184,7 +330,25 @@ const EventDetails = () => {
                     href="https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className={`btn ${isDark ? "btn-outline-light" : "btn-outline-primary"}`}
+                    style={{
+                      backgroundColor: "transparent",
+                      borderColor: goldenColor,
+                      color: goldenColor,
+                      borderRadius: "20px",
+                      padding: "8px 20px",
+                      fontWeight: "600",
+                      transition: "all 0.3s ease",
+                      textDecoration: "none",
+                      border: "1px solid"
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.backgroundColor = goldenColor;
+                      e.target.style.color = "white";
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.backgroundColor = "transparent";
+                      e.target.style.color = goldenColor;
+                    }}
                   >
                     LinkedIn
                   </a>
@@ -193,7 +357,25 @@ const EventDetails = () => {
                     href="https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className={`btn ${isDark ? "btn-outline-light" : "btn-outline-danger"}`}
+                    style={{
+                      backgroundColor: "transparent",
+                      borderColor: goldenColor,
+                      color: goldenColor,
+                      borderRadius: "20px",
+                      padding: "8px 20px",
+                      fontWeight: "600",
+                      transition: "all 0.3s ease",
+                      textDecoration: "none",
+                      border: "1px solid"
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.backgroundColor = goldenColor;
+                      e.target.style.color = "white";
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.backgroundColor = "transparent";
+                      e.target.style.color = goldenColor;
+                    }}
                   >
                     YouTube
                   </a>

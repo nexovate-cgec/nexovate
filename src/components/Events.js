@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
-import { events, getUpcomingEvents } from "../data/events";
+import { events } from "../data/events";
 
 const truncateWords = (text, wordLimit) => {
   const words = text.split(" ");
@@ -12,33 +12,55 @@ const truncateWords = (text, wordLimit) => {
 const Events = () => {
   const { isDark } = useTheme(); 
   
-  const upcomingEvents = getUpcomingEvents();
-  const displayedEvents = upcomingEvents.slice(0, 4);
+  const displayedEvents = events.slice(0, 4);
   const totalEvents = events.length;
+
+  // Dark mode colors
+  const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
+  const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+  const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
+  const secondaryTextColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
+  const goldenColor = "rgb(189, 159, 103)";
 
   return (
     <section
       id="events"
       className="py-5"
       style={{
-        backgroundColor: "var(--section-bg)",
-        color: "var(--text-color)", 
+        backgroundColor: sectionBg,
+        color: textColor, 
       }}
     >
       <Container>
         <div className="text-center mb-5">
-          <h2 className="fw-bold mb-3" style={{ color: "var(--text-color)" }}>
-            Our <span style={{ color: "var(--primary-color)" }}>Events</span>
+          <h2 className="fw-bold mb-3" style={{ color: goldenColor }}>
+            Our <span style={{ color: textColor }}>Events</span>
           </h2>
-          <p className="lead mb-4" style={{ color: "var(--secondary-color)" }}>
+          <p className="lead mb-4" style={{ color: secondaryTextColor }}>
             Discover our latest events and activities
           </p>
           
           <Link to="/events" className="text-decoration-none">
             <Button
-              variant={isDark ? "outline-light" : "outline-primary"}
+              style={{
+                backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
+                borderColor: goldenColor,
+                color: goldenColor,
+                borderRadius: "25px",
+                padding: "8px 20px",
+                fontWeight: "600",
+                transition: "all 0.3s ease"
+              }}
               size="sm"
               className="rounded-pill px-4"
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = goldenColor;
+                e.target.style.color = "white";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                e.target.style.color = goldenColor;
+              }}
             >
               View All Events ({totalEvents})
             </Button>
@@ -47,8 +69,8 @@ const Events = () => {
         
         {displayedEvents.length === 0 ? (
           <div className="text-center py-5">
-            <h5 style={{ color: "var(--secondary-color)" }}>
-              No upcoming events at the moment. Check back soon!
+            <h5 style={{ color: secondaryTextColor }}>
+              No events at the moment. Check back soon!
             </h5>
           </div>
         ) : (
@@ -59,15 +81,20 @@ const Events = () => {
                   className="h-100 shadow-sm border-0"
                   style={{
                     borderRadius: "12px",
-                    backgroundColor: "var(--card-bg)", 
-                    color: "var(--text-color)", 
-                    transition: "transform 0.2s ease-in-out",
+                    backgroundColor: cardBg, 
+                    color: textColor, 
+                    transition: "transform 0.3s ease-in-out",
+                    border: `2px solid ${goldenColor}`
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-5px)";
+                    e.currentTarget.style.boxShadow = isDark 
+                      ? "0 10px 25px rgba(0, 0, 0, 0.4)" 
+                      : "0 10px 25px rgba(189, 159, 103, 0.2)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "";
                   }}
                 >
                   <Card.Img
@@ -77,22 +104,38 @@ const Events = () => {
                     style={{
                       height: "150px",
                       objectFit: "cover",
-                      borderTopLeftRadius: "12px",
-                      borderTopRightRadius: "12px",
+                      borderTopLeftRadius: "10px",
+                      borderTopRightRadius: "10px",
                     }}
                   />
                   <Card.Body className="p-3 d-flex flex-column">
-                    <Card.Title className="fs-6 fw-semibold" style={{ color: "var(--text-color)" }}>
+                    <Card.Title className="fs-6 fw-semibold" style={{ color: textColor }}>
                       {event.title}
                     </Card.Title>
                     <Card.Subtitle
                       className="mb-2"
-                      style={{ color: "var(--secondary-color)", fontSize: "0.8rem" }} 
+                      style={{ color: secondaryTextColor, fontSize: "0.8rem", opacity: "0.8" }} 
                     >
                       {event.date}
                     </Card.Subtitle>
+                    
+                    {/* Status Badge */}
+                    <div className="mb-2">
+                      <small 
+                        className="badge rounded-pill px-3 py-1"
+                        style={{ 
+                          fontSize: "0.7rem",
+                          backgroundColor: event.status === "Completed" ? "#28a745" : goldenColor,
+                          color: "white",
+                          fontWeight: "600"
+                        }}
+                      >
+                        {event.status === "Completed" ? "Completed" : "Upcoming"}
+                      </small>
+                    </div>
+                    
                     <Card.Text 
-                      style={{ color: "var(--text-color)", fontSize: "0.85rem" }}
+                      style={{ color: textColor, fontSize: "0.85rem", opacity: "0.9" }}
                       className="flex-grow-1"
                     >
                       {truncateWords(event.description, 15)}
@@ -100,11 +143,11 @@ const Events = () => {
 
                     <div className="mt-auto">
                       <small 
-                        className="badge rounded-pill mb-2"
+                        className="badge rounded-pill mb-2 px-3 py-1 bg-primary"
                         style={{
-                          backgroundColor: "var(--primary-color)",
                           color: "white",
-                          fontSize: "0.7rem"
+                          fontSize: "0.7rem",
+                          fontWeight: "600"
                         }}
                       >
                         {event.category}
@@ -112,9 +155,29 @@ const Events = () => {
                       
                       <Link to={`/events/${event.id}`}>
                         <Button
-                          variant={isDark ? "outline-light" : "primary"}
+                          style={{
+                            backgroundColor: goldenColor,
+                            borderColor: goldenColor,
+                            color: "white",
+                            borderRadius: "20px",
+                            padding: "6px 16px",
+                            fontWeight: "600",
+                            fontSize: "0.85rem",
+                            transition: "all 0.3s ease",
+                            width: "100%"
+                          }}
                           size="sm"
-                          className="rounded-pill px-3 w-100"
+                          className="rounded-pill"
+                          onMouseOver={(e) => {
+                            e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                            e.target.style.color = goldenColor;
+                            e.target.style.borderColor = goldenColor;
+                          }}
+                          onMouseOut={(e) => {
+                            e.target.style.backgroundColor = goldenColor;
+                            e.target.style.color = "white";
+                            e.target.style.borderColor = goldenColor;
+                          }}
                         >
                           View Details
                         </Button>

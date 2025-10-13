@@ -75,7 +75,7 @@
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(189, 159, 103);
   transition: all 0.3s ease;
   text-decoration: none;
   backdrop-filter: blur(10px);
@@ -87,17 +87,17 @@
 }
 
 .social-link.linkedin:hover {
-  background: #0077b5;
+  background: rgb(189, 159, 103);
   color: white;
 }
 
 .social-link.instagram:hover {
-  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  background: rgb(189, 159, 103);
   color: white;
 }
 
 .social-link.email:hover {
-  background: #ea4335;
+  background: rgb(189, 159, 103);
   color: white;
 }
 

@@ -8,6 +8,16 @@ const GalleryPage = () => {
   const { isDark } = useTheme();
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  
+  // Dark mode colors
+  const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
+  const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+  const modalBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+  const modalBodyBg = isDark ? "var(--dark-bg, #121212)" : "#f8f9fa";
+  const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
+  const goldenColor = "rgb(189, 159, 103)";
+  const borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
+  
   const allEvents = getAllEvents();
 
   const handleEventClick = (event) => {
@@ -22,24 +32,30 @@ const GalleryPage = () => {
 
   return (
     <section style={{
-      backgroundColor: "var(--section-bg)",
-      color: "var(--text-color)",
+      backgroundColor: sectionBg,
+      color: textColor,
       padding: "60px 0",
       minHeight: "100vh"
     }}>
       <Container>
         <Breadcrumb className="mb-4">
-          <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
+          <Breadcrumb.Item 
+            linkAs={Link} 
+            linkProps={{ to: "/" }}
+            style={{ color: goldenColor }}
+          >
             Home
           </Breadcrumb.Item>
-          <Breadcrumb.Item active>Gallery</Breadcrumb.Item>
+          <Breadcrumb.Item active style={{ color: textColor }}>
+            Gallery
+          </Breadcrumb.Item>
         </Breadcrumb>
 
         <div className="text-center mb-5">
-          <h1 className="fw-bold display-5 mb-3">
-            Event <span style={{ color: "var(--primary-color)" }}>Gallery</span>
+          <h1 className="fw-bold display-5 mb-3" style={{ color: goldenColor }}>
+            Event <span style={{ color: textColor }}>Gallery</span>
           </h1>
-          <p className="lead">
+          <p className="lead" style={{ color: textColor, opacity: "0.8" }}>
             Click on any event to view all photos
           </p>
         </div>
@@ -50,18 +66,23 @@ const GalleryPage = () => {
               <Card 
                 className="shadow-sm border-0 h-100 event-card"
                 style={{
-                  backgroundColor: "var(--card-bg)",
-                  transition: "transform 0.3s ease",
+                  backgroundColor: cardBg,
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   borderRadius: "12px",
                   overflow: "hidden",
-                  cursor: "pointer"
+                  cursor: "pointer",
+                  border: `2px solid ${goldenColor}`
                 }}
                 onClick={() => handleEventClick(event)}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = isDark 
+                    ? "0 10px 25px rgba(0, 0, 0, 0.4)" 
+                    : "0 10px 25px rgba(189, 159, 103, 0.2)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "";
                 }}
               >
                 <Card.Img
@@ -74,22 +95,47 @@ const GalleryPage = () => {
                   }}
                 />
                 <Card.Body className="p-3 d-flex flex-column">
-                  <Card.Title className="h6 mb-2" style={{ color: "var(--text-color)" }}>
+                  <Card.Title className="h6 mb-2" style={{ color: textColor }}>
                     {event.name}
                   </Card.Title>
                   <div className="mt-auto">
                     <div className="d-flex justify-content-between align-items-center">
-                      <Badge bg="primary">
+                      <Badge 
+                        style={{
+                          backgroundColor: goldenColor,
+                          color: "white",
+                          fontWeight: "600"
+                        }}
+                      >
                         {event.totalImages} Photos
                       </Badge>
-                      <small className="text-muted">
+                      <small style={{ color: textColor, opacity: "0.7" }}>
                         {new Date(event.date).toLocaleDateString()}
                       </small>
                     </div>
                     <Button 
-                      variant={isDark ? "outline-light" : "outline-primary"} 
-                      size="sm" 
-                      className="w-100 mt-2"
+                      style={{
+                        backgroundColor: goldenColor,
+                        borderColor: goldenColor,
+                        color: "white",
+                        borderRadius: "20px",
+                        padding: "6px 16px",
+                        fontWeight: "600",
+                        transition: "all 0.3s ease",
+                        width: "100%",
+                        marginTop: "8px"
+                      }}
+                      size="sm"
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                        e.target.style.color = goldenColor;
+                        e.target.style.borderColor = goldenColor;
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = goldenColor;
+                        e.target.style.color = "white";
+                        e.target.style.borderColor = goldenColor;
+                      }}
                     >
                       View Photos
                     </Button>
@@ -106,21 +152,27 @@ const GalleryPage = () => {
           size="xl" 
           centered
           scrollable 
+          style={{
+            backdropFilter: "blur(5px)"
+          }}
         >
           <Modal.Header 
             closeButton 
             style={{
-              backgroundColor: isDark ? "var(--card-bg)" : "white",
-              color: isDark ? "white" : "var(--text-color)",
-              borderBottom: isDark ? "1px solid #444" : "1px solid #dee2e6"
+              backgroundColor: modalBg,
+              color: textColor,
+              borderBottom: `1px solid ${borderColor}`,
+              borderRadius: "15px 15px 0 0"
             }}
           >
-            <Modal.Title className="fw-bold">{selectedEvent?.name}</Modal.Title>
+            <Modal.Title className="fw-bold" style={{ color: goldenColor }}>
+              {selectedEvent?.name}
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body 
             style={{
-              backgroundColor: isDark ? "var(--card-bg)" : "white",
-              color: isDark ? "white" : "var(--text-color)",
+              backgroundColor: modalBodyBg,
+              color: textColor,
               padding: "20px"
             }}
           >
@@ -131,7 +183,16 @@ const GalleryPage = () => {
                     <Card 
                       className="border-0 shadow-sm h-100"
                       style={{
-                        backgroundColor: isDark ? "var(--section-bg)" : "#f8f9fa"
+                        backgroundColor: cardBg,
+                        border: `2px solid ${goldenColor}`,
+                        borderRadius: "12px",
+                        transition: "transform 0.3s ease"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "translateY(-3px)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "translateY(0)";
                       }}
                     >
                       <Card.Img
@@ -142,14 +203,17 @@ const GalleryPage = () => {
                           height: "250px", 
                           objectFit: "cover", 
                           width: "100%", 
-                          borderRadius: "8px 8px 0 0"
+                          borderRadius: "10px 10px 0 0"
                         }}
                       />
                       <Card.Body className="p-3">
                         <div className="mb-2">
                           <Badge 
-                            bg={isDark ? "light" : "primary"} 
-                            text={isDark ? "dark" : "white"}
+                            style={{
+                              backgroundColor: goldenColor,
+                              color: "white",
+                              fontWeight: "600"
+                            }}
                             className="text-capitalize"
                           >
                             {image.category}
@@ -159,7 +223,7 @@ const GalleryPage = () => {
                           className="mb-0 fw-medium"
                           style={{ 
                             fontSize: "0.9rem",
-                            color: isDark ? "white" : "var(--text-color)"
+                            color: textColor
                           }}
                         >
                           {image.caption}
@@ -167,7 +231,8 @@ const GalleryPage = () => {
                         <Card.Text 
                           className="small mt-1"
                           style={{ 
-                            color: isDark ? "#ccc" : "var(--secondary-color)"
+                            color: textColor,
+                            opacity: "0.7"
                           }}
                         >
                           {new Date(image.date).toLocaleDateString('en-US', {
@@ -185,20 +250,39 @@ const GalleryPage = () => {
           </Modal.Body>
           <Modal.Footer 
             style={{
-              backgroundColor: isDark ? "var(--card-bg)" : "white",
-              color: isDark ? "white" : "var(--text-color)",
-              borderTop: isDark ? "1px solid #444" : "1px solid #dee2e6"
+              backgroundColor: modalBg,
+              color: textColor,
+              borderTop: `1px solid ${borderColor}`,
+              borderRadius: "0 0 15px 15px"
             }}
           >
             <div className="d-flex justify-content-between w-100 align-items-center">
-              <small style={{ color: isDark ? "#ccc" : "var(--secondary-color)" }}>
+              <small style={{ color: textColor, opacity: "0.7" }}>
                 {selectedEvent?.totalImages} photos in this event
               </small>
               <Button 
-                variant={isDark ? "outline-light" : "outline-primary"} 
+                style={{
+                  backgroundColor: goldenColor,
+                  borderColor: goldenColor,
+                  color: "white",
+                  borderRadius: "20px",
+                  padding: "8px 20px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease"
+                }}
                 onClick={handleCloseModal}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                  e.target.style.color = goldenColor;
+                  e.target.style.borderColor = goldenColor;
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.backgroundColor = goldenColor;
+                  e.target.style.color = "white";
+                  e.target.style.borderColor = goldenColor;
+                }}
               >
-                Close
+                Close Gallery
               </Button>
             </div>
           </Modal.Footer>
@@ -207,8 +291,24 @@ const GalleryPage = () => {
         <div className="text-center mt-5">
           <Link to="/">
             <Button
-              variant={isDark ? "outline-light" : "outline-primary"}
+              style={{
+                backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
+                borderColor: goldenColor,
+                color: goldenColor,
+                borderRadius: "25px",
+                padding: "8px 20px",
+                fontWeight: "600",
+                transition: "all 0.3s ease"
+              }}
               className="rounded-pill px-4"
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = goldenColor;
+                e.target.style.color = "white";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                e.target.style.color = goldenColor;
+              }}
             >
               ← Back to Home
             </Button>

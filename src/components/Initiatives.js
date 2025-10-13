@@ -1,8 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { useTheme } from '../contexts/ThemeContext';
 import './Initiatives.css';
 
 const Initiatives = () => {
+  const { isDark } = useTheme();
 
   const digitalInitiatives = [
     {
@@ -41,19 +43,19 @@ const Initiatives = () => {
     <>
       <section 
         id="initiatives" 
-        className="" 
+        className="initiatives-section"
         style={{ 
-          backgroundColor: "var(--section-bg)",
-          color: "var(--text-color)"
+          backgroundColor: isDark ? "var(--dark-bg)" : "white",
+          color: isDark ? "var(--light-text)" : "#2c3e50"
         }}
       >
         <Container>
           <Row className="mt-5 pt-5">
             <Col className="text-center">
-              <h3 className="display-6 fw-bold mb-3" style={{ color: "var(--text-color)" }}>
-                Our <span style={{ color: "var(--primary-color)" }}>Initiatives</span>
+              <h3 className="display-6 fw-bold mb-3" style={{ color: "rgb(189, 159, 103)" }}>
+                Our <span style={{ color: isDark ? "var(--light-text)" : "#2c3e50" }}>Initiatives</span>
               </h3>
-              <p className="lead" style={{ color: "var(--secondary-color)" }}>
+              <p className="lead" style={{ color: isDark ? "var(--light-text)" : "#2c3e50" }}>
                 Stay connected with our online platforms for continuous learning and inspiration
               </p>
             </Col>
@@ -65,30 +67,39 @@ const Initiatives = () => {
                 <Card 
                   className="h-100 shadow border-0 digital-initiative-card"
                   style={{ 
-                    backgroundColor: "var(--card-bg)",
-                    color: "var(--text-color)"
+                    backgroundColor: isDark ? "var(--dark-card-bg)" : "white",
+                    color: isDark ? "var(--light-text)" : "#2c3e50",
+                    border: "2px solid rgb(189, 159, 103)",
+                    borderRadius: "15px"
                   }}
                 >
                   <Card.Body className="p-4">
                     <div className="d-flex align-items-start mb-3">
-                      <span className="display-6 me-3">{initiative.icon}</span>
+                      <span 
+                        className="display-6 me-3"
+                        style={{ color: "rgb(189, 159, 103)" }}
+                      >
+                        {initiative.icon}
+                      </span>
                       <div>
                         <Card.Title 
                           className="h4 fw-bold mb-1" 
-                          style={{ color: "var(--text-color)" }}
+                          style={{ color: isDark ? "var(--light-text)" : "#2c3e50" }}
                         >
                           {initiative.title}
                         </Card.Title>
                         <div 
-                          className="badge mb-2"
+                          className="badge mb-2 px-3 py-2"
                           style={{ 
-                            backgroundColor: "var(--section-bg)",
-                            color: "var(--text-color)"
+                            backgroundColor: "rgb(189, 159, 103)",
+                            color: "white",
+                            fontSize: "0.8rem",
+                            fontWeight: "600"
                           }}
                         >
                           {initiative.platform}
                         </div>
-                        <Card.Text style={{ color: "var(--secondary-color)" }}>
+                        <Card.Text style={{ color: isDark ? "var(--light-text)" : "#2c3e50" }}>
                           {initiative.description}
                         </Card.Text>
                       </div>
@@ -96,7 +107,7 @@ const Initiatives = () => {
 
                     <h6 
                       className="fw-bold mt-4 mb-3" 
-                      style={{ color: "var(--text-color)" }}
+                      style={{ color: "rgb(189, 159, 103)" }}
                     >
                       What You'll Find:
                     </h6>
@@ -106,11 +117,11 @@ const Initiatives = () => {
                           <div className="d-flex align-items-center mb-2">
                             <span 
                               className="me-2"
-                              style={{ color: "var(--primary-color)" }}
+                              style={{ color: "rgb(189, 159, 103)" }}
                             >
                               •
                             </span>
-                            <small style={{ color: "var(--text-color)" }}>
+                            <small style={{ color: isDark ? "var(--light-text)" : "#2c3e50" }}>
                               {item}
                             </small>
                           </div>
@@ -120,11 +131,29 @@ const Initiatives = () => {
 
                     <div className="mt-4 pt-2">
                       <Button 
-                        variant={initiative.color} 
+                        style={{
+                          backgroundColor: "rgb(189, 159, 103)",
+                          borderColor: "rgb(189, 159, 103)",
+                          color: "white",
+                          padding: "10px 25px",
+                          fontWeight: "600",
+                          borderRadius: "25px",
+                          transition: "all 0.3s ease"
+                        }}
                         href={initiative.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-4"
+                        onMouseOver={(e) => {
+                          e.target.style.backgroundColor = isDark ? "var(--dark-card-bg)" : "white";
+                          e.target.style.color = "rgb(189, 159, 103)";
+                          e.target.style.borderColor = "rgb(189, 159, 103)";
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.backgroundColor = "rgb(189, 159, 103)";
+                          e.target.style.color = "white";
+                          e.target.style.borderColor = "rgb(189, 159, 103)";
+                        }}
                       >
                         {initiative.cta}
                       </Button>

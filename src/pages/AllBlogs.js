@@ -9,6 +9,13 @@ const AllBlogs = () => {
   const { isDark } = useTheme(); 
   const [selectedCategory, setSelectedCategory] = useState("all");
   
+  // Dark mode colors
+  const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
+  const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+  const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
+  const goldenColor = "rgb(189, 159, 103)";
+  const borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
+  
   const allBlogs = getRecentBlogs();
   const categories = ["all", ...new Set(allBlogs.map(blog => blog.category))];
   
@@ -19,27 +26,31 @@ const AllBlogs = () => {
   return (
     <section 
       style={{ 
-        backgroundColor: isDark ? "var(--bg-color)" : "var(--section-bg)", 
+        backgroundColor: sectionBg,
         padding: "40px 0",
-        color: isDark ? "white" : "var(--text-color)",
+        color: textColor,
         minHeight: "100vh"
       }}
     >
       <Container>
         <Breadcrumb className="mb-4">
-          <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }} style={{ color: isDark ? "white" : "inherit" }}>
+          <Breadcrumb.Item 
+            linkAs={Link} 
+            linkProps={{ to: "/" }} 
+            style={{ color: goldenColor }}
+          >
             Home
           </Breadcrumb.Item>
-          <Breadcrumb.Item active style={{ color: isDark ? "white" : "inherit" }}>
+          <Breadcrumb.Item active style={{ color: textColor }}>
             All Blogs
           </Breadcrumb.Item>
         </Breadcrumb>
 
         <div className="text-center mb-4">
-          <h1 className="fw-bold h3 mb-2" style={{ color: isDark ? "white" : "var(--text-color)" }}>
-            Our <span style={{ color: "var(--primary-color)" }}>Blogs</span>
+          <h1 className="fw-bold h3 mb-2" style={{ color: goldenColor }}>
+            Our <span style={{ color: textColor }}>Blogs</span>
           </h1>
-          <p className="mb-3" style={{ color: isDark ? "#ccc" : "var(--secondary-color)" }}>
+          <p className="mb-3" style={{ color: textColor, opacity: "0.8" }}>
             Discover insights, stories and updates from E-Cell
           </p>
         </div>
@@ -49,15 +60,31 @@ const AllBlogs = () => {
             {categories.map(category => (
               <Button
                 key={category}
-                variant={
-                  selectedCategory === category 
-                    ? "primary" 
-                    : isDark ? "outline-light" : "outline-dark"
-                }
+                style={{
+                  backgroundColor: selectedCategory === category ? goldenColor : "transparent",
+                  borderColor: goldenColor,
+                  color: selectedCategory === category ? "white" : goldenColor,
+                  borderRadius: "20px",
+                  padding: "6px 16px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease",
+                  fontSize: "0.8rem"
+                }}
                 size="sm"
                 className="rounded-pill text-capitalize"
                 onClick={() => setSelectedCategory(category)}
-                style={{ fontSize: "0.8rem" }}
+                onMouseOver={(e) => {
+                  if (selectedCategory !== category) {
+                    e.target.style.backgroundColor = goldenColor;
+                    e.target.style.color = "white";
+                  }
+                }}
+                onMouseOut={(e) => {
+                  if (selectedCategory !== category) {
+                    e.target.style.backgroundColor = "transparent";
+                    e.target.style.color = goldenColor;
+                  }
+                }}
               >
                 {category === "all" ? "All Blogs" : category}
               </Button>
@@ -66,7 +93,7 @@ const AllBlogs = () => {
         </div>
 
         <div className="text-center mb-4">
-          <p style={{ color: isDark ? "#ccc" : "var(--secondary-color)", fontSize: "0.9rem" }}>
+          <p style={{ color: textColor, opacity: "0.8", fontSize: "0.9rem" }}>
             Showing {filteredBlogs.length} blog{filteredBlogs.length !== 1 ? 's' : ''}
             {selectedCategory !== 'all' && ` in ${selectedCategory}`}
           </p>
@@ -78,12 +105,22 @@ const AllBlogs = () => {
               <Card 
                 className="h-100 shadow-sm border-0 blog-card"
                 style={{ 
-                  backgroundColor: isDark ? "var(--card-bg)" : "var(--card-bg)",
-                  color: isDark ? "white" : "var(--text-color)",
-                  transition: "all 0.3s ease",
+                  backgroundColor: cardBg,
+                  color: textColor,
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   borderRadius: "12px",
                   overflow: "hidden",
-                  border: isDark ? "1px solid #444" : "none"
+                  border: `2px solid ${goldenColor}`
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = isDark 
+                    ? "0 10px 25px rgba(0, 0, 0, 0.4)" 
+                    : "0 10px 25px rgba(189, 159, 103, 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "";
                 }}
               >
                 <div className="position-relative">
@@ -100,9 +137,12 @@ const AllBlogs = () => {
                   />
                   <div className="position-absolute top-0 start-0 m-2">
                     <Badge 
-                      bg={"primary"} 
-                      text={isDark ? "dark" : "white"}
-                      style={{ fontSize: "0.7rem" }}
+                      style={{ 
+                        backgroundColor: goldenColor,
+                        color: "white",
+                        fontSize: "0.7rem",
+                        fontWeight: "600"
+                      }}
                     >
                       {blog.category}
                     </Badge>
@@ -113,7 +153,7 @@ const AllBlogs = () => {
                   <Card.Title 
                     className="fw-semibold h6 mb-2" 
                     style={{ 
-                      color: isDark ? "white" : "var(--text-color)",
+                      color: textColor,
                       lineHeight: "1.4",
                       minHeight: "42px",
                       display: "-webkit-box",
@@ -127,7 +167,8 @@ const AllBlogs = () => {
                   
                   <Card.Text 
                     style={{ 
-                      color: isDark ? "#ccc" : "var(--text-color)",
+                      color: textColor,
+                      opacity: "0.9",
                       lineHeight: "1.5",
                       fontSize: "0.85rem",
                       flexGrow: 1,
@@ -140,7 +181,9 @@ const AllBlogs = () => {
                     {blog.desc}
                   </Card.Text>
                   
-                  <div className="d-flex align-items-center mb-2 pt-2" style={{ borderTop: isDark ? "1px solid #444" : "1px solid #dee2e6" }}>
+                  <div className="d-flex align-items-center mb-2 pt-2" style={{ 
+                    borderTop: `1px solid ${borderColor}` 
+                  }}>
                     <img
                       src={logo}
                       alt="E-Cell Logo"
@@ -149,19 +192,24 @@ const AllBlogs = () => {
                         height: "24px",
                         objectFit: "contain",
                         marginRight: "8px",
-                        backgroundColor: isDark ? "white" : "transparent",
+                        backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
                         padding: "2px",
-                        borderRadius: "4px"
+                        borderRadius: "4px",
+                        border: `1px solid ${goldenColor}`
                       }}
                     />
                     <div>
-                      <small className="fw-semibold" style={{ fontSize: "0.8rem", color: isDark ? "white" : "inherit" }}>
+                      <small className="fw-semibold" style={{ 
+                        fontSize: "0.8rem", 
+                        color: textColor 
+                      }}>
                         E-Cell CGEC
                       </small>
                       <br />
                       <small style={{ 
                         fontSize: "0.7rem", 
-                        color: isDark ? "#999" : "var(--secondary-color)" 
+                        color: textColor,
+                        opacity: "0.7"
                       }}>
                         {new Date(blog.date).toLocaleDateString('en-US', { 
                           day: 'numeric',
@@ -174,10 +222,29 @@ const AllBlogs = () => {
                   
                   <Link to={`/blog/${blog.id}`} className="mt-auto">
                     <Button 
-                      variant={isDark ? "outline-light" : "outline-primary"} 
-                      className="w-100 rounded-pill"
+                      style={{
+                        backgroundColor: goldenColor,
+                        borderColor: goldenColor,
+                        color: "white",
+                        borderRadius: "20px",
+                        padding: "6px 16px",
+                        fontWeight: "600",
+                        transition: "all 0.3s ease",
+                        fontSize: "0.8rem",
+                        width: "100%"
+                      }}
                       size="sm"
-                      style={{ fontSize: "0.8rem" }}
+                      className="rounded-pill"
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                        e.target.style.color = goldenColor;
+                        e.target.style.borderColor = goldenColor;
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = goldenColor;
+                        e.target.style.color = "white";
+                        e.target.style.borderColor = goldenColor;
+                      }}
                     >
                       Read More
                     </Button>
@@ -190,14 +257,32 @@ const AllBlogs = () => {
 
         {filteredBlogs.length === 0 && (
           <div className="text-center py-5">
-            <h5 style={{ color: isDark ? "#ccc" : "var(--secondary-color)" }}>
+            <h5 style={{ color: textColor, opacity: "0.8" }}>
               No blogs found in this category.
             </h5>
             <Button
-              variant={isDark ? "outline-light" : "primary"}
+              style={{
+                backgroundColor: goldenColor,
+                borderColor: goldenColor,
+                color: "white",
+                borderRadius: "20px",
+                padding: "8px 20px",
+                fontWeight: "600",
+                transition: "all 0.3s ease"
+              }}
               onClick={() => setSelectedCategory("all")}
               className="mt-3 rounded-pill"
               size="sm"
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                e.target.style.color = goldenColor;
+                e.target.style.borderColor = goldenColor;
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = goldenColor;
+                e.target.style.color = "white";
+                e.target.style.borderColor = goldenColor;
+              }}
             >
               Show All Blogs
             </Button>
@@ -206,33 +291,67 @@ const AllBlogs = () => {
 
         <div className="text-center mt-4">
           <div className="p-4 rounded-3" style={{ 
-            backgroundColor: isDark ? "var(--card-bg)" : "var(--card-bg)",
-            border: isDark ? "1px solid #444" : "none"
+            backgroundColor: cardBg,
+            border: `2px solid ${goldenColor}`,
+            borderRadius: "15px"
           }}>
-            <h6 className="fw-bold mb-2" style={{ color: isDark ? "white" : "inherit" }}>
+            <h6 className="fw-bold mb-2" style={{ color: textColor }}>
               More Content Coming Soon
             </h6>
             <p className="mb-3" style={{ 
               fontSize: "0.9rem", 
-              color: isDark ? "#ccc" : "var(--secondary-color)" 
+              color: textColor,
+              opacity: "0.8"
             }}>
               Stay tuned for more exciting blogs from E-Cell
             </p>
             <div className="d-flex justify-content-center gap-2 flex-wrap">
               <Link to="/">
                 <Button
-                  variant={isDark ? "outline-light" : "outline-primary"}
+                  style={{
+                    backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
+                    borderColor: goldenColor,
+                    color: goldenColor,
+                    borderRadius: "20px",
+                    padding: "6px 16px",
+                    fontWeight: "600",
+                    transition: "all 0.3s ease"
+                  }}
                   className="rounded-pill px-3"
                   size="sm"
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = goldenColor;
+                    e.target.style.color = "white";
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                    e.target.style.color = goldenColor;
+                  }}
                 >
                   ← Home
                 </Button>
               </Link>
               <Button
-                variant={isDark ? "outline-light" : "dark"}
+                style={{
+                  backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
+                  borderColor: goldenColor,
+                  color: goldenColor,
+                  borderRadius: "20px",
+                  padding: "6px 16px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease"
+                }}
                 className="rounded-pill px-3"
                 size="sm"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = goldenColor;
+                  e.target.style.color = "white";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+                  e.target.style.color = goldenColor;
+                }}
               >
                 ↑ Top
               </Button>
@@ -240,16 +359,6 @@ const AllBlogs = () => {
           </div>
         </div>
       </Container>
-
-      <style jsx>{`
-        .blog-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
-        }
-        .blog-card:hover .blog-image {
-          transform: scale(1.03);
-        }
-      `}</style>
     </section>
   );
 };
