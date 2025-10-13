@@ -14,7 +14,6 @@ const NavBar = () => {
   const navigate = useNavigate();
   const { isDark, toggleTheme } = useTheme(); 
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -24,7 +23,6 @@ const NavBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle active section detection for home page
   useEffect(() => {
     if (location.pathname === '/') {
       const sections = ['home', 'initiatives', 'events', 'gallery', 'blog', 'team', 'testimonials'];
@@ -119,7 +117,6 @@ const NavBar = () => {
           <span className="fw-bold navbar-brand-text golden-text">CGEC ECELL</span>
         </Navbar.Brand>
 
-        {/* Theme Toggle Button - Moved outside Brand */}
         <div className="d-flex align-items-center">
           <button 
             className="theme-toggle-btn me-3 golden-border"
@@ -230,7 +227,6 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
       
-      {/* Golden Border at Bottom */}
       <div className="navbar-golden-border"></div>
     </Navbar>
   );

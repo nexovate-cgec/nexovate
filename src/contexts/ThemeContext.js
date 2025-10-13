@@ -1,4 +1,4 @@
-// contexts/ThemeContext.js
+
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const ThemeContext = createContext();
@@ -16,13 +16,11 @@ export const ThemeProvider = ({ children }) => {
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    // Check localStorage first
     const savedTheme = localStorage.getItem('ecell-theme');
     if (savedTheme) {
       setIsDark(savedTheme === 'dark');
       document.documentElement.setAttribute('data-theme', savedTheme);
     } else {
-      // Check system preference
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       setIsDark(prefersDark);
       document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');

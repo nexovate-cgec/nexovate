@@ -15,7 +15,6 @@ const Events = () => {
   const displayedEvents = events.slice(0, 4);
   const totalEvents = events.length;
 
-  // Dark mode colors
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
   const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
@@ -119,7 +118,6 @@ const Events = () => {
                       {event.date}
                     </Card.Subtitle>
                     
-                    {/* Status Badge */}
                     <div className="mb-2">
                       <small 
                         className="badge rounded-pill px-3 py-1"

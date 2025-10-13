@@ -9,7 +9,6 @@ const GalleryPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showModal, setShowModal] = useState(false);
   
-  // Dark mode colors
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
   const modalBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";

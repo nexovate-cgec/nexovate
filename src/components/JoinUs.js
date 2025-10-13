@@ -16,7 +16,6 @@ const JoinUs = () => {
   
   const { isDark } = useTheme(); 
 
-  // Dark mode colors
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
   const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
@@ -117,7 +116,6 @@ const JoinUs = () => {
               }}
             >
               <Card.Body className="p-5">
-                {/* Header Section */}
                 <div className="text-center mb-5">
                   <h1 
                     className="display-5 fw-bold"
@@ -250,7 +248,6 @@ const JoinUs = () => {
                         </Form.Select>
                       </Form.Group>
 
-                      {/* Other College Input - Shows only when "OTHER" is selected */}
                       {formData.college === "OTHER" && (
                         <Form.Group className="mb-3">
                           <Form.Label style={{ color: textColor }}>Specify Your College</Form.Label>
@@ -327,8 +324,6 @@ const JoinUs = () => {
                           </Form.Group>
                         </Col>
                       </Row>
-
-                      {/* Other Department Input - Shows only when "Other" is selected */}
                       {formData.department === "OTHER" && (
                         <Form.Group className="mb-3">
                           <Form.Label style={{ color: textColor }}>Specify Your Department</Form.Label>
@@ -398,6 +393,7 @@ const JoinUs = () => {
                           e.target.style.color = "white";
                           e.target.style.borderColor = goldenColor;
                         }}
+                        disabled="true"
                       >
                         Submit Application
                       </Button>

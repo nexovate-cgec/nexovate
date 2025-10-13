@@ -10,7 +10,6 @@ const EventDetails = () => {
   const { isDark } = useTheme(); 
   const event = getEventById(id);
 
-  // Dark mode colors
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
   const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";

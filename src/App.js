@@ -33,7 +33,6 @@ function App() {
           <Navbar />
           <main>
             <Routes>
-              {/* Home Page Route */}
               <Route path="/" element={
                 <>
                   <Hero />
@@ -48,18 +47,11 @@ function App() {
                 </>
               } />
               
-              {/* Events Routes */}
               <Route path="/events" element={<AllEvents />} />
               <Route path="/events/:id" element={<EventDetail />} />
-              
-              {/* Blog Routes */}
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
-              
-              {/* Gallery Route */}
-              <Route path="/gallery" element={<GalleryPage />} />
-              
-              {/* Join Us Route */}
+              <Route path="/gallery" element={<GalleryPage />} />]
               <Route path="/join" element={<JoinUs />} />
             </Routes>
           </main>

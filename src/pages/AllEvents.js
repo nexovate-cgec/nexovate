@@ -8,7 +8,6 @@ const AllEvents = () => {
   const { isDark } = useTheme();
   const [filter, setFilter] = useState("all");
   
-  // Dark mode colors
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
   const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
