@@ -27,7 +27,6 @@ const BlogSection = () => {
       }}
     >
       <Container>
-        {/* Header Section - Centered */}
         <div className="text-center mb-5">
           <h2 className="fw-bold mb-3" style={{ color: "var(--text-color)" }}>
             Latest <span style={{ color: "var(--primary-color)" }}>Blogs</span>
@@ -36,7 +35,6 @@ const BlogSection = () => {
             Discover our most recent articles and insights
           </p>
           
-          {/* View All Button - Also centered */}
           <Link to="/blogs" className="text-decoration-none">
             <Button
               variant={isDark ? "outline-light" : "outline-primary"}

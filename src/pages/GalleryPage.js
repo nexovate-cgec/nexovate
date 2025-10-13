@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Button, Breadcrumb, Badge, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
-import { getAllEvents, getEventByName } from "../data/gallery";
+import { getAllEvents } from "../data/gallery";
 
 const GalleryPage = () => {
   const { isDark } = useTheme();
@@ -44,7 +44,6 @@ const GalleryPage = () => {
           </p>
         </div>
 
-        {/* Events Grid - প্রতিটি event এর জন্য ১টি card */}
         <Row>
           {allEvents.map((event, index) => (
             <Col lg={3} md={6} className="mb-4" key={index}>
@@ -101,13 +100,12 @@ const GalleryPage = () => {
           ))}
         </Row>
 
-        {/* Modal for Event Photos - Fixed */}
         <Modal 
           show={showModal} 
           onHide={handleCloseModal} 
-          size="xl" // Changed to xl for larger size
+          size="xl" 
           centered
-          scrollable // Added scrollable
+          scrollable 
         >
           <Modal.Header 
             closeButton 
@@ -141,9 +139,9 @@ const GalleryPage = () => {
                         src={image.src}
                         alt={image.caption}
                         style={{
-                          height: "250px", // Increased height
-                          objectFit: "cover", // Ensure full image shows
-                          width: "100%", // Full width
+                          height: "250px", 
+                          objectFit: "cover", 
+                          width: "100%", 
                           borderRadius: "8px 8px 0 0"
                         }}
                       />
@@ -206,7 +204,6 @@ const GalleryPage = () => {
           </Modal.Footer>
         </Modal>
 
-        {/* Back to Home */}
         <div className="text-center mt-5">
           <Link to="/">
             <Button

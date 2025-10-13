@@ -11,7 +11,7 @@ const JoinUs = () => {
     interests: [],
   });
   
-  const { isDark } = useTheme(); // Use the theme context
+  const { isDark } = useTheme(); 
 
   const interestsList = [
     "Startup Incubation",

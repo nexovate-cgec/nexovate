@@ -64,7 +64,6 @@ const NavBar = () => {
     }
   };
 
-  // নতুন function: Specific pages এ navigate করার জন্য
   const handlePageNavigation = (page) => {
     if (page === 'events') {
       navigate('/events');
@@ -96,7 +95,6 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto align-items-center gap-2">
-            {/* Home */}
             <Nav.Link
               onClick={() => handleSectionClick('home')}
               className={`nav-link-custom ${activeSection === 'home' ? 'active-section' : ''}`}
@@ -105,7 +103,6 @@ const NavBar = () => {
               Home
             </Nav.Link>
 
-            {/* Initiatives */}
             <Nav.Link
               onClick={() => handleSectionClick('initiatives')}
               className={`nav-link-custom ${activeSection === 'initiatives' ? 'active-section' : ''}`}
@@ -114,7 +111,6 @@ const NavBar = () => {
               Initiatives
             </Nav.Link>
 
-            {/* Events - All Events page এ navigate করবে */}
             <Nav.Link
               onClick={() => handlePageNavigation('events')}
               className={`nav-link-custom ${location.pathname === '/events' ? 'active-section' : ''}`}
@@ -123,7 +119,6 @@ const NavBar = () => {
               Events
             </Nav.Link>
 
-            {/* Gallery - Gallery page এ navigate করবে */}
             <Nav.Link
               onClick={() => handlePageNavigation('gallery')}
               className={`nav-link-custom ${location.pathname === '/gallery' ? 'active-section' : ''}`}
@@ -132,7 +127,6 @@ const NavBar = () => {
               Gallery
             </Nav.Link>
 
-            {/* Blog - All Blogs page এ navigate করবে */}
             <Nav.Link
               onClick={() => handlePageNavigation('blog')}
               className={`nav-link-custom ${location.pathname === '/blogs' ? 'active-section' : ''}`}
@@ -141,7 +135,6 @@ const NavBar = () => {
               Blog
             </Nav.Link>
 
-            {/* Team */}
             <Nav.Link
               onClick={() => handleSectionClick('team')}
               className={`nav-link-custom ${activeSection === 'team' ? 'active-section' : ''}`}
@@ -150,7 +143,6 @@ const NavBar = () => {
               Team
             </Nav.Link>
 
-            {/* Testimonials */}
             <Nav.Link
               onClick={() => handleSectionClick('testimonials')}
               className={`nav-link-custom ${activeSection === 'testimonials' ? 'active-section' : ''}`}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Container, Row, Col, Button, Card, Badge } from "react-bootstrap";
-import { ArrowLeft, Calendar, GeoAlt, Clock, Share, Clipboard } from "react-bootstrap-icons";
+import { ArrowLeft, Calendar, GeoAlt, Clock, Share } from "react-bootstrap-icons";
 import { useTheme } from "../contexts/ThemeContext"; 
 import { getEventById } from "../data/events";
 
@@ -31,7 +31,6 @@ const EventDetails = () => {
 
   return (
     <>
-      {/* Simple Header */}
       <nav className={`navbar border-bottom ${isDark ? 'bg-dark navbar-dark' : 'bg-light navbar-light'}`}>
         <Container>
           <div className="d-flex justify-content-between w-100 align-items-center">
@@ -51,7 +50,6 @@ const EventDetails = () => {
         <Row className="justify-content-center">
           <Col lg={10}>
             
-            {/* Event Header */}
             <div className="text-center mb-5">
               <Badge bg="primary" className="mb-3 fs-6">
                 {event.category}
@@ -87,7 +85,6 @@ const EventDetails = () => {
               </div>
             </div>
 
-            {/* Event Image */}
             <div className="text-center mb-5">
               <img
                 src={event.image}
@@ -98,7 +95,6 @@ const EventDetails = () => {
             </div>
 
             <Row className="g-4">
-              {/* Event Description */}
               <Col lg={8}>
                 <Card className={isDark ? "bg-dark text-light" : ""}>
                   <Card.Body className="p-4">
@@ -112,7 +108,6 @@ const EventDetails = () => {
                 </Card>
               </Col>
 
-              {/* Quick Info Sidebar */}
               <Col lg={4}>
                 <Card className={`shadow-sm sticky-top ${isDark ? "bg-dark text-light" : ""}`} style={{ top: "20px" }}>
                   <Card.Body>
@@ -156,7 +151,6 @@ const EventDetails = () => {
                       {event.compleOrNot}
                     </Button>
 
-                    {/* Contact Info if available */}
                     {event.contacts && event.contacts.length > 0 && (
                       <div className="mt-4">
                         <h6>Contact:</h6>
@@ -172,45 +166,40 @@ const EventDetails = () => {
               </Col>
             </Row>
 
-            {/* Social Links */}
             <Card className={`border-0 mt-4 text-center ${isDark ? "bg-secondary text-light" : "bg-light"}`}>
-  <Card.Body className="p-4">
-    <h5>Follow Us</h5>
-    <p className="mb-3">Stay updated with our latest events</p>
-    <div className="d-flex justify-content-center gap-3 flex-wrap">
-      {/* Always show all social links with fallback */}
-      <a 
-                         href="https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" 
-
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className={`btn ${isDark ? "btn-outline-light" : "btn-outline-danger"}`}
-      >
-        Instagram
-      </a>
-      
-      <a 
-                         href="https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className={`btn ${isDark ? "btn-outline-light" : "btn-outline-primary"}`}
-      >
-        LinkedIn
-      </a>
-      
-      <a 
-        href="https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf" 
-
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className={`btn ${isDark ? "btn-outline-light" : "btn-outline-danger"}`}
-      >
-        YouTube
-      </a>
-    </div>
-  </Card.Body>
-</Card>
+              <Card.Body className="p-4">
+                <h5>Follow Us</h5>
+                <p className="mb-3">Stay updated with our latest events</p>
+                <div className="d-flex justify-content-center gap-3 flex-wrap">
+                  <a 
+                    href="https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={`btn ${isDark ? "btn-outline-light" : "btn-outline-danger"}`}
+                  >
+                    Instagram
+                  </a>
+                  
+                  <a 
+                    href="https://www.linkedin.com/in/nexovate-ecell-041104374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={`btn ${isDark ? "btn-outline-light" : "btn-outline-primary"}`}
+                  >
+                    LinkedIn
+                  </a>
+                  
+                  <a 
+                    href="https://youtube.com/@nexovatecgec?si=hyPLtxqmlvG-AScf" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={`btn ${isDark ? "btn-outline-light" : "btn-outline-danger"}`}
+                  >
+                    YouTube
+                  </a>
+                </div>
+              </Card.Body>
+            </Card>
 
           </Col>
         </Row>

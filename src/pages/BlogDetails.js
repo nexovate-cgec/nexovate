@@ -767,7 +767,6 @@ const BlogDetails = () => {
         </div>
       </div>
 
-      {/* Share section update */}
       <div 
         className="d-flex justify-content-between align-items-center mb-5 p-3 rounded-3"
         style={{ 
@@ -823,7 +822,6 @@ const BlogDetails = () => {
   }}
 />
 
-{/* Tags section update */}
 <div className="mb-5">
   <h5 className="fw-semibold mb-3" style={{ color: "var(--text-color)" }}>Tags:</h5>
   <div className="d-flex flex-wrap gap-2">
@@ -841,7 +839,6 @@ const BlogDetails = () => {
   </div>
 </div>
 
-{/* Author card update */}
 <Card 
   className="border-0 rounded-4"
   style={{ backgroundColor: "var(--card-bg)" }}

@@ -12,7 +12,6 @@ const AllBlogs = () => {
   const allBlogs = getRecentBlogs();
   const categories = ["all", ...new Set(allBlogs.map(blog => blog.category))];
   
-  // Filter blogs based on selected category
   const filteredBlogs = selectedCategory === "all" 
     ? allBlogs 
     : getBlogsByCategory(selectedCategory);
@@ -27,7 +26,6 @@ const AllBlogs = () => {
       }}
     >
       <Container>
-        {/* Breadcrumb Navigation */}
         <Breadcrumb className="mb-4">
           <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }} style={{ color: isDark ? "white" : "inherit" }}>
             Home
@@ -37,7 +35,6 @@ const AllBlogs = () => {
           </Breadcrumb.Item>
         </Breadcrumb>
 
-        {/* Page Header */}
         <div className="text-center mb-4">
           <h1 className="fw-bold h3 mb-2" style={{ color: isDark ? "white" : "var(--text-color)" }}>
             Our <span style={{ color: "var(--primary-color)" }}>Blogs</span>
@@ -47,7 +44,6 @@ const AllBlogs = () => {
           </p>
         </div>
 
-        {/* Category Filter */}
         <div className="text-center mb-4">
           <div className="d-flex flex-wrap justify-content-center gap-2">
             {categories.map(category => (
@@ -69,7 +65,6 @@ const AllBlogs = () => {
           </div>
         </div>
 
-        {/* Results Count */}
         <div className="text-center mb-4">
           <p style={{ color: isDark ? "#ccc" : "var(--secondary-color)", fontSize: "0.9rem" }}>
             Showing {filteredBlogs.length} blog{filteredBlogs.length !== 1 ? 's' : ''}
@@ -77,7 +72,6 @@ const AllBlogs = () => {
           </p>
         </div>
 
-        {/* Blog Grid - 3 cards per row */}
         <Row>
           {filteredBlogs.map((blog) => (
             <Col lg={4} md={6} className="mb-4" key={blog.id}>
@@ -92,7 +86,6 @@ const AllBlogs = () => {
                   border: isDark ? "1px solid #444" : "none"
                 }}
               >
-                {/* Blog Image */}
                 <div className="position-relative">
                   <Card.Img
                     variant="top"
@@ -105,7 +98,6 @@ const AllBlogs = () => {
                     }}
                     className="blog-image"
                   />
-                  {/* Category Badge */}
                   <div className="position-absolute top-0 start-0 m-2">
                     <Badge 
                       bg={"primary"} 
@@ -118,7 +110,6 @@ const AllBlogs = () => {
                 </div>
                 
                 <Card.Body className="p-3 d-flex flex-column">
-                  {/* Blog Title */}
                   <Card.Title 
                     className="fw-semibold h6 mb-2" 
                     style={{ 
@@ -134,7 +125,6 @@ const AllBlogs = () => {
                     {blog.title}
                   </Card.Title>
                   
-                  {/* Blog Description */}
                   <Card.Text 
                     style={{ 
                       color: isDark ? "#ccc" : "var(--text-color)",
@@ -150,7 +140,6 @@ const AllBlogs = () => {
                     {blog.desc}
                   </Card.Text>
                   
-                  {/* E-Cell Logo and Name */}
                   <div className="d-flex align-items-center mb-2 pt-2" style={{ borderTop: isDark ? "1px solid #444" : "1px solid #dee2e6" }}>
                     <img
                       src={logo}
@@ -183,7 +172,6 @@ const AllBlogs = () => {
                     </div>
                   </div>
                   
-                  {/* Read More Button */}
                   <Link to={`/blog/${blog.id}`} className="mt-auto">
                     <Button 
                       variant={isDark ? "outline-light" : "outline-primary"} 
@@ -200,7 +188,6 @@ const AllBlogs = () => {
           ))}
         </Row>
 
-        {/* No Blogs Message */}
         {filteredBlogs.length === 0 && (
           <div className="text-center py-5">
             <h5 style={{ color: isDark ? "#ccc" : "var(--secondary-color)" }}>
@@ -217,7 +204,6 @@ const AllBlogs = () => {
           </div>
         )}
 
-        {/* Footer Section */}
         <div className="text-center mt-4">
           <div className="p-4 rounded-3" style={{ 
             backgroundColor: isDark ? "var(--card-bg)" : "var(--card-bg)",
@@ -255,7 +241,6 @@ const AllBlogs = () => {
         </div>
       </Container>
 
-      {/* Custom styles for hover effects */}
       <style jsx>{`
         .blog-card:hover {
           transform: translateY(-4px);

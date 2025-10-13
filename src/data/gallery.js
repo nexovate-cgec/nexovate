@@ -180,7 +180,6 @@ export const allEvents = [
   
 ];
 
-// Helper functions
 export const getAllEvents = () => {
   return allEvents;
 };

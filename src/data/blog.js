@@ -77,7 +77,6 @@ export const blogData = [
 //   }
 ];
 
-// Helper functions
 export const getBlogById = (id) => {
   return blogData.find(blog => blog.id === parseInt(id));
 };

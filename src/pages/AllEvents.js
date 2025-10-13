@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Button, Breadcrumb, Form, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
-import { events, getUpcomingEvents, getEventsByCategory, getCompletedEvents } from "../data/events";
+import { getUpcomingEvents, getEventsByCategory, getCompletedEvents } from "../data/events";
 
 const AllEvents = () => {
   const { isDark } = useTheme();
   const [filter, setFilter] = useState("all");
   
-  // Get all events
   const upcomingEvents = getUpcomingEvents();
   const completedEvents = getCompletedEvents();
   
-  // Filter only completed events based on category
   const filteredCompletedEvents = filter === "all" 
     ? completedEvents 
     : getEventsByCategory(filter).filter(event => event.status === "Completed");
@@ -29,7 +27,6 @@ const AllEvents = () => {
       }}
     >
       <Container>
-        {/* Breadcrumb */}
         <Breadcrumb className="mb-4">
           <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
             Home
@@ -37,7 +34,6 @@ const AllEvents = () => {
           <Breadcrumb.Item active>All Events</Breadcrumb.Item>
         </Breadcrumb>
 
-        {/* Page Header */}
         <div className="text-center mb-5">
           <h1 className="fw-bold" style={{ color: "var(--text-color)" }}>
             All <span style={{ color: "var(--primary-color)" }}>Events</span>
@@ -47,7 +43,6 @@ const AllEvents = () => {
           </p>
         </div>
 
-        {/* Upcoming Events Section - No Filter */}
         {upcomingEvents.length > 0 && (
           <div className="mb-5">
             <div className="d-flex align-items-center justify-content-between mb-4">
@@ -150,7 +145,6 @@ const AllEvents = () => {
           </div>
         )}
 
-        {/* Completed Events Section - With Filter */}
         {completedEvents.length > 0 && (
           <div className="mb-5">
             <div className="d-flex align-items-center justify-content-between mb-4">
@@ -162,7 +156,6 @@ const AllEvents = () => {
               </h2>
             </div>
 
-            {/* Filter Section - Only for Completed Events */}
             <div className="mb-4">
               <Form.Group>
                 <Form.Label style={{ color: "var(--text-color)" }}>Filter Completed Events by Category:</Form.Label>
@@ -182,7 +175,6 @@ const AllEvents = () => {
               </Form.Group>
             </div>
 
-            {/* Events Count */}
             <div className="mb-4">
               <p style={{ color: "var(--secondary-color)" }}>
                 Showing {filteredCompletedEvents.length} completed event{filteredCompletedEvents.length !== 1 ? 's' : ''}
@@ -299,7 +291,6 @@ const AllEvents = () => {
           </div>
         )}
 
-        {/* No Events Message */}
         {upcomingEvents.length === 0 && completedEvents.length === 0 && (
           <div className="text-center py-5">
             <h5 style={{ color: "var(--secondary-color)" }}>
@@ -308,7 +299,6 @@ const AllEvents = () => {
           </div>
         )}
 
-        {/* Back to Home */}
         <div className="text-center mt-5">
           <Link to="/">
             <Button

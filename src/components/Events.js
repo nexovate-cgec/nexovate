@@ -26,7 +26,6 @@ const Events = () => {
       }}
     >
       <Container>
-        {/* Header Section - Middle aligned */}
         <div className="text-center mb-5">
           <h2 className="fw-bold mb-3" style={{ color: "var(--text-color)" }}>
             Our <span style={{ color: "var(--primary-color)" }}>Events</span>
@@ -35,7 +34,6 @@ const Events = () => {
             Discover our latest events and activities
           </p>
           
-          {/* View All Button - Also centered */}
           <Link to="/events" className="text-decoration-none">
             <Button
               variant={isDark ? "outline-light" : "outline-primary"}

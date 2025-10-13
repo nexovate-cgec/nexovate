@@ -63,7 +63,6 @@ export const events = [
 
 ];
 
-// Helper functions
 export const getEventById = (id) => {
   return events.find(event => event.id === parseInt(id));
 };

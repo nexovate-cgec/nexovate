@@ -15,7 +15,7 @@ import { getFeaturedEvents, getAllEvents } from "../data/gallery";
 
 const Gallery = () => {
   const { isDark } = useTheme();
-  const featuredEvent = getFeaturedEvents(1)[0]; // Show only 1 featured event
+  const featuredEvent = getFeaturedEvents(1)[0];
   const allEvents = getAllEvents();
 
   return (
@@ -24,7 +24,6 @@ const Gallery = () => {
       color: "var(--text-color)"
     }}>
       <Container>
-        {/* Header Section - Middle Aligned */}
         <div className="text-center mb-5">
           <h2 className="fw-bold mb-3" style={{ color: "var(--text-color)" }}>
             Our <span style={{ color: "var(--primary-color)" }}>Event Gallery</span>
@@ -33,7 +32,6 @@ const Gallery = () => {
             Explore our event memories and moments
           </p>
           
-          {/* View All Button - Also centered */}
           <Link to="/gallery" className="text-decoration-none">
             <Button
               variant={isDark ? "outline-light" : "outline-primary"}
@@ -45,7 +43,6 @@ const Gallery = () => {
           </Link>
         </div>
 
-        {/* Single Event Swiper */}
         {featuredEvent && (
           <div>
             <h3 className="text-center fw-bold mb-4 gallery-heading">
