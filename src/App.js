@@ -1,4 +1,4 @@
-// App.js
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -17,7 +17,7 @@ import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
-import FloatingJoinButton from "./components/FloatingJoinButton"; // নতুন কম্পোনেন্ট ইম্পোর্ট করুন
+import FloatingJoinButton from "./components/FloatingJoinButton"; 
 
 // Pages
 import AllEvents from "./pages/AllEvents";
@@ -57,7 +57,6 @@ function App() {
             </Routes>
           </main>
           
-          {/* Floating Join Button সব পেজেই দেখাবে */}
           <FloatingJoinButton />
         </div>
       </Router>
