@@ -64,17 +64,17 @@ export const blogData = [
     category: "Micro Business",
     readTime: "3 min read"
   },
-//   {
-//     id: 5,
-//     title: "Smart Ways to Build Brand Trust as a New Company",
-//     img: Blog4,
-//     desc: "In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb.",
-//     fullContent:"In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb.",
-//     author: "Author Name",
-//     date: "2025-10-15",
-//     category: "Branding",
-//     readTime: "5 min read"
-//   }
+  {
+    id: 5,
+    title: "Smart Ways to Build Brand Trust as a New Company",
+    img: Blog4,
+    desc: "In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb.",
+    fullContent:"In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb.",
+    author: "Author Name",
+    date: "2025-10-15",
+    category: "Branding",
+    readTime: "5 min read"
+  }
 ];
 
 export const getBlogById = (id) => {
