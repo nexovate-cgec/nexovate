@@ -1,0 +1,243 @@
+/* Startup Launch Style - FIXED VERSION */
+.floating-join-link {
+  text-decoration: none;
+  display: inline-block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.floating-join-btn.startup-style {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 2px solid #334155;
+  border-radius: 16px;
+  padding: 20px 25px;
+  box-shadow: 
+    0 20px 40px rgba(14, 165, 233, 0.2),
+    0 0 0 1px rgba(14, 165, 233, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: cyberPulse 4s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  display: block;
+}
+
+@keyframes cyberPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 20px 40px rgba(14, 165, 233, 0.2),
+      0 0 0 1px rgba(14, 165, 233, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 20px 60px rgba(14, 165, 233, 0.4),
+      0 0 0 1px rgba(14, 165, 233, 0.3);
+  }
+}
+
+.countdown-dots {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  display: flex;
+  gap: 4px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #64748b;
+  animation: dotBlink 2s infinite;
+}
+
+.dot-1 { animation-delay: 0s; }
+.dot-2 { animation-delay: 0.2s; }
+.dot-3 { animation-delay: 0.4s; }
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; background: #0ea5e9; }
+}
+
+.launch-icon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rocket-main {
+  font-size: 1.3rem;
+  color: #0ea5e9;
+  animation: rocketVibrate 2s ease-in-out infinite;
+}
+
+@keyframes rocketVibrate {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-2px) rotate(2deg); }
+  75% { transform: translateY(1px) rotate(-1deg); }
+}
+
+.flame {
+  position: absolute;
+  bottom: -5px;
+  width: 8px;
+  height: 12px;
+  background: linear-gradient(to top, #f59e0b, #ef4444, transparent);
+  border-radius: 50% 50% 0 0;
+  animation: flameFlicker 0.8s infinite alternate;
+  filter: blur(1px);
+}
+
+@keyframes flameFlicker {
+  0% { 
+    transform: scaleY(0.8);
+    opacity: 0.7;
+  }
+  100% { 
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.text-launch {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.text-journey {
+  font-size: 1rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #0ea5e9, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.arrow-icon {
+  color: #0ea5e9;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.floating-join-btn.startup-style:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+  border-radius: 0 0 16px 16px;
+  animation: progressLoad 3s ease-in-out infinite;
+}
+
+@keyframes progressLoad {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+.hover-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+  animation: glowExpand 0.6s ease-out;
+  border-radius: 16px;
+}
+
+@keyframes glowExpand {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Hover Effects */
+.floating-join-btn.startup-style:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 25px 50px rgba(14, 165, 233, 0.3),
+    0 0 0 1px rgba(14, 165, 233, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .floating-join-link {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floating-join-btn.startup-style {
+    padding: 16px 20px;
+    border-radius: 14px;
+  }
+  
+  .btn-content {
+    gap: 10px;
+  }
+  
+  .launch-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .rocket-main {
+    font-size: 1.1rem;
+  }
+  
+  .text-launch {
+    font-size: 0.7rem;
+  }
+  
+  .text-journey {
+    font-size: 0.9rem;
+  }
+  
+  .countdown-dots {
+    top: 10px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-join-link {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .floating-join-btn.startup-style {
+    padding: 14px 18px;
+  }
+  
+  .btn-content {
+    gap: 8px;
+  }
+  
+  .text-launch {
+    font-size: 0.65rem;
+  }
+  
+  .text-journey {
+    font-size: 0.85rem;
+  }
+}

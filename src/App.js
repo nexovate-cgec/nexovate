@@ -17,6 +17,7 @@ import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
+import FloatingJoinButton from "./components/FloatingJoinButton"; // নতুন কম্পোনেন্ট ইম্পোর্ট করুন
 
 // Pages
 import AllEvents from "./pages/AllEvents";
@@ -51,10 +52,13 @@ function App() {
               <Route path="/events/:id" element={<EventDetail />} />
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
-              <Route path="/gallery" element={<GalleryPage />} />]
+              <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
             </Routes>
           </main>
+          
+          {/* Floating Join Button সব পেজেই দেখাবে */}
+          <FloatingJoinButton />
         </div>
       </Router>
     </ThemeProvider>

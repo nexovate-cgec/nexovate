@@ -1,8 +1,7 @@
 
 
-import React from 'react';import { Link } from 'react-router-dom';
-
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { FaLinkedin, FaInstagram, FaEnvelope, FaRocket, FaHeart, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import './Footer.css';
 
@@ -107,15 +106,7 @@ const Footer = () => (
       </Container>
     </div>
 
-    <Button className="footer-cta" variant="warning">
-      <FaRocket className="me-2" />
-     <Link 
-  to="/join" 
-  className="btn btn-warning ms-2 px-3 fw-semibold rounded-pill"
->
-  Join Our Team
-</Link>
-    </Button>
+   
   </footer>
 );
 
