@@ -393,7 +393,7 @@ const JoinUs = () => {
                           e.target.style.color = "white";
                           e.target.style.borderColor = goldenColor;
                         }}
-                        disabled="true"
+                        
                       >
                         Submit Application
                       </Button>
