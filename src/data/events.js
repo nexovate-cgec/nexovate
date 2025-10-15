@@ -36,7 +36,7 @@ export const events = [
   },
   {
     id: 3,
-    title: "Entrepreneurship Challenge 2025 🧠",
+    title: "Group discussion What's the Problem?🧠",
     date: "Sept 3, 2025",
     description: "🚀 Got ideas? Let's solve big problems together! Pitch your startup ideas to industry experts.",
     fullDescription: "An intensive workshop and pitching competition helping aspiring entrepreneurs transform ideas into viable businesses. Includes sessions on business modeling, pitch creation, funding strategies, and live pitching to investors for mentorship and support opportunities.",

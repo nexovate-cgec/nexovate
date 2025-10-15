@@ -114,7 +114,7 @@ const NavBar = () => {
             height="36" 
             className="navbar-logo"
           />
-          <span className="fw-bold navbar-brand-text golden-text">CGEC ECELL</span>
+          <span className="fw-bold navbar-brand-text golden-text">CGEC ECell</span>
         </Navbar.Brand>
 
         <div className="d-flex align-items-center">
