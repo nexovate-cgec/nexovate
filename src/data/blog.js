@@ -2,6 +2,7 @@ import Blog1 from "../assets/Blogs/2.jpg";
 import Blog2 from "../assets/Blogs/blog31.png";
 import Blog3 from "../assets/Blogs/blog44.png";
 import Blog4 from "../assets/Blogs/blog51.png";
+import Blog5 from "../assets/Blogs/blog61.png";
 
 export const blogData = [
   {
@@ -67,7 +68,7 @@ export const blogData = [
   {
     id: 5,
     title: "Smart Ways to Build Brand Trust as a New Company",
-    img: Blog4,
+    img: Blog5,
     desc: "In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb.",
     fullContent:"In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb.",
     author: "Author Name",
