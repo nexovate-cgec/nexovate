@@ -32,7 +32,7 @@ const FloatingJoinButton = () => {
             <div className="flame"></div>
           </div>
           <div className="text-content">
-            <span className="text-launch">Join Your</span>
+            <span className="text-launch">Join Our</span>
             <span className="text-journey">Team</span>
           </div>
           <FaChevronRight className="arrow-icon" />
