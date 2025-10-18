@@ -132,37 +132,50 @@ const JoinUs = () => {
   };
 
   // Netlify Function for sending confirmation email
-  const sendConfirmationEmail = async (data) => {
-    try {
-      const response = await fetch('/.netlify/functions/send-confirmation-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          to: data.email,
-          name: data.name,
-          year: data.year,
-          college: data.college,
-          department: data.department,
-          submissionDate: data.submissionDate
-        }),
-      });
+// Netlify Function for sending confirmation email
+const sendConfirmationEmail = async (data) => {
+  // Local development-এ email skip করবে কিন্তু success return করবে
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    console.log('📧 [LOCAL DEV] Email would be sent to:', data.email);
+    console.log('📧 [LOCAL DEV] Email content preview:', {
+      to: data.email,
+      name: data.name,
+      year: data.year,
+      college: data.college
+    });
+    return true; // Local-এ always true return করবে
+  }
 
-      const result = await response.json();
-      
-      if (response.ok) {
-        console.log('✅ Confirmation email sent successfully');
-        return true;
-      } else {
-        console.error('❌ Failed to send email:', result.error);
-        return false;
-      }
-    } catch (error) {
-      console.error('⚠️ Email sending failed:', error);
+  try {
+    const response = await fetch('/.netlify/functions/send-confirmation-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        to: data.email,
+        name: data.name,
+        year: data.year,
+        college: data.college,
+        department: data.department,
+        submissionDate: data.submissionDate
+      }),
+    });
+
+    const result = await response.json();
+    
+    if (response.ok) {
+      console.log('✅ Confirmation email sent successfully to:', data.email);
+      return true;
+    } else {
+      console.error('❌ Failed to send email:', result.error);
       return false;
     }
-  };
+  } catch (error) {
+    console.error('⚠️ Email sending failed:', error);
+    return false;
+  }
+};
 
   const resetForm = () => {
     setFormData({
