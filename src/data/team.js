@@ -108,8 +108,8 @@ export const teamData = [
   },
   {
     name: "Sumouli Banerjee",
-    designation: "Content Creator",
-    role: "Graphics and Content",
+    designation: "Content writer",
+    role: "Content Writer",
     year: "2nd",
     dept: "ECE",
     image: member10,
@@ -130,8 +130,8 @@ export const teamData = [
   },
   {
     name: "Pranay Hazra",
-    designation: "Media & Research",
-    role: "Graphics, Video Editing, Research",
+    designation: "Graphics",
+    role: "Media and Design",
     year: "2nd",
     dept: "CE",
     image: member12,
@@ -163,8 +163,8 @@ export const teamData = [
   },
   {
     name: "Swastik Bal",
-    designation: "Team Management & Skill development",
-    role: "",
+    designation: "Team Management ",
+    role: "Team Management & Skill development",
     year: "3rd",
     dept: "ECE",
     image: member15,
