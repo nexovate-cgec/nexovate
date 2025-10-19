@@ -20,14 +20,12 @@ const JoinUs = () => {
 
   const { isDark } = useTheme();
 
-  // Theme styles
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
   const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
   const goldenColor = "rgb(189, 159, 103)";
   const borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
 
-  // Interests list
   const interestsList = [
     "Graphics",
     "Video Editing", 
@@ -41,7 +39,6 @@ const JoinUs = () => {
     "Mentorship Programs",
   ];
 
-  // Colleges list
   const popularColleges = [
     "Cooch Behar Government Engineering College",
     "Jalpaiguri Government Engineering College", 
@@ -53,7 +50,6 @@ const JoinUs = () => {
     "OTHER"
   ];
 
-  // Academic years
   const currentYear = new Date().getFullYear();
   const academicYears = [
     { value: "1st", label: `1st Year (${currentYear}-${currentYear + 1})` },
@@ -64,13 +60,11 @@ const JoinUs = () => {
     { value: "Postgraduate", label: "Postgraduate" }
   ];
 
-  // Load submitted emails from localStorage on component mount
   useEffect(() => {
     const storedEmails = JSON.parse(localStorage.getItem('submittedEmails') || '[]');
     setSubmittedEmails(new Set(storedEmails));
   }, []);
 
-  // Duplicate submission prevention function
   const isDuplicateSubmission = (email) => {
     return submittedEmails.has(email.toLowerCase());
   };
@@ -114,13 +108,11 @@ const JoinUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Check for duplicate submission
     if (isDuplicateSubmission(formData.email)) {
       alert("❌ You have already submitted an application with this email address.");
       return;
     }
 
-    // Validate interests
     if (formData.interests.length === 0) {
       alert("❌ Please select at least one area of interest.");
       return;
@@ -143,7 +135,6 @@ const JoinUs = () => {
         _subject: `New E-Cell Application from ${formData.name}`
       };
 
-      // Formspree submission
       const formspreeResponse = await fetch("https://formspree.io/f/xanppake", {
         method: "POST",
         headers: { 
@@ -154,11 +145,9 @@ const JoinUs = () => {
       });
 
       if (formspreeResponse.ok) {
-        // Send confirmation email
         const emailSent = await sendConfirmationEmail(finalData);
         
         if (emailSent) {
-          // Mark email as submitted to prevent duplicates
           markEmailAsSubmitted(formData.email);
           setShowSuccess(true);
           resetForm();
@@ -181,9 +170,7 @@ const JoinUs = () => {
     }
   };
 
-  // Netlify Function for sending confirmation email
   const sendConfirmationEmail = async (data) => {
-    // Local development-এ email skip করবে
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       console.log('📧 [LOCAL DEV] Email would be sent to:', data.email);
       console.log('📧 [LOCAL DEV] Email content:', {
@@ -239,7 +226,6 @@ const JoinUs = () => {
       <Container>
         <Row className="justify-content-center">
           <Col lg={10} xl={9}>
-            {/* Success Alert */}
             {showSuccess && (
               <Alert 
                 variant="success" 
@@ -302,7 +288,6 @@ const JoinUs = () => {
                 </div>
 
                 <Row className="g-4">
-                  {/* Left Side - Benefits */}
                   <Col lg={6} className="mb-4">
                     <div className="h-100">
                       <h4 
@@ -365,8 +350,7 @@ const JoinUs = () => {
                       </div>
                     </div>
                   </Col>
-
-                  {/* Right Side - Form */}
+a
                   <Col lg={6}>
                     <Form onSubmit={handleSubmit} className="h-100">
                       <Form.Group className="mb-3">
@@ -716,7 +700,6 @@ const JoinUs = () => {
               </Card.Body>
             </Card>
 
-            {/* Additional Info Section */}
             <div className="text-center mt-5">
               <p style={{ color: textColor, opacity: "0.7" }} className="mb-2">
                 <i className="fas fa-clock me-2" style={{ color: goldenColor }}></i>
