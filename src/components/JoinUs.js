@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button, Alert } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeContext";
 
@@ -16,15 +16,18 @@ const JoinUs = () => {
 
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const { isDark } = useTheme(); 
+  const [submittedEmails, setSubmittedEmails] = useState(new Set());
 
+  const { isDark } = useTheme();
+
+  // Theme styles
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
   const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
   const goldenColor = "rgb(189, 159, 103)";
   const borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
 
+  // Interests list
   const interestsList = [
     "Graphics",
     "Video Editing", 
@@ -38,6 +41,7 @@ const JoinUs = () => {
     "Mentorship Programs",
   ];
 
+  // Colleges list
   const popularColleges = [
     "Cooch Behar Government Engineering College",
     "Jalpaiguri Government Engineering College", 
@@ -49,6 +53,7 @@ const JoinUs = () => {
     "OTHER"
   ];
 
+  // Academic years
   const currentYear = new Date().getFullYear();
   const academicYears = [
     { value: "1st", label: `1st Year (${currentYear}-${currentYear + 1})` },
@@ -58,6 +63,23 @@ const JoinUs = () => {
     { value: "5th", label: `5th Year (${currentYear - 4}-${currentYear - 3})` },
     { value: "Postgraduate", label: "Postgraduate" }
   ];
+
+  // Load submitted emails from localStorage on component mount
+  useEffect(() => {
+    const storedEmails = JSON.parse(localStorage.getItem('submittedEmails') || '[]');
+    setSubmittedEmails(new Set(storedEmails));
+  }, []);
+
+  // Duplicate submission prevention function
+  const isDuplicateSubmission = (email) => {
+    return submittedEmails.has(email.toLowerCase());
+  };
+
+  const markEmailAsSubmitted = (email) => {
+    const updatedEmails = [...submittedEmails, email.toLowerCase()];
+    localStorage.setItem('submittedEmails', JSON.stringify(updatedEmails));
+    setSubmittedEmails(new Set(updatedEmails));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -76,8 +98,34 @@ const JoinUs = () => {
     }));
   };
 
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      college: "CGEC",
+      otherCollege: "",
+      year: "",
+      department: "",
+      otherDepartment: "",
+      interests: [],
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Check for duplicate submission
+    if (isDuplicateSubmission(formData.email)) {
+      alert("❌ You have already submitted an application with this email address.");
+      return;
+    }
+
+    // Validate interests
+    if (formData.interests.length === 0) {
+      alert("❌ Please select at least one area of interest.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -106,88 +154,76 @@ const JoinUs = () => {
       });
 
       if (formspreeResponse.ok) {
-        // Send confirmation email using Netlify Function
+        // Send confirmation email
         const emailSent = await sendConfirmationEmail(finalData);
         
         if (emailSent) {
+          // Mark email as submitted to prevent duplicates
+          markEmailAsSubmitted(formData.email);
           setShowSuccess(true);
           resetForm();
           setTimeout(() => setShowSuccess(false), 8000);
         } else {
-          // Form submitted but email failed - still show success but with warning
+          alert("⚠️ Form submitted but confirmation email failed. Please check your email.");
+          markEmailAsSubmitted(formData.email);
           setShowSuccess(true);
           resetForm();
           setTimeout(() => setShowSuccess(false), 8000);
-          console.warn("Form submitted but confirmation email failed");
         }
       } else {
-        alert("❌ Failed to submit the form. Try again later.");
+        alert("❌ Failed to submit the form. Please try again later.");
       }
     } catch (error) {
       console.error("Submission error:", error);
-      alert("⚠️ Something went wrong. Please check your connection.");
+      alert("⚠️ Something went wrong. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   // Netlify Function for sending confirmation email
-// Netlify Function for sending confirmation email
-const sendConfirmationEmail = async (data) => {
-  // Local development-এ email skip করবে কিন্তু success return করবে
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    console.log('📧 [LOCAL DEV] Email would be sent to:', data.email);
-    console.log('📧 [LOCAL DEV] Email content preview:', {
-      to: data.email,
-      name: data.name,
-      year: data.year,
-      college: data.college
-    });
-    return true; // Local-এ always true return করবে
-  }
-
-  try {
-    const response = await fetch('/.netlify/functions/send-confirmation-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
+  const sendConfirmationEmail = async (data) => {
+    // Local development-এ email skip করবে
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      console.log('📧 [LOCAL DEV] Email would be sent to:', data.email);
+      console.log('📧 [LOCAL DEV] Email content:', {
         to: data.email,
         name: data.name,
         year: data.year,
         college: data.college,
-        department: data.department,
-        submissionDate: data.submissionDate
-      }),
-    });
-
-    const result = await response.json();
-    
-    if (response.ok) {
-      console.log('✅ Confirmation email sent successfully to:', data.email);
+        department: data.department
+      });
       return true;
-    } else {
-      console.error('❌ Failed to send email:', result.error);
+    }
+
+    try {
+      const response = await fetch('/.netlify/functions/send-confirmation-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: data.email,
+          name: data.name,
+          year: data.year,
+          college: data.college,
+          department: data.department
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        console.log('✅ Confirmation email sent successfully to:', data.email);
+        return true;
+      } else {
+        console.error('❌ Failed to send email:', result.error);
+        return false;
+      }
+    } catch (error) {
+      console.error('⚠️ Email sending failed:', error);
       return false;
     }
-  } catch (error) {
-    console.error('⚠️ Email sending failed:', error);
-    return false;
-  }
-};
-
-  const resetForm = () => {
-    setFormData({
-      name: "",
-      email: "",
-      college: "CGEC",
-      otherCollege: "",
-      year: "",
-      department: "",
-      otherDepartment: "",
-      interests: [],
-    });
   };
 
   return (
@@ -233,7 +269,6 @@ const sendConfirmationEmail = async (data) => {
               </Alert>
             )}
 
-            {/* Rest of your JSX remains exactly the same */}
             <Card 
               className="shadow-lg border-0 animate__animated animate__fadeInUp"
               style={{ 
@@ -267,6 +302,7 @@ const sendConfirmationEmail = async (data) => {
                 </div>
 
                 <Row className="g-4">
+                  {/* Left Side - Benefits */}
                   <Col lg={6} className="mb-4">
                     <div className="h-100">
                       <h4 
@@ -330,6 +366,7 @@ const sendConfirmationEmail = async (data) => {
                     </div>
                   </Col>
 
+                  {/* Right Side - Form */}
                   <Col lg={6}>
                     <Form onSubmit={handleSubmit} className="h-100">
                       <Form.Group className="mb-3">
@@ -553,6 +590,11 @@ const sendConfirmationEmail = async (data) => {
                             ))}
                           </Row>
                         </div>
+                        {formData.interests.length === 0 && (
+                          <Form.Text className="text-danger">
+                            * Please select at least one interest area
+                          </Form.Text>
+                        )}
                       </Form.Group>
 
                       <Button
