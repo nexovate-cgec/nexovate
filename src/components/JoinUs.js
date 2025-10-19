@@ -350,7 +350,6 @@ const JoinUs = () => {
                       </div>
                     </div>
                   </Col>
-a
                   <Col lg={6}>
                     <Form onSubmit={handleSubmit} className="h-100">
                       <Form.Group className="mb-3">
