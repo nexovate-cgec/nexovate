@@ -1,4 +1,5 @@
 
+
 const nodemailer = require('nodemailer');
 
 exports.handler = async (event) => {
@@ -23,18 +24,37 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { to, name, year, college, department } = JSON.parse(event.body);
+    let parsedBody;
+    try {
+      parsedBody = JSON.parse(event.body);
+    } catch (parseError) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: 'Invalid JSON in request body' })
+      };
+    }
+
+    const { to, name, year, college, department } = parsedBody;
     
-    console.log('📧 Attempting to send email to:', to);
+    console.log('📧 Email to:', to);
     console.log('👤 Name:', name);
     console.log('🏫 College:', college);
 
     if (!to || !name) {
-      console.error('❌ Missing required fields');
       return {
         statusCode: 400,
         headers,
         body: JSON.stringify({ error: 'Missing required fields: to and name' })
+      };
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(to)) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: 'Invalid email address' })
       };
     }
 
@@ -45,7 +65,7 @@ exports.handler = async (event) => {
         headers,
         body: JSON.stringify({ 
           error: 'Email configuration missing',
-          details: 'EMAIL_USER or EMAIL_PASS not set'
+          details: 'Check Netlify environment variables'
         })
       };
     }
@@ -58,37 +78,37 @@ exports.handler = async (event) => {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
       },
-      debug: true,
-      logger: true
+      secure: true,
+      port: 465
     });
 
     try {
       await transporter.verify();
       console.log('✅ Transporter verified successfully');
     } catch (verifyError) {
-      console.error('❌ Transporter verification failed:', verifyError);
+      console.error('❌ Transporter verification failed:', verifyError.message);
       return {
         statusCode: 500,
         headers,
         body: JSON.stringify({ 
-          error: 'Email configuration invalid',
+          error: 'Email authentication failed',
           details: verifyError.message
         })
       };
     }
 
-
     const mailOptions = {
       from: `"CGEC E-Cell" <${process.env.EMAIL_USER}>`,
       to: to,
+      replyTo: process.env.EMAIL_USER,
       subject: 'Application Received - CGEC E-Cell',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: linear-gradient(135deg, #bd9f67, #a67c52); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+          <div style="background: linear-gradient(135deg, #bd9f67, #a67c52); color: white; padding: 30px; text-align: center;">
             <h1>Welcome to CGEC E-Cell!</h1>
             <p>Entrepreneurship Cell</p>
           </div>
-          <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px;">
+          <div style="background: #f9f9f9; padding: 30px;">
             <h2>Hello ${name}! 👋</h2>
             <p>Thank you for submitting your application to join CGEC E-Cell. We're excited to have you on board!</p>
             
@@ -119,11 +139,10 @@ exports.handler = async (event) => {
       `
     };
 
-
     console.log('📤 Sending email...');
     const result = await transporter.sendMail(mailOptions);
-    console.log('✅ Email sent successfully:', result.messageId);
-    console.log('✅ Response:', result.response);
+    console.log('✅ Email sent successfully');
+    console.log('✅ Message ID:', result.messageId);
     
     return {
       statusCode: 200,
@@ -131,13 +150,13 @@ exports.handler = async (event) => {
       body: JSON.stringify({ 
         success: true, 
         message: 'Confirmation email sent successfully',
-        messageId: result.messageId
+        messageId: result.messageId,
+        to: to
       })
     };
 
   } catch (error) {
-    console.error('❌ Error in send-confirmation-email:', error);
-    console.error('❌ Error stack:', error.stack);
+    console.error('❌ Unexpected error:', error);
     
     return {
       statusCode: 500,

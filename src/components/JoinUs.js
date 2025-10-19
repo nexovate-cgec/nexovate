@@ -15,6 +15,7 @@ const JoinUs = () => {
   });
 
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showEmailSuccess, setShowEmailSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedEmails, setSubmittedEmails] = useState(new Set());
 
@@ -119,7 +120,7 @@ const JoinUs = () => {
     }
 
     setIsSubmitting(true);
-
+    setShowEmailSuccess(false);
     try {
       const finalData = {
         ...formData,
@@ -150,10 +151,13 @@ const JoinUs = () => {
         if (emailSent) {
           markEmailAsSubmitted(formData.email);
           setShowSuccess(true);
+          setShowEmailSuccess(true); 
           resetForm();
-          setTimeout(() => setShowSuccess(false), 8000);
+          setTimeout(() => {
+            setShowSuccess(false);
+            setShowEmailSuccess(false);
+          }, 10000); 
         } else {
-          alert("⚠️ Form submitted but confirmation email failed. Please check your email.");
           markEmailAsSubmitted(formData.email);
           setShowSuccess(true);
           resetForm();
@@ -173,17 +177,12 @@ const JoinUs = () => {
   const sendConfirmationEmail = async (data) => {
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       console.log('📧 [LOCAL DEV] Email would be sent to:', data.email);
-      console.log('📧 [LOCAL DEV] Email content:', {
-        to: data.email,
-        name: data.name,
-        year: data.year,
-        college: data.college,
-        department: data.department
-      });
       return true;
     }
 
     try {
+      console.log('📧 Calling Netlify function for:', data.email);
+      
       const response = await fetch('/.netlify/functions/send-confirmation-email', {
         method: 'POST',
         headers: {
@@ -199,8 +198,9 @@ const JoinUs = () => {
       });
 
       const result = await response.json();
+      console.log('📧 Function response:', result);
       
-      if (response.ok) {
+      if (response.ok && result.success) {
         console.log('✅ Confirmation email sent successfully to:', data.email);
         return true;
       } else {
@@ -226,6 +226,30 @@ const JoinUs = () => {
       <Container>
         <Row className="justify-content-center">
           <Col lg={10} xl={9}>
+            {showEmailSuccess && (
+              <Alert 
+                variant="info" 
+                className="mb-3 text-center animate__animated animate__fadeInDown"
+                style={{
+                  backgroundColor: "rgba(13, 110, 253, 0.1)",
+                  borderColor: "#0d6efd",
+                  color: "#0d6efd",
+                  borderRadius: "15px",
+                  border: "2px solid #0d6efd",
+                  padding: "15px"
+                }}
+              >
+                <div className="d-flex align-items-center justify-content-center mb-2">
+                  <i className="fas fa-paper-plane me-2" style={{ fontSize: "1.5rem" }}></i>
+                  <h5 className="mb-0 fw-bold">Confirmation Email Sent!</h5>
+                </div>
+                <p className="mb-0">
+                  We've sent a confirmation email to <strong>{formData.email}</strong>. 
+                  Please check your inbox and spam folder.
+                </p>
+              </Alert>
+            )}
+
             {showSuccess && (
               <Alert 
                 variant="success" 
@@ -247,11 +271,16 @@ const JoinUs = () => {
                   Thank you <strong>{formData.name}</strong> for your interest in CGEC E-Cell!
                 </p>
                 <p className="mb-3">
-                  We have received your application and will contact you at <strong className="text-dark">{formData.email}</strong> soon.
+                  We have received your application and will contact you soon.
                 </p>
-                <p className="mb-0 text-muted">
-                  <small>You will receive a confirmation email shortly.</small>
-                </p>
+                {!showEmailSuccess && (
+                  <p className="mb-0 text-muted">
+                    <small>
+                      <i className="fas fa-info-circle me-1"></i>
+                      You should receive a confirmation email shortly.
+                    </small>
+                  </p>
+                )}
               </Alert>
             )}
 
@@ -698,17 +727,6 @@ const JoinUs = () => {
                 </Row>
               </Card.Body>
             </Card>
-
-            <div className="text-center mt-5">
-              <p style={{ color: textColor, opacity: "0.7" }} className="mb-2">
-                <i className="fas fa-clock me-2" style={{ color: goldenColor }}></i>
-                We typically respond within 24-48 hours
-              </p>
-              <p style={{ color: textColor, opacity: "0.7" }} className="mb-0">
-                <i className="fas fa-shield-alt me-2" style={{ color: goldenColor }}></i>
-                Your information is secure and will not be shared with third parties
-              </p>
-            </div>
           </Col>
         </Row>
       </Container>
