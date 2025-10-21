@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { FaLinkedin, FaEnvelope, FaInstagram } from "react-icons/fa"; 
+import { FaLinkedin, FaEnvelope, FaInstagram, FaFilePdf } from "react-icons/fa"; 
 import { useTheme } from "../contexts/ThemeContext";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,6 +18,30 @@ const Team = () => {
   const textColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
   const secondaryTextColor = isDark ? "var(--light-text, #ffffff)" : "#2c3e50";
   const goldenColor = "rgb(189, 159, 103)";
+
+  const iconStyle = {
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
+    color: goldenColor,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "all 0.3s ease",
+    border: `2px solid ${goldenColor}`,
+    textDecoration: "none"
+  };
+
+  const handleIconHover = (e) => {
+    e.currentTarget.style.backgroundColor = goldenColor;
+    e.currentTarget.style.color = "white";
+  };
+
+  const handleIconLeave = (e) => {
+    e.currentTarget.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
+    e.currentTarget.style.color = goldenColor;
+  };
 
   return (
     <section 
@@ -60,12 +84,13 @@ const Team = () => {
           {teamData.map((member, index) => (
             <SwiperSlide key={index}>
               <div
-                className="team-card text-center p-4 rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-between h-100 transition-card"
+                className="team-card text-center p-4 rounded-4 shadow-sm d-flex flex-column h-100 transition-card"
                 style={{
                   backgroundColor: cardBg,
                   color: textColor,
                   border: `2px solid ${goldenColor}`,
-                  borderRadius: "15px"
+                  borderRadius: "15px",
+                  minHeight: "450px"
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-5px)";
@@ -91,124 +116,109 @@ const Team = () => {
                     }}
                   />
                 </div>
-                <h5 className="fw-bold mb-1" style={{ color: textColor }}>
-                  {member.name}
-                </h5>
-                <p 
-                  className="fw-semibold mb-1"
-                  style={{ 
-                    color: goldenColor,
-                    fontSize: "0.95rem"
-                  }}
-                >
-                  {member.designation}
-                </p>
-                <p 
-                  className="mb-2" 
-                  style={{ 
-                    fontSize: "0.9rem",
-                    color: secondaryTextColor,
-                    opacity: "0.8"
-                  }}
-                >
-                  {member.role}
-                </p>
-                <small 
-                  className="fst-italic mb-3"
-                  style={{
-                    color: secondaryTextColor,
-                    opacity: "0.7"
-                  }}
-                >
-                  {member.year} year, {member.dept} Dept, CGEC
-                </small>
 
-                <div className="d-flex justify-content-center gap-3">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-icon"
-                    style={{
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "50%",
-                      backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
-                      color: goldenColor,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      transition: "all 0.3s ease",
-                      border: `2px solid ${goldenColor}`,
-                      textDecoration: "none"
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = goldenColor;
-                      e.currentTarget.style.color = "white";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
-                      e.currentTarget.style.color = goldenColor;
-                    }}
-                  >
-                    <FaLinkedin />
-                  </a>
-                  <a
-                    href={member.insta}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-icon"
-                    style={{
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "50%",
-                      backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
-                      color: goldenColor,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      transition: "all 0.3s ease",
-                      border: `2px solid ${goldenColor}`,
-                      textDecoration: "none"
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = goldenColor;
-                      e.currentTarget.style.color = "white";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
-                      e.currentTarget.style.color = goldenColor;
-                    }}
-                  >
-                    <FaInstagram />
-                  </a>
-                  <a 
-                    href={`mailto:${member.email}`} 
-                    className="contact-icon"
-                    style={{
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "50%",
-                      backgroundColor: isDark ? "var(--dark-card-bg, #1a1a1a)" : "white",
-                      color: goldenColor,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      transition: "all 0.3s ease",
-                      border: `2px solid ${goldenColor}`,
-                      textDecoration: "none"
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = goldenColor;
-                      e.currentTarget.style.color = "white";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
-                      e.currentTarget.style.color = goldenColor;
-                    }}
-                  >
-                    <FaEnvelope />
-                  </a>
+              
+                <div className="flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h5 className="fw-bold mb-1" style={{ color: textColor }}>
+                      {member.name}
+                    </h5>
+                    <p 
+                      className="fw-semibold mb-1"
+                      style={{ 
+                        color: goldenColor,
+                        fontSize: "0.95rem"
+                      }}
+                    >
+                      {member.designation}
+                    </p>
+                    <p 
+                      className="mb-2" 
+                      style={{ 
+                        fontSize: "0.9rem",
+                        color: secondaryTextColor,
+                        opacity: "0.8"
+                      }}
+                    >
+                      {member.role}
+                    </p>
+                    <small 
+                      className="fst-italic"
+                      style={{
+                        color: secondaryTextColor,
+                        opacity: "0.7"
+                      }}
+                    >
+                      {member.year} year, {member.dept} Dept, CGEC
+                    </small>
+                  </div>
+
+                  <div className="mt-4">
+                    <div className="d-flex justify-content-center gap-3 mb-3">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-icon"
+                        style={iconStyle}
+                        onMouseOver={handleIconHover}
+                        onMouseOut={handleIconLeave}
+                      >
+                        <FaLinkedin />
+                      </a>
+                      <a
+                        href={member.insta}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-icon"
+                        style={iconStyle}
+                        onMouseOver={handleIconHover}
+                        onMouseOut={handleIconLeave}
+                      >
+                        <FaInstagram />
+                      </a>
+                      <a 
+                        href={`mailto:${member.email}`} 
+                        className="contact-icon"
+                        style={iconStyle}
+                        onMouseOver={handleIconHover}
+                        onMouseOut={handleIconLeave}
+                      >
+                        <FaEnvelope />
+                      </a>
+                    </div>
+
+                    {member.resume && (
+                      <a
+                        href={member.resume}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn w-100 d-flex align-items-center justify-content-center"
+                        style={{
+                          border: `2px solid ${goldenColor}`,
+                          color: goldenColor,
+                          backgroundColor: 'transparent',
+                          borderRadius: '25px',
+                          padding: '8px 16px',
+                          fontSize: '0.9rem',
+                          fontWeight: '600',
+                          textDecoration: 'none',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = goldenColor;
+                          e.currentTarget.style.color = "white";
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = goldenColor;
+                        }}
+                      >
+                        <FaFilePdf className="me-2" />
+                        View Resume
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

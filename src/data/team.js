@@ -28,6 +28,7 @@ export const teamData = [
     email: "ghosharya28@gmail.com",
     insta: "https://www.instagram.com/mytharya/",
     linkedin: "https://www.linkedin.com/in/arya-ghosh",
+     resume: "/resumes/Arya.pdf" 
   },
   {
     name: "Adripta Ghosh",
@@ -39,6 +40,7 @@ export const teamData = [
     email: "adriptaghosh122@gmail.com",
     insta: "https://www.instagram.com/adripta.ghosh/",
     linkedin: "https://www.linkedin.com/in/adripta-ghosh",
+      resume: "/resumes/Adripta.pdf" 
   },
   {
     name: "Satyajit Roy",
@@ -50,6 +52,7 @@ export const teamData = [
     email: "satyajit41cse@gmail.com",
     insta: "https://www.instagram.com/satyajitan21.official/",
     linkedin: "https://www.linkedin.com/in/satyajit--roy",
+      resume: "/resumes/Satyajit.pdf" 
   },
   {
     name: "Ayan Roy",
@@ -61,6 +64,7 @@ export const teamData = [
     email: "ayan76cse@gmail.com",
     insta: "https://www.instagram.com/_____ayan__roy____/",
     linkedin: "https://www.linkedin.com/in/ayan-roy-0853b831b/",
+      resume: "/resumes/Ayan.pdf" 
   },
   {
     name: "Debojit Sarkar",
@@ -72,6 +76,7 @@ export const teamData = [
     email: "debojit64cse@gmail.com",
     insta: "https://www.instagram.com/__dev432__/",
     linkedin: "https://www.linkedin.com/in/debojit-sarkar",
+      resume: "/resumes/Debojit.pdf" 
   },
   {
     name: "Anushka Roy",
@@ -83,6 +88,7 @@ export const teamData = [
     email: "anushkaaroy34@gmail.com",
     insta: "https://www.instagram.com/_anushh.kaaa/",
     linkedin: "https://linkedin.com/in/anushka-roy34",
+      resume: "/resumes/Anushka.pdf" 
   },
   {
     name: "Adityava Gangopadhyay",
@@ -94,6 +100,7 @@ export const teamData = [
     email: "adityava49cse@gmail.com",
     insta: "https://www.instagram.com/ganguly_71/",
     linkedin: "https://www.linkedin.com/in/adityava-gangopadhyay",
+      resume: "/resumes/Adityava.pdf" 
   },
   {
     name: "Sk Sahil Akhtar",
@@ -105,6 +112,7 @@ export const teamData = [
     email: "sksahil38ece@gmail.com",
     insta: "https://www.instagram.com/sksahilakhtar1/",
     linkedin: "https://www.linkedin.com/in/s-k-sahil-akhtar-69528724a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      resume: "/resumes/Sahil.pdf" 
   },
   {
     name: "Sumouli Banerjee",
@@ -116,6 +124,7 @@ export const teamData = [
     email: "sumouli05ece@gmail.com",
     insta: "https://www.instagram.com/Sumouli_07/",
     linkedin: "https://www.linkedin.com/in/sumouli-banerjee",
+      resume: "/resumes/Sumouli.pdf" 
   },
   {
     name: "Trishan Banik",
@@ -127,6 +136,7 @@ export const teamData = [
     email: "trishanbanik691@gmail.com",
     insta: "https://www.instagram.com/trishan.banik/",
     linkedin: "https://www.linkedin.com/in/trishan-banik-84a685303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      resume: "/resumes/Trishan.pdf" 
   },
   {
     name: "Pranay Hazra",
@@ -138,6 +148,7 @@ export const teamData = [
     email: "hazrapranaycgec2024@gmail.com",
     insta: "https://www.instagram.com/_pranayyy_.0/",
     linkedin: "https://www.linkedin.com/in/pranay-hazra-308913333",
+      resume: "/resumes/Pranay.pdf" 
   },
   {
     name: "Chiradeep Mukherjee",
@@ -149,6 +160,7 @@ export const teamData = [
     email: "chiradeep88ece@gmail.com",
     insta: "https://www.instagram.com/_carpediem_here_/",
     linkedin: "https://www.linkedin.com/in/chiradeep-mukherjee",
+      resume: "/resumes/Chiradeep.pdf" 
   },
   {
     name: "Anupam Dutta",
@@ -160,6 +172,7 @@ export const teamData = [
     email: "ad4887269@gmail.com",
     insta: "https://www.instagram.com/anupam_dutta275/",
     linkedin: "https://www.linkedin.com/in/anupam-dutta-508ba6325",
+      resume: "/resumes/Anupam.pdf" 
   },
   {
     name: "Swastik Bal",
@@ -171,6 +184,7 @@ export const teamData = [
     email: "sumitaparuanokia2@gmail.com",
     insta: "https://www.instagram.com/sbstikbl/",
     linkedin: "https://www.linkedin.com/in/swastik-bal-32981632a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      resume: "/resumes/Swastik.pdf" 
   },
   {
     name: "Md Ayub",
@@ -182,6 +196,7 @@ export const teamData = [
     email: "mdayub742136@gmail.com",
     insta: "https://www.instagram.com/md_ayub_70/",
     linkedin: "https://www.linkedin.com/in/md-ayub-26617434a",
+      resume: "/resumes/Ayub.pdf" 
   },
   {
     name: "Rishav Prasad ",
@@ -193,6 +208,7 @@ export const teamData = [
     email: "mdayub742136@gmail.com",
     insta: "https://www.instagram.com/____.rishav/",
     linkedin: "https://www.linkedin.com/in/rishav-prasad-",
+      resume: "/resumes/Rishav.pdf" 
   },
   {
     name: "Arayan Prasad",
@@ -204,6 +220,7 @@ export const teamData = [
     email: "aryanprasad2406@gmail.com",
     insta: "https://www.instagram.com/tecboy_0604/",
     linkedin: "https://www.linkedin.com/in/arayan-prasad-1bba73237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      resume: "/resumes/Arayan.pdf" 
   },
   {
     name: "Aditya Dey ",
@@ -215,6 +232,7 @@ export const teamData = [
     email: "adityax141@gmail.com",
     insta: "https://www.instagram.com/Adityax141/",
     linkedin: "https://www.linkedin.com/in/aditya-dey7",
+      resume: "/resumes/Aditya.pdf" 
   },
 ];
 
