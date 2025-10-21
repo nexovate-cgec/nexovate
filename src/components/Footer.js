@@ -6,18 +6,16 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './Footer.css';
 
-// Leaflet marker icon issue fix
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-// College location constant
-const COLLEGE_LOCATION = [26.323921, 89.451088];
-
 const Footer = () => {
+  const collegePosition = [26.29331898181347, 89.46019841567104];
+
   return (
     <footer className="footer-wrapper">
       <div className="footer-main py-5">
@@ -106,25 +104,43 @@ const Footer = () => {
                 </div>
               </div>
               
-              {/* 🗺️ সম্পূর্ণ ফ্রি ম্যাপ */}
-              <div className="free-map-container">
-                <MapContainer 
-                  center={COLLEGE_LOCATION}
-                  zoom={15} 
-                  style={{ height: '100%', width: '100%' }}
-                  scrollWheelZoom={false}
+              <div className="map-wrapper">
+                <a 
+                  href="https://www.google.com/maps/place/Cooch+Behar+Government+Engineering+College/@26.2932636,89.4576245,17z/data=!4m6!3m5!1s0x39e2fc6ea5239b93:0xe4952b5891bb2389!8m2!3d26.2932636!4d89.4601994!16s%2Fg%2F11dxb0yfvd?entry=tts&g_ep=EgoyMDI1MTAxNC4wIPu8ASoASAFQAw%3D%3D&skid=91152ab3-5f05-43c1-ad11-2d2187fbc2cd" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="map-link-overlay"
+                  title="Open in Google Maps"
                 >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={COLLEGE_LOCATION}>
-                    <Popup>
-                      <strong>CGEC E-CELL</strong><br/>
-                      Cooch Behar Government Engineering College
-                    </Popup>
-                  </Marker>
-                </MapContainer>
+                  <div className="free-map-container">
+                    <MapContainer 
+                      center={collegePosition}
+                      zoom={15} 
+                      style={{ height: '100%', width: '100%' }}
+                      scrollWheelZoom={false}
+                    >
+                      <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                      />
+                      <Marker position={collegePosition}>
+                        <Popup>
+                          <strong>CGEC E-CELL</strong><br/>
+                          Cooch Behar Government Engineering College<br/>
+                          <a 
+                            href="https://www.google.com/maps/place/Cooch+Behar+Government+Engineering+College/@26.2932636,89.4576245,17z/data=!4m6!3m5!1s0x39e2fc6ea5239b93:0xe4952b5891bb2389!8m2!3d26.2932636!4d89.4601994!16s%2Fg%2F11dxb0yfvd?entry=tts&g_ep=EgoyMDI1MTAxNC4wIPu8ASoASAFQAw%3D%3D&skid=91152ab3-5f05-43c1-ad11-2d2187fbc2cd" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{color: '#ff6b35', fontWeight: 'bold', textDecoration: 'none'}}
+                          >
+                            📍 Open in Google Maps
+                          </a>
+                        </Popup>
+                      </Marker>
+                    </MapContainer>
+                  </div>
+                 
+                </a>
               </div>
             </Col>
           </Row>
