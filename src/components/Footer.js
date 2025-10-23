@@ -150,12 +150,12 @@ const Footer = () => {
       <div className="footer-bottom py-3">
         <Container>
           <Row className="align-items-center">
-            <Col md={6} className="text-center text-md-start">
+            <Col xs={12} md={6} className="text-center text-md-start mb-2 mb-md-0">
               <p className="mb-0 copyright-text">
                 &copy; {new Date().getFullYear()} CGEC E-CELL. All rights reserved.
               </p>
             </Col>
-            <Col md={6} className="text-center text-md-end">
+            <Col xs={12} md={6} className="text-center text-md-end">
               <p className="mb-0 made-with">
                 Made with <FaHeart className="heart-icon" /> using React & Bootstrap
               </p>

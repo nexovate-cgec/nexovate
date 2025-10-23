@@ -1,4 +1,3 @@
-
 .footer-wrapper {
   position: relative;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -31,11 +30,13 @@
 
 .footer-brand {
   position: relative;
+  text-align: center;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   margin-bottom: 1rem; 
 }
@@ -65,19 +66,21 @@
   line-height: 1.5;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .social-links {
   display: flex;
   gap: 12px;
+  justify-content: center;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* ✅ Reduced from 45px */
-  height: 40px; /* ✅ Reduced from 45px */
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgb(189, 159, 103);
   transition: all 0.3s ease;
@@ -98,13 +101,15 @@
   position: relative;
   padding-bottom: 0.5rem;
   font-size: 1.1rem;
+  text-align: center;
 }
 
 .footer-heading::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 40px;
   height: 2px;
   background: #f7931e;
@@ -114,10 +119,11 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .footer-links li {
-  margin-bottom: 0.6rem; /* ✅ Reduced from 0.8rem */
+  margin-bottom: 0.6rem;
 }
 
 .footer-links a {
@@ -126,7 +132,8 @@
   transition: all 0.3s ease;
   position: relative;
   padding-left: 0;
-  font-size: 0.9rem
+  font-size: 0.9rem;
+  display: inline-block;
 }
 
 .footer-links a:hover {
@@ -161,6 +168,8 @@
   gap: 10px;
   color: #b0b0b0;
   font-size: 0.9rem;
+  justify-content: center;
+  text-align: center;
 }
 
 .contact-icon {
@@ -266,7 +275,7 @@
   font-size: 0.85rem; 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 5px;
 }
 
@@ -281,7 +290,61 @@
   50% { transform: scale(1.1); }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .footer-brand {
+    text-align: left;
+  }
+  
+  .brand-logo {
+    justify-content: flex-start;
+  }
+  
+  .brand-description {
+    text-align: left;
+  }
+  
+  .social-links {
+    justify-content: flex-start;
+  }
+  
+  .footer-heading {
+    text-align: left;
+  }
+  
+  .footer-heading::after {
+    left: 0;
+    transform: none;
+  }
+  
+  .footer-links {
+    text-align: left;
+  }
+  
+  .contact-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .made-with {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 992px) {
+  .brand-text {
+    font-size: 1.5rem;
+  }
+  
+  .rocket-icon {
+    font-size: 1.8rem;
+  }
+  
+  .free-map-container {
+    height: 160px;
+  }
+}
+
+@media (max-width: 767px) {
   .footer-main {
     padding: 1.5rem 0;
   }
@@ -306,11 +369,6 @@
     justify-content: center;
     margin-top: 0.3rem; 
   }
-  
-  .footer-heading::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 @media (max-width: 576px) {
@@ -321,11 +379,6 @@
   .social-links {
     justify-content: center;
     gap: 10px;
-  }
-  
-  .footer-heading {
-    text-align: center;
-    margin-bottom: 0.8rem;
   }
   
   .free-map-container {
@@ -369,5 +422,13 @@
   .social-link {
     width: 35px;
     height: 35px;
+  }
+  
+  .footer-heading {
+    font-size: 1rem;
+  }
+  
+  .footer-links a {
+    font-size: 0.85rem;
   }
 }
