@@ -1,3 +1,24 @@
+/* --- Typewriter Animation Styles --- */
+
+.typing-cursor {
+    display: inline; 
+    color: #ff8c00; 
+    font-weight: 700;
+    animation: blink-caret 0.75s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink-caret {
+    from, to { color: transparent } 
+    50% { color: #ff8c00 }
+}
+
+.typewriter-text {
+  position: relative;
+}
+
+/* --- Existing CSS Styles --- */
+
 .hero-split {
   min-height: 100vh;
   background: url('../assets/images/background.png') center/cover no-repeat;
