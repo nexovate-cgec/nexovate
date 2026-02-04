@@ -1,4 +1,3 @@
-/* --- Typewriter Animation Styles --- */
 
 .typing-cursor {
     display: inline; 
@@ -17,7 +16,6 @@
   position: relative;
 }
 
-/* --- Existing CSS Styles --- */
 
 .hero-split {
   min-height: 100vh;

@@ -24,6 +24,8 @@ import EventDetail from "./pages/EventDetail";
 import AllBlogs from "./pages/AllBlogs";
 import BlogDetails from "./pages/BlogDetails";
 import GalleryPage from "./pages/GalleryPage";
+import VerifyCertificate from "./pages/VerifyCertificate";
+
 
 function App() {
   return (
@@ -53,6 +55,8 @@ function App() {
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
+              <Route path="/verify-certificate" element={<VerifyCertificate />} />
+
             </Routes>
           </main>
           

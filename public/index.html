@@ -5,19 +5,33 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="This is the official E-Cell of CGEC"
-    />
+    <meta name="description" content="Official E-Cell of CGEC - Moved to new address" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-   
-    <title >Nexovate CGEC E-cell</title>
+    <title>Website Moved - CGEC E-Cell</title>
   </head>
   <body>
     <noscript>It is the Official Website of CGEC Entrepreneurship cell...!</noscript>
-    <div id="root"></div>
-     
+    
+    <div id="root">
+        <div style="text-align: center; margin-top: 100px; font-family: sans-serif;">
+            <h1 style="color: #2c3e50;">We Have Moved!</h1>
+            <p>Our new website is: <b>cgec-ecell.netlify.app</b></p>
+            <p id="status-msg">You will be redirected in 5 seconds...</p>
+            <a href="https://cgec-ecell.netlify.app/" style="color: blue;">Go to New Site</a>
+        </div>
+    </div>
+
+    <script>
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      
+      if (!isLocal) {
+        setTimeout(function() {
+          window.location.href = "https://cgec-ecell.netlify.app/";
+        }, 3000);
+      } else {
+        document.getElementById('status-msg').innerText = "Running locally - Redirect disabled for development.";
+      }
+    </script>
   </body>
 </html>
