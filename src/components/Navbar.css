@@ -1,4 +1,4 @@
-/* Navbar.css */
+
 :root {
   --gold-primary: rgb(189, 159, 103);
   --gold-secondary: #D4AF37;
@@ -7,7 +7,6 @@
   --gold-gradient: linear-gradient(135deg, rgb(189, 159, 103), #D4AF37, rgb(189, 159, 103));
   --gold-border-gradient: linear-gradient(90deg, transparent, rgb(189, 159, 103), #D4AF37, rgb(189, 159, 103), transparent);
   
-  /* Light theme variables */
   --navbar-bg-light: rgba(255, 255, 255, 0.95);
   --navbar-bg-scrolled-light: rgba(255, 255, 255, 0.98);
   --text-color-light: #2c3e50;
@@ -22,14 +21,12 @@
   --gold-gradient: linear-gradient(135deg, rgb(189, 159, 103), #D4AF37, rgb(189, 159, 103));
   --gold-border-gradient: linear-gradient(90deg, transparent, rgb(189, 159, 103), #D4AF37, rgb(189, 159, 103), transparent);
   
-  /* Dark theme variables */
   --navbar-bg-dark: rgba(0, 0, 0, 0.95);
   --navbar-bg-scrolled-dark: rgba(0, 0, 0, 0.98);
   --text-color-dark: #ffffff;
   --border-color-dark: rgba(255, 255, 255, 0.05);
 }
 
-/* Main Navbar Styles */
 .main-navbar {
   backdrop-filter: blur(12px);
   transition: all 0.3s ease-in-out;
@@ -45,7 +42,6 @@
   animation: slideDown 0.5s ease-out;
 }
 
-/* Light Mode Styles */
 .main-navbar.navbar-light {
   background-color: var(--navbar-bg-light) !important;
   border-bottom-color: var(--border-color-light);
@@ -56,7 +52,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark Mode Styles */
 .main-navbar.navbar-dark {
   background-color: var(--navbar-bg-dark) !important;
   border-bottom-color: var(--border-color-dark);
@@ -67,7 +62,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Golden Border at Bottom */
 .navbar-golden-border {
   position: absolute;
   bottom: 0;
@@ -99,26 +93,24 @@
   }
 }
 
-/* Golden Text Styles */
 .golden-text {
   color: var(--gold-primary) !important;
   font-weight: 600;
   text-shadow: 0 0 10px rgba(189, 159, 103, 0.3);
 }
 
-/* Golden Border */
 .golden-border {
   border: 1px solid var(--gold-primary) !important;
   box-shadow: 0 0 8px rgba(189, 159, 103, 0.3);
 }
 
-/* Navbar Brand */
 .navbar-brand-text {
   transition: all 0.3s ease;
 }
 
 .navbar-logo {
   transition: transform 0.3s ease;
+  border-radius: 8px;
   filter: drop-shadow(0 0 4px rgba(189, 159, 103, 0.4));
 }
 
@@ -126,7 +118,6 @@
   transform: scale(1.05);
 }
 
-/* Theme Toggle Button */
 .theme-toggle-btn {
   background: transparent;
   border-radius: 20px;
@@ -164,7 +155,6 @@
   color: var(--gold-primary);
 }
 
-/* Navbar Toggler */
 .navbar-toggler-custom {
   border-radius: 6px;
   padding: 4px 8px;
@@ -185,7 +175,6 @@
   transition: all 0.3s ease;
 }
 
-/* Navigation Links */
 .nav-link-custom {
   position: relative;
   padding: 8px 16px;
@@ -226,7 +215,6 @@
   color: var(--gold-primary) !important;
 }
 
-/* Active Section */
 .active-section {
   background: var(--gold-gradient) !important;
   color: #000 !important;
@@ -239,7 +227,6 @@
   width: 0 !important;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 991px) {
   .navbar-collapse {
     background-color: var(--navbar-bg-light);
@@ -266,7 +253,6 @@
   }
 }
 
-/* Enhanced golden effects for premium look */
 .nav-link-custom {
   position: relative;
   overflow: hidden;

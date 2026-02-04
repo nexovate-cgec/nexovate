@@ -12,7 +12,7 @@ import {
   Linkedin,
 } from "react-bootstrap-icons";
 import { useTheme } from "../contexts/ThemeContext"; 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.jpeg";
 import { getBlogById } from "../data/detailBlog";
 
 const BlogDetails = () => {
@@ -92,12 +92,12 @@ const BlogDetails = () => {
         <Container>
           <div className="d-flex justify-content-between w-100 align-items-center">
             <Link to="/" className="navbar-brand d-flex align-items-center">
-              <img src={logo} alt="NEXOVATE Logo" height="40" className="me-2" />
+              <img src={logo} alt="E-Cell Logo" height="40" className="me-2" />
               <span 
                 className="fw-bold" 
                 style={{ color: goldenColor }}
               >
-                NEXOVATE
+                E-Cell
               </span>
             </Link>
             
@@ -430,8 +430,8 @@ const BlogDetails = () => {
           <Row>
             <Col md={6}>
               <div className="d-flex align-items-center mb-3">
-                <img src={logo} alt="NEXOVATE Logo" height="30" className="me-2" />
-                <span className="fw-bold" style={{ color: goldenColor }}>NEXOVATE - CGEC ECELL</span>
+                <img src={logo} alt="E-Cell Logo" height="30" className="me-2" />
+                <span className="fw-bold" style={{ color: goldenColor }}>CGEC ECELL</span>
               </div>
               <p className="mb-0" style={{ opacity: "0.8" }}>
                 Empowering entrepreneurs and fostering innovation in the community.
@@ -439,7 +439,7 @@ const BlogDetails = () => {
             </Col>
             <Col md={6} className="text-md-end">
               <p className="mb-0" style={{ opacity: "0.8" }}>
-                &copy; 2024 NEXOVATE. All rights reserved.
+                &copy; 2026 CGEC E-Cell. All rights reserved.
               </p>
             </Col>
           </Row>

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"; 
 import { useTheme } from "../contexts/ThemeContext"; 
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo.jpeg';
 import { blogData } from "../data/blog";
 
 const truncateWords = (text, wordLimit) => {

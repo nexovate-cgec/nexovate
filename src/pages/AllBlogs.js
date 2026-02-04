@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button, Breadcrumb, Badge } from "react-boot
 import { Link } from "react-router-dom"; 
 import { useTheme } from "../contexts/ThemeContext"; 
 import { getRecentBlogs, getBlogsByCategory } from "../data/blog";
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo.jpeg';
 
 const AllBlogs = () => {
   const { isDark } = useTheme(); 

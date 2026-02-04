@@ -3,7 +3,7 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 import './Hero.css';
 import heroImage from '../assets/images/full_team.jpg'; 
 import collegeLogo from '../assets/images/cgec.jpeg'; 
-import nexovateLogo from '../assets/images/logo.png'; 
+import ecellLogo from '../assets/images/logo.jpeg'; 
 
 const Hero = () => {
   const rotatingTexts = useMemo(() => [
@@ -71,8 +71,8 @@ const Hero = () => {
           </Col>
           <Col xs={6} className="text-end">
             <img 
-              src={nexovateLogo} 
-              alt="Nexovate Logo" 
+              src={ecellLogo} 
+              alt="E-cell Logo" 
               className="hero-logo"
               style={{ maxHeight: '70px' }}
             />

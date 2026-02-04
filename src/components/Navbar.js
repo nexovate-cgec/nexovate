@@ -1,9 +1,9 @@
-// components/Navbar.js
+
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeContext";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.jpeg";
 import "./Navbar.css";
 
 const NavBar = () => {
@@ -119,7 +119,7 @@ const NavBar = () => {
           <img
             src={logo}
             alt="ECELL Logo"
-            height="36"
+            height="40"
             className="navbar-logo"
           />
           <span className="fw-bold navbar-brand-text golden-text">
