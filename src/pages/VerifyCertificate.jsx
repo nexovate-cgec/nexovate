@@ -96,7 +96,7 @@ const VerifyCertificate = () => {
               <Form.Label>Certificate ID</Form.Label>
               <Form.Control
                 name="certificateId"
-                placeholder="e.g. CGEC2026-001"
+                placeholder="e.g.EC26SM001"
                 onChange={handleChange}
                 required
               />
