@@ -61,8 +61,26 @@ const VerifyCertificate = () => {
     }, 1500);
   };
 
+  const inputStyle = {
+    backgroundColor: isDark ? "#2d2d2d" : "#ffffff",
+    color: isDark ? "#ffffff" : "#000000",
+    border: isDark ? "1px solid #444" : "1px solid #ced4da"
+  };
+
+  const inputClassName = isDark ? "custom-placeholder-white shadow-none" : "shadow-none";
+
   return (
     <Container style={{ maxWidth: "850px", marginTop: "120px", marginBottom: "50px" }}>
+      {isDark && (
+        <style>
+          {`
+            .custom-placeholder-white::placeholder {
+              color: rgba(255, 255, 255, 0.8) !important;
+              opacity: 1;
+            }
+          `}
+        </style>
+      )}
       <Card
         className="p-4 shadow-lg"
         style={{
@@ -79,13 +97,13 @@ const VerifyCertificate = () => {
             variant={mode === "id" ? "warning" : "outline-warning"}
             onClick={() => setMode("id")}
           >
-            By Certificate ID
+            Enter Certificate ID
           </Button>
           <Button
             variant={mode === "search" ? "warning" : "outline-warning"}
             onClick={() => setMode("search")}
           >
-            By Student Details
+            Search Your Certificate
           </Button>
         </div>
 
@@ -95,33 +113,65 @@ const VerifyCertificate = () => {
               <Form.Label>Certificate ID</Form.Label>
               <Form.Control
                 name="certificateId"
-                placeholder="e.g. EC26SM001"
+                placeholder="Enter Certificate ID"
                 onChange={handleChange}
                 required
-                className={isDark ? "bg-dark text-white border-secondary" : ""}
+                style={inputStyle}
+                className={inputClassName}
               />
             </Form.Group>
           ) : (
             <Row>
               <Col md={6} className="mb-3">
                 <Form.Label>Full Name</Form.Label>
-                <Form.Control name="name" placeholder="Enter Name" onChange={handleChange} required />
+                <Form.Control 
+                  name="name" 
+                  placeholder="Enter Your Name" 
+                  onChange={handleChange} 
+                  required 
+                  style={inputStyle}
+                  className={inputClassName}
+                />
               </Col>
               <Col md={6} className="mb-3">
                 <Form.Label>College / University</Form.Label>
-                <Form.Control name="college" placeholder="College Name" onChange={handleChange} />
+                <Form.Control 
+                  name="college" 
+                  placeholder="Enter College Name" 
+                  onChange={handleChange} 
+                  style={inputStyle}
+                  className={inputClassName}
+                />
               </Col>
               <Col md={4} className="mb-3">
                 <Form.Label>Roll Number</Form.Label>
-                <Form.Control name="roll" placeholder="Roll No" onChange={handleChange} />
+                <Form.Control 
+                  name="roll" 
+                  placeholder="Enter Roll No" 
+                  onChange={handleChange} 
+                  style={inputStyle}
+                  className={inputClassName}
+                />
               </Col>
               <Col md={4} className="mb-3">
                 <Form.Label>Year</Form.Label>
-                <Form.Control name="year" placeholder="e.g. 2nd Year" onChange={handleChange} />
+                <Form.Control 
+                  name="year" 
+                  placeholder="e.g. 2nd Year" 
+                  onChange={handleChange} 
+                  style={inputStyle}
+                  className={inputClassName}
+                />
               </Col>
               <Col md={4} className="mb-3">
                 <Form.Label>Department</Form.Label>
-                <Form.Control name="department" placeholder="e.g. CSE" onChange={handleChange} />
+                <Form.Control 
+                  name="department" 
+                  placeholder="e.g. CSE" 
+                  onChange={handleChange} 
+                  style={inputStyle}
+                  className={inputClassName}
+                />
               </Col>
             </Row>
           )}
@@ -149,28 +199,22 @@ const VerifyCertificate = () => {
                 <h5 className="border-bottom pb-2 mb-3">✅ Certificate Verified</h5>
                 <Row>
                   <Col sm={6}><p><strong>Name:</strong> {result.data.name}</p></Col>
-                  
                   {result.data.roll && (
                     <Col sm={6}><p><strong>Roll No:</strong> {result.data.roll}</p></Col>
                   )}
-
                   {result.data.college && (
                     <Col sm={12}><p><strong>College:</strong> {result.data.college}</p></Col>
                   )}
-
                   {result.data.department && (
                     <Col sm={6}><p><strong>Department:</strong> {result.data.department}</p></Col>
                   )}
-
                   {result.data.year && (
                     <Col sm={6}><p><strong>Year:</strong> {result.data.year}</p></Col>
                   )}
-
                   <Col sm={6}><p><strong>Event:</strong> {result.data.event}</p></Col>
                   <Col sm={6}><p><strong>Issue Date:</strong> {result.data.issueDate}</p></Col>
                   <Col sm={12}><p><strong>Certificate ID:</strong> {result.data.certificateId}</p></Col>
                 </Row>
-                
                 <a
                   href={`/certificate_down/${result.data.file}`}
                   download
