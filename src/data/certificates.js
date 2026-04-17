@@ -1,4 +1,14 @@
 const certificates = [
+  // Social Media Challenge  CERTIFICATES
+  {
+    certificateId: "EC26SM001",
+    name: "Pranay Hazra",
+    year: "2nd",
+    department: "CE",
+    event: "Social Media Challenge",
+    issueDate: "17-04-2026",
+    file: "EC26SM001.png",
+  },
   {
     certificateId: "EC26SM002",
     name: "BARNABAS HEMBRAM",
@@ -242,16 +252,356 @@ const certificates = [
     issueDate: "17-04-2026",
     file: "EC26SM028.png",
   },
+
+  // EUREKA 2025 CERTIFICATE
+
+  {
+    certificateId: "EC26EU001",
+    name: "Sarnajit Dhar ",
+    college: "Calcutta Institute of Engineering And Management",
+    roll: "16500224050",
+    year: "",
+    department: " IT",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU001.png",
+  },
+
+  {
+    certificateId: "EC26EU002",
+    name: "Sannidhyo Datta Chaudhuri ",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900124017",
+    year: "",
+    department: "CSE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU002.png",
+  },
+
+  {
+    certificateId: "EC26EU003",
+    name: " Shubham Monda",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901623035",
+    year: "",
+    department: "EE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU003.png",
+  },
+
+  {
+    certificateId: "EC26EU004",
+    name: " Dibyendu Koley",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900323017",
+    year: "",
+    department: "ECE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU004.png",
+  },
+
+  {
+    certificateId: "EC26EU005",
+    name: " Krishanu Mandal",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901624048",
+    year: "",
+    department: "EE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU005.png",
+  },
+
+  {
+    certificateId: "EC26EU006",
+    name: "Barnabas Hembram ",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900724052",
+    year: "",
+    department: "ME",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU006.png",
+  },
+
+  {
+    certificateId: "EC26EU007",
+    name: " Manish Dey",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901323023",
+    year: "",
+    department: "CE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU007.png",
+  },
+
+  {
+    certificateId: "EC26EU008",
+    name: " Dwip Majumdar",
+
+    college: " University of North Bengal",
+    roll: " 0092312032750",
+    year: "",
+    department: "CHEMISTRY",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU008.png",
+  },
+
+  {
+    certificateId: "EC26EU009",
+    name: "Rishav Prasad ",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900124037",
+    year: "2nd",
+    department: "CSE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU009.png",
+  },
+
+  {
+    certificateId: "EC26EU010",
+    name: "Parthiv Baniya",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900124024",
+    year: "2nd",
+    department: "CSE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU010.png",
+  },
+
+  {
+    certificateId: "EC26EU011",
+    name: " Harasundar Patra",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900724006",
+    year: "",
+    department: "ME",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU011.png",
+  },
+
+  {
+    certificateId: "EC26EU012",
+    name: " Pial Saha",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900324055",
+    year: "",
+    department: "ECE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU012.png",
+  },
+
+  {
+    certificateId: "EC26EU013",
+    name: " Rupak Mahapatra",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901324039",
+    year: "",
+    department: "CE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU013.png",
+  },
+
+  {
+    certificateId: "EC26EU014",
+    name: " Sumanta Ghosh",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901324040",
+    year: "",
+    department: "CE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU014.png",
+  },
+
+  {
+    certificateId: "EC26EU015",
+    name: "Md Mahja Karim ",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901324035",
+    year: "",
+    department: "CE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU015.png",
+  },
+
+  {
+    certificateId: "EC26EU016",
+    name: " Shabnur mallick ",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901624026",
+    year: "",
+    department: "EE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU016.png",
+  },
+
+  {
+    certificateId: "EC26EU017",
+    name: "Koyel Bhui ",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901324016",
+    year: "",
+    department: "CE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU017.png",
+  },
+
+  {
+    certificateId: "EC26EU018",
+    name: " Farhat Rahaman ",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901324033",
+    year: "",
+    department: "CE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU018.png",
+  },
+
+  {
+    certificateId: "EC26EU019",
+    name: " Arkaprabha Dutta",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901324021",
+    year: "",
+    department: "CE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU019.png",
+  },
+
+  {
+    certificateId: "EC26EU020",
+    name: "34901624041",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901624041",
+    year: "",
+    department: "EE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU020.png",
+  },
+
+  {
+    certificateId: "EC26EU021",
+    name: " Abhinab Santikary",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34901624001",
+    year: "",
+    department: "EE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU021.png",
+  },
+
+  {
+    certificateId: "EC26EU022",
+    name: " Adrish Aditya",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900323002",
+    year: "",
+    department: "ECE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU022.png",
+  },
+
+  {
+    certificateId: "EC26EU023",
+    name: " Krishanu Biswas",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900324075",
+    year: "",
+    department: "ECE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU023.png",
+  },
+
+  {
+    certificateId: "EC26EU024",
+    name: "Suraj Kumar Das ",
+
+    college: "ALIPURDUAR GOVERNMENT ENGINEERING AND MANAGEMENT COLLEGE ",
+    roll: "38700124018",
+    year: "",
+    department: "CSE",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU024.png",
+  },
+
+  {
+    certificateId: "EC26EU025",
+    name: "Sovan Rajbanshi",
+
+    college: "ALIPURDUAR GOVERNMENT ENGINEERING AND MANAGEMENT COLLEGE ",
+    roll: "38732524031",
+    year: "",
+    department: "AI",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU025.png",
+  },
+
+  {
+    certificateId: "EC26EU026",
+    name: "Chayan barman ",
+
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900724005",
+    year: "",
+    department: "ME",
+    event: "EUREKA 2025",
+    issueDate: "17-04-2026",
+    file: "EC26EU026.png",
+  },
+
   // {
-  //   certificateId: "EC26SM002",
+  //   certificateId: "EC26EU021",
   //   name: "",
+  // college: "",
+  //     roll: "",
   //   year: "",
   //   department: "",
-  //   event: "Social Media Challenge",
+  //   event: "EUREKA 2025",
   //   issueDate: "17-04-2026",
-  //   file: "EC26SM002",
+  //   file: "EC26EU001",
   // },
-    
 ];
 
 export default certificates;
