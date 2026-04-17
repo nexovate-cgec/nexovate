@@ -9,6 +9,10 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Initiatives from "./components/Initiatives";
+// import FloatingSubmitIdea from "./components/FloatingSubmitIdea";
+// import SubmitIdea from "./pages/SubmitIdea";
+
+
 import Events from "./components/Events";
 import Blog from "./components/Blog";
 import Gallery from "./components/Gallery";
@@ -40,17 +44,22 @@ function App() {
                   <Hero />
                   <About />
                   <Initiatives />
+                  {/* <IdeaDiscussion /> */}
                   <Events />
                   <Gallery />
                   <Blog />
                   <Team />
                   <Testimonials />
                   <Footer />
+                  {/* <FloatingSubmitIdea /> */}
+
                 </>
               } />
               
               <Route path="/events" element={<AllEvents />} />
               <Route path="/events/:id" element={<EventDetail />} />
+              {/* <Route path="/submit-idea" element={<SubmitIdea />} /> */}
+
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/gallery" element={<GalleryPage />} />

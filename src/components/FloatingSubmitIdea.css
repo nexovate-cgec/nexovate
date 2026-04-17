@@ -1,0 +1,19 @@
+.floating-idea-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  background: rgb(189, 159, 103);
+  color: #000;
+  padding: 14px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.floating-idea-btn:hover {
+  transform: translateY(-6px);
+  background: #e6c98a;
+}
