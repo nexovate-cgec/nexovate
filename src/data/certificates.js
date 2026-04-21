@@ -639,7 +639,7 @@ const certificates = [
     department: "ECE",
     event: "EUREKA 2025 ORGANISER ",
     issueDate: "22-04-2026",
-    file: "EC26EC27",
+    file: "EC26EC31.jpg",
   },
   {
     certificateId: "EC26EC32",
@@ -711,7 +711,7 @@ const certificates = [
     department: "CSE",
     event: "EUREKA 2025 ORGANISER ",
     issueDate: "22-04-2026",
-    file: "EC26EC39.jpgR",
+    file: "EC26EC39.jpg",
   },
   {
     certificateId: "EC26EC40",
@@ -720,7 +720,7 @@ const certificates = [
     department: "CSE",
     event: "EUREKA 2025 ORGANISER ",
     issueDate: "22-04-2026",
-    file: "EC26EC27",
+    file: "EC26EC40.jpg",
   },
   {
     certificateId: "EC26EC41",
@@ -738,7 +738,7 @@ const certificates = [
     department: "ECE",
     event: "EUREKA 2025 ORGANISER ",
     issueDate: "22-04-2026",
-    file: "EC26EC27",
+    file: "EC26EC42.jpg",
   },
   {
     certificateId: "EC26EC43",
