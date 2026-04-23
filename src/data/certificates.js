@@ -738,7 +738,6 @@ const certificates = [
     year: "2nd",
     department: "CE",
     event: "EUREKA 2025 ORGANISER ",
-    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     issueDate: "22-04-2026",
     file: "EC26EC38.jpg",
   },
