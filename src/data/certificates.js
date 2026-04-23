@@ -3,6 +3,7 @@ const certificates = [
   {
     certificateId: "EC26SM001",
     name: "Pranay Hazra",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     year: "2nd",
     department: "CE",
     event: "Social Media Challenge",
@@ -12,6 +13,7 @@ const certificates = [
   {
     certificateId: "EC26SM002",
     name: "BARNABAS HEMBRAM",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     year: "2nd",
     department: "ME",
     event: "Social Media Challenge",
@@ -20,6 +22,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM003",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "RISHAV PRASAD",
     year: "2nd",
     department: "CSE",
@@ -29,15 +32,17 @@ const certificates = [
   },
   {
     certificateId: "EC26SM004",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Krishanu Mondal",
     year: "2nd",
     department: "EE",
     event: "Social Media Challenge",
     issueDate: "17-04-2026",
-    file: "EC26SM004.png",
+    file: "EC26SM004.jpeg",
   },
   {
     certificateId: "EC26SM005",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Sumouli Banerjee ",
     year: "2nd",
     department: "ECE",
@@ -47,6 +52,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM006",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Arayan Prasad",
     year: "2nd",
     department: "ME",
@@ -56,6 +62,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM007",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Sk Sahil Akhtar ",
     year: "2nd",
     department: "ECE",
@@ -65,6 +72,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM008",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Yasashree Paul",
     year: "2nd",
     department: "EE",
@@ -74,6 +82,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM009",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Debojit Sarkar ",
     year: "2nd",
     department: "CSE",
@@ -83,6 +92,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM010",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Satyajit Roy",
     year: "2nd",
     department: "CSE",
@@ -92,6 +102,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM011",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Ayan Roy ",
     year: "2nd",
     department: "CSE",
@@ -101,6 +112,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM012",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Joydeep Mitra ",
     year: "2nd",
     department: "ME",
@@ -110,6 +122,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM013",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Anushka Roy",
     year: "3rd",
     department: "ECE",
@@ -119,6 +132,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM014",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Md Ayub ",
     year: "2nd",
     department: "EE",
@@ -128,6 +142,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM015",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Swastik Bal",
     year: "3rd",
     department: "ECE",
@@ -137,6 +152,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM016",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "ADRIPTA GHOSH",
     year: "3rd",
     department: "ECE",
@@ -146,6 +162,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM017",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Anupam Dutta",
     year: "3rd",
     department: "ECE",
@@ -155,6 +172,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM018",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Aniket das",
     year: "2nd",
     department: "CE",
@@ -164,6 +182,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM019",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Abhinab Santikary ",
     year: "2nd",
     department: "EE",
@@ -173,6 +192,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM020",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Arnab Bar ",
     year: "2nd",
     department: "CE",
@@ -182,6 +202,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM021",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Ayan Biswas",
     year: "2nd",
     department: "CE",
@@ -191,6 +212,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM022",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Manojit Dey ",
     year: "2nd",
     department: "EE",
@@ -200,6 +222,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM023",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Koyel Bhui  ",
     year: "2nd",
     department: "CE",
@@ -209,6 +232,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM024",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Sumit Sahani",
     year: "2nd",
     department: "EE",
@@ -218,6 +242,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM025",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: " Ankit kr Yadav ",
     year: "2nd",
     department: "EE",
@@ -227,6 +252,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM026",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Santanu Saha",
     year: "2nd",
     department: "ME",
@@ -236,6 +262,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM027",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Somiha Das ",
     year: "2nd",
     department: "CE",
@@ -245,6 +272,7 @@ const certificates = [
   },
   {
     certificateId: "EC26SM028",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Bishal Das ",
     year: "2nd",
     department: "EE",
@@ -591,13 +619,11 @@ const certificates = [
     file: "EC26EU026.png",
   },
 
-
-
-
   //  EUREKA ORGANIZER CERTIFICATE
 
   {
     certificateId: "EC26EC27",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Arya Ghosh",
     year: "3rd",
     department: "ECE",
@@ -607,6 +633,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC28",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Aditya Dey",
     year: "2nd",
     department: "ME",
@@ -616,6 +643,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC29",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Adityava Gangopadhyay",
     year: "2nd",
     department: "CSE",
@@ -625,6 +653,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC30",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Adripta Ghosh",
     year: "3rd",
     department: "ECE",
@@ -634,6 +663,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC31",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Anupam Dutta",
     year: "3rd",
     department: "ECE",
@@ -643,6 +673,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC32",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Anushka Roy",
     year: "3rd",
     department: "ECE",
@@ -652,6 +683,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC33",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Arayan Prasad",
     year: "2nd",
     department: "ME",
@@ -661,6 +693,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC34",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Ayan Roy",
     year: "2nd",
     department: "CSE",
@@ -670,6 +703,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC35",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Chiradeep Mukherjee",
     year: "2nd",
     department: "ECE",
@@ -679,6 +713,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC36",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Debojit Sarkar",
     year: "2nd",
     department: "CSE",
@@ -688,24 +723,28 @@ const certificates = [
   },
   {
     certificateId: "EC26EC37",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Md Ayub",
     year: "2nd",
     department: "EE",
-        event: "EUREKA 2025 ORGANISER ",
+    event: "EUREKA 2025 ORGANISER ",
     issueDate: "22-04-2026",
     file: "EC26EC37.jpg",
   },
   {
     certificateId: "EC26EC38",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Pranay Hazra",
     year: "2nd",
     department: "CE",
     event: "EUREKA 2025 ORGANISER ",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     issueDate: "22-04-2026",
     file: "EC26EC38.jpg",
   },
   {
     certificateId: "EC26EC39",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Rishav Prasad",
     year: "2nd",
     department: "CSE",
@@ -715,6 +754,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC40",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Satyajit Roy",
     year: "2nd",
     department: "CSE",
@@ -724,6 +764,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC41",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Sk Sahil Akhtar",
     year: "2nd",
     department: "ECE",
@@ -733,6 +774,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC42",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Sumouli Banerjee",
     year: "2nd",
     department: "ECE",
@@ -742,6 +784,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC43",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Trishan Banik",
     year: "2nd",
     department: "ECE",
@@ -751,6 +794,7 @@ const certificates = [
   },
   {
     certificateId: "EC26EC44",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Swastik Bal",
     year: "2nd",
     department: "ECE",
@@ -763,6 +807,81 @@ const certificates = [
   //   name: "",
   // college: "",
   //     roll: "",
+  //   year: "",
+  //   department: "",
+  //   event: "EUREKA 2025 ORGANISER ",
+  //   issueDate: "17-04-2026",
+  //   file: "EC26EC27",
+  // },
+
+  // Video certificate
+  {
+    certificateId: "EC26EC45",
+    name: "Aditya Dey",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    year: "2nd",
+    department: "ME",
+    event: "Creation of Video film promoting ",
+    issueDate: "22-04-2026",
+    file: "EC26EC45.png",
+  },
+  {
+    certificateId: "EC26EC46",
+    name: "Arya Ghosh",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    year: "3rd",
+    department: "ECE",
+    event: "Creation of Video film promoting ",
+    issueDate: "22-04-2026",
+    file: "EC26EC46.png",
+  },
+  {
+    certificateId: "EC26EC47",
+    name: "Debojit Sarkar",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900124042",
+    year: "2nd",
+    department: "CSE",
+    event: "Creation of Video film promoting ",
+    issueDate: "22-04-2026",
+    file: "EC26EC27.png",
+  },
+  {
+    certificateId: "EC26EC48",
+    name: "Pranay Hazra",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    year: "2nd",
+    department: "ECE",
+    event: "Creation of Video film promoting ",
+    issueDate: "22-04-2026",
+    file: "EC26EC48.png",
+  },
+  {
+    certificateId: "EC26EC49",
+    name: "MD Ayub",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    year: "2nd",
+    department: "EE",
+    event: "Creation of Video film promoting ",
+    issueDate: "22-04-2026",
+    file: "EC26EC49.png",
+  },
+  {
+    certificateId: "EC26EC50",
+    name: "Satyajit Roy",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll: "34900124051",
+    year: "2nd",
+    department: "CSE",
+    event: "Creation of Video film promoting ",
+    issueDate: "22-04-2026",
+    file: "EC26EC50.png",
+  },
+  // {
+  //   certificateId: "EC26EC",
+  //   name: "",
+  //   college: "",
+  //   roll: "",
   //   year: "",
   //   department: "",
   //   event: "EUREKA 2025 ORGANISER ",
