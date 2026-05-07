@@ -1016,6 +1016,17 @@ const certificates = [
     issueDate: "03-05-2026",
     file: "EC26EC64.jpeg",
   },
+  {
+    certificateId: "EC26EC65",
+    name: "Arman Mia",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll:"34900122050",
+    year: "4th",
+    department: "CSE",
+    event: "Creation of Video film promoting",
+    issueDate: "03-05-2026",
+    file: "EC26EC65.png",
+  },
   // {
   //   certificateId: "EC26EC",
   //   name: "",
