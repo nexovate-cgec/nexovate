@@ -280,6 +280,16 @@ const certificates = [
     issueDate: "17-04-2026",
     file: "EC26SM028.png",
   },
+  {
+    certificateId: "EC26SM029",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    name: "Prithwiraj Sarkar",
+    year: "2nd",
+    department: "CSE",
+    event: "Social Media Challenge",
+    issueDate: "17-04-2026",
+    file: "EC26SM029.jpeg",
+  },
 
   // EUREKA 2025 CERTIFICATE
 
@@ -1026,6 +1036,17 @@ const certificates = [
     event: "Creation of Video film promoting",
     issueDate: "03-05-2026",
     file: "EC26EC65.png",
+  },
+  {
+    certificateId: "EC26EC66",
+    name: "Prithwiraj Sarkar",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    roll:"34900124047",
+    year: "2nd",
+    department: "CSE",
+    event: "Creation of Video film promoting",
+    issueDate: "03-05-2026",
+    file: "EC26EC66.jpeg",
   },
   // {
   //   certificateId: "EC26EC",
