@@ -11,6 +11,8 @@ import {
 } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeContext";
 import { supabase } from "../supabase";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const VerifyCertificate = () => {
   const { isDark } = useTheme();
@@ -72,15 +74,9 @@ const VerifyCertificate = () => {
       let query = supabase.from("certificates").select("*");
 
       if (mode === "id") {
-        query = query.eq(
-          "certificateId",
-          formData.certificateId
-        );
+        query = query.eq("certificateId", formData.certificateId);
       } else {
-        query = query.ilike(
-          "name",
-          `%${formData.name}%`
-        );
+        query = query.ilike("name", `%${formData.name}%`);
       }
 
       const { data, error } = await query.single();
@@ -105,42 +101,36 @@ const VerifyCertificate = () => {
   };
 
   const handleAddCertificate = async () => {
-  if (!certificateFile) {
-    alert("Upload certificate");
-    return;
-  }
-
-  setIsAdding(true);
-
-  try {
-    const fileExt =
-      certificateFile.name.split(".").pop();
-
-    const fileName = `${Date.now()}-${formData.certificateId}.${fileExt}`;
-
-    const { error: uploadError } =
-      await supabase.storage
-        .from("certificates")
-        .upload(fileName, certificateFile);
-
-    if (uploadError) {
-      console.log(uploadError);
-      alert(uploadError.message);
-      setIsAdding(false);
+    if (!certificateFile) {
+      alert("Upload certificate");
       return;
     }
 
-    const { data: publicData } =
-      supabase.storage
+    setIsAdding(true);
+
+    try {
+      const fileExt = certificateFile.name.split(".").pop();
+
+      const fileName = `${Date.now()}-${formData.certificateId}.${fileExt}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("certificates")
+        .upload(fileName, certificateFile);
+
+      if (uploadError) {
+        console.log(uploadError);
+        alert(uploadError.message);
+        setIsAdding(false);
+        return;
+      }
+
+      const { data: publicData } = supabase.storage
         .from("certificates")
         .getPublicUrl(fileName);
 
-    const { error } = await supabase
-      .from("certificates")
-      .insert([
+      const { error } = await supabase.from("certificates").insert([
         {
-          certificateId:
-            formData.certificateId,
+          certificateId: formData.certificateId,
           name: formData.name,
           college: formData.college,
           issueDate: formData.issueDate,
@@ -152,48 +142,43 @@ const VerifyCertificate = () => {
         },
       ]);
 
-    if (error) {
+      if (error) {
+        console.log(error);
+        alert(error.message);
+        setIsAdding(false);
+        return;
+      }
+
+      alert("Certificate Added Successfully");
+
+      fetchCertificates();
+
+      setFormData({
+        certificateId: "",
+        name: "",
+        college: "",
+        issueDate: "",
+        roll: "",
+        department: "",
+        year: "",
+        event: "",
+      });
+
+      setCertificateFile(null);
+    } catch (error) {
       console.log(error);
-      alert(error.message);
-      setIsAdding(false);
-      return;
+      alert("Something went wrong");
     }
 
-    alert("Certificate Added Successfully");
-
-    fetchCertificates();
-
-    setFormData({
-      certificateId: "",
-      name: "",
-      college: "",
-      issueDate: "",
-      roll: "",
-      department: "",
-      year: "",
-      event: "",
-    });
-
-    setCertificateFile(null);
-  } catch (error) {
-    console.log(error);
-    alert("Something went wrong");
-  }
-
-  setIsAdding(false);
-};
+    setIsAdding(false);
+  };
 
   const handleDelete = async (id, fileUrl) => {
     const fileName = fileUrl.split("/").pop();
 
-    await supabase.storage
-      .from("certificates")
-      .remove([fileName]);
+    await supabase.storage.from("certificates").remove([fileName]);
 
-    await supabase
-      .from("certificates")
-      .delete()
-      .eq("id", id);
+    await supabase.from("certificates").delete().eq("id", id);
 
     fetchCertificates();
   };
@@ -218,9 +203,7 @@ const VerifyCertificate = () => {
       let publicUrl = null;
 
       if (certificateFile) {
-        const fileExt = certificateFile.name
-          .split(".")
-          .pop();
+        const fileExt = certificateFile.name.split(".").pop();
 
         const fileName = `${formData.certificateId}.${fileExt}`;
 
@@ -248,10 +231,7 @@ const VerifyCertificate = () => {
       await supabase
         .from("certificates")
         .update(updateData)
-        .eq(
-          "certificateId",
-          formData.certificateId
-        );
+        .eq("certificateId", formData.certificateId);
 
       alert("Updated Successfully");
 
@@ -262,6 +242,46 @@ const VerifyCertificate = () => {
     }
 
     setIsUpdating(false);
+  };
+
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+
+    doc.setFontSize(18);
+
+    doc.text("Certificate List", 14, 20);
+
+    const tableColumn = [
+      "Certificate ID",
+      "Name",
+      "College",
+      "Department",
+      "Year",
+      "Event",
+    ];
+
+    const tableRows = [];
+
+    allCertificates.forEach((cert) => {
+      const certData = [
+        cert.certificateId,
+        cert.name,
+        cert.college || "-",
+        cert.department || "-",
+        cert.year || "-",
+        cert.event || "-",
+      ];
+
+      tableRows.push(certData);
+    });
+
+    autoTable(doc, {
+      head: [tableColumn],
+      body: tableRows,
+      startY: 30,
+    });
+
+    doc.save("certificate-list.pdf");
   };
 
   return (
@@ -275,42 +295,25 @@ const VerifyCertificate = () => {
       <Card
         className="p-4 shadow-lg"
         style={{
-          backgroundColor: isDark
-            ? "#1e1e1e"
-            : "#ffffff",
-          color: isDark
-            ? "#ffffff"
-            : "#000000",
-          border:
-            "2px solid rgb(189,159,103)",
+          backgroundColor: isDark ? "#1e1e1e" : "#ffffff",
+          color: isDark ? "#ffffff" : "#000000",
+          border: "2px solid rgb(189,159,103)",
           borderRadius: "15px",
         }}
       >
-        <h3 className="text-center mb-4">
-          🎓 Certificate Verification
-        </h3>
+        <h3 className="text-center mb-4">🎓 Certificate Verification</h3>
 
         <div className="d-flex justify-content-center mb-4 gap-2">
           <Button
-            variant={
-              mode === "id"
-                ? "warning"
-                : "outline-warning"
-            }
+            variant={mode === "id" ? "warning" : "outline-warning"}
             onClick={() => setMode("id")}
           >
             Enter Certificate ID
           </Button>
 
           <Button
-            variant={
-              mode === "search"
-                ? "warning"
-                : "outline-warning"
-            }
-            onClick={() =>
-              setMode("search")
-            }
+            variant={mode === "search" ? "warning" : "outline-warning"}
+            onClick={() => setMode("search")}
           >
             Search Your Certificate
           </Button>
@@ -321,9 +324,7 @@ const VerifyCertificate = () => {
             <Form.Group className="mb-3">
               <Form.Label
                 style={{
-                  color: isDark
-                    ? "#ffffff"
-                    : "#000000",
+                  color: isDark ? "#ffffff" : "#000000",
                   fontWeight: "600",
                 }}
               >
@@ -340,13 +341,8 @@ const VerifyCertificate = () => {
             </Form.Group>
           ) : (
             <Row>
-              <Col
-                md={6}
-                className="mb-3"
-              >
-                <Form.Label>
-                  Full Name
-                </Form.Label>
+              <Col md={6} className="mb-3">
+                <Form.Label>Full Name</Form.Label>
 
                 <Form.Control
                   name="name"
@@ -367,10 +363,7 @@ const VerifyCertificate = () => {
           >
             {isVerifying ? (
               <>
-                <Spinner
-                  size="sm"
-                  className="me-2"
-                />
+                <Spinner size="sm" className="me-2" />
                 Verifying...
               </>
             ) : (
@@ -385,12 +378,8 @@ const VerifyCertificate = () => {
               <div
                 className="p-4 rounded border"
                 style={{
-                  background: isDark
-                    ? "#12372a"
-                    : "#e9f7ef",
-                  color: isDark
-                    ? "#b6f2d6"
-                    : "#155724",
+                  background: isDark ? "#12372a" : "#e9f7ef",
+                  color: isDark ? "#b6f2d6" : "#155724",
                 }}
               >
                 <h5 className="border-bottom pb-2 mb-3">
@@ -400,21 +389,14 @@ const VerifyCertificate = () => {
                 <Row>
                   <Col sm={6}>
                     <p>
-                      <strong>Name:</strong>{" "}
-                      {result.data.name}
+                      <strong>Name:</strong> {result.data.name}
                     </p>
                   </Col>
 
                   {result.data.college && (
                     <Col sm={6}>
                       <p>
-                        <strong>
-                          College:
-                        </strong>{" "}
-                        {
-                          result.data
-                            .college
-                        }
+                        <strong>College:</strong> {result.data.college}
                       </p>
                     </Col>
                   )}
@@ -422,13 +404,7 @@ const VerifyCertificate = () => {
                   {result.data.roll && (
                     <Col sm={6}>
                       <p>
-                        <strong>
-                          Roll:
-                        </strong>{" "}
-                        {
-                          result.data
-                            .roll
-                        }
+                        <strong>Roll:</strong> {result.data.roll}
                       </p>
                     </Col>
                   )}
@@ -436,13 +412,7 @@ const VerifyCertificate = () => {
                   {result.data.department && (
                     <Col sm={6}>
                       <p>
-                        <strong>
-                          Department:
-                        </strong>{" "}
-                        {
-                          result.data
-                            .department
-                        }
+                        <strong>Department:</strong> {result.data.department}
                       </p>
                     </Col>
                   )}
@@ -450,47 +420,27 @@ const VerifyCertificate = () => {
                   {result.data.year && (
                     <Col sm={6}>
                       <p>
-                        <strong>
-                          Year:
-                        </strong>{" "}
-                        {
-                          result.data
-                            .year
-                        }
+                        <strong>Year:</strong> {result.data.year}
                       </p>
                     </Col>
                   )}
 
                   <Col sm={6}>
                     <p>
-                      <strong>
-                        Event:
-                      </strong>{" "}
-                      {result.data.event}
+                      <strong>Event:</strong> {result.data.event}
                     </p>
                   </Col>
 
                   <Col sm={6}>
                     <p>
-                      <strong>
-                        Issue Date:
-                      </strong>{" "}
-                      {
-                        result.data
-                          .issueDate
-                      }
+                      <strong>Issue Date:</strong> {result.data.issueDate}
                     </p>
                   </Col>
 
                   <Col sm={12}>
                     <p>
-                      <strong>
-                        Certificate ID:
-                      </strong>{" "}
-                      {
-                        result.data
-                          .certificateId
-                      }
+                      <strong>Certificate ID:</strong>{" "}
+                      {result.data.certificateId}
                     </p>
                   </Col>
                 </Row>
@@ -516,172 +466,110 @@ const VerifyCertificate = () => {
           <div className="mt-5">
             <hr />
 
-            <h3 className="mb-4">
-              Admin Certificate Panel
-            </h3>
+            <h3 className="mb-4">Admin Certificate Panel</h3>
 
             <Form>
               <Row>
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="certificateId"
                     placeholder="Certificate ID"
-                    value={
-                      formData.certificateId
-                    }
-                    onChange={
-                      handleChange
-                    }
+                    value={formData.certificateId}
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="name"
                     placeholder="Name"
                     value={formData.name}
-                    onChange={
-                      handleChange
-                    }
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="college"
                     placeholder="College"
-                    value={
-                      formData.college
-                    }
-                    onChange={
-                      handleChange
-                    }
+                    value={formData.college}
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="issueDate"
                     placeholder="Issue Date"
-                    value={
-                      formData.issueDate
-                    }
-                    onChange={
-                      handleChange
-                    }
+                    value={formData.issueDate}
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="roll"
                     placeholder="Roll"
                     value={formData.roll}
-                    onChange={
-                      handleChange
-                    }
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="department"
                     placeholder="Department"
-                    value={
-                      formData.department
-                    }
-                    onChange={
-                      handleChange
-                    }
+                    value={formData.department}
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="year"
                     placeholder="Year"
                     value={formData.year}
-                    onChange={
-                      handleChange
-                    }
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={6}
-                  className="mb-3"
-                >
+                <Col md={6} className="mb-3">
                   <Form.Control
                     name="event"
                     placeholder="Event"
                     value={formData.event}
-                    onChange={
-                      handleChange
-                    }
+                    onChange={handleChange}
                     className="custom-dark-input"
                   />
                 </Col>
 
-                <Col
-                  md={12}
-                  className="mb-3"
-                >
+                <Col md={12} className="mb-3">
                   <Form.Control
                     type="file"
                     accept=".jpg,.jpeg,.png,.pdf"
-                    onChange={(e) =>
-                      setCertificateFile(
-                        e.target.files[0]
-                      )
-                    }
+                    onChange={(e) => setCertificateFile(e.target.files[0])}
                     className="custom-dark-input"
                   />
                 </Col>
               </Row>
 
-              <div className="d-flex gap-3">
+              <div className="d-flex gap-3 flex-wrap">
                 <Button
                   type="button"
                   variant="success"
-                  onClick={
-                    handleAddCertificate
-                  }
+                  onClick={handleAddCertificate}
                   disabled={isAdding}
                 >
                   {isAdding ? (
                     <>
-                      <Spinner
-                        size="sm"
-                        className="me-2"
-                      />
+                      <Spinner size="sm" className="me-2" />
                       Adding...
                     </>
                   ) : (
@@ -697,15 +585,19 @@ const VerifyCertificate = () => {
                 >
                   {isUpdating ? (
                     <>
-                      <Spinner
-                        size="sm"
-                        className="me-2"
-                      />
+                      <Spinner size="sm" className="me-2" />
                       Updating...
                     </>
                   ) : (
                     "Update Certificate"
                   )}
+                </Button>
+                <Button
+                  type="button"
+                  variant="warning"
+                  onClick={handleDownloadPDF}
+                >
+                  Download Certificate List
                 </Button>
               </div>
             </Form>
@@ -716,19 +608,13 @@ const VerifyCertificate = () => {
                 hover
                 responsive
                 style={{
-                  backgroundColor: isDark
-                    ? "#1a1a1a"
-                    : "#ffffff",
-                  color: isDark
-                    ? "#ffffff"
-                    : "#000000",
+                  backgroundColor: isDark ? "#1a1a1a" : "#ffffff",
+                  color: isDark ? "#ffffff" : "#000000",
                 }}
               >
                 <thead>
                   <tr>
-                    <th>
-                      Certificate ID
-                    </th>
+                    <th>Certificate ID</th>
                     <th>Name</th>
                     <th>Event</th>
                     <th>Actions</th>
@@ -736,54 +622,35 @@ const VerifyCertificate = () => {
                 </thead>
 
                 <tbody>
-                  {allCertificates.map(
-                    (cert) => (
-                      <tr key={cert.id}>
-                        <td>
-                          {
-                            cert.certificateId
-                          }
-                        </td>
+                  {allCertificates.map((cert) => (
+                    <tr key={cert.id}>
+                      <td>{cert.certificateId}</td>
 
-                        <td>
-                          {cert.name}
-                        </td>
+                      <td>{cert.name}</td>
 
-                        <td>
-                          {cert.event}
-                        </td>
+                      <td>{cert.event}</td>
 
-                        <td>
-                          <div className="d-flex gap-2 justify-content-center">
-                            <Button
-                              size="sm"
-                              variant="warning"
-                              onClick={() =>
-                                handleEdit(
-                                  cert
-                                )
-                              }
-                            >
-                              Edit
-                            </Button>
+                      <td>
+                        <div className="d-flex gap-2 justify-content-center">
+                          <Button
+                            size="sm"
+                            variant="warning"
+                            onClick={() => handleEdit(cert)}
+                          >
+                            Edit
+                          </Button>
 
-                            <Button
-                              size="sm"
-                              variant="danger"
-                              onClick={() =>
-                                handleDelete(
-                                  cert.id,
-                                  cert.file
-                                )
-                              }
-                            >
-                              Delete
-                            </Button>
-                          </div>
-                        </td>
-                      </tr>
-                    )
-                  )}
+                          <Button
+                            size="sm"
+                            variant="danger"
+                            onClick={() => handleDelete(cert.id, cert.file)}
+                          >
+                            Delete
+                          </Button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
             </div>
