@@ -280,17 +280,28 @@ const certificates = [
     issueDate: "17-04-2026",
     file: "EC26SM028.png",
   },
+  
   {
     certificateId: "EC26SM029",
+    college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
+    name: "Arijit Manna",
+    roll:"34900323006",
+    year: "3rd",
+    department: "ECE",
+    event: "Social Media Challenge",
+    issueDate: "17-04-2026",
+    file: "EC26SM029.png",
+  },
+  {
+    certificateId: "EC26SM030",
     college: "COOCH BEHAR GOVT. ENGINEERING COLLEGE",
     name: "Prithwiraj Sarkar",
     year: "2nd",
     department: "CSE",
     event: "Social Media Challenge",
     issueDate: "17-04-2026",
-    file: "EC26SM029.jpeg",
+    file: "EC26SM030.jpeg",
   },
-
   // EUREKA 2025 CERTIFICATE
 
   {

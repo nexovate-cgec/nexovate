@@ -9,9 +9,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Initiatives from "./components/Initiatives";
-// import FloatingSubmitIdea from "./components/FloatingSubmitIdea";
-// import SubmitIdea from "./pages/SubmitIdea";
-
+import LoginPage from "./components/LoginPage";
 
 import Events from "./components/Events";
 import Blog from "./components/Blog";
@@ -20,7 +18,7 @@ import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
-import FloatingJoinButton from "./components/FloatingJoinButton"; 
+import FloatingJoinButton from "./components/FloatingJoinButton";
 
 // Pages
 import AllEvents from "./pages/AllEvents";
@@ -30,7 +28,6 @@ import BlogDetails from "./pages/BlogDetails";
 import GalleryPage from "./pages/GalleryPage";
 import VerifyCertificate from "./pages/VerifyCertificate";
 
-
 function App() {
   return (
     <ThemeProvider>
@@ -39,36 +36,41 @@ function App() {
           <Navbar />
           <main>
             <Routes>
-              <Route path="/" element={
-                <>
-                  <Hero />
-                  <About />
-                  <Initiatives />
-                  {/* <IdeaDiscussion /> */}
-                  <Events />
-                  <Gallery />
-                  <Blog />
-                  <Team />
-                  <Testimonials />
-                  <Footer />
-                  {/* <FloatingSubmitIdea /> */}
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <About />
+                    <Initiatives />
+                    {/* <IdeaDiscussion /> */}
+                    <Events />
+                    <Gallery />
+                    <Blog />
+                    <Team />
+                    <Testimonials />
+                    <Footer />
+                    {/* <FloatingSubmitIdea /> */}
+                  </>
+                }
+              />
 
-                </>
-              } />
-              
               <Route path="/events" element={<AllEvents />} />
               <Route path="/events/:id" element={<EventDetail />} />
               {/* <Route path="/submit-idea" element={<SubmitIdea />} /> */}
+              <Route path="/login" element={<LoginPage />} />
 
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
-              <Route path="/verify-certificate" element={<VerifyCertificate />} />
-
+              <Route
+                path="/verify-certificate"
+                element={<VerifyCertificate />}
+              />
             </Routes>
           </main>
-          
+
           <FloatingJoinButton />
         </div>
       </Router>
@@ -77,8 +79,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-

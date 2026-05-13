@@ -6,6 +6,7 @@ import logo from "../assets/images/logo.jpeg";
 import "./Navbar.css";
 
 const NavBar = () => {
+
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isExpanded, setIsExpanded] = useState(false);
@@ -15,20 +16,52 @@ const NavBar = () => {
 
   const { isDark, toggleTheme } = useTheme();
 
+  const isAdmin =
+    localStorage.getItem("isAdmin") === "true";
+
+  const handleLogout = () => {
+
+    localStorage.removeItem("isAdmin");
+
+    localStorage.removeItem(
+      "adminSessionActive"
+    );
+
+    localStorage.removeItem(
+      "lastAdminActivity"
+    );
+
+    alert("Logged Out");
+
+    navigate("/");
+
+    window.location.reload();
+  };
+
   useEffect(() => {
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
     };
+
   }, []);
 
   useEffect(() => {
+
     if (location.pathname === "/") {
+
       const sections = [
         "home",
         "initiatives",
@@ -39,89 +72,143 @@ const NavBar = () => {
         "testimonials",
       ];
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(entry.target.id);
-            }
-          });
-        },
-        {
-          threshold: 0.3,
-        }
-      );
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            entries.forEach((entry) => {
+
+              if (entry.isIntersecting) {
+                setActiveSection(
+                  entry.target.id
+                );
+              }
+
+            });
+
+          },
+          {
+            threshold: 0.3,
+          }
+        );
 
       sections.forEach((id) => {
-        const section = document.getElementById(id);
+
+        const section =
+          document.getElementById(id);
 
         if (section) {
           observer.observe(section);
         }
+
       });
 
       return () => observer.disconnect();
+
     } else {
+
       setActiveSection("");
+
     }
+
   }, [location.pathname]);
 
-  const handleSectionClick = (sectionId) => {
+  const handleSectionClick = (
+    sectionId
+  ) => {
+
     setIsExpanded(false);
 
     setActiveSection(sectionId);
 
     if (location.pathname !== "/") {
+
       navigate("/");
 
       setTimeout(() => {
+
         if (sectionId === "home") {
+
           window.scrollTo({
             top: 0,
             behavior: "smooth",
           });
+
         } else {
-          const element = document.getElementById(sectionId);
+
+          const element =
+            document.getElementById(
+              sectionId
+            );
 
           if (element) {
+
             element.scrollIntoView({
               behavior: "smooth",
               block: "start",
             });
+
           }
+
         }
+
       }, 200);
+
     } else {
+
       if (sectionId === "home") {
+
         window.scrollTo({
           top: 0,
           behavior: "smooth",
         });
+
       } else {
-        const element = document.getElementById(sectionId);
+
+        const element =
+          document.getElementById(
+            sectionId
+          );
 
         if (element) {
+
           element.scrollIntoView({
             behavior: "smooth",
             block: "start",
           });
+
         }
+
       }
+
     }
+
   };
 
-  const handlePageNavigation = (page) => {
+  const handlePageNavigation = (
+    page
+  ) => {
+
     setIsExpanded(false);
 
     if (page === "events") {
+
       navigate("/events");
+
     } else if (page === "gallery") {
+
       navigate("/gallery");
+
     } else if (page === "blog") {
+
       navigate("/blogs");
+
     } else if (page === "join") {
+
       navigate("/join");
+
     }
+
   };
 
   const handleThemeToggle = () => {
@@ -142,9 +229,16 @@ const NavBar = () => {
       fixed="top"
       expanded={isExpanded}
       className={`main-navbar ${
-        scrolled ? "navbar-scrolled" : ""
-      } ${isDark ? "navbar-dark" : "navbar-light"}`}
+        scrolled
+          ? "navbar-scrolled"
+          : ""
+      } ${
+        isDark
+          ? "navbar-dark"
+          : "navbar-light"
+      }`}
     >
+
       <Container>
 
         <Navbar.Brand
@@ -152,11 +246,16 @@ const NavBar = () => {
           to="/"
           className="d-flex align-items-center gap-2"
           onClick={() => {
+
             handleNavLinkClick();
 
-            handleSectionClick("home");
+            handleSectionClick(
+              "home"
+            );
+
           }}
         >
+
           <img
             src={logo}
             alt="ECELL Logo"
@@ -167,50 +266,65 @@ const NavBar = () => {
           <span className="fw-bold navbar-brand-text golden-text">
             CGEC ECell
           </span>
+
         </Navbar.Brand>
 
         <div className="d-flex align-items-center">
 
           <button
             className="theme-toggle-btn me-3 golden-border"
-            onClick={handleThemeToggle}
-            aria-label={
-              isDark
-                ? "Switch to light mode"
-                : "Switch to dark mode"
+            onClick={
+              handleThemeToggle
             }
           >
+
             <div className="theme-toggle-inner">
+
               <span className="theme-icon">
-                {isDark ? "☀️" : "🌙"}
+                {isDark
+                  ? "☀️"
+                  : "🌙"}
               </span>
 
               <span className="theme-text">
-                {isDark ? "Light" : "Dark"}
+                {isDark
+                  ? "Light"
+                  : "Dark"}
               </span>
+
             </div>
+
           </button>
 
           <Navbar.Toggle
             aria-controls="navbar-nav"
-            onClick={handleNavbarToggle}
+            onClick={
+              handleNavbarToggle
+            }
             className="navbar-toggler-custom golden-border"
           />
+
         </div>
 
         <Navbar.Collapse id="navbar-nav">
+
           <Nav className="ms-auto align-items-center gap-2">
 
             <Nav.Link
               as={Link}
               to="/"
               onClick={() => {
+
                 handleNavLinkClick();
 
-                handleSectionClick("home");
+                handleSectionClick(
+                  "home"
+                );
+
               }}
               className={`nav-link-custom ${
-                activeSection === "home"
+                activeSection ===
+                "home"
                   ? "active-section"
                   : ""
               }`}
@@ -222,12 +336,17 @@ const NavBar = () => {
               as={Link}
               to="/"
               onClick={() => {
+
                 handleNavLinkClick();
 
-                handleSectionClick("initiatives");
+                handleSectionClick(
+                  "initiatives"
+                );
+
               }}
               className={`nav-link-custom ${
-                activeSection === "initiatives"
+                activeSection ===
+                "initiatives"
                   ? "active-section"
                   : ""
               }`}
@@ -239,12 +358,17 @@ const NavBar = () => {
               as={Link}
               to="/events"
               onClick={() => {
+
                 handleNavLinkClick();
 
-                handlePageNavigation("events");
+                handlePageNavigation(
+                  "events"
+                );
+
               }}
               className={`nav-link-custom ${
-                location.pathname === "/events"
+                location.pathname ===
+                "/events"
                   ? "active-section"
                   : ""
               }`}
@@ -256,12 +380,17 @@ const NavBar = () => {
               as={Link}
               to="/gallery"
               onClick={() => {
+
                 handleNavLinkClick();
 
-                handlePageNavigation("gallery");
+                handlePageNavigation(
+                  "gallery"
+                );
+
               }}
               className={`nav-link-custom ${
-                location.pathname === "/gallery"
+                location.pathname ===
+                "/gallery"
                   ? "active-section"
                   : ""
               }`}
@@ -273,12 +402,17 @@ const NavBar = () => {
               as={Link}
               to="/blogs"
               onClick={() => {
+
                 handleNavLinkClick();
 
-                handlePageNavigation("blog");
+                handlePageNavigation(
+                  "blog"
+                );
+
               }}
               className={`nav-link-custom ${
-                location.pathname === "/blogs"
+                location.pathname ===
+                "/blogs"
                   ? "active-section"
                   : ""
               }`}
@@ -290,12 +424,17 @@ const NavBar = () => {
               as={Link}
               to="/"
               onClick={() => {
+
                 handleNavLinkClick();
 
-                handleSectionClick("team");
+                handleSectionClick(
+                  "team"
+                );
+
               }}
               className={`nav-link-custom ${
-                activeSection === "team"
+                activeSection ===
+                "team"
                   ? "active-section"
                   : ""
               }`}
@@ -307,12 +446,17 @@ const NavBar = () => {
               as={Link}
               to="/"
               onClick={() => {
+
                 handleNavLinkClick();
 
-                handleSectionClick("testimonials");
+                handleSectionClick(
+                  "testimonials"
+                );
+
               }}
               className={`nav-link-custom ${
-                activeSection === "testimonials"
+                activeSection ===
+                "testimonials"
                   ? "active-section"
                   : ""
               }`}
@@ -323,9 +467,12 @@ const NavBar = () => {
             <Nav.Link
               as={Link}
               to="/verify-certificate"
-              onClick={handleNavLinkClick}
+              onClick={
+                handleNavLinkClick
+              }
               className={`nav-link-custom ${
-                location.pathname === "/verify-certificate"
+                location.pathname ===
+                "/verify-certificate"
                   ? "active-section"
                   : ""
               }`}
@@ -333,11 +480,45 @@ const NavBar = () => {
               Verify Certificate
             </Nav.Link>
 
+            {isAdmin ? (
+
+              <button
+                onClick={
+                  handleLogout
+                }
+                className="btn btn-danger btn-sm fw-bold"
+              >
+                Logout
+              </button>
+
+            ) : (
+
+              <Nav.Link
+                as={Link}
+                to="/login"
+                onClick={
+                  handleNavLinkClick
+                }
+                className={`nav-link-custom ${
+                  location.pathname ===
+                  "/login"
+                    ? "active-section"
+                    : ""
+                }`}
+              >
+                Login
+              </Nav.Link>
+
+            )}
+
           </Nav>
+
         </Navbar.Collapse>
+
       </Container>
 
       <div className="navbar-golden-border"></div>
+
     </Navbar>
   );
 };
