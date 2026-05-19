@@ -36,7 +36,7 @@ const LoginPage = () => {
 
     if (
       email === "nexovatecgec@gmail.com" &&
-      password === "NexovateCgec123"
+      password === "CgecEcell2026"
     ) {
 
       localStorage.setItem(
