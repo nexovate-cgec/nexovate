@@ -356,6 +356,42 @@ export const galleryDataGroupDiscuss = [
   },
   
 ];
+export const galleryThinkLikeEnt = [
+  {
+    id: 1,
+    src: require("../assets/Events/Think_Like_an_Entrepreneur/1.jpeg"),
+    caption: "Groups",
+    event: "💡 Think Like An Entrepreneur 💡",
+    category: "Entrepreneur",
+    date: "10 May 2026"
+  },
+  {
+    id: 2,
+    src: require("../assets/Events/Think_Like_an_Entrepreneur/2.jpeg"),
+    caption: "Groups",
+    event: "💡 Think Like An Entrepreneur 💡",
+    category: "Entrepreneur",
+    date: "10 May 2026"
+  },
+  {
+    id: 3,
+    src: require("../assets/Events/Think_Like_an_Entrepreneur/3.jpeg"),
+    caption: "Groups",
+    event: "💡 Think Like An Entrepreneur 💡",
+    category: "Entrepreneur",
+    date: "10 May 2026"
+  },
+  {
+    id: 4,
+    src: require("../assets/Events/Think_Like_an_Entrepreneur/4.jpeg"),
+    caption: "Groups",
+    event: "💡 Think Like An Entrepreneur 💡",
+    category: "Entrepreneur",
+    date: "10 May 2026"
+  },
+ 
+  
+];
 // require("../assets/Events/eureka25/18.jpeg").default,
 
 export const allEvents = [
@@ -393,6 +429,13 @@ export const allEvents = [
     featuredImage:require("../assets/Events/groupDiscuss/dis1.png"),
     totalImages: galleryDataGroupDiscuss.length,
     date: "#"
+  },
+  {
+    name: "💡 Think Like An Entrepreneur 💡",
+    data: galleryThinkLikeEnt,
+    featuredImage:require("../assets/Events/Think_Like_an_Entrepreneur/1.jpeg"),
+    totalImages: galleryThinkLikeEnt.length,
+    date: "10 May, 2026"
   },
   
 ];
