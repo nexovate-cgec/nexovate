@@ -29,12 +29,12 @@ const EventApply = () => {
     department: "",
     contact: "",
     email: "",
-    workshopAttendance: "",
-    attendedPart: "",
-    componentsStatus: "",
-    componentsList: "",
+    attendedWorkshop: "",
+    workshopPart: "",
+    entrepreneurshipIdea: "",
+    startupInterest: "",
     workshopExpectation: "",
-    robowarExpectation: ""
+    entrepreneurGoal: ""
   });
 
   const handleChange = (e) => {
@@ -75,12 +75,12 @@ const EventApply = () => {
           department: "",
           contact: "",
           email: "",
-          workshopAttendance: "",
-          attendedPart: "",
-          componentsStatus: "",
-          componentsList: "",
+          attendedWorkshop: "",
+          workshopPart: "",
+          entrepreneurshipIdea: "",
+          startupInterest: "",
           workshopExpectation: "",
-          robowarExpectation: ""
+          entrepreneurGoal: ""
         });
 
         setLoading(false);
@@ -129,7 +129,7 @@ const EventApply = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Enter your name"
+                    placeholder="Enter your full name"
                   />
                 </Form.Group>
 
@@ -204,48 +204,48 @@ const EventApply = () => {
 
                 <Form.Group className="mb-4">
                   <Form.Label>
-                    Have you attended the Ultimate Electronics Workshop hosted by Roboverse earlier?
+                    Have you attended the Think Like An Entrepreneur session earlier?
                   </Form.Label>
 
                   <Form.Check
                     type="radio"
                     label="Yes, full attendance"
-                    name="workshopAttendance"
+                    name="attendedWorkshop"
                     value="Yes, full attendance"
-                    checked={formData.workshopAttendance === "Yes, full attendance"}
+                    checked={formData.attendedWorkshop === "Yes, full attendance"}
                     onChange={handleChange}
                     required
                   />
 
                   <Form.Check
                     type="radio"
-                    label="Could not attend the whole workshop"
-                    name="workshopAttendance"
-                    value="Could not attend the whole workshop"
-                    checked={formData.workshopAttendance === "Could not attend the whole workshop"}
+                    label="Could not attend the whole session"
+                    name="attendedWorkshop"
+                    value="Could not attend the whole session"
+                    checked={formData.attendedWorkshop === "Could not attend the whole session"}
                     onChange={handleChange}
                   />
 
                   <Form.Check
                     type="radio"
                     label="No"
-                    name="workshopAttendance"
+                    name="attendedWorkshop"
                     value="No"
-                    checked={formData.workshopAttendance === "No"}
+                    checked={formData.attendedWorkshop === "No"}
                     onChange={handleChange}
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-4">
                   <Form.Label>
-                    If you could not attend the full workshop, which part did you attend?
+                    If yes, which part did you attend?
                   </Form.Label>
 
                   <Form.Control
                     as="textarea"
                     rows={3}
-                    name="attendedPart"
-                    value={formData.attendedPart}
+                    name="workshopPart"
+                    value={formData.workshopPart}
                     onChange={handleChange}
                     placeholder="Write here..."
                   />
@@ -253,56 +253,41 @@ const EventApply = () => {
 
                 <Form.Group className="mb-4">
                   <Form.Label>
-                    Do you have the components required for making a bot?
-                  </Form.Label>
-
-                  <Form.Check
-                    type="radio"
-                    label="Yes, I have all the components required"
-                    name="componentsStatus"
-                    value="Yes, I have all the components required"
-                    checked={formData.componentsStatus === "Yes, I have all the components required"}
-                    onChange={handleChange}
-                    required
-                  />
-
-                  <Form.Check
-                    type="radio"
-                    label="I have some components"
-                    name="componentsStatus"
-                    value="I have some components"
-                    checked={formData.componentsStatus === "I have some components"}
-                    onChange={handleChange}
-                  />
-
-                  <Form.Check
-                    type="radio"
-                    label="I don't have any component"
-                    name="componentsStatus"
-                    value="I don't have any component"
-                    checked={formData.componentsStatus === "I don't have any component"}
-                    onChange={handleChange}
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-4">
-                  <Form.Label>
-                    Enlist the components you have present.
+                    What does entrepreneurship mean to you?
                   </Form.Label>
 
                   <Form.Control
                     as="textarea"
-                    rows={3}
-                    name="componentsList"
-                    value={formData.componentsList}
+                    rows={4}
+                    name="entrepreneurshipIdea"
+                    value={formData.entrepreneurshipIdea}
                     onChange={handleChange}
-                    placeholder="Write your components..."
+                    placeholder="Write your thoughts..."
+                    required
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-4">
                   <Form.Label>
-                    What expectations do you have from the Robowar Workshop?
+                    Are you interested in building your own startup?
+                  </Form.Label>
+
+                  <Form.Select
+                    name="startupInterest"
+                    required
+                    value={formData.startupInterest}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="Maybe">Maybe</option>
+                    <option value="No">No</option>
+                  </Form.Select>
+                </Form.Group>
+
+                <Form.Group className="mb-4">
+                  <Form.Label>
+                    What expectations do you have from this E-Cell event?
                   </Form.Label>
 
                   <Form.Control
@@ -318,14 +303,14 @@ const EventApply = () => {
 
                 <Form.Group className="mb-4">
                   <Form.Label>
-                    What expectations do you have from Robowar, the ultimate bot fighting competition?
+                    What is your future entrepreneurial goal?
                   </Form.Label>
 
                   <Form.Control
                     as="textarea"
                     rows={4}
-                    name="robowarExpectation"
-                    value={formData.robowarExpectation}
+                    name="entrepreneurGoal"
+                    value={formData.entrepreneurGoal}
                     onChange={handleChange}
                     placeholder="Write here..."
                     required
