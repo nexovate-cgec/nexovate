@@ -53,7 +53,7 @@ const EventApply = () => {
     try {
 
       await fetch(
-        "YOUR_GOOGLE_SCRIPT_URL",
+        "https://script.google.com/macros/s/AKfycbzbKP1e7E7IqBfsAveOvfMqRNkdnbxsKw-mnuU55wK-ZujBtS8RMD4EQzRFtTtNaXzizg/exec",
         {
           method: "POST",
           mode: "no-cors",
@@ -115,7 +115,7 @@ const EventApply = () => {
                 className="text-center fw-bold mb-4"
                 style={{ color: goldenColor }}
               >
-                Apply For {event?.title}
+                Workshop Registration For {event?.title}
               </h2>
 
               <Form onSubmit={handleSubmit}>

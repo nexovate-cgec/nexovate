@@ -82,16 +82,60 @@ export const events = [
     status: "Completed",
     color: "danger"
   },
-  {
+{
   id: 6,
-  title: "✨🚀Think Like An Entrepreneur 💡",
-  date: "May 10th, 2026",
-  description: "🚀✨ E-CELL CGEC PRESENTS ✨🚀Think Like An Entrepreneur 💡Every successful startup begins with a single idea — and every entrepreneur begins with a different way of thinking.",
-  fullDescription: "🚀✨ E-CELL CGEC PRESENTS ✨🚀Think Like An Entrepreneur 💡Every successful startup begins with a single idea — and every entrepreneur begins with a different way of thinking. E-Cell CGEC invites all newcomers to join an exciting interactive session where you will:⚡ Test your entrepreneurial thinking through fun quiz rounds⚡ Learn the basics of entrepreneurship and innovation⚡ Explore how entrepreneurs identify problems and create solutions⚡ Develop a mindset that helps you think beyond the ordinary This event is not just a competition — it is the first step of your entrepreneurial journey. 🌱",
+  title: "B-Plan Workshop",
+  date: "Jun 8th, 2026",
+  description: "🚀 Think Fast. Plan Smart. Pitch Sharp. Join the ultimate startup business planning competition where participants build innovative business ideas and pitch them before judges.",
+  
+  fullDescription: `
+  🚀✨ E-CELL CGEC PRESENTS ✨🚀
+
+  💡 B-PLAN WORKSHOP & STARTUP PITCHING EVENT 💡
+
+  Think Fast. Plan Smart. Pitch Sharp.
+
+  B-Plan is an exciting entrepreneurship-based competition where participants will receive a surprise technology-based problem statement or startup idea and develop a complete business plan within a limited time.
+
+  Participants will:
+  
+  ⚡ Analyze real-world startup problems  
+  ⚡ Build innovative business solutions  
+  ⚡ Develop revenue and marketing strategies  
+  ⚡ Create startup pitch presentations  
+  ⚡ Present ideas before judges in a professional startup-style pitch round  
+
+  👥 Team Details:
+  • Team Size: 2–3 Members
+  • Individual Participation Allowed
+  • Cross-Branch Teams Allowed
+
+  ⏳ Event Structure:
+  • Problem Statement Reveal – 5 Minutes
+  • Business Plan Preparation – 45 Minutes
+  • Final Pitch Presentation – 15 Minutes
+
+  🎯 Judging Criteria:
+  • Innovation & Creativity
+  • Business Feasibility
+  • Problem Solving
+  • Revenue & Marketing Plan
+  • Team Coordination
+  • Presentation Skills
+
+  📌 Important Rules:
+  • Use of AI is strictly prohibited
+  • Pre-made startup plans are not allowed
+  • Teams must create plans during the event itself
+  • Judges’ decisions will be final
+
+  🌱 Whether you are an aspiring entrepreneur, innovator, or startup enthusiast — this event is your chance to experience the real startup ecosystem and test your entrepreneurial mindset.
+  `,
+  
   image: bPlane,
-  category: "social",
-  venue: "Google Meet",
-  time: "6:00 PM",
+  category: "workshop",
+  venue: "Room No. : AC112",
+  time: "4:00 PM to 7:00 PM",
   compleOrNot: "Apply Now",
   src: "/apply/6",
   status: "upcoming",
