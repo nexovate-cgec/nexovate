@@ -13,13 +13,11 @@ import { getEventById } from "../data/events";
 import { useTheme } from "../contexts/ThemeContext";
 
 const EventApply = () => {
-
   const { id } = useParams();
   const event = getEventById(id);
   const { isDark } = useTheme();
 
   const goldenColor = "rgb(189, 159, 103)";
-
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -45,29 +43,23 @@ const EventApply = () => {
   };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
-
     setLoading(true);
 
     try {
-
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbzbKP1e7E7IqBfsAveOvfMqRNkdnbxsKw-mnuU55wK-ZujBtS8RMD4EQzRFtTtNaXzizg/exec",
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzqlp8cWfOaw-DWU9z61dZQdFlObCbSYC8mhU2BdUrLiDPkKxHGbtnBmnMaPaI8mC2Rpw/exec",
         {
           method: "POST",
-          mode: "no-cors",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "text/plain;charset=utf-8"
           },
           body: JSON.stringify(formData)
         }
       );
 
-      setTimeout(() => {
-
+      if (response.ok) {
         alert("Application Submitted Successfully!");
-
         setFormData({
           name: "",
           roll: "",
@@ -82,16 +74,14 @@ const EventApply = () => {
           workshopExpectation: "",
           entrepreneurGoal: ""
         });
-
-        setLoading(false);
-
-      }, 1500);
-
+      } else {
+        alert("Server responded with an error!");
+      }
     } catch (error) {
-
+      console.error("Error submitting form:", error);
+      alert("Something went wrong! Please check your network or script deployment.");
+    } finally {
       setLoading(false);
-      alert("Something went wrong!");
-
     }
   };
 
@@ -99,7 +89,6 @@ const EventApply = () => {
     <Container className="py-5">
       <Row className="justify-content-center">
         <Col lg={8}>
-
           <Card
             style={{
               backgroundColor: isDark ? "#1a1a1a" : "#fff",
@@ -108,9 +97,7 @@ const EventApply = () => {
               borderRadius: "20px"
             }}
           >
-
             <Card.Body className="p-4">
-
               <h2
                 className="text-center fw-bold mb-4"
                 style={{ color: goldenColor }}
@@ -119,10 +106,8 @@ const EventApply = () => {
               </h2>
 
               <Form onSubmit={handleSubmit}>
-
                 <Form.Group className="mb-3">
                   <Form.Label>Full Name</Form.Label>
-
                   <Form.Control
                     type="text"
                     name="name"
@@ -135,7 +120,6 @@ const EventApply = () => {
 
                 <Form.Group className="mb-3">
                   <Form.Label>Roll Number</Form.Label>
-
                   <Form.Control
                     type="text"
                     name="roll"
@@ -148,7 +132,6 @@ const EventApply = () => {
 
                 <Form.Group className="mb-3">
                   <Form.Label>Year</Form.Label>
-
                   <Form.Select
                     name="year"
                     required
@@ -165,7 +148,6 @@ const EventApply = () => {
 
                 <Form.Group className="mb-3">
                   <Form.Label>Department</Form.Label>
-
                   <Form.Control
                     type="text"
                     name="department"
@@ -178,7 +160,6 @@ const EventApply = () => {
 
                 <Form.Group className="mb-3">
                   <Form.Label>Contact Number</Form.Label>
-
                   <Form.Control
                     type="tel"
                     name="contact"
@@ -191,7 +172,6 @@ const EventApply = () => {
 
                 <Form.Group className="mb-4">
                   <Form.Label>Gmail</Form.Label>
-
                   <Form.Control
                     type="email"
                     name="email"
@@ -206,7 +186,6 @@ const EventApply = () => {
                   <Form.Label>
                     Have you attended the Think Like An Entrepreneur session earlier?
                   </Form.Label>
-
                   <Form.Check
                     type="radio"
                     label="Yes, full attendance"
@@ -216,7 +195,6 @@ const EventApply = () => {
                     onChange={handleChange}
                     required
                   />
-
                   <Form.Check
                     type="radio"
                     label="Could not attend the whole session"
@@ -225,7 +203,6 @@ const EventApply = () => {
                     checked={formData.attendedWorkshop === "Could not attend the whole session"}
                     onChange={handleChange}
                   />
-
                   <Form.Check
                     type="radio"
                     label="No"
@@ -237,10 +214,7 @@ const EventApply = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                  <Form.Label>
-                    If yes, which part did you attend?
-                  </Form.Label>
-
+                  <Form.Label>If yes, which part did you attend?</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={3}
@@ -252,10 +226,7 @@ const EventApply = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                  <Form.Label>
-                    What does entrepreneurship mean to you?
-                  </Form.Label>
-
+                  <Form.Label>What does entrepreneurship mean to you?</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={4}
@@ -268,10 +239,7 @@ const EventApply = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                  <Form.Label>
-                    Are you interested in building your own startup?
-                  </Form.Label>
-
+                  <Form.Label>Are you interested in building your own startup?</Form.Label>
                   <Form.Select
                     name="startupInterest"
                     required
@@ -286,10 +254,7 @@ const EventApply = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                  <Form.Label>
-                    What expectations do you have from this E-Cell event?
-                  </Form.Label>
-
+                  <Form.Label>What expectations do you have from this E-Cell event?</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={4}
@@ -302,10 +267,7 @@ const EventApply = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                  <Form.Label>
-                    What is your future entrepreneurial goal?
-                  </Form.Label>
-
+                  <Form.Label>What is your future entrepreneurial goal?</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={4}
@@ -342,13 +304,9 @@ const EventApply = () => {
                     "Submit Application"
                   )}
                 </Button>
-
               </Form>
-
             </Card.Body>
-
           </Card>
-
         </Col>
       </Row>
     </Container>
