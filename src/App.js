@@ -19,6 +19,7 @@ import Testimonials from "./components/Testimonials";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
 import FloatingJoinButton from "./components/FloatingJoinButton";
+import EventApply from "./pages/EventApply";
 
 // Pages
 import AllEvents from "./pages/AllEvents";
@@ -52,11 +53,12 @@ function App() {
                     <Footer />
                     {/* <FloatingSubmitIdea /> */}
                   </>
-                }
+                } 
               />
 
               <Route path="/events" element={<AllEvents />} />
               <Route path="/events/:id" element={<EventDetail />} />
+              <Route path="/apply/:id" element={<EventApply />} />
               {/* <Route path="/submit-idea" element={<SubmitIdea />} /> */}
               <Route path="/login" element={<LoginPage />} />
 

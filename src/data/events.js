@@ -3,6 +3,7 @@ import Nec from "../assets/images/nec.jpeg";
 import Entrepreneurship from "../assets/images/Entrepreneurship.jpg";
 import social from "../assets/images/social.png";
 import thinkLikeEnt from "../assets/Events/Think_Like_an_Entrepreneur/1.jpeg";
+import bPlane from "../assets/Events/bPlane.jpeg";
 
 
 export const events = [
@@ -81,6 +82,21 @@ export const events = [
     status: "Completed",
     color: "danger"
   },
+  {
+  id: 6,
+  title: "✨🚀Think Like An Entrepreneur 💡",
+  date: "May 10th, 2026",
+  description: "🚀✨ E-CELL CGEC PRESENTS ✨🚀Think Like An Entrepreneur 💡Every successful startup begins with a single idea — and every entrepreneur begins with a different way of thinking.",
+  fullDescription: "🚀✨ E-CELL CGEC PRESENTS ✨🚀Think Like An Entrepreneur 💡Every successful startup begins with a single idea — and every entrepreneur begins with a different way of thinking. E-Cell CGEC invites all newcomers to join an exciting interactive session where you will:⚡ Test your entrepreneurial thinking through fun quiz rounds⚡ Learn the basics of entrepreneurship and innovation⚡ Explore how entrepreneurs identify problems and create solutions⚡ Develop a mindset that helps you think beyond the ordinary This event is not just a competition — it is the first step of your entrepreneurial journey. 🌱",
+  image: bPlane,
+  category: "social",
+  venue: "Google Meet",
+  time: "6:00 PM",
+  compleOrNot: "Apply Now",
+  src: "/apply/6",
+  status: "upcoming",
+  color: "danger"
+}
 ];
 
 export const getEventById = (id) => {
