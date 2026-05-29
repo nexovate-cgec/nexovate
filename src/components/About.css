@@ -1,59 +1,122 @@
-.social-icon {
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #f8f9fa;
-    transition: all 0.3s ease;
-    color: #333;
-  }
-  
-  .social-icon:hover {
-    color: #fff;
-    transform: scale(1.2);
-  }
-  
-  .social-icon.facebook:hover {
-    background: #1877f2;
-  }
-  
-  .social-icon.instagram:hover {
-    background: #e4405f;
-  }
-  
-  .social-icon.linkedin:hover {
-    background: #0a66c2;
-  }
-  
-  .social-icon.twitter:hover {
-    background: #1da1f2;
-    
-  }
-  
-
 #about {
-  background-color: var(--section-bg) !important;
-  color: var(--text-color);
+  background: white;
 }
 
-#about h2,
-#about h5,
-#about .lead,
-#about p {
-  color: var(--text-color) !important;
+.about-image {
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+  border: 3px solid rgb(189, 159, 103);
 }
 
-.social-icon {
-  background: var(--card-bg) !important;
-  color: var(--text-color) !important;
-  border: 1px solid var(--border-color);
+.collab-section {
+  margin-bottom: 30px;
 }
 
-#about {
-  background-color: white;
+.collab-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(189, 159, 103, 0.12);
+  color: rgb(189, 159, 103);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.collab-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo-card {
+  width: 110px;
+  height: 120px;
+  background: white;
+  border-radius: 20px;
+  border: 2px solid rgba(189, 159, 103, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.logo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(189, 159, 103, 0.25);
+}
+
+.logo-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.logo-card span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.collab-x {
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgb(189, 159, 103);
+  animation: pulseX 2s infinite;
+}
+
+@keyframes pulseX {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.about-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgb(189, 159, 103);
+  margin-bottom: 18px;
+}
+
+.about-heading span {
+  color: #2c3e50;
+}
+
+.about-lead {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 1.15rem;
+}
+
+.about-text {
+  color: #2c3e50;
+}
+
+.about-text strong {
+  color: rgb(189, 159, 103);
+}
+
+.follow-text {
+  color: rgb(189, 159, 103);
+  font-weight: 600;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 .social-circle {
@@ -75,4 +138,44 @@
   background: rgb(189, 159, 103);
   color: white;
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .collab-wrapper {
+    justify-content: center;
+  }
+
+  .logo-card {
+    width: 90px;
+    height: 100px;
+  }
+
+  .logo-card img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo-card span {
+    font-size: 0.7rem;
+  }
+
+  .collab-x {
+    font-size: 1.4rem;
+  }
+
+  .about-heading {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+
+  .about-lead,
+  .about-text {
+    text-align: center;
+  }
+
+  .follow-text {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
 }
