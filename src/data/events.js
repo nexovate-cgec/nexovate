@@ -136,9 +136,9 @@ export const events = [
   category: "workshop",
   venue: "Room No. : AC112",
   time: "4:00 PM to 7:00 PM",
-  compleOrNot: "Apply Now",
-  src: "/apply/6",
-  status: "upcoming",
+  compleOrNot: "Event Finished!",
+  src: "#",
+  status: "Completed",
   color: "danger"
 }
 ];
