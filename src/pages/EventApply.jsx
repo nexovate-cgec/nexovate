@@ -6,7 +6,7 @@ import {
   Card,
   Form,
   Button,
-  Spinner
+  // Spinner
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getEventById } from "../data/events";
@@ -18,7 +18,7 @@ const EventApply = () => {
   const { isDark } = useTheme();
 
   const goldenColor = "rgb(189, 159, 103)";
-  const [loading, setLoading] = useState(false);
+  const [ setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -280,30 +280,20 @@ const EventApply = () => {
                 </Form.Group>
 
                 <Button
-                  type="submit"
-                  disabled={loading}
-                  style={{
-                    backgroundColor: goldenColor,
-                    borderColor: goldenColor,
-                    width: "100%",
-                    padding: "10px",
-                    borderRadius: "30px",
-                    fontWeight: "600"
-                  }}
-                >
-                  {loading ? (
-                    <>
-                      <Spinner
-                        animation="border"
-                        size="sm"
-                        className="me-2"
-                      />
-                      Submitting...
-                    </>
-                  ) : (
-                    "Submit Application"
-                  )}
-                </Button>
+  type="submit"
+  disabled={true} 
+  style={{
+    backgroundColor: "#6c757d", 
+    borderColor: "#6c757d",
+    width: "100%",
+    padding: "10px",
+    borderRadius: "30px",
+    fontWeight: "600",
+    cursor: "not-allowed" 
+  }}
+>
+  Registration Closed 
+</Button>
               </Form>
             </Card.Body>
           </Card>
