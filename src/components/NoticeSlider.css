@@ -5,15 +5,18 @@
 
 .notice-viewport {
   overflow: hidden;
+  width: 100%;
 }
 
 .notice-track {
   display: flex;
   transition: transform 0.8s ease-in-out;
+  width: 100%;
 }
 
 .notice-slide {
   min-width: 100%;
+  flex: 0 0 100%;
 }
 
 .notice-card {
@@ -25,6 +28,7 @@
   border-radius: 16px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   position: relative;
+  z-index: 1;
 }
 
 .notice-card::before {
@@ -43,6 +47,7 @@
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
+  pointer-events: none;
 }
 
 .notice-icon {
@@ -54,6 +59,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.notice-content {
+  flex-grow: 1;
 }
 
 .notice-content h6 {
@@ -68,7 +78,13 @@
   color: #555;
 }
 
+.notice-action {
+  position: relative;
+  z-index: 2;
+}
+
 .notice-action a {
+  display: inline-block;
   background: rgb(189, 159, 103);
   color: #fff;
   padding: 8px 16px;
@@ -77,19 +93,31 @@
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.notice-action a:hover {
+.notice-action a:hover,
+.notice-action a:focus {
   background: #2c3e50;
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
   .notice-card {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
+  }
+
+  .notice-action {
+    width: 100%;
   }
 
   .notice-action a {
+    display: block;
     width: 100%;
+    text-align: center;
   }
 }

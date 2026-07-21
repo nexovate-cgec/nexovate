@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { FaBullhorn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./NoticeSlider.css";
 
 const notices = [
@@ -8,15 +9,16 @@ const notices = [
     title: "🚀 Upcoming Event",
     message: "NEC 2026.",
     linkText: "Register Now",
-    linkUrl: "#",
+    linkUrl: "/coming-soon",
   },
-  
 ];
 
 const NoticeSlider = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (notices.length <= 1) return;
+
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % notices.length);
     }, 3000);
@@ -44,7 +46,7 @@ const NoticeSlider = () => {
                 </div>
 
                 <div className="notice-action">
-                  <a href={notice.linkUrl}>{notice.linkText}</a>
+                  <Link to={notice.linkUrl}>{notice.linkText}</Link>
                 </div>
               </div>
             </div>

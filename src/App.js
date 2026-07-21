@@ -4,12 +4,12 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-// Components
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Initiatives from "./components/Initiatives";
 import LoginPage from "./components/LoginPage";
+import ComingSoon from "./components/ComingSoon";
 
 import Events from "./components/Events";
 import Blog from "./components/Blog";
@@ -19,11 +19,10 @@ import Testimonials from "./components/Testimonials";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
 import FloatingJoinButton from "./components/FloatingJoinButton";
-import EventApply from "./pages/EventApply";
 
-// Pages
 import AllEvents from "./pages/AllEvents";
 import EventDetail from "./pages/EventDetail";
+import EventApply from "./pages/EventApply";
 import AllBlogs from "./pages/AllBlogs";
 import BlogDetails from "./pages/BlogDetails";
 import GalleryPage from "./pages/GalleryPage";
@@ -44,26 +43,23 @@ function App() {
                     <Hero />
                     <About />
                     <Initiatives />
-                    {/* <IdeaDiscussion /> */}
                     <Events />
                     <Gallery />
                     <Blog />
                     <Team />
                     <Testimonials />
                     <Footer />
-                    {/* <FloatingSubmitIdea /> */}
                   </>
-                } 
+                }
               />
 
               <Route path="/events" element={<AllEvents />} />
               <Route path="/events/:id" element={<EventDetail />} />
               <Route path="/apply/:id" element={<EventApply />} />
-              {/* <Route path="/submit-idea" element={<SubmitIdea />} /> */}
               <Route path="/login" element={<LoginPage />} />
-
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
+              <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
               <Route
