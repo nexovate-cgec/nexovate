@@ -20,6 +20,7 @@ const JoinUs = () => {
   const [submittedEmails, setSubmittedEmails] = useState(new Set());
 
   const { isDark } = useTheme();
+  const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwe0SgtTAJ1DH-JhcZTuxaOGhxgVaD0qWh9YcU_CfnSDdo1g-X90jwlbA_xCZ50dO1Y/exec";
 
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
@@ -121,6 +122,7 @@ const JoinUs = () => {
 
     setIsSubmitting(true);
     setShowEmailSuccess(false);
+
     try {
       const finalData = {
         ...formData,
@@ -132,40 +134,33 @@ const JoinUs = () => {
           day: 'numeric',
           hour: '2-digit',
           minute: '2-digit'
-        }),
-        _subject: `New E-Cell Application from ${formData.name}`
+        })
       };
 
-      const formspreeResponse = await fetch("https://formspree.io/f/xanppake", {
+      // Google Apps Script এ ডাটা পাঠানো
+      await fetch(GOOGLE_SHEETS_URL, {
         method: "POST",
+        mode: "no-cors",
         headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(finalData),
       });
 
-      if (formspreeResponse.ok) {
-        const emailSent = await sendConfirmationEmail(finalData);
-        
-        if (emailSent) {
-          markEmailAsSubmitted(formData.email);
-          setShowSuccess(true);
-          setShowEmailSuccess(true); 
-          resetForm();
-          setTimeout(() => {
-            setShowSuccess(false);
-            setShowEmailSuccess(false);
-          }, 10000); 
-        } else {
-          markEmailAsSubmitted(formData.email);
-          setShowSuccess(true);
-          resetForm();
-          setTimeout(() => setShowSuccess(false), 8000);
-        }
-      } else {
-        alert("❌ Failed to submit the form. Please try again later.");
+      const emailSent = await sendConfirmationEmail(finalData);
+      
+      markEmailAsSubmitted(formData.email);
+      setShowSuccess(true);
+      if (emailSent) {
+        setShowEmailSuccess(true); 
       }
+
+      resetForm();
+      setTimeout(() => {
+        setShowSuccess(false);
+        setShowEmailSuccess(false);
+      }, 10000);
+
     } catch (error) {
       console.error("Submission error:", error);
       alert("⚠️ Something went wrong. Please check your connection and try again.");
@@ -244,8 +239,7 @@ const JoinUs = () => {
                   <h5 className="mb-0 fw-bold">Confirmation Email Sent!</h5>
                 </div>
                 <p className="mb-0">
-                  We've sent a confirmation email to <strong>{formData.email}</strong>. 
-                  Please check your inbox and spam folder.
+                  We've sent a confirmation email to your email address. Please check your inbox and spam folder.
                 </p>
               </Alert>
             )}
@@ -268,7 +262,7 @@ const JoinUs = () => {
                   <h4 className="mb-0 fw-bold">Application Submitted Successfully!</h4>
                 </div>
                 <p className="mb-2 fs-5">
-                  Thank you <strong>{formData.name}</strong> for your interest in CGEC E-Cell!
+                  Thank you for your interest in CGEC E-Cell!
                 </p>
                 <p className="mb-3">
                   We have received your application and will contact you soon.

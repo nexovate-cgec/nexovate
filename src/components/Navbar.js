@@ -6,62 +6,37 @@ import logo from "../assets/images/logo.jpeg";
 import "./Navbar.css";
 
 const NavBar = () => {
-
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isExpanded, setIsExpanded] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
-
   const { isDark, toggleTheme } = useTheme();
 
-  const isAdmin =
-    localStorage.getItem("isAdmin") === "true";
+  const isAdmin = localStorage.getItem("isAdmin") === "true";
 
   const handleLogout = () => {
-
     localStorage.removeItem("isAdmin");
-
-    localStorage.removeItem(
-      "adminSessionActive"
-    );
-
-    localStorage.removeItem(
-      "lastAdminActivity"
-    );
-
+    localStorage.removeItem("adminSessionActive");
+    localStorage.removeItem("lastAdminActivity");
     alert("Logged Out");
-
     navigate("/");
-
     window.location.reload();
   };
 
   useEffect(() => {
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
-
-    return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
-    };
-
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Active Section Highlighting via Scroll Position (Only on Home Page)
   useEffect(() => {
-
     if (location.pathname === "/") {
-
       const sections = [
         "home",
         "initiatives",
@@ -72,261 +47,125 @@ const NavBar = () => {
         "testimonials",
       ];
 
-      const observer =
-        new IntersectionObserver(
-          (entries) => {
+      const handleScrollHighlight = () => {
+        const isAtBottom =
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 50;
 
-            entries.forEach((entry) => {
-
-              if (entry.isIntersecting) {
-                setActiveSection(
-                  entry.target.id
-                );
-              }
-
-            });
-
-          },
-          {
-            threshold: 0.3,
-          }
-        );
-
-      sections.forEach((id) => {
-
-        const section =
-          document.getElementById(id);
-
-        if (section) {
-          observer.observe(section);
+        if (isAtBottom) {
+          setActiveSection("testimonials");
+          return;
         }
 
-      });
+        const scrollPosition = window.scrollY + 180;
 
-      return () => observer.disconnect();
+        for (let id of sections) {
+          const element = document.getElementById(id);
+          if (element) {
+            const top = element.offsetTop;
+            const height = element.offsetHeight;
+            if (scrollPosition >= top && scrollPosition < top + height) {
+              setActiveSection(id);
+              break;
+            }
+          }
+        }
+      };
 
+      window.addEventListener("scroll", handleScrollHighlight);
+      handleScrollHighlight();
+
+      return () => window.removeEventListener("scroll", handleScrollHighlight);
     } else {
-
       setActiveSection("");
-
     }
-
   }, [location.pathname]);
 
-  const handleSectionClick = (
-    sectionId
-  ) => {
-
+  const handleSectionClick = (sectionId) => {
     setIsExpanded(false);
-
     setActiveSection(sectionId);
 
-    if (location.pathname !== "/") {
-
-      navigate("/");
-
-      setTimeout(() => {
-
-        if (sectionId === "home") {
-
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-
-        } else {
-
-          const element =
-            document.getElementById(
-              sectionId
-            );
-
-          if (element) {
-
-            element.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-
-          }
-
-        }
-
-      }, 200);
-
-    } else {
-
+    const scrollToSection = () => {
       if (sectionId === "home") {
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-
-        const element =
-          document.getElementById(
-            sectionId
-          );
-
+        const element = document.getElementById(sectionId);
         if (element) {
+          const yOffset = -80;
+          const y =
+            element.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
 
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
-
       }
+    };
 
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(scrollToSection, 300);
+    } else {
+      scrollToSection();
     }
-
   };
 
-  const handlePageNavigation = (
-    page
-  ) => {
-
-    setIsExpanded(false);
-
-    if (page === "events") {
-
-      navigate("/events");
-
-    } else if (page === "gallery") {
-
-      navigate("/gallery");
-
-    } else if (page === "blog") {
-
-      navigate("/blogs");
-
-    } else if (page === "join") {
-
-      navigate("/join");
-
-    }
-
-  };
-
-  const handleThemeToggle = () => {
-    toggleTheme();
-  };
-
-  const handleNavbarToggle = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-  const handleNavLinkClick = () => {
-    setIsExpanded(false);
-  };
+  const handleNavLinkClick = () => setIsExpanded(false);
 
   return (
     <Navbar
       expand="lg"
       fixed="top"
       expanded={isExpanded}
-      className={`main-navbar ${
-        scrolled
-          ? "navbar-scrolled"
-          : ""
-      } ${
-        isDark
-          ? "navbar-dark"
-          : "navbar-light"
+      className={`main-navbar ${scrolled ? "navbar-scrolled" : ""} ${
+        isDark ? "navbar-dark" : "navbar-light"
       }`}
     >
-
       <Container>
-
         <Navbar.Brand
           as={Link}
           to="/"
           className="d-flex align-items-center gap-2"
           onClick={() => {
-
             handleNavLinkClick();
-
-            handleSectionClick(
-              "home"
-            );
-
+            handleSectionClick("home");
           }}
         >
-
-          <img
-            src={logo}
-            alt="ECELL Logo"
-            height="40"
-            className="navbar-logo"
-          />
-
+          <img src={logo} alt="ECELL Logo" height="40" className="navbar-logo" />
           <span className="fw-bold navbar-brand-text golden-text">
             CGEC ECell
           </span>
-
         </Navbar.Brand>
 
         <div className="d-flex align-items-center">
-
           <button
             className="theme-toggle-btn me-3 golden-border"
-            onClick={
-              handleThemeToggle
-            }
+            onClick={toggleTheme}
           >
-
             <div className="theme-toggle-inner">
-
-              <span className="theme-icon">
-                {isDark
-                  ? "☀️"
-                  : "🌙"}
-              </span>
-
-              <span className="theme-text">
-                {isDark
-                  ? "Light"
-                  : "Dark"}
-              </span>
-
+              <span className="theme-icon">{isDark ? "☀️" : "🌙"}</span>
+              <span className="theme-text">{isDark ? "Light" : "Dark"}</span>
             </div>
-
           </button>
 
           <Navbar.Toggle
             aria-controls="navbar-nav"
-            onClick={
-              handleNavbarToggle
-            }
+            onClick={() => setIsExpanded(!isExpanded)}
             className="navbar-toggler-custom golden-border"
           />
-
         </div>
 
         <Navbar.Collapse id="navbar-nav">
-
           <Nav className="ms-auto align-items-center gap-2">
-
             <Nav.Link
               as={Link}
               to="/"
               onClick={() => {
-
                 handleNavLinkClick();
-
-                handleSectionClick(
-                  "home"
-                );
-
+                handleSectionClick("home");
               }}
               className={`nav-link-custom ${
-                activeSection ===
-                "home"
-                  ? "active-section"
-                  : ""
+                activeSection === "home" ? "active-section" : ""
               }`}
             >
               Home
@@ -336,39 +175,26 @@ const NavBar = () => {
               as={Link}
               to="/"
               onClick={() => {
-
                 handleNavLinkClick();
-
-                handleSectionClick(
-                  "initiatives"
-                );
-
+                handleSectionClick("initiatives");
               }}
               className={`nav-link-custom ${
-                activeSection ===
-                "initiatives"
-                  ? "active-section"
-                  : ""
+                activeSection === "initiatives" ? "active-section" : ""
               }`}
             >
               Initiatives
             </Nav.Link>
 
+            {/* EVENTS LINK */}
             <Nav.Link
               as={Link}
-              to="/events"
+              to="/"
               onClick={() => {
-
                 handleNavLinkClick();
-
-                handlePageNavigation(
-                  "events"
-                );
-
+                handleSectionClick("events");
               }}
               className={`nav-link-custom ${
-                location.pathname ===
-                "/events"
+                activeSection === "events" || location.pathname === "/events"
                   ? "active-section"
                   : ""
               }`}
@@ -376,21 +202,16 @@ const NavBar = () => {
               Events
             </Nav.Link>
 
+            {/* GALLERY LINK (FIXED) */}
             <Nav.Link
               as={Link}
-              to="/gallery"
+              to="/"
               onClick={() => {
-
                 handleNavLinkClick();
-
-                handlePageNavigation(
-                  "gallery"
-                );
-
+                handleSectionClick("gallery");
               }}
               className={`nav-link-custom ${
-                location.pathname ===
-                "/gallery"
+                activeSection === "gallery" || location.pathname === "/gallery"
                   ? "active-section"
                   : ""
               }`}
@@ -398,21 +219,16 @@ const NavBar = () => {
               Gallery
             </Nav.Link>
 
+            {/* BLOG LINK (FIXED) */}
             <Nav.Link
               as={Link}
-              to="/blogs"
+              to="/"
               onClick={() => {
-
                 handleNavLinkClick();
-
-                handlePageNavigation(
-                  "blog"
-                );
-
+                handleSectionClick("blog");
               }}
               className={`nav-link-custom ${
-                location.pathname ===
-                "/blogs"
+                activeSection === "blog" || location.pathname === "/blogs"
                   ? "active-section"
                   : ""
               }`}
@@ -424,19 +240,11 @@ const NavBar = () => {
               as={Link}
               to="/"
               onClick={() => {
-
                 handleNavLinkClick();
-
-                handleSectionClick(
-                  "team"
-                );
-
+                handleSectionClick("team");
               }}
               className={`nav-link-custom ${
-                activeSection ===
-                "team"
-                  ? "active-section"
-                  : ""
+                activeSection === "team" ? "active-section" : ""
               }`}
             >
               Team
@@ -446,19 +254,11 @@ const NavBar = () => {
               as={Link}
               to="/"
               onClick={() => {
-
                 handleNavLinkClick();
-
-                handleSectionClick(
-                  "testimonials"
-                );
-
+                handleSectionClick("testimonials");
               }}
               className={`nav-link-custom ${
-                activeSection ===
-                "testimonials"
-                  ? "active-section"
-                  : ""
+                activeSection === "testimonials" ? "active-section" : ""
               }`}
             >
               Testimonials
@@ -467,12 +267,9 @@ const NavBar = () => {
             <Nav.Link
               as={Link}
               to="/verify-certificate"
-              onClick={
-                handleNavLinkClick
-              }
+              onClick={handleNavLinkClick}
               className={`nav-link-custom ${
-                location.pathname ===
-                "/verify-certificate"
+                location.pathname === "/verify-certificate"
                   ? "active-section"
                   : ""
               }`}
@@ -481,46 +278,602 @@ const NavBar = () => {
             </Nav.Link>
 
             {isAdmin ? (
-
               <button
-                onClick={
-                  handleLogout
-                }
+                onClick={handleLogout}
                 className="btn btn-danger btn-sm fw-bold"
               >
                 Logout
               </button>
-
             ) : (
-
               <Nav.Link
                 as={Link}
                 to="/login"
-                onClick={
-                  handleNavLinkClick
-                }
+                onClick={handleNavLinkClick}
                 className={`nav-link-custom ${
-                  location.pathname ===
-                  "/login"
-                    ? "active-section"
-                    : ""
+                  location.pathname === "/login" ? "active-section" : ""
                 }`}
               >
                 Login
               </Nav.Link>
-
             )}
-
           </Nav>
-
         </Navbar.Collapse>
-
       </Container>
 
       <div className="navbar-golden-border"></div>
-
     </Navbar>
   );
 };
 
 export default NavBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import { Navbar, Nav, Container } from "react-bootstrap";
+// import { useTheme } from "../contexts/ThemeContext";
+// import logo from "../assets/images/logo.jpeg";
+// import "./Navbar.css";
+
+// const NavBar = () => {
+
+//   const [scrolled, setScrolled] = useState(false);
+//   const [activeSection, setActiveSection] = useState("home");
+//   const [isExpanded, setIsExpanded] = useState(false);
+
+//   const location = useLocation();
+//   const navigate = useNavigate();
+
+//   const { isDark, toggleTheme } = useTheme();
+
+//   const isAdmin =
+//     localStorage.getItem("isAdmin") === "true";
+
+//   const handleLogout = () => {
+
+//     localStorage.removeItem("isAdmin");
+
+//     localStorage.removeItem(
+//       "adminSessionActive"
+//     );
+
+//     localStorage.removeItem(
+//       "lastAdminActivity"
+//     );
+
+//     alert("Logged Out");
+
+//     navigate("/");
+
+//     window.location.reload();
+//   };
+
+//   useEffect(() => {
+
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 20);
+//     };
+
+//     window.addEventListener(
+//       "scroll",
+//       handleScroll
+//     );
+
+//     return () => {
+//       window.removeEventListener(
+//         "scroll",
+//         handleScroll
+//       );
+//     };
+
+//   }, []);
+
+//   useEffect(() => {
+
+//     if (location.pathname === "/") {
+
+//       const sections = [
+//         "home",
+//         "initiatives",
+//         "events",
+//         "gallery",
+//         "blog",
+//         "team",
+//         "testimonials",
+//       ];
+
+//       const observer =
+//         new IntersectionObserver(
+//           (entries) => {
+
+//             entries.forEach((entry) => {
+
+//               if (entry.isIntersecting) {
+//                 setActiveSection(
+//                   entry.target.id
+//                 );
+//               }
+
+//             });
+
+//           },
+//           {
+//             threshold: 0.3,
+//           }
+//         );
+
+//       sections.forEach((id) => {
+
+//         const section =
+//           document.getElementById(id);
+
+//         if (section) {
+//           observer.observe(section);
+//         }
+
+//       });
+
+//       return () => observer.disconnect();
+
+//     } else {
+
+//       setActiveSection("");
+
+//     }
+
+//   }, [location.pathname]);
+
+//   const handleSectionClick = (
+//     sectionId
+//   ) => {
+
+//     setIsExpanded(false);
+
+//     setActiveSection(sectionId);
+
+//     if (location.pathname !== "/") {
+
+//       navigate("/");
+
+//       setTimeout(() => {
+
+//         if (sectionId === "home") {
+
+//           window.scrollTo({
+//             top: 0,
+//             behavior: "smooth",
+//           });
+
+//         } else {
+
+//           const element =
+//             document.getElementById(
+//               sectionId
+//             );
+
+//           if (element) {
+
+//             element.scrollIntoView({
+//               behavior: "smooth",
+//               block: "start",
+//             });
+
+//           }
+
+//         }
+
+//       }, 200);
+
+//     } else {
+
+//       if (sectionId === "home") {
+
+//         window.scrollTo({
+//           top: 0,
+//           behavior: "smooth",
+//         });
+
+//       } else {
+
+//         const element =
+//           document.getElementById(
+//             sectionId
+//           );
+
+//         if (element) {
+
+//           element.scrollIntoView({
+//             behavior: "smooth",
+//             block: "start",
+//           });
+
+//         }
+
+//       }
+
+//     }
+
+//   };
+
+//   const handlePageNavigation = (
+//     page
+//   ) => {
+
+//     setIsExpanded(false);
+
+//     if (page === "events") {
+
+//       navigate("/events");
+
+//     } else if (page === "gallery") {
+
+//       navigate("/gallery");
+
+//     } else if (page === "blog") {
+
+//       navigate("/blogs");
+
+//     } else if (page === "join") {
+
+//       navigate("/join");
+
+//     }
+
+//   };
+
+//   const handleThemeToggle = () => {
+//     toggleTheme();
+//   };
+
+//   const handleNavbarToggle = () => {
+//     setIsExpanded(!isExpanded);
+//   };
+
+//   const handleNavLinkClick = () => {
+//     setIsExpanded(false);
+//   };
+
+//   return (
+//     <Navbar
+//       expand="lg"
+//       fixed="top"
+//       expanded={isExpanded}
+//       className={`main-navbar ${
+//         scrolled
+//           ? "navbar-scrolled"
+//           : ""
+//       } ${
+//         isDark
+//           ? "navbar-dark"
+//           : "navbar-light"
+//       }`}
+//     >
+
+//       <Container>
+
+//         <Navbar.Brand
+//           as={Link}
+//           to="/"
+//           className="d-flex align-items-center gap-2"
+//           onClick={() => {
+
+//             handleNavLinkClick();
+
+//             handleSectionClick(
+//               "home"
+//             );
+
+//           }}
+//         >
+
+//           <img
+//             src={logo}
+//             alt="ECELL Logo"
+//             height="40"
+//             className="navbar-logo"
+//           />
+
+//           <span className="fw-bold navbar-brand-text golden-text">
+//             CGEC ECell
+//           </span>
+
+//         </Navbar.Brand>
+
+//         <div className="d-flex align-items-center">
+
+//           <button
+//             className="theme-toggle-btn me-3 golden-border"
+//             onClick={
+//               handleThemeToggle
+//             }
+//           >
+
+//             <div className="theme-toggle-inner">
+
+//               <span className="theme-icon">
+//                 {isDark
+//                   ? "☀️"
+//                   : "🌙"}
+//               </span>
+
+//               <span className="theme-text">
+//                 {isDark
+//                   ? "Light"
+//                   : "Dark"}
+//               </span>
+
+//             </div>
+
+//           </button>
+
+//           <Navbar.Toggle
+//             aria-controls="navbar-nav"
+//             onClick={
+//               handleNavbarToggle
+//             }
+//             className="navbar-toggler-custom golden-border"
+//           />
+
+//         </div>
+
+//         <Navbar.Collapse id="navbar-nav">
+
+//           <Nav className="ms-auto align-items-center gap-2">
+
+//             <Nav.Link
+//               as={Link}
+//               to="/"
+//               onClick={() => {
+
+//                 handleNavLinkClick();
+
+//                 handleSectionClick(
+//                   "home"
+//                 );
+
+//               }}
+//               className={`nav-link-custom ${
+//                 activeSection ===
+//                 "home"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Home
+//             </Nav.Link>
+
+//             <Nav.Link
+//               as={Link}
+//               to="/"
+//               onClick={() => {
+
+//                 handleNavLinkClick();
+
+//                 handleSectionClick(
+//                   "initiatives"
+//                 );
+
+//               }}
+//               className={`nav-link-custom ${
+//                 activeSection ===
+//                 "initiatives"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Initiatives
+//             </Nav.Link>
+
+//             <Nav.Link
+//               as={Link}
+//               to="/events"
+//               onClick={() => {
+
+//                 handleNavLinkClick();
+
+//                 handlePageNavigation(
+//                   "events"
+//                 );
+
+//               }}
+//               className={`nav-link-custom ${
+//                 location.pathname ===
+//                 "/events"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Events
+//             </Nav.Link>
+
+//             <Nav.Link
+//               as={Link}
+//               to="/gallery"
+//               onClick={() => {
+
+//                 handleNavLinkClick();
+
+//                 handlePageNavigation(
+//                   "gallery"
+//                 );
+
+//               }}
+//               className={`nav-link-custom ${
+//                 location.pathname ===
+//                 "/gallery"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Gallery
+//             </Nav.Link>
+
+//             <Nav.Link
+//               as={Link}
+//               to="/blogs"
+//               onClick={() => {
+
+//                 handleNavLinkClick();
+
+//                 handlePageNavigation(
+//                   "blog"
+//                 );
+
+//               }}
+//               className={`nav-link-custom ${
+//                 location.pathname ===
+//                 "/blogs"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Blog
+//             </Nav.Link>
+
+//             <Nav.Link
+//               as={Link}
+//               to="/"
+//               onClick={() => {
+
+//                 handleNavLinkClick();
+
+//                 handleSectionClick(
+//                   "team"
+//                 );
+
+//               }}
+//               className={`nav-link-custom ${
+//                 activeSection ===
+//                 "team"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Team
+//             </Nav.Link>
+
+//             <Nav.Link
+//               as={Link}
+//               to="/"
+//               onClick={() => {
+
+//                 handleNavLinkClick();
+
+//                 handleSectionClick(
+//                   "testimonials"
+//                 );
+
+//               }}
+//               className={`nav-link-custom ${
+//                 activeSection ===
+//                 "testimonials"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Testimonials
+//             </Nav.Link>
+
+//             <Nav.Link
+//               as={Link}
+//               to="/verify-certificate"
+//               onClick={
+//                 handleNavLinkClick
+//               }
+//               className={`nav-link-custom ${
+//                 location.pathname ===
+//                 "/verify-certificate"
+//                   ? "active-section"
+//                   : ""
+//               }`}
+//             >
+//               Verify Certificate
+//             </Nav.Link>
+
+//             {isAdmin ? (
+
+//               <button
+//                 onClick={
+//                   handleLogout
+//                 }
+//                 className="btn btn-danger btn-sm fw-bold"
+//               >
+//                 Logout
+//               </button>
+
+//             ) : (
+
+//               <Nav.Link
+//                 as={Link}
+//                 to="/login"
+//                 onClick={
+//                   handleNavLinkClick
+//                 }
+//                 className={`nav-link-custom ${
+//                   location.pathname ===
+//                   "/login"
+//                     ? "active-section"
+//                     : ""
+//                 }`}
+//               >
+//                 Login
+//               </Nav.Link>
+
+//             )}
+
+//           </Nav>
+
+//         </Navbar.Collapse>
+
+//       </Container>
+
+//       <div className="navbar-golden-border"></div>
+
+//     </Navbar>
+//   );
+// };
+
+// export default NavBar;
