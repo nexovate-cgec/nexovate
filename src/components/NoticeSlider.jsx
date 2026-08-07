@@ -7,9 +7,9 @@ import "./NoticeSlider.css";
 const notices = [
   {
     title: "🚀 Upcoming Event",
-    message: "NEC 2026.",
+    message: "EUREKA! 2026.",
     linkText: "Register Now",
-    linkUrl: "/coming-soon",
+    linkUrl: "/eureka-2026",
   },
 ];
 

@@ -59,7 +59,7 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
-              <Route path="/coming-soon" element={<ComingSoon />} />
+              <Route path="/eureka-2026" element={<ComingSoon />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
               <Route

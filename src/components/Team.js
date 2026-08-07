@@ -1,17 +1,34 @@
-import React from "react";
-import { Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container, Modal, Button, Form } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { FaLinkedin, FaEnvelope, FaInstagram, FaFilePdf } from "react-icons/fa"; 
+import { FaLinkedin, FaEnvelope, FaInstagram, FaFilePdf, FaPlus, FaTrash, FaEdit } from "react-icons/fa"; 
 import { useTheme } from "../contexts/ThemeContext";
+import { supabase } from "../supabase"; 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Team.css";
-import { teamData } from "../data/team";
 
 const Team = () => {
   const { isDark } = useTheme();
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
+  const [editMemberId, setEditMemberId] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    designation: "",
+    role: "",
+    year: "",
+    dept: "",
+    image: "",
+    linkedin: "",
+    insta: "",
+    email: "",
+    resume: ""
+  });
 
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
   const cardBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
@@ -33,39 +50,78 @@ const Team = () => {
     textDecoration: "none"
   };
 
-  const handleIconHover = (e) => {
-    e.currentTarget.style.backgroundColor = goldenColor;
-    e.currentTarget.style.color = "white";
+  useEffect(() => {
+    const adminStatus = localStorage.getItem("isAdmin") === "true";
+    setIsAdmin(adminStatus);
+    fetchTeamData();
+  }, []);
+
+  const fetchTeamData = async () => {
+    const { data, error } = await supabase.from("team").select("*").order("id", { ascending: true });
+    if (error) console.error("Error fetching team data:", error);
+    else setTeamMembers(data);
   };
 
-  const handleIconLeave = (e) => {
-    e.currentTarget.style.backgroundColor = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
-    e.currentTarget.style.color = goldenColor;
+  const handleOpenModal = (member = null) => {
+    if (member) {
+      setEditMemberId(member.id);
+      setFormData(member);
+    } else {
+      setEditMemberId(null);
+      setFormData({
+        name: "", designation: "", role: "", year: "", dept: "",
+        image: "", linkedin: "", insta: "", email: "", resume: ""
+      });
+    }
+    setShowModal(true);
+  };
+
+  const handleSave = async (e) => {
+    e.preventDefault();
+    if (editMemberId) {
+      const { error } = await supabase.from("team").update(formData).eq("id", editMemberId);
+      if (error) alert("Error updating member");
+    } else {
+      const { error } = await supabase.from("team").insert([formData]);
+      if (error) alert("Error adding member");
+    }
+    setShowModal(false);
+    fetchTeamData();
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this member?")) {
+      const { error } = await supabase.from("team").delete().eq("id", id);
+      if (error) alert("Error deleting member");
+      else fetchTeamData();
+    }
   };
 
   return (
-    <section 
-      id="team" 
-      className="py-5"
-      style={{
-        backgroundColor: sectionBg,
-        color: textColor
-      }}
-    >
+    <section id="team" className="py-5" style={{ backgroundColor: sectionBg, color: textColor }}>
       <Container>
-        <h2 className="text-center fw-bold mb-5" style={{ color: goldenColor }}>
-          Meet Our <span style={{ color: textColor }}>Team</span>
-        </h2>
+<div className="position-relative mb-5 text-center">
+  <h2 className="fw-bold m-0" style={{ color: goldenColor }}>
+    Meet Our <span style={{ color: textColor }}>Team</span>
+  </h2>
+  
+  {isAdmin && (
+    <Button 
+      variant="warning" 
+      onClick={() => handleOpenModal()} 
+      className="fw-bold d-flex align-items-center gap-2 position-absolute end-0 top-50 translate-middle-y"
+    >
+      <FaPlus /> Add Member
+    </Button>
+  )}
+</div>
 
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
           navigation
-          pagination={{ 
-            clickable: true,
-            bulletActiveClass: 'swiper-pagination-bullet-active-gold'
-          }}
+          pagination={{ clickable: true }}
           autoplay={{ delay: 3000 }}
           breakpoints={{
             576: { slidesPerView: 2 },
@@ -74,157 +130,168 @@ const Team = () => {
           }}
           style={{
             "--swiper-pagination-color": goldenColor,
-            "--swiper-pagination-bullet-inactive-color": isDark ? "#666" : "#ccc",
-            "--swiper-pagination-bullet-inactive-opacity": "0.6",
-            "--swiper-pagination-bullet-size": "12px",
-            "--swiper-pagination-bullet-horizontal-gap": "6px",
             "--swiper-navigation-color": goldenColor
           }}
         >
-          {teamData.map((member, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="team-card text-center p-4 rounded-4 shadow-sm d-flex flex-column h-100 transition-card"
-                style={{
-                  backgroundColor: cardBg,
-                  color: textColor,
-                  border: `2px solid ${goldenColor}`,
-                  borderRadius: "15px",
-                  minHeight: "450px"
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                  e.currentTarget.style.boxShadow = isDark 
-                    ? "0 10px 25px rgba(0, 0, 0, 0.4)" 
-                    : "0 10px 25px rgba(189, 159, 103, 0.2)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "";
-                }}
-              >
-                <div className="team-img-wrapper mb-3">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="rounded-circle team-img"
-                    style={{
-                      width: "120px",
-                      height: "120px",
-                      objectFit: "cover",
-                      border: `3px solid ${goldenColor}`
-                    }}
-                  />
-                </div>
+          {teamMembers.map((member) => {
+            const hasSocialLinks = member.linkedin || member.insta || member.email;
 
-              
-                <div className="flex-grow-1 d-flex flex-column justify-content-between">
-                  <div>
-                    <h5 className="fw-bold mb-1" style={{ color: textColor }}>
-                      {member.name}
-                    </h5>
-                    <p 
-                      className="fw-semibold mb-1"
-                      style={{ 
-                        color: goldenColor,
-                        fontSize: "0.95rem"
-                      }}
-                    >
-                      {member.designation}
-                    </p>
-                    <p 
-                      className="mb-2" 
-                      style={{ 
-                        fontSize: "0.9rem",
-                        color: secondaryTextColor,
-                        opacity: "0.8"
-                      }}
-                    >
-                      {member.role}
-                    </p>
-                    <small 
-                      className="fst-italic"
+            return (
+              <SwiperSlide key={member.id} className="h-auto">
+                <div
+                  className="team-card text-center p-4 rounded-4 shadow-sm d-flex flex-column h-100 transition-card position-relative"
+                  style={{
+                    backgroundColor: cardBg,
+                    color: textColor,
+                    border: `2px solid ${goldenColor}`,
+                    borderRadius: "15px"
+                  }}
+                >
+                  {isAdmin && (
+                    <div className="position-absolute top-0 end-0 p-2 d-flex gap-2" style={{ zIndex: 10 }}>
+                      <Button size="sm" variant="info" onClick={() => handleOpenModal(member)}>
+                        <FaEdit />
+                      </Button>
+                      <Button size="sm" variant="danger" onClick={() => handleDelete(member.id)}>
+                        <FaTrash />
+                      </Button>
+                    </div>
+                  )}
+
+                  <div className="team-img-wrapper mb-3">
+                    <img
+                      src={member.image || "https://via.placeholder.com/120"}
+                      alt={member.name}
+                      className="rounded-circle team-img"
                       style={{
-                        color: secondaryTextColor,
-                        opacity: "0.7"
+                        width: "120px",
+                        height: "120px",
+                        objectFit: "cover",
+                        border: `3px solid ${goldenColor}`
                       }}
-                    >
-                      {member.year} year, {member.dept} Dept, CGEC
-                    </small>
+                    />
                   </div>
 
-                  <div className="mt-4">
-                    <div className="d-flex justify-content-center gap-3 mb-3">
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="contact-icon"
-                        style={iconStyle}
-                        onMouseOver={handleIconHover}
-                        onMouseOut={handleIconLeave}
-                      >
-                        <FaLinkedin />
-                      </a>
-                      <a
-                        href={member.insta}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="contact-icon"
-                        style={iconStyle}
-                        onMouseOver={handleIconHover}
-                        onMouseOut={handleIconLeave}
-                      >
-                        <FaInstagram />
-                      </a>
-                      <a 
-                        href={`mailto:${member.email}`} 
-                        className="contact-icon"
-                        style={iconStyle}
-                        onMouseOver={handleIconHover}
-                        onMouseOut={handleIconLeave}
-                      >
-                        <FaEnvelope />
-                      </a>
+                  <div className="flex-grow-1 d-flex flex-column justify-content-between">
+                    <div>
+                      <h5 className="fw-bold mb-1" style={{ color: textColor }}>{member.name}</h5>
+                      <p className="fw-semibold mb-1" style={{ color: goldenColor, fontSize: "0.95rem" }}>
+                        {member.designation}
+                      </p>
+                      {member.role && (
+                        <p className="mb-2" style={{ fontSize: "0.9rem", color: secondaryTextColor, opacity: "0.8" }}>
+                          {member.role}
+                        </p>
+                      )}
+                      {(member.year || member.dept) && (
+                        <small className="fst-italic d-block mb-3" style={{ color: secondaryTextColor, opacity: "0.7" }}>
+                          {member.year ? `${member.year} year, ` : ""}{member.dept ? `${member.dept} Dept, ` : ""}CGEC
+                        </small>
+                      )}
                     </div>
 
-                    {member.resume && (
-                      <a
-                        href={member.resume}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn w-100 d-flex align-items-center justify-content-center"
-                        style={{
-                          border: `2px solid ${goldenColor}`,
-                          color: goldenColor,
-                          backgroundColor: 'transparent',
-                          borderRadius: '25px',
-                          padding: '8px 16px',
-                          fontSize: '0.9rem',
-                          fontWeight: '600',
-                          textDecoration: 'none',
-                          transition: 'all 0.3s ease'
-                        }}
-                        onMouseOver={(e) => {
-                          e.currentTarget.style.backgroundColor = goldenColor;
-                          e.currentTarget.style.color = "white";
-                        }}
-                        onMouseOut={(e) => {
-                          e.currentTarget.style.backgroundColor = 'transparent';
-                          e.currentTarget.style.color = goldenColor;
-                        }}
-                      >
-                        <FaFilePdf className="me-2" />
-                        View Resume
-                      </a>
-                    )}
+                    <div className="mt-auto">
+                      {hasSocialLinks && (
+                        <div className="d-flex justify-content-center gap-3 mb-3">
+                          {member.linkedin && (
+                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={iconStyle}>
+                              <FaLinkedin />
+                            </a>
+                          )}
+                          {member.insta && (
+                            <a href={member.insta} target="_blank" rel="noopener noreferrer" style={iconStyle}>
+                              <FaInstagram />
+                            </a>
+                          )}
+                          {member.email && (
+                            <a href={`mailto:${member.email}`} style={iconStyle}>
+                              <FaEnvelope />
+                            </a>
+                          )}
+                        </div>
+                      )}
+
+                      {member.resume && (
+                        <a
+                          href={member.resume}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn w-100 d-flex align-items-center justify-content-center"
+                          style={{
+                            border: `2px solid ${goldenColor}`,
+                            color: goldenColor,
+                            borderRadius: '25px',
+                            padding: '8px 16px',
+                            fontSize: '0.9rem',
+                            fontWeight: '600',
+                            textDecoration: 'none'
+                          }}
+                        >
+                          <FaFilePdf className="me-2" /> View Resume
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </Container>
+
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>{editMemberId ? "Edit Member" : "Add Member"}</Modal.Title>
+        </Modal.Header>
+        <Form onSubmit={handleSave}>
+          <Modal.Body style={{ maxHeight: "70vh", overflowY: "auto" }}>
+            <Form.Group className="mb-2">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Designation</Form.Label>
+              <Form.Control type="text" value={formData.designation} onChange={(e) => setFormData({...formData, designation: e.target.value})} required />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Role</Form.Label>
+              <Form.Control type="text" value={formData.role} onChange={(e) => setFormData({...formData, role: e.target.value})} />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Year (e.g. 3rd)</Form.Label>
+              <Form.Control type="text" value={formData.year} onChange={(e) => setFormData({...formData, year: e.target.value})} />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Department</Form.Label>
+              <Form.Control type="text" value={formData.dept} onChange={(e) => setFormData({...formData, dept: e.target.value})} />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Image URL</Form.Label>
+              <Form.Control type="text" value={formData.image} onChange={(e) => setFormData({...formData, image: e.target.value})} />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>LinkedIn URL</Form.Label>
+              <Form.Control type="text" value={formData.linkedin} onChange={(e) => setFormData({...formData, linkedin: e.target.value})} />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Instagram URL</Form.Label>
+              <Form.Control type="text" value={formData.insta} onChange={(e) => setFormData({...formData, insta: e.target.value})} />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label>Resume Link (PDF)</Form.Label>
+              <Form.Control type="text" value={formData.resume} onChange={(e) => setFormData({...formData, resume: e.target.value})} />
+            </Form.Group>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setShowModal(false)}>Cancel</Button>
+            <Button variant="warning" type="submit">Save Changes</Button>
+          </Modal.Footer>
+        </Form>
+      </Modal>
     </section>
   );
 };

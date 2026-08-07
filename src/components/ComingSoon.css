@@ -1,43 +1,93 @@
 .coming-soon-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  padding: 50px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s ease;
+}
+
+.coming-soon-container.light-mode {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.coming-soon-container.dark-mode {
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+}
+
+.coming-soon-wrapper {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 850px;
+  width: 100%;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coming-soon-wrapper.dark-wrapper {
+  background: #1a1a1a;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333333;
+  color: #ffffff;
 }
 
 .coming-soon-title {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 900;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   background: linear-gradient(45deg, #2c3e50, rgb(189, 159, 103));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 10px 20px rgba(189, 159, 103, 0.25);
-  margin-bottom: 1.5rem;
-  animation: fadeInDown 1s ease-in-out;
+  margin-bottom: 0.5rem;
 }
 
-.coming-soon-text {
+.section-heading {
   font-size: 1.25rem;
+  font-weight: 700;
+  color: #2c3e50;
+  border-left: 4px solid rgb(189, 159, 103);
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.section-heading.dark-heading {
+  color: #ffffff !important;
+}
+
+.form-label {
+  font-weight: 600;
   color: #4a5568;
-  max-width: 500px;
-  margin: 0 auto 2rem auto;
-  line-height: 1.6;
-  animation: fadeInUp 1s ease-in-out 0.3s backwards;
+  font-size: 0.9rem;
+}
+
+.form-control, .form-select {
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.custom-input-dark::placeholder {
+  color: #a0aec0 !important;
+  opacity: 1;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: rgb(189, 159, 103);
+  box-shadow: 0 0 0 0.2rem rgba(189, 159, 103, 0.25);
 }
 
 .coming-soon-btn {
   background-color: rgb(189, 159, 103) !important;
   border-color: rgb(189, 159, 103) !important;
   color: #ffffff !important;
-  padding: 12px 30px;
+  padding: 12px 35px;
   font-weight: 600;
   border-radius: 50px;
   transition: all 0.3s ease;
   box-shadow: 0px 5px 15px rgba(189, 159, 103, 0.3);
-  animation: fadeInUp 1s ease-in-out 0.6s backwards;
+  width: 100%;
 }
 
 .coming-soon-btn:hover,
@@ -45,39 +95,6 @@
   background-color: #2c3e50 !important;
   border-color: #2c3e50 !important;
   color: #ffffff !important;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0px 8px 20px rgba(44, 62, 80, 0.4);
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 576px) {
-  .coming-soon-title {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-
-  .coming-soon-text {
-    font-size: 1rem;
-  }
 }
