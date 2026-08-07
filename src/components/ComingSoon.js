@@ -117,7 +117,7 @@ const ComingSoon = () => {
                     value={formData.leaderRoll}
                     onChange={handleChange}
                     required
-                    placeholder="e.g. 210xxxx"
+                    placeholder="e.g. 349XXXXX"
                     className={isDark ? "bg-dark text-light border-secondary custom-input-dark" : "form-control"}
                   />
                 </Form.Group>
@@ -159,7 +159,7 @@ const ComingSoon = () => {
                     value={formData.leaderEmail}
                     onChange={handleChange}
                     required
-                    placeholder="name@example.com"
+                    placeholder="name@gmail.com"
                     className={isDark ? "bg-dark text-light border-secondary custom-input-dark" : "form-control"}
                   />
                 </Form.Group>
@@ -193,7 +193,7 @@ const ComingSoon = () => {
                     value={formData.m2Roll}
                     onChange={handleChange}
                     required
-                    placeholder="e.g. 210xxxx"
+                    placeholder="e.g. 349XXXXX"
                     className={isDark ? "bg-dark text-light border-secondary custom-input-dark" : "form-control"}
                   />
                 </Form.Group>
@@ -207,7 +207,7 @@ const ComingSoon = () => {
                     value={formData.m2Dept}
                     onChange={handleChange}
                     required
-                    placeholder="e.g. EEE"
+                    placeholder="e.g. CSE"
                     className={isDark ? "bg-dark text-light border-secondary custom-input-dark" : "form-control"}
                   />
                 </Form.Group>
@@ -235,7 +235,7 @@ const ComingSoon = () => {
                     value={formData.m2Email}
                     onChange={handleChange}
                     required
-                    placeholder="name@example.com"
+                    placeholder="name@gmail.com"
                     className={isDark ? "bg-dark text-light border-secondary custom-input-dark" : "form-control"}
                   />
                 </Form.Group>
