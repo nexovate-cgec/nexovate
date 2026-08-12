@@ -133,7 +133,7 @@ const NavBar = () => {
         >
           <img src={logo} alt="ECELL Logo" height="40" className="navbar-logo" />
           <span className="fw-bold navbar-brand-text golden-text">
-            CGEC ECell
+            CGEC E-Cell
           </span>
         </Navbar.Brand>
 
