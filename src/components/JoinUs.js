@@ -368,7 +368,7 @@ const JoinUs = () => {
                           "E-Cell provided amazing opportunities to collaborate with students from different colleges and work on real startup projects!"
                         </p>
                         <small className="fw-semibold" style={{ color: goldenColor }}>
-                          - Student from Partner College
+                          - Student from CGEC
                         </small>
                       </div>
                     </div>
