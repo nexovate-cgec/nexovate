@@ -1,4 +1,5 @@
 import Eureca from "../assets/images/eurecaa.jpg";
+import Eureca2026 from "../assets/Events/eureka-2026/eurekA.jpeg";
 import Nec from "../assets/images/nec.jpeg";
 import Entrepreneurship from "../assets/images/Entrepreneurship.jpg";
 import social from "../assets/images/social.png";
@@ -9,6 +10,21 @@ import bPlane from "../assets/Events/bPlane.jpeg";
 export const events = [
   {
     id: 1,
+    title: "EUREKA 2026",
+    date: "Aug 22, 2026",
+    description: "CGEC's flagship tech showcase celebrating cutting-edge engineering and research.",
+    fullDescription: "EUREKA 2026 brings the brightest minds of CGEC together to showcase transformative solutions in AI, robotics, smart IoT, and sustainable technologies. Experience hands-on prototype demos, deep-dive tech talks, expert networking, and high-stakes innovation challenges.",
+    image: Eureca2026,
+    category: "exhibition",
+    venue: "Central Library Lab",
+    time: "9:30 AM",
+    compleOrNot: "Event Finished!",
+    src: "#",
+    status: "Completed",
+    color: "danger"
+  },
+  {
+    id: 2,
     title: "NEC 2025",
     date: "July 27, 2025",
     description: "A tech-based ideation competition to bring ideas into action.",
@@ -23,7 +39,7 @@ export const events = [
     color: "danger"
   },
   {
-    id: 2,
+    id: 3,
     title: "EUREKA 2025",
     date: "Aug 16, 2025",
     description: "Eureca is conducted by CGEC featuring innovative projects and research presentations.",
@@ -38,7 +54,7 @@ export const events = [
     color: "danger"
   },
   {
-    id: 3,
+    id: 4,
     title: "Group discussion What's the Problem?🧠",
     date: "Sept 3, 2025",
     description: "🚀 Got ideas? Let's solve big problems together! Pitch your startup ideas to industry experts.",
@@ -53,7 +69,7 @@ export const events = [
     color: "danger"
   },
   {
-    id: 4,
+    id: 5,
     title: "SOCIAL MEDIA EVENT 🧠✨",
     date: "Sept 6, 2025",
     description: "Who knew 3 random words could make you the next Elon Musk? 🤯✨ Drop your wildest startup mashups & let the madness begin! 🚀🤣",
@@ -68,7 +84,7 @@ export const events = [
     color: "danger"
   },
   {
-    id: 5,
+    id: 6,
     title: "✨🚀Think Like An Entrepreneur 💡",
     date: "May 10th, 2026",
     description: "🚀✨ E-CELL CGEC PRESENTS ✨🚀Think Like An Entrepreneur 💡Every successful startup begins with a single idea — and every entrepreneur begins with a different way of thinking.",
@@ -83,7 +99,7 @@ export const events = [
     color: "danger"
   },
 {
-  id: 6,
+  id: 7,
   title: "B-Plan Workshop",
   date: "Jun 8th, 2026",
   description: "🚀 Think Fast. Plan Smart. Pitch Sharp. Join the ultimate startup business planning competition where participants build innovative business ideas and pitch them before judges.",

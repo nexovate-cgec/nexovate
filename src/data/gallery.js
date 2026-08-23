@@ -17,6 +17,377 @@ import gallery17 from "../assets/Events/eureka25/17.jpeg";
 import gallery18 from "../assets/Events/eureka25/18.jpeg";
 
 
+
+export const galleryDataEureka2026 = [
+ {
+    id: 1,
+    src: require("../assets/Events/eureka-2026/13.jpg"),
+    caption: "WINNERS",
+    event: "EUREKA-2K26",
+    category: "competition",
+    date: "2026-08-22"
+  },
+ {
+    id: 2,
+    src: require("../assets/Events/eureka-2026/1st.jpg"),
+    caption: "1st Position holder",
+   event: "EUREKA-2K26",
+    category: "competition",
+    date: "2025-08-16"
+  },
+  {
+    id: 3,
+     src: require("../assets/Events/eureka-2026/2nd.jpg"),
+    caption: "2nd position holder",
+    event: "EUREKA-2K26",
+    category: "competition", 
+    date: "2025-08-16"
+  },
+  {
+    id: 4,
+    src: require("../assets/Events/eureka-2026/3rd.jpg"),
+    caption: "3rd position holder",
+    event: "EUREKA-2K26",
+    category: "ceremony",
+    date: "2025-08-16"
+  },
+  {
+    id: 5,
+    src: require("../assets/Events/eureka-2026/1.jpg"),
+    caption: "Lecture Session", 
+    event: "EUREKA-2K26",
+    category: "ceremony",
+    date: "2025-08-16"
+  },
+  {
+    id: 6,
+    src: require("../assets/Events/eureka-2026/2.jpg"),
+    caption: "Lecture Session",
+    event: "EUREKA-2K26",
+    category: "ceremony",
+    date: "2026-08-22"
+  },
+  {
+    id: 7,
+    src: require("../assets/Events/eureka-2026/3.jpg"),
+    caption: "Lecture Session",
+   event: "EUREKA-2K26",
+    category: "ceremony",
+   date: "2026-08-22"
+  },
+  {
+    id: 8,
+    src: require("../assets/Events/eureka-2026/4.jpg"),
+    caption: "Lecture Session",
+    event: "EUREKA-2K26",
+    category: "ceremony",
+   date: "2026-08-22"
+  },
+  {
+    id: 9,
+    src: require("../assets/Events/eureka-2026/5.jpg"),
+    caption: "Lecture Session",
+    event: "EUREKA-2K26",
+    category: "ceremony",
+    date: "2026-08-22"
+  },
+  {
+    id: 10,
+    src: require("../assets/Events/eureka-2026/judges.jpeg"),
+    caption: "Judges",
+    event: "EUREKA-2K26",
+    category: "Judges",
+    date: "2025-08-16"
+  },
+  {
+    id: 11,
+    src: require("../assets/Events/eureka-2026/judesss.jpeg"),
+    caption: "Judges",
+    event: "EUREKA-2K26",
+    category: "Judges",
+    date: "2025-08-16"
+  },
+  {
+    id: 12,
+    src: require("../assets/Events/eureka-2026/6.jpg"),
+    caption: "Prize Distribution",
+    event: "EUREKA-2K26",
+    category: "Prize Distribution",
+    date: "2025-08-16"
+  },
+  {
+    id: 13,
+    src: require("../assets/Events/eureka-2026/7.jpg"),
+    caption: "Prize Distribution",
+    event: "EUREKA-2K26",
+    category: "Prize Distribution",
+    date: "2025-08-16"
+  },
+  {
+    id: 14,
+    src: require("../assets/Events/eureka-2026/8.jpg"),
+    caption: "Prize Distribution",
+    event: "EUREKA-2K26",
+    category: "Prize Distribution",
+    date: "2025-08-16"
+  },
+  {
+    id: 15,
+    src: require("../assets/Events/eureka-2026/9.jpg"),
+    caption: "Prize Distribution",
+    event: "EUREKA-2K26",
+    category: "Prize Distribution",
+    date: "2025-08-16"
+  },
+  {
+    id: 16,
+    src: require("../assets/Events/eureka-2026/10.jpg"),
+    caption: "Team 1 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 17,
+    src: require("../assets/Events/eureka-2026/11.jpg"),
+    caption: "Team 2 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 18,
+    src: require("../assets/Events/eureka-2026/12.jpg"),
+    caption: "Team 3 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 19,
+    src: require("../assets/Events/eureka-2026/24.jpg"),
+    caption: "Team 4 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 20,
+    src: require("../assets/Events/eureka-2026/14.jpg"),
+    caption: "Team 5 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 21,
+    src: require("../assets/Events/eureka-2026/15.jpg"),
+    caption: "Team 6 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 22,
+    src: require("../assets/Events/eureka-2026/16.jpg"),
+    caption: "Team 7 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 23,
+    src: require("../assets/Events/eureka-2026/17.jpg"),
+    caption: "Team 8 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 24,
+    src: require("../assets/Events/eureka-2026/18.jpg"),
+    caption: "Team 9 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 25,
+    src: require("../assets/Events/eureka-2026/19.jpg"),
+    caption: "Team 10 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 26,
+    src: require("../assets/Events/eureka-2026/20.jpg"),
+    caption: "Team 11 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 27,
+    src: require("../assets/Events/eureka-2026/21.jpg"),
+    caption: "Team 12 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 28,
+    src: require("../assets/Events/eureka-2026/22.jpg"),
+    caption: "Team 13 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 29,
+    src: require("../assets/Events/eureka-2026/23.jpg"),
+    caption: "Team 14 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 30,
+    src: require("../assets/Events/eureka-2026/25.jpg"),
+    caption: "Team 15 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 31,
+    src: require("../assets/Events/eureka-2026/26.jpg"),
+    caption: "Team 16 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 32,
+    src: require("../assets/Events/eureka-2026/27.jpg"),
+    caption: "Team 17 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 33,
+    src: require("../assets/Events/eureka-2026/28.jpg"),
+    caption: "Team 18 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 34,
+    src: require("../assets/Events/eureka-2026/29.jpg"),
+    caption: "Team 19 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 35,
+    src: require("../assets/Events/eureka-2026/30.jpg"),
+    caption: "Team 20 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 36,
+    src: require("../assets/Events/eureka-2026/31.jpg"),
+    caption: "Team 21 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 37,
+    src: require("../assets/Events/eureka-2026/32.jpg"),
+    caption: "Team 22 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 38,
+    src: require("../assets/Events/eureka-2026/33.jpg"),
+    caption: "Team 23 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 39,
+    src: require("../assets/Events/eureka-2026/34.jpg"),
+    caption: "Team 24 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 40,
+    src: require("../assets/Events/eureka-2026/35.jpg"),
+    caption: "Team 25 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 41,
+    src: require("../assets/Events/eureka-2026/36.jpg"),
+    caption: "Team 26 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 42,
+    src: require("../assets/Events/eureka-2026/37.jpg"),
+    caption: "Team 27 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 43,
+    src: require("../assets/Events/eureka-2026/38.jpg"),
+    caption: "Team 28 Presentation",
+    event: "EUREKA-2K26",
+    category: "Presentation",
+    date: "2025-08-16"
+  },
+  {
+    id: 44,
+    src: require("../assets/Events/eureka-2026/endd.jpg"),
+    caption: "End of the session",
+    event: "EUREKA-2K26",
+    category: "team",
+    date: "2025-08-16"
+  },
+  {
+    id: 45,
+    src: require("../assets/Events/eureka-2026/out.jpg"),
+    caption: "End of the session",
+    event: "EUREKA-2K26",
+    category: "team",
+    date: "2025-08-16"
+  },
+  {
+    id: 46,
+    src: require("../assets/Events/eureka-2026/team.jpg"),
+    caption: "E-cellTeam members",
+    event: "EUREKA-2K26",
+    category: "team",
+    date: "2025-08-16"
+  },
+];
 export const galleryDataEureka = [
   {
     id: 1,
@@ -395,6 +766,13 @@ export const galleryThinkLikeEnt = [
 // require("../assets/Events/eureka25/18.jpeg").default,
 
 export const allEvents = [
+   {
+    name: "EUREKA-2K26",
+    data: galleryDataEureka2026,
+    featuredImage: require("../assets/Events/eureka-2026/2nd.jpg"),
+    totalImages: galleryDataEureka2026.length,
+    date: "2026-08-22"
+  },
   {
     name: "EUREKA-2K25",
     data: galleryDataEureka,
