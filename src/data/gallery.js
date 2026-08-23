@@ -769,7 +769,7 @@ export const allEvents = [
    {
     name: "EUREKA-2K26",
     data: galleryDataEureka2026,
-    featuredImage: require("../assets/Events/eureka-2026/2nd.jpg"),
+    featuredImage: require("../assets/Events/eureka-2026/out.jpg"),
     totalImages: galleryDataEureka2026.length,
     date: "2026-08-22"
   },
