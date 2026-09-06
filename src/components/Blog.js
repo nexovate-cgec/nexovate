@@ -2,10 +2,11 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"; 
 import { useTheme } from "../contexts/ThemeContext"; 
-import logo from '../assets/images/logo.jpeg';
-import { blogData } from "../data/blog";
+import logo from "../assets/images/logo.jpeg";
+import { blogData, getRecentBlogs } from "../data/blog";
 
 const truncateWords = (text, wordLimit) => {
+  if (!text) return "";
   const words = text.split(" ");
   return words.length > wordLimit
     ? words.slice(0, wordLimit).join(" ") + "..."
@@ -21,7 +22,7 @@ const BlogSection = () => {
   const goldenColor = "rgb(189, 159, 103)";
   const logoBg = isDark ? "var(--dark-card-bg, #1a1a1a)" : "white";
 
-  const displayedBlogs = blogData.slice(0, 3);
+  const displayedBlogs = getRecentBlogs(3);
   const totalBlogs = blogData.length;
 
   return (
@@ -151,7 +152,6 @@ const BlogSection = () => {
                       <span 
                         className="badge px-3 py-2 bg-primary"
                         style={{ 
-                          
                           color: "white",
                           fontSize: "0.8rem",
                           fontWeight: "600",

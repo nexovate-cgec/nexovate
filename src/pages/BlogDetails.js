@@ -302,26 +302,28 @@ const BlogDetails = () => {
               }}
             />
 
-            <div className="mb-5">
-              <h5 className="fw-semibold mb-3" style={{ color: goldenColor }}>Tags:</h5>
-              <div className="d-flex flex-wrap gap-2">
-                {blog.tags.map((tag, index) => (
-                  <Badge 
-                    key={index} 
-                    style={{
-                      backgroundColor: "transparent",
-                      color: goldenColor,
-                      border: `1px solid ${goldenColor}`,
-                      padding: "6px 12px",
-                      fontWeight: "600"
-                    }}
-                    className="px-3 py-2"
-                  >
-                    #{tag}
-                  </Badge>
-                ))}
+            {blog.tags && blog.tags.length > 0 && (
+              <div className="mb-5">
+                <h5 className="fw-semibold mb-3" style={{ color: goldenColor }}>Tags:</h5>
+                <div className="d-flex flex-wrap gap-2">
+                  {blog.tags.map((tag, index) => (
+                    <Badge 
+                      key={index} 
+                      style={{
+                        backgroundColor: "transparent",
+                        color: goldenColor,
+                        border: `1px solid ${goldenColor}`,
+                        padding: "6px 12px",
+                        fontWeight: "600"
+                      }}
+                      className="px-3 py-2"
+                    >
+                      #{tag}
+                    </Badge>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             <Card 
               style={{ 
@@ -337,7 +339,7 @@ const BlogDetails = () => {
                       className="rounded-circle d-flex align-items-center justify-content-center text-white"
                       style={{ 
                         width: '60px', 
-                        height: '60px',
+                        height: '60px', 
                         backgroundColor: goldenColor
                       }}
                     >
@@ -349,10 +351,10 @@ const BlogDetails = () => {
                       {blog.author}
                     </h5>
                     <p className="mb-0" style={{ color: textColor, opacity: "0.8" }}>
-                      Startup Legal Expert at CGEC ECELL
+                      Startup Contributor at CGEC ECELL
                     </p>
                     <small style={{ color: textColor, opacity: "0.7" }}>
-                      Specializing in business validation and legal foundations for startups
+                      Specializing in business development, innovation, and startup ecosystem
                     </small>
                   </Col>
                 </Row>
@@ -455,30 +457,25 @@ const BlogDetails = () => {
             border-left: 4px solid ${goldenColor};
             padding-left: 1rem;
           }
-          
           .blog-content h4 {
             color: ${textColor};
             margin-top: 2rem;
             margin-bottom: 1rem;
           }
-          
           .blog-content h5 {
             color: ${textColor};
             margin-top: 1.5rem;
             margin-bottom: 0.8rem;
           }
-          
           .blog-content ul, .blog-content ol {
             margin-bottom: 1.5rem;
             padding-left: 2rem;
             color: ${textColor};
           }
-          
           .blog-content li {
             margin-bottom: 0.5rem;
             color: ${textColor};
           }
-          
           .feature-point {
             background: ${cardBg};
             padding: 1.2rem;
@@ -487,14 +484,12 @@ const BlogDetails = () => {
             border-left: 4px solid ${goldenColor};
             color: ${textColor};
           }
-          
           .benefit-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
             margin: 1.5rem 0;
           }
-          
           .benefit-item {
             background: ${sectionBg};
             padding: 1rem;
@@ -502,7 +497,6 @@ const BlogDetails = () => {
             border-left: 4px solid ${goldenColor};
             color: ${textColor};
           }
-          
           .tip-section {
             background: ${cardBg};
             padding: 1rem;
@@ -511,22 +505,6 @@ const BlogDetails = () => {
             border-left: 4px solid ${goldenColor};
             color: ${textColor};
           }
-          
-          .compliance-tips {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-          }
-          
-          .compliance-item {
-            background: ${sectionBg};
-            padding: 1rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid ${goldenColor};
-            color: ${textColor};
-          }
-          
           .conclusion {
             background: ${sectionBg};
             padding: 1.5rem;
@@ -535,16 +513,6 @@ const BlogDetails = () => {
             border: 2px solid ${goldenColor};
             color: ${textColor};
           }
-          
-          .key-points {
-            background: ${cardBg};
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-            border-left: 4px solid ${goldenColor};
-            color: ${textColor};
-          }
-          
           .highlight-box {
             background: ${sectionBg};
             padding: 1.5rem;
@@ -555,7 +523,6 @@ const BlogDetails = () => {
             margin: 2rem 0;
             color: ${textColor};
           }
-          
           .lead {
             font-size: 1.25rem;
             font-weight: 300;
@@ -566,7 +533,6 @@ const BlogDetails = () => {
             border-radius: 0.5rem;
             border-left: 4px solid ${goldenColor};
           }
-          
           .blog-content img {
             max-width: 100%;
             height: auto;
@@ -575,7 +541,6 @@ const BlogDetails = () => {
             margin: 1.5rem 0;
             border: 2px solid ${goldenColor};
           }
-          
           .text-center.my-5 {
             background: ${cardBg};
             padding: 1.5rem;
@@ -583,16 +548,13 @@ const BlogDetails = () => {
             margin: 2rem 0;
             border: 2px solid ${goldenColor};
           }
-          
           .blog-content strong {
             color: ${textColor};
             font-weight: 600;
           }
-
           .breadcrumb-item.active {
             color: ${textColor} !important;
           }
-          
           .breadcrumb-item a {
             color: ${goldenColor} !important;
           }

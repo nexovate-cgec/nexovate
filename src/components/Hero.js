@@ -206,7 +206,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import './Hero.css';
-import heroImage from '../assets/images/full_team.jpg'; 
+import heroImage from '../assets/Events/eureka-2026/team.jpg'; 
 import collegeLogo from '../assets/images/cgec.jpeg'; 
 import ecellLogo from '../assets/images/logo.jpeg'; 
 

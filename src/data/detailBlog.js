@@ -19,19 +19,30 @@ import blog63 from "../assets/Blogs/blog63.png";
 import blog64 from "../assets/Blogs/blog64.png";
 import blog65 from "../assets/Blogs/blog65.png";
 import blog66 from "../assets/Blogs/blog66.png";
+import blog71 from "../assets/Blogs/blog71 (2).png";
+import blog72 from "../assets/Blogs/blog71 (1).jpeg";
+import blog73 from "../assets/Blogs/blog71 (2).jpeg";
+import blog74 from "../assets/Blogs/blog71 (3).jpeg";
+import blog75 from "../assets/Blogs/blog71 (1).png";
+import blog81 from "../assets/Blogs/blog81.jpeg";
+import blog82 from "../assets/Blogs/blog82.jpeg";
+import blog91 from "../assets/Blogs/Blog91.jpeg";
+import blog92 from "../assets/Blogs/Blog92.jpeg";
 
 export const blogData = [
   {
     id: 1,
+    slug: "from-spark-to-startup-validating-your-idea",
     title: "From Spark to Startup: Validating Your Idea and Getting the Legal Basics Right",
     img: Startup1,
     desc: "Great businesses don't begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you're planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases.",
     fullContent: `
       <p class="lead">Great businesses don't begin with a full bank account—they begin with a tested idea and a solid foundation. Whether you're planning an app, a café, or a niche service, two early steps can save you time, money, and stress: validate the idea and cover your legal bases.</p>
-       <div class="text-center my-5">
-      <img src="${Startup1}" alt="Micro-entrepreneur working from small home-based setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-      <p class="text-muted mt-2"><small>Micro-entrepreneurs operate with minimal staff and serve specific markets</small></p>
-    </div>
+      
+      <div class="text-center my-5">
+        <img src="${Startup1}" alt="Micro-entrepreneur working from small home-based setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Micro-entrepreneurs operate with minimal staff and serve specific markets</small></p>
+      </div>
 
       <h3>1. Validate Before You Invest</h3>
       <p>A brilliant concept means little unless customers actually pay for it.</p>
@@ -107,6 +118,7 @@ export const blogData = [
   },
   {
     id: 2,
+    slug: "the-rise-of-solopreneurs-building-a-business-of-one",
     title: "The Rise of Solopreneurs: Building a Business of One",
     img: blog31,
     desc: "Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.",
@@ -114,102 +126,71 @@ export const blogData = [
       <p class="lead">Entrepreneurship is no longer defined by large teams, big offices, or heavy investment. A growing wave of solopreneurs—founders who launch and run businesses entirely on their own—is reshaping the startup landscape worldwide.</p>
 
       <h3>🚀 Why Solopreneurship is Booming</h3>
-      <p>Three powerful forces are driving this shift toward one-person businesses :cite[1]:</p>
+      <p>Three powerful forces are driving this shift toward one-person businesses:</p>
       
       <div class="feature-point">
         <h5>💻 Digital Tools & The Power of the Internet</h5>
-        <p>Affordable, user-friendly platforms for payments, marketing, and customer support mean you don't need a full staff to look professional. The digital economy has removed traditional barriers to entry, allowing individuals to launch and scale businesses from anywhere in the world :cite[1].</p>
+        <p>Affordable, user-friendly platforms for payments, marketing, and customer support mean you don't need a full staff to look professional.</p>
       </div>
 
       <div class="feature-point">
         <h5>🌐 Remote Work Culture & Normalization</h5>
-        <p>Clients and collaborators are comfortable working virtually, lowering the barrier for solo operators. The widespread shift toward remote work made professionals realize they could operate independently with greater autonomy :cite[1].</p>
+        <p>Clients and collaborators are comfortable working virtually, lowering the barrier for solo operators.</p>
       </div>
 
       <div class="feature-point">
         <h5>⚖️ Lifestyle Flexibility & Desire for Freedom</h5>
-        <p>Many professionals crave autonomy over schedules, projects, and income rather than traditional corporate hierarchies. Today's workforce values lifestyle design as much as financial success, seeking freedom from the 9-to-5 grind :cite[1].</p>
+        <p>Many professionals crave autonomy over schedules, projects, and income rather than traditional corporate hierarchies.</p>
       </div>
 
       <h3>✅ Advantages of Going Solo</h3>
-      <p>Operating alone offers unique benefits that traditional businesses can't match :cite[1]:</p>
+      <p>Operating alone offers unique benefits that traditional businesses can't match:</p>
       
       <div class="benefit-grid">
         <div class="benefit-item">
           <h5>Speed and Agility</h5>
-          <p>Decisions are instant because you are the decision-maker. No committees, no approval processes—just rapid execution and adaptation to market changes.</p>
+          <p>Decisions are instant because you are the decision-maker. No committees, no approval processes—just rapid execution.</p>
         </div>
         <div class="benefit-item">
           <h5>Low Overhead</h5>
-          <p>With no payroll or office lease, expenses stay lean. This financial efficiency means you can achieve profitability faster with lower revenue thresholds.</p>
+          <p>With no payroll or office lease, expenses stay lean. This financial efficiency lets you achieve profitability faster.</p>
         </div>
         <div class="benefit-item">
           <h5>Creative Freedom</h5>
-          <p>You can pivot your product or service without internal negotiations. Follow your vision and make changes based on customer feedback, not office politics.</p>
+          <p>You can pivot your product or service without internal negotiations based directly on customer feedback.</p>
         </div>
       </div>
 
       <div class="text-center my-5">
-        <pics style="display: flex;">
-          <img src="${blog32}" alt="Solopreneur working remotely from a cafe with laptop" class="img-fluid rounded shadow" style="max-height: 200px; width: auto; max-width: 100%;" />
-          <img src="${blog33}" alt="Solopreneur managing multiple business tasks and automation" class="img-fluid rounded shadow" style="max-height: 200px; width: auto; max-width: 100%;" />
-          <img src="${blog34}" alt="Successful solopreneur achieving work-life balance" class="img-fluid rounded shadow" style="max-height: 200px; width: auto; max-width: 100%;" />
-        </pics>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <img src="${blog32}" alt="Solopreneur working remotely from a cafe" class="img-fluid rounded shadow" style="max-height: 200px; width: auto;" />
+          <img src="${blog33}" alt="Solopreneur managing business tasks" class="img-fluid rounded shadow" style="max-height: 200px; width: auto;" />
+          <img src="${blog34}" alt="Successful solopreneur work-life balance" class="img-fluid rounded shadow" style="max-height: 200px; width: auto;" />
+        </div>
         <p class="text-muted mt-2"><small>Effective solopreneurs use systems and automation to scale their efforts</small></p>
       </div>
 
       <h3>⚠️ Key Challenges</h3>
-      <p>Of course, being a one-person startup is not effortless. Solopreneurs face several unique challenges :cite[1]:</p>
+      <p>Of course, being a one-person startup is not effortless:</p>
       
       <div class="challenge-item">
         <h5>Wearing All the Hats</h5>
-        <p>Solopreneurs juggle marketing, finances, customer service, and strategy themselves. This requires continuous learning and rapid context switching throughout each day, with burnout being a real risk without boundaries.</p>
+        <p>Solopreneurs juggle marketing, finances, customer service, and strategy themselves, making burnout a real risk.</p>
       </div>
 
       <div class="challenge-item">
         <h5>Isolation and Loneliness</h5>
-        <p>Working alone can feel lonely. Without colleagues or collaborators, you may lack emotional and creative support that traditional office environments provide.</p>
+        <p>Working alone can feel lonely without colleagues or collaborators for daily creative support.</p>
       </div>
 
       <div class="challenge-item">
         <h5>Income Variability and Scaling Limitations</h5>
-        <p>Unlike a salaried job, income as a solopreneur can be inconsistent. Without a team, your growth depends heavily on your own time and energy unless you leverage automation or digital products.</p>
-      </div>
-
-      <h3>💡 Tips for Aspiring Solopreneurs</h3>
-      
-      <div class="tip-section">
-        <h5>1. Validate Your Idea & Define Your Niche</h5>
-        <p>Run small tests—landing pages, pre-orders, or pilot projects—to confirm real demand. Don't try to serve everyone; focus on a specific audience and problem you can solve exceptionally well :cite[1].</p>
-      </div>
-
-      <div class="tip-section">
-        <h5>2. Automate, Delegate & Build Systems</h5>
-        <p>Use tools for accounting, scheduling, and email marketing; delegate specialized tasks to freelancers. You don't need a team to scale; you need systems that make your work repeatable and efficient :cite[1].</p>
-      </div>
-
-      <div class="tip-section">
-        <h5>3. Protect Your Business & Choose the Right Model</h5>
-        <p>Choose the right legal structure, register trademarks, and keep contracts in writing. Consider business models that suit your skills and goals beyond just hourly work, such as productized services or digital products :cite[1].</p>
-      </div>
-
-      <div class="tip-section">
-        <h5>4. Invest in Yourself & Build Your Brand</h5>
-        <p>Continuous learning—new skills, emerging tech, market trends—keeps you competitive. As a solopreneur, you are the face of your business, so building a strong personal brand is crucial for attracting ideal clients :cite[1].</p>
-      </div>
-
-      <h3>🌟 Real-World Inspiration</h3>
-      <p>From independent app developers to single-founder consultancies and boutique e-commerce brands, solopreneurs are proving that one person with the right systems can compete with traditional startups. Many intentionally stay small, enjoying high profit margins and personal freedom over rapid scaling :cite[1].</p>
-
-      <div class="success-story">
-        <h5>Inspiring Examples</h5>
-        <p>Individuals like Ali Abdaal (former doctor turned productivity YouTuber) and Pat Flynn (Smart Passive Income) have built multi-million dollar businesses as solopreneurs, demonstrating that a business of one can create massive value and legacy :cite[1].</p>
+        <p>Without a team, your growth depends heavily on your own time and energy unless you leverage automation or digital products.</p>
       </div>
 
       <div class="conclusion">
         <h4>🎯 Bottom Line</h4>
         <p><strong>The one-person startup isn't just a stopgap before hiring—it's a legitimate, sustainable business model.</strong> With digital infrastructure and global markets at your fingertips, building a business of one may be the most entrepreneurial move of all.</p>
-        <p>Solopreneurship is more than a business model; it's a lifestyle, a mindset, and a statement of independence. It reflects a world where individuals have the power to carve their path, build on their terms, and serve a global audience without ever hiring a team :cite[1].</p>
       </div>
     `,
     author: "Entrepreneurship Team",
@@ -221,6 +202,7 @@ export const blogData = [
   },
   {
     id: 3,
+    slug: "building-a-business-plan-that-investors-will-read",
     title: "Building a Business Plan That Investors Will Actually Read",
     img: blog44,
     desc: "A business plan isn't a 50-page homework assignment—it's a sales document. Its job is to convince busy investors that your idea is real, scalable, and worth their time. Here's how to craft a plan they'll actually finish reading.",
@@ -238,7 +220,7 @@ export const blogData = [
       </div>
 
       <div class="text-center my-5">
-        <img src="${blog41}" alt="Financial projections chart showing revenue growth and milestones" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog41}" alt="Financial projections chart" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Realistic financial projections demonstrate business viability</small></p>
       </div>
 
@@ -249,11 +231,10 @@ export const blogData = [
         <h5>📊 Market Research</h5>
         <p>Provide credible data on total addressable market (TAM) and target segments.</p>
         <p>Identify trends or pain points that make this the right time for your product.</p>
-        <p>Keep charts simple and sources reputable.</p>
       </div>
 
       <div class="text-center my-5">
-        <img src="${blog42}" alt="Market analysis charts showing TAM and growth trends" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog42}" alt="Market analysis charts" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Clear market data builds credibility and shows opportunity size</small></p>
       </div>
 
@@ -276,64 +257,13 @@ export const blogData = [
       </div>
 
       <div class="text-center my-5">
-        <img src="${blog43}" alt="Executive summary example with clear problem-solution structure" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog43}" alt="Executive summary example" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>A compelling executive summary grabs investor attention immediately</small></p>
-      </div>
-
-      <h3>4. Detail Your Business Model</h3>
-      <p>Investors care about how you make money.</p>
-      
-      <div class="tip-section">
-        <h5>💰 Revenue Strategy</h5>
-        <p>Pricing strategy and revenue streams.</p>
-        <p>Customer acquisition plans and key channels.</p>
-        <p>Basic unit economics: cost to acquire a customer (CAC) vs. lifetime value (LTV).</p>
-      </div>
-
-      <h3>5. Introduce the Team</h3>
-      <p>People fund people.</p>
-      
-      <div class="feature-point">
-        <h5>👥 Team Highlights</h5>
-        <p>Highlight founders' relevant skills and past successes.</p>
-        <p>Mention advisors or key hires who strengthen credibility.</p>
-      </div>
-
-      <h3>6. Show a Realistic Financial Roadmap</h3>
-      <p>Three- to five-year projections with clear assumptions.</p>
-      
-      <div class="tip-section">
-        <h5>📈 Financial Planning</h5>
-        <p>Break-even point and anticipated milestones.</p>
-        <p>Funding ask: amount, use of funds, and runway it provides.</p>
-      </div>
-
-      <h3>7. Keep the Design Investor-Friendly</h3>
-      <p>Make your plan easy to digest.</p>
-      
-      <div class="benefit-grid">
-        <div class="benefit-item">
-          <h5>📄 Concise Format</h5>
-          <p>Limit the main plan to 15–20 pages.</p>
-        </div>
-        <div class="benefit-item">
-          <h5>🎨 Visual Appeal</h5>
-          <p>Use visuals—charts, infographics, product screenshots—over dense text.</p>
-        </div>
-        <div class="benefit-item">
-          <h5>📁 Organized Structure</h5>
-          <p>Provide an appendix for deeper details so the main story stays concise.</p>
-        </div>
-      </div>
-
-      <div class="text-center my-5">
-        <img src="${blog44}" alt="Business model canvas showing revenue streams and cost structure" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-        <p class="text-muted mt-2"><small>A clear business model shows how you'll generate revenue and profit</small></p>
       </div>
 
       <div class="conclusion">
         <h4>🎯 Key Takeaway</h4>
-        <p><strong>A great business plan is focused, data-backed, and easy to skim.</strong> Investors don't need a novel; they need proof that you understand the market, can execute, and will generate returns. Nail the executive summary, highlight traction, and make every section earn its place.</p>
+        <p><strong>A great business plan is focused, data-backed, and easy to skim.</strong> Investors don't need a novel; they need proof that you understand the market, can execute, and will generate returns.</p>
       </div>
     `,
     author: "Investment Strategy Team",
@@ -345,6 +275,7 @@ export const blogData = [
   },
   {
     id: 4,
+    slug: "micro-entrepreneurship-big-impact-small-ventures",
     title: "Micro-Entrepreneurship: The Big Impact of Small Ventures",
     img: blog51,
     desc: "Gone are the days when 'entrepreneur' meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focused businesses with minimal staff and capital—are quietly transforming local economies.",
@@ -352,103 +283,36 @@ export const blogData = [
       <p class="lead">Gone are the days when "entrepreneur" meant a large startup with hefty funding. Across towns and neighbourhoods, micro-entrepreneurs—people running hyper-focused businesses with minimal staff and capital—are quietly transforming local economies.</p>
 
       <h3>What Is Micro-Entrepreneurship?</h3>
-      <p>A micro-entrepreneur typically operates with one to five employees (often solo) and serves a highly specific market. Think home-based bakers, boutique digital marketers, hyper-local delivery services, or artisans selling via Instagram. Low overhead and targeted offerings let them thrive in niches larger companies overlook.</p>
+      <p>A micro-entrepreneur typically operates with one to five employees (often solo) and serves a highly specific market. Low overhead and targeted offerings let them thrive in niches larger companies overlook.</p>
 
       <div class="text-center my-5">
-        <img src="${blog51}" alt="Micro-entrepreneur working from small home-based setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog51}" alt="Micro-entrepreneur setup" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Micro-entrepreneurs operate with minimal staff and serve specific markets</small></p>
       </div>
 
       <h3>Why It's Growing</h3>
-      <p>Several forces fuel the movement:</p>
-      
       <div class="feature-point">
         <h5>💻 Accessible digital tools</h5>
         <p>Social media, e-commerce platforms, and mobile payment apps make marketing and transactions simple and cheap.</p>
       </div>
-
       <div class="feature-point">
         <h5>🛍️ Changing consumer habits</h5>
         <p>Customers value personalised, authentic products—whether organic skincare or handcrafted décor.</p>
       </div>
 
-      <div class="feature-point">
-        <h5>🌍 Pandemic lessons</h5>
-        <p>Remote work and side hustles proved that small, flexible businesses can survive economic shocks.</p>
-      </div>
-
       <div class="text-center my-5">
-        <img src="${blog52}" alt="Local community market with micro-entrepreneurs" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog52}" alt="Local community market" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Micro-enterprises create jobs and support local economies</small></p>
       </div>
 
-      <h3>Economic and Social Impact</h3>
-      <p>Micro-enterprises generate more than pocket money. They:</p>
-      
-      <div class="benefit-grid">
-        <div class="benefit-item">
-          <h5>Create jobs locally</h5>
-          <p>Especially for women and youth.</p>
-        </div>
-        <div class="benefit-item">
-          <h5>Circulate money within communities</h5>
-          <p>Supporting neighbourhood suppliers and services.</p>
-        </div>
-        <div class="benefit-item">
-          <h5>Preserve culture and craft</h5>
-          <p>From regional textiles to traditional foods.</p>
-        </div>
-      </div>
-
       <div class="text-center my-5">
-        <img src="${blog53}" alt="Micro-entrepreneur using digital tools and smartphone" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog53}" alt="Micro-entrepreneur using digital tools" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Digital platforms enable micro-entrepreneurs to reach customers efficiently</small></p>
-      </div>
-
-      <p>In countries like India, these ventures collectively contribute billions to GDP while revitalising rural and semi-urban markets.</p>
-
-      <h3>Keys to Success for Micro-Entrepreneurs</h3>
-      
-      <div class="tip-section">
-        <h5>1. Start lean, test fast.</h5>
-        <p>Use small batches or pilot services to gauge demand.</p>
-      </div>
-
-      <div class="tip-section">
-        <h5>2. Leverage digital platforms.</h5>
-        <p>Free tools like Instagram Shops, WhatsApp Business, and UPI payments reduce setup costs.</p>
-      </div>
-
-      <div class="tip-section">
-        <h5>3. Focus on customer relationships.</h5>
-        <p>Personalised service and quick responses build loyalty.</p>
-      </div>
-
-      <div class="tip-section">
-        <h5>4. Mind the basics.</h5>
-        <p>Even tiny businesses need proper bookkeeping, necessary licences, and clear contracts.</p>
-      </div>
-
-      <h3>Challenges to Watch</h3>
-      
-      <div class="challenge-item">
-        <h5>Scaling vs. staying niche</h5>
-        <p>Growth may strain the personal touch that makes these ventures unique.</p>
-      </div>
-
-      <div class="challenge-item">
-        <h5>Competition</h5>
-        <p>Low barriers invite imitators. Protect your brand with trademarks and consistent quality.</p>
-      </div>
-
-      <div class="challenge-item">
-        <h5>Access to finance</h5>
-        <p>Micro-loans and government schemes can bridge gaps, but awareness is key.</p>
       </div>
 
       <div class="conclusion">
         <h4>🎯 Bottom Line</h4>
-        <p><strong>Micro-entrepreneurship proves that "small" can be mighty.</strong> With creativity, digital savvy, and strong community ties, one person or a tiny team can boost local economies—and craft a fulfilling livelihood—without chasing venture capital or building a massive organisation.</p>
+        <p><strong>Micro-entrepreneurship proves that "small" can be mighty.</strong> With creativity, digital savvy, and strong community ties, small teams can boost local economies without chasing venture capital.</p>
       </div>
     `,
     author: "Entrepreneurship Team",
@@ -460,6 +324,7 @@ export const blogData = [
   },
   {
     id: 5,
+    slug: "smart-ways-to-build-brand-trust-new-company",
     title: "Smart Ways to Build Brand Trust as a New Company",
     img: blog61,
     desc: "In a crowded marketplace, customers don't just buy products—they buy confidence. For a young business, earning trust can feel like climbing a mountain, but the right strategies can accelerate the climb. Here's how to establish credibility from day one.",
@@ -471,112 +336,29 @@ export const blogData = [
       
       <div class="feature-point">
         <h5>Transparency Practices</h5>
-        <p>Share clear pricing with no hidden fees.</p>
-        <p>Communicate openly about timelines, delays, or product limitations.</p>
-        <p>Admit mistakes promptly and show how you're fixing them.</p>
+        <p>Share clear pricing with no hidden fees and admit mistakes promptly.</p>
       </div>
 
-      <p>Transparency signals that you value customers more than short-term gain.</p>
-
       <div class="text-center my-5">
-        <img src="${blog61}" alt="Transparent business practices and honest communication" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog61}" alt="Transparent business practices" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Transparency signals that you value customers more than short-term gain.</small></p>
       </div>
 
       <h3>2. Deliver Consistently</h3>
-      <p>Promises mean little without follow-through.</p>
-      
-      <div class="feature-point">
-        <h5>Consistency Standards</h5>
-        <p>Maintain product quality even as you scale.</p>
-        <p>Provide timely responses to customer queries.</p>
-        <p>Ensure your website, packaging, and service experience all reflect the same standards.</p>
-      </div>
-
-      <p>Consistency tells customers they can rely on you every time.</p>
-
       <div class="text-center my-5">
-        <img src="${blog62}" alt="Consistent quality and reliable service" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog62}" alt="Consistent quality" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Consistency tells customers they can rely on you every time.</small></p>
       </div>
 
       <h3>3. Showcase Social Proof</h3>
-      <p>People trust people more than marketing copy.</p>
-      
-      <div class="benefit-grid">
-        <div class="benefit-item">
-          <h5>Collect Testimonials</h5>
-          <p>Collect testimonials and reviews from your earliest users.</p>
-        </div>
-        <div class="benefit-item">
-          <h5>Highlight Media Mentions</h5>
-          <p>Highlight media mentions or partnerships.</p>
-        </div>
-        <div class="benefit-item">
-          <h5>Use Case Studies</h5>
-          <p>Use case studies or before-and-after stories to demonstrate results.</p>
-        </div>
-      </div>
-
-      <p>Even a handful of authentic endorsements carries weight.</p>
-
       <div class="text-center my-5">
-        <img src="${blog63}" alt="Customer testimonials and social proof" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+        <img src="${blog63}" alt="Social proof" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
         <p class="text-muted mt-2"><small>Even a handful of authentic endorsements carries weight</small></p>
-      </div>
-
-      <h3>4. Build a Human Brand Voice</h3>
-      <p>Customers connect with people, not faceless entities.</p>
-      
-      <div class="tip-section">
-        <h5>Human Connection Strategies</h5>
-        <p>Use approachable, conversational language in emails and on social media.</p>
-        <p>Share behind-the-scenes content: your team, your process, your mission.</p>
-        <p>Engage in two-way dialogue—reply to comments and messages promptly.</p>
-      </div>
-
-      <p>A relatable personality makes your brand memorable and trustworthy.</p>
-
-      <div class="text-center my-5">
-        <img src="${blog64}" alt="Excellent customer support and multiple support channels" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-        <p class="text-muted mt-2"><small>Responsive customer service turns buyers into loyal advocates</small></p>
-      </div>
-
-      <h3>5. Prioritise Customer Support</h3>
-      <p>Excellent service can turn a first-time buyer into a loyal advocate.</p>
-      
-      <div class="feature-point">
-        <h5>Support Excellence</h5>
-        <p>Offer multiple support channels (chat, email, phone) and respond quickly.</p>
-        <p>Empower your team to solve problems without excessive bureaucracy.</p>
-        <p>Follow up after issues are resolved to ensure satisfaction.</p>
-      </div>
-
-      <p>A single great support experience often leads to repeat business.</p>
-
-      <div class="text-center my-5">
-        <img src="${blog65}" alt="Customer support excellence" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-        <p class="text-muted mt-2"><small>A single great support experience often leads to repeat business.</small></p>
-      </div>
-
-      <h3>6. Secure and Protect Data</h3>
-      <p>In an age of cyber risks, privacy matters.</p>
-      
-      <div class="tip-section">
-        <h5>Data Protection Measures</h5>
-        <p>Use HTTPS, secure payment gateways, and clear data policies.</p>
-        <p>Comply with local data-protection regulations (e.g., GDPR or India's Digital Personal Data Protection Act).</p>
-        <p>Communicate your security practices so customers know their information is safe.</p>
-      </div>
-
-      <div class="text-center my-5">
-        <img src="${blog66}" alt="Long-term brand trust and customer relationships" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
-        <p class="text-muted mt-2"><small>Building lasting confidence through genuine relationships</small></p>
       </div>
 
       <div class="conclusion">
         <h4>Bottom Line</h4>
-        <p><strong>Brand trust isn't built overnight—it's earned through transparency, reliability, and genuine relationships.</strong> By being open, consistent, and customer-centric from day one, your new company can inspire confidence that lasts for years.</p>
+        <p><strong>Brand trust isn't built overnight—it's earned through transparency, reliability, and genuine relationships.</strong></p>
       </div>
     `,
     author: "Brand Strategy Team",
@@ -585,20 +367,256 @@ export const blogData = [
     category: "Brand Building",
     tags: ["Brand Trust", "Customer Confidence", "Transparency", "Social Proof", "Customer Support", "Data Security"],
     additionalImages: [blog61, blog62, blog63, blog64, blog65, blog66]
-  }
+  },
+  {
+    id: 6,
+    slug: "when-nobody-believed-in-airbnb",
+    title: "When Nobody Believed in Airbnb: From Three Mattresses to a Global Giant",
+    img: blog71,
+    desc: "What if your billion-dollar idea starts with three air mattresses and a problem you're trying to solve just to pay your rent? Discover how Airbnb transformed rejection into a global travel revolution.",
+    fullContent: `
+      <p class="lead">What if your billion-dollar idea starts with <strong>three air mattresses and a problem you’re trying to solve just to pay your rent?</strong> That’s almost exactly how Airbnb began.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog71}" alt="When Nobody Believed in Airbnb Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Sometimes big ideas start small: from an air mattress to a global journey</small></p>
+      </div>
+
+      <h3>1. The Beginning</h3>
+      <p>In 2007, Brian Chesky and Joe Gebbia were struggling to pay their rent in San Francisco. At the same time, a major design conference was coming to the city, and almost every hotel room was booked completely full.</p>
+
+      <div class="text-center my-4">
+        <img src="${blog72}" alt="Brian Chesky, Co-founder and CEO of Airbnb" class="img-fluid rounded shadow" style="max-height: 300px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Brian Chesky, Co-founder of Airbnb</small></p>
+      </div>
+
+      <div class="feature-point">
+        <h5>💡 The Simple Solution</h5>
+        <p>Instead of letting the opportunity pass, they set up three air mattresses in their apartment and launched a simple website called <strong>“Air Bed & Breakfast.”</strong> The concept was straightforward: give people a place to sleep when hotels are full.</p>
+      </div>
+
+      <div class="text-center my-5">
+        <img src="${blog74}" alt="Early Air Bed and Breakfast website interface" class="img-fluid rounded shadow" style="max-height: 380px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>The original AirBed&Breakfast website interface in 2008</small></p>
+      </div>
+
+      <p>Strangers actually paid to sleep in their living room. But turning an experimental hack into an enduring enterprise was anything but easy.</p>
+
+      <h3>2. When Everyone Said “No”</h3>
+      <p>The founders soon discovered that having a clever idea and building an investable company around it are two completely different realities.</p>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>❌ Investor Skepticism</h5>
+          <p>Investors couldn't grasp the model: why would anyone stay in a stranger's house, or allow strangers inside theirs?</p>
+        </div>
+        <div class="benefit-item">
+          <h5>💳 Running on Credit</h5>
+          <p>Funding ran out rapidly, forcing the co-founders to max out personal credit cards just to keep servers alive.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🔄 The Mindset Pivot</h5>
+          <p>Instead of asking <em>“Why isn't this working?”</em>, they asked: <strong>“What can we learn from what's happening?”</strong></p>
+        </div>
+      </div>
+
+      <div class="text-center my-5">
+        <img src="${blog73}" alt="Airbnb founders in their apartment" class="img-fluid rounded shadow" style="max-height: 420px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Founders Brian Chesky, Joe Gebbia, and Nathan Blecharczyk in their early days</small></p>
+      </div>
+
+      <h3>3. The Turning Point: Do Things That Don't Scale</h3>
+      <p>The founders noticed that their biggest barrier was trust and visual presentation. Early listings contained terrible, low-resolution phone photos that made listings look unappealing.</p>
+
+      <div class="tip-section">
+        <h5>📸 Direct Action in New York</h5>
+        <p>Brian and Joe rented a camera, flew directly to New York City, met their hosts face-to-face, and professionally photographed each space themselves.</p>
+      </div>
+
+      <p class="highlight-box">The outcome was immediate: high-resolution photography boosted listings' appeal, drove customer bookings up exponentially, and proved that user experience builds adoption.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog75}" alt="National Entrepreneurship Challenge 2026 Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Ideas That Lift Beyond: Be a problem solver, be a change maker, be the future</small></p>
+      </div>
+
+      <div class="conclusion">
+        <h4>🎯 Key Takeaway</h4>
+        <p><strong>Your first idea doesn't have to be perfect—it just has to be worth improving.</strong> Often, what feels like failure is simply customer feedback pointing toward the version that works.</p>
+        <p>If the world doesn't believe in your idea yet, don't give up. Give it a reason to believe.</p>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-01",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["Airbnb", "Startup", "Pivot", "Innovation", "Business Lessons", "Entrepreneurship"],
+    additionalImages: [blog71, blog72, blog73, blog74, blog75]
+  },
+ {
+    id: 7,
+    slug: "when-everyone-said-canva-was-too-ambitious",
+    title: "When Everyone Said Canva Was Too Ambitious: The Story of Melanie Perkins",
+    img: blog82, 
+    desc: "What if someone told you that your idea was too big to work—and instead of shrinking the dream, you decided to build it anyway? Discover how Melanie Perkins turned repeated investor rejection into a global design revolution.",
+    fullContent: `
+      <p class="lead">What if someone told you that your idea was <strong>too big to work</strong>—and instead of shrinking the dream, you decided to build it anyway? That’s the story behind Canva.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog82}" alt="Canva Campaign Poster - Melanie Perkins" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>The Dream Was Big. So Was The Rejection — Rejection is not the end. It's redirection.</small></p>
+      </div>
+
+      <h3>1. The Problem</h3>
+      <p>Melanie Perkins noticed something frustrating while teaching students how to use design software. The tools were powerful, but they were complicated.</p>
+      <p>For someone who wasn't a professional designer, creating a simple design could mean learning complicated software, watching tutorials, and spending hours figuring out where everything was.</p>
+
+      <div class="text-center my-4">
+        <img src="${blog81}" alt="Melanie Perkins, Co-founder & CEO of Canva" class="img-fluid rounded shadow" style="max-height: 280px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Melanie Perkins, Co-founder & CEO of Canva</small></p>
+      </div>
+
+      <div class="feature-point">
+        <h5>💡 The Question That Started It All</h5>
+        <p><strong>Why should designing something beautiful be so difficult?</strong> She imagined a platform where almost anyone could create professional-looking designs without being a design expert.</p>
+      </div>
+
+      <h3>2. When Nobody Believed</h3>
+      <p>Melanie started pitching her idea to investors. And the answer was often <strong>no</strong>. Again. And again. And again.</p>
+      
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>❌ “Too Ambitious”</h5>
+          <p>Investors claimed that competing against established design software giants was an impossible feat.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🚪 Finding Another Door</h5>
+          <p>Melanie didn't take rejection as a reason to abandon her dream. She realized: <em>if the big door wouldn't open, start with a smaller one.</em></p>
+        </div>
+      </div>
+
+      <h3>3. Starting Small: Fusion Books</h3>
+      <p>Instead of immediately building Canva, Melanie and Cliff Obrecht started a smaller business called <strong>Fusion Books</strong>—an online platform that allowed students to create school yearbooks.</p>
+      
+      <div class="tip-section">
+        <h5>📊 The Value of Proof</h5>
+        <p>It gave them something far more valuable than early funding: <strong>proof</strong>. They learned user pain points and proved that everyday people were eager to use simple drag-and-drop design tools.</p>
+      </div>
+
+      <p class="highlight-box">Fusion Books became the essential stepping stone and technological proof that made Canva possible.</p>
+
+      <h3>4. The Breakthrough</h3>
+      <p>Melanie still needed the right team. Eventually, Cameron Adams, a former Google employee, joined as co-founder. After years of rejection, experimentation, and persistence, <strong>Canva officially launched in 2013</strong>.</p>
+
+      <div class="conclusion">
+        <h4>🎯 Key Takeaway</h4>
+        <p><strong>Sometimes, rejection isn't telling you to stop. It's challenging you to find a better way forward.</strong> Melanie Perkins proved that a big vision can survive a lot of small failures.</p>
+        <p>Don't make your dream smaller just because others can't see how big it could become.</p>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-03",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["Canva", "MelaniePerkins", "Startup", "Persistence", "Innovation", "BusinessLessons", "Entrepreneurship"],
+    additionalImages: [blog81, blog82]
+  },
+  {
+    id: 8,
+    slug: "when-the-game-failed-slack-was-born",
+    title: "When the Game Failed, Slack Was Born: The Accidental Billion-Dollar Pivot",
+    img: blog91,
+    desc: "What if the startup you spent years building completely failed—but hidden inside that failure was the idea that would become a billion-dollar business? Discover how Stewart Butterfield turned the failure of Glitch into Slack.",
+    fullContent: `
+      <p class="lead">What if the startup you spent years building completely failed—but hidden inside that failure was the idea that would become a billion-dollar business? That’s what happened to <strong>Stewart Butterfield</strong>.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog91}" alt="Slack Campaign Poster - Stewart Butterfield" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>The Game Failed. The Idea Didn't — Sometimes, your biggest failure leads you to your biggest opportunity.</small></p>
+      </div>
+
+      <h3>1. The Original Idea</h3>
+      <p>Before Slack became one of the most popular workplace communication platforms in the world, Stewart Butterfield and his team were building something entirely different.</p>
+      <p>Through their gaming studio, <strong>Tiny Speck</strong>, they spent years and raised millions in venture capital to build an online multiplayer game called <em>Glitch</em>. They genuinely believed they were creating something people would love.</p>
+      
+      <p>But reality had other plans. Despite the hard work, <em>Glitch</em> struggled to gain traction and in 2012, the servers were permanently shut down. For most founders, that would have been the devastating end of the journey.</p>
+
+      <div class="text-center my-4">
+        <img src="${blog92}" alt="Stewart Butterfield, Founder of Slack" class="img-fluid rounded shadow" style="max-height: 300px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Stewart Butterfield, Co-founder of Flickr and Slack</small></p>
+      </div>
+
+      <h3>2. The Tool Hidden Inside the Failure</h3>
+      <p>While building the game, the distributed team had built their own custom IRC-based communication tool to stay connected. They used it daily to share code, documents, links, and quick messages across different time zones.</p>
+
+      <div class="feature-point">
+        <h5>💡 The Golden Realization</h5>
+        <p>Unlike the game itself, <strong>their internal chat tool worked seamlessly</strong>. The team had accidentally created an extraordinarily powerful workplace collaboration system while trying to build a video game.</p>
+      </div>
+
+      <p>That realization changed everything. Instead of asking: <em>“How do we rescue our failed game?”</em> they asked: <strong>“What if the tool we built for ourselves is actually the product the world needs?”</strong></p>
+
+      <h3>3. The Masterclass in Pivoting</h3>
+      <p>The team decided not to throw everything away. They stripped out the gaming elements, focused entirely on streamlining internal communication, and rebuilt the platform for other companies.</p>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>🎮 Glitch Failed</h5>
+          <p>Years of hard work couldn't save the game, but the foundation remained strong.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🔍 Looked Closer</h5>
+          <p>They noticed their internal chat system was fast, enjoyable, and uniquely organized.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🚀 Made the Pivot</h5>
+          <p>Transformed an internal company utility into an enterprise SaaS product for every modern team.</p>
+        </div>
+      </div>
+
+      <p class="highlight-box">Teams were drowning in unorganized email threads. Slack offered transparent channels, integrations, and conversational flow that workplaces desperately needed.</p>
+
+      <h3>4. From Failure to Global Standard</h3>
+      <p>When Slack officially launched in 2013, adoption exploded purely through organic word-of-mouth. Companies fell in love with its frictionless collaboration experience.</p>
+      <p>Stewart Butterfield didn't succeed by refusing to accept defeat. He succeeded because he looked closely at what broke down and spotted the hidden gem that was actually thriving.</p>
+
+      <div class="conclusion">
+        <h4>🎯 Key Takeaway</h4>
+        <p><strong>Failures end stories. Pivots create legacies.</strong> Your failed idea may not be completely useless—sometimes, it contains the very seed of your next breakout success.</p>
+        <p>Maybe your Plan B isn't just a backup plan. Maybe it's the breakthrough you haven't noticed yet.</p>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-05",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["Slack", "StewartButterfield", "Startup", "Pivot", "Innovation", "BusinessLessons", "Entrepreneurship"],
+    additionalImages: [blog91, blog92]
+  },
 ];
 
+// Helper Functions
 export const getBlogById = (id) => {
-  return blogData.find(blog => blog.id === parseInt(id));
+  return blogData.find((blog) => blog.id === parseInt(id, 10));
+};
+
+export const getBlogBySlug = (slug) => {
+  return blogData.find((blog) => blog.slug === slug);
 };
 
 export const getRecentBlogs = (limit = null) => {
-  const sortedBlogs = [...blogData].sort((a, b) => new Date(b.date) - new Date(a.date));
-  return limit ? sortedBlogs.slice(0, limit) : sortedBlogs;
+  const sorted = [...blogData].sort((a, b) => new Date(b.date) - new Date(a.date));
+  return limit ? sorted.slice(0, limit) : sorted;
 };
 
 export const getBlogsByCategory = (category) => {
-  return blogData.filter(blog => blog.category === category);
+  return blogData.filter(
+    (blog) => blog.category.toLowerCase() === category.toLowerCase()
+  );
+};
+
+export const getAllCategories = () => {
+  return [...new Set(blogData.map((blog) => blog.category))];
 };
 
 export default blogData;
