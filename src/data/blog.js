@@ -6,6 +6,7 @@ import Blog5 from "../assets/Blogs/blog61.png";
 import Blog6 from "../assets/Blogs/blog71 (2).png";
 import Blog7 from "../assets/Blogs/blog82.jpeg";
 import Blog8 from "../assets/Blogs/Blog91.jpeg";
+import Blog9 from "../assets/Blogs/Blog101.jpeg";
 
 export const blogData = [
   {
@@ -161,6 +162,32 @@ export const blogData = [
     `,
     author: "CGEC E-Cell Team",
     date: "2026-09-05", 
+    category: "Startup Stories",
+    readTime: "5 min read"
+  },
+  {
+    id: 9,
+    slug: "when-burbn-failed-instagram-was-born",
+    title: "When Burbn Failed, Instagram Was Born: The Power of a Ruthless Pivot",
+    img: Blog9,
+    desc: "What if the app you spent a year building wasn’t working—but your users were quietly showing you exactly what they wanted instead? Discover how Kevin Systrom and Mike Krieger pivoted from Burbn to launch Instagram.",
+    fullContent: `
+      <p>What if the app you spent a year building wasn’t working—but your users were quietly showing you exactly what they wanted instead? That’s the story behind Instagram.</p>
+      
+      <h3>The First Idea</h3>
+      <p>In 2010, Kevin Systrom and Mike Krieger launched an app called Burbn. It allowed users to check in at locations, earn points, make plans, and post photos. On paper, an all-in-one platform sounded great, but in reality, Burbn was cluttered and confusing.</p>
+      
+      <h3>Listening Over Defending</h3>
+      <p>Instead of forcing users to like all the features, the founders analyzed user behavior and noticed a distinct pattern: despite all the features, users only cared about sharing photos.</p>
+      
+      <h3>The Ruthless Pivot</h3>
+      <p>Systrom and Krieger stripped Burbn down to its bare bones. They kept only three things: Photos, Filters, and Sharing. They rebuilt the app and renamed it Instagram. When it launched in October 2010, it blew up immediately.</p>
+      
+      <h3>The Real Lesson</h3>
+      <p>They succeeded because they refused to let their egos protect a dying concept. Failure isn't always about building the wrong thing; often, it’s about building too much of the wrong thing.</p>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-07",
     category: "Startup Stories",
     readTime: "5 min read"
   },

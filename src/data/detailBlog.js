@@ -28,6 +28,9 @@ import blog81 from "../assets/Blogs/blog81.jpeg";
 import blog82 from "../assets/Blogs/blog82.jpeg";
 import blog91 from "../assets/Blogs/Blog91.jpeg";
 import blog92 from "../assets/Blogs/Blog92.jpeg";
+import blog101 from "../assets/Blogs/Blog101.jpeg";
+import blog102 from "../assets/Blogs/Blog102.jpeg";
+import blog103 from "../assets/Blogs/Blog103.jpeg";
 
 export const blogData = [
   {
@@ -592,6 +595,82 @@ export const blogData = [
     category: "Startup Stories",
     tags: ["Slack", "StewartButterfield", "Startup", "Pivot", "Innovation", "BusinessLessons", "Entrepreneurship"],
     additionalImages: [blog91, blog92]
+  },
+  {
+    id: 9,
+    slug: "when-burbn-failed-instagram-was-born",
+    title: "When Burbn Failed, Instagram Was Born: The Power of a Ruthless Pivot",
+    img: blog101,
+    desc: "What if the app you spent a year building wasn’t working—but your users were quietly showing you exactly what they wanted instead? Discover how Kevin Systrom and Mike Krieger pivoted from Burbn to launch Instagram.",
+    fullContent: `
+      <p class="lead">What if the app you spent a year building wasn’t working—but your users were quietly showing you exactly what they wanted instead? That’s the story behind Instagram.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog101}" alt="Instagram Co-founders Kevin Systrom and Mike Krieger" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Kevin Systrom & Mike Krieger discussing the evolution of their product vision.</small></p>
+      </div>
+
+      <h3>1. The First Idea</h3>
+      <p>In 2010, Kevin Systrom and Mike Krieger launched an app called <strong>Burbn</strong>.</p>
+      <p>The idea was ambitious: users could check in at locations, earn points, make plans with friends, and post photos. On paper, an all-in-one platform sounded great.</p>
+      
+      <div class="feature-point">
+        <h5>⚠️ The Reality Check</h5>
+        <p>In reality, Burbn was cluttered, confusing, and overwhelming. People simply weren't using most of the features.</p>
+      </div>
+
+      <h3>2. Listening Over Defending</h3>
+      <p>The founders could have doubled down, added more features, or tried harder to convince users to like the app. Instead, they did something much harder: <strong>they listened to the data</strong>.</p>
+
+      <div class="row my-4 justify-content-center text-center">
+        <div class="col-md-5 mb-3">
+          <img src="${blog102}" alt="Kevin Systrom" class="img-fluid rounded shadow mb-2" style="max-height: 280px; width: auto;" />
+          <p class="text-muted mb-0"><small>Kevin Systrom, Co-founder</small></p>
+        </div>
+        <div class="col-md-5 mb-3">
+          <img src="${blog103}" alt="Mike Krieger" class="img-fluid rounded shadow mb-2" style="max-height: 280px; width: auto;" />
+          <p class="text-muted mb-0"><small>Mike Krieger, Co-founder</small></p>
+        </div>
+      </div>
+
+      <p>They looked at user behavior and noticed a distinct pattern: despite all the bells and whistles, users only cared about one thing—<strong>sharing photos</strong>.</p>
+
+      <h3>3. The Ruthless Pivot</h3>
+      <p>Systrom and Krieger made a radical decision. They stripped Burbn down to its bare bones.</p>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>❌ Removed Features</h5>
+          <p>No check-ins, no gaming mechanics, and no unnecessary clutter.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>✅ Kept Essentials</h5>
+          <p>They kept only three things: <strong>Photos, Filters, and Sharing</strong>.</p>
+        </div>
+      </div>
+
+      <p class="highlight-box">They rebuilt the app around that single behavior and renamed it <strong>Instagram</strong> (a mix of “instant” and “telegram”). When it launched in October 2010, it blew up immediately.</p>
+
+      <h3>4. The Real Lesson</h3>
+      <p>Kevin Systrom and Mike Krieger didn’t succeed because their first idea was flawless. They succeeded because they refused to let their egos protect a dying concept.</p>
+
+      <div class="tip-section">
+        <h5>💡 Key Takeaway for Entrepreneurs</h5>
+        <p><strong>They didn’t protect the idea; they protected the opportunity.</strong> Entrepreneurs often get emotionally attached to what took months to build. But users don't care how much effort went into features they don't need.</p>
+      </div>
+
+      <div class="conclusion">
+        <h4>🎯 Final Thought</h4>
+        <p>Failure isn't always about building the wrong thing. Often, it’s about building too much of the wrong thing. Instagram wasn't created by adding more. It was born when the founders had the courage to cut away everything that didn’t matter.</p>
+        <p><strong>Your next breakthrough might already be hiding inside the single feature you're taking for granted.</strong></p>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-07",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["Instagram", "KevinSystrom", "MikeKrieger", "Startup", "Pivot", "Innovation", "BusinessLessons", "ProductDesign"],
+    additionalImages: [blog103, blog102, blog101]
   },
 ];
 
