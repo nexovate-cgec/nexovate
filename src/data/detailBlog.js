@@ -31,6 +31,8 @@ import blog92 from "../assets/Blogs/Blog92.jpeg";
 import blog101 from "../assets/Blogs/Blog101.jpeg";
 import blog102 from "../assets/Blogs/Blog102.jpeg";
 import blog103 from "../assets/Blogs/Blog103.jpeg";
+import blog111 from "../assets/Blogs/Blog111.jpeg";
+import blog112 from "../assets/Blogs/Blog112.jpeg";
 
 export const blogData = [
   {
@@ -671,6 +673,79 @@ export const blogData = [
     category: "Startup Stories",
     tags: ["Instagram", "KevinSystrom", "MikeKrieger", "Startup", "Pivot", "Innovation", "BusinessLessons", "ProductDesign"],
     additionalImages: [blog103, blog102, blog101]
+  },
+  {
+    id: 10,
+    slug: "when-facebook-said-no-whatsapp-said-keep-going",
+    title: "When Facebook Said “No,” WhatsApp Said “Keep Going”",
+    img: blog111,
+    desc: "What if the company that rejected your job application eventually offered billions to buy the company you built? Discover the incredible journey of Jan Koum and Brian Acton from rejection to a $19 billion acquisition.",
+    fullContent: `
+      <p class="lead">What if the company that rejected your job application eventually offered billions to buy the company you built? Sounds like a movie plot, but for <strong>Jan Koum</strong> and <strong>Brian Acton</strong>, it became reality.</p>
+
+      <div class="row my-4 justify-content-center text-center">
+        <div class="col-md-5 mb-3">
+          <img src="${blog111}" alt="Jan Koum, Co-founder of WhatsApp" class="img-fluid rounded shadow mb-2" style="max-height: 320px; width: auto;" />
+          <p class="text-muted mb-0"><small>Jan Koum, Co-founder of WhatsApp</small></p>
+        </div>
+        <div class="col-md-5 mb-3">
+          <img src="${blog112}" alt="Brian Acton, Co-founder of WhatsApp" class="img-fluid rounded shadow mb-2" style="max-height: 320px; width: auto;" />
+          <p class="text-muted mb-0"><small>Brian Acton, Co-founder of WhatsApp</small></p>
+        </div>
+      </div>
+
+      <h3>1. The Rejection</h3>
+      <p>Before WhatsApp connected billions across the globe, Jan and Brian were simply two engineers looking for their next gig. In 2009, they both applied for jobs at Facebook.</p>
+      
+      <div class="feature-point">
+        <h5>❌ Both Were Rejected</h5>
+        <p>Instead of taking rejection as a dead end, they decided to build something of their own. That marked the birth of <strong>WhatsApp</strong>.</p>
+      </div>
+
+      <h3>2. Finding the Product</h3>
+      <p>WhatsApp wasn't an overnight success. The very first version was glitchy and gained zero traction—it only displayed static status updates next to phone contacts.</p>
+      <p>Then Apple launched push notifications. Jan immediately recognized the opportunity: <em>What if WhatsApp wasn't just a status updater, but a real-time messaging tool?</em> That single pivot transformed the product completely.</p>
+
+      <h3>3. The Power of Simplicity</h3>
+      <p>The journey wasn’t linear. When they tested charging an annual fee, downloads plummeted. Instead of forcing a broken business model, they doubled down on user obsession.</p>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>🚫 What They Avoided</h5>
+          <p>No flashy bells and whistles, no intrusive ads, and no bloated social feeds.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>✅ What They Focused On</h5>
+          <p>Fast, ultra-reliable, private messaging that worked even on weak mobile networks.</p>
+        </div>
+      </div>
+
+      <p class="highlight-box">By 2014, WhatsApp had scaled to over 450 million active users with a remarkably tiny engineering team.</p>
+
+      <h3>4. The $19 Billion Full Circle</h3>
+      <p>Then came the defining moment: Facebook—the exact company that turned them away five years earlier—acquired WhatsApp for approximately <strong>$19 billion</strong>.</p>
+
+      <div class="tip-section">
+        <h5>💡 The Real Lesson</h5>
+        <p>Jan and Brian’s story isn’t about revenge; it’s about <strong>relentless execution</strong> and sticking to core product values.</p>
+      </div>
+
+      <div class="conclusion">
+        <h4>🎯 Key Takeaways</h4>
+        <ul>
+          <li>A "No" today isn't a permanent full stop on your ambitions.</li>
+          <li>Your initial idea rarely ends up being your winning product.</li>
+          <li>Simplicity and solving a real pain point beats flashy noise every time.</li>
+          <li>The company that passes on you today might just be your biggest buyer tomorrow. Keep building.</li>
+        </ul>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-09",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["WhatsApp", "JanKoum", "BrianActon", "Facebook", "Startup", "Innovation", "Persistence", "BusinessLessons"],
+    additionalImages: [blog111, blog112]
   },
 ];
 

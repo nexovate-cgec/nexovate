@@ -7,6 +7,7 @@ import Blog6 from "../assets/Blogs/blog71 (2).png";
 import Blog7 from "../assets/Blogs/blog82.jpeg";
 import Blog8 from "../assets/Blogs/Blog91.jpeg";
 import Blog9 from "../assets/Blogs/Blog101.jpeg";
+import Blog10 from "../assets/Blogs/Blog111.jpeg";
 
 export const blogData = [
   {
@@ -188,6 +189,32 @@ export const blogData = [
     `,
     author: "CGEC E-Cell Team",
     date: "2026-09-07",
+    category: "Startup Stories",
+    readTime: "5 min read"
+  },
+  {
+    id: 10,
+    slug: "when-facebook-said-no-whatsapp-said-keep-going",
+    title: "When Facebook Said “No,” WhatsApp Said “Keep Going”",
+    img: Blog10,
+    desc: "What if the company that rejected your job application eventually offered billions to buy the company you built? Discover the incredible journey of Jan Koum and Brian Acton from rejection to a $19 billion acquisition.",
+    fullContent: `
+      <p>What if the company that rejected your job application eventually offered billions to buy the company you built? Sounds like a movie plot, but for Jan Koum and Brian Acton, it became reality.</p>
+      
+      <h3>The Rejection</h3>
+      <p>In 2009, Jan Koum and Brian Acton applied for jobs at Facebook and were both rejected. Instead of seeing it as a dead end, they decided to build something of their own: WhatsApp.</p>
+      
+      <h3>Finding the Product</h3>
+      <p>The first version was glitchy and only displayed static status updates. When Apple launched push notifications, Jan pivoted WhatsApp into a real-time messaging tool, completely transforming the product.</p>
+      
+      <h3>The Power of Simplicity</h3>
+      <p>They focused strictly on fast, ultra-reliable, private messaging without ads, flashy gimmicks, or bloated social feeds.</p>
+      
+      <h3>The $19 Billion Full Circle</h3>
+      <p>By 2014, with over 450 million active users, Facebook acquired WhatsApp for approximately $19 billion—five years after rejecting its founders for engineering jobs.</p>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-09",
     category: "Startup Stories",
     readTime: "5 min read"
   },
