@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { FaInstagram, FaLinkedin, FaYoutube, FaEnvelope } from "react-icons/fa";
 import "./About.css";
-import aboutImg from '../assets/images/about.png';
+import aboutVideo from '../assets/videos/about.mp4';
 import cgecLogo from '../assets/images/cgec.jpeg';
 import ecellLogo from '../assets/images/logo.jpeg';
 import iicLogo from '../assets/images/iic-logo.jpeg';
@@ -23,18 +23,18 @@ const About = () => (
       <Container>
         <Row className="align-items-center">
           <Col md={6} className="mb-4 mb-md-0">
-            <Image
-              src={aboutImg}
-              alt="About CGEC ECELL"
-              fluid
-              rounded
-              className="shadow about-image"
+            <video
+              src={aboutVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-100 shadow rounded about-video"
             />
           </Col>
 
           <Col md={6}>
             <div className="ps-md-4">
-
               <div className="collab-section">
                 <div className="collab-badge">
                   Official Collaboration
@@ -105,7 +105,6 @@ const About = () => (
                   ))}
                 </div>
               </div>
-
             </div>
           </Col>
         </Row>
