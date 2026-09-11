@@ -8,6 +8,7 @@ import Blog7 from "../assets/Blogs/blog82.jpeg";
 import Blog8 from "../assets/Blogs/Blog91.jpeg";
 import Blog9 from "../assets/Blogs/Blog101.jpeg";
 import Blog10 from "../assets/Blogs/Blog111.jpeg";
+import Blog11 from "../assets/Blogs/Blog121.jpeg";
 
 export const blogData = [
   {
@@ -215,6 +216,32 @@ export const blogData = [
     `,
     author: "CGEC E-Cell Team",
     date: "2026-09-09",
+    category: "Startup Stories",
+    readTime: "5 min read"
+  },
+  {
+    id: 11,
+    slug: "the-snowboard-store-that-became-shopify",
+    title: "The Snowboard Store That Became Shopify: Solving Your Own Problem",
+    img: Blog11,
+    desc: "What if you set out to sell snowboards online, but ended up building the infrastructure that powers millions of global businesses? Discover the story of Tobi Lütke and Shopify.",
+    fullContent: `
+      <p>What if you set out to sell snowboards online, but ended up building the infrastructure that powers millions of global businesses? That’s the story of Tobi Lütke and Shopify.</p>
+      
+      <h3>It Started With Snowboards</h3>
+      <p>In the mid-2000s, Tobi Lütke wanted to launch an online store for snowboarding gear called Snowdevil. Instead of an easy launch, he hit a massive wall: existing e-commerce software was clunky, rigid, and expensive.</p>
+      
+      <h3>The Problem Behind the Problem</h3>
+      <p>As a software engineer, Tobi asked why building an online store was so painful. He realized millions of entrepreneurs faced the exact same roadblock.</p>
+      
+      <h3>From Snowdevil to Shopify</h3>
+      <p>Tobi built custom software from scratch to run Snowdevil. Soon, he realized the custom software was far more valuable than the snowboards he was selling. That code became the foundation of Shopify.</p>
+      
+      <h3>The Real Lesson</h3>
+      <p>Tobi didn’t start with a grand plan to build an e-commerce titan; he was simply scratching his own itch. The best business opportunities often hide inside real, everyday frustrations.</p>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-11",
     category: "Startup Stories",
     readTime: "5 min read"
   },

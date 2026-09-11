@@ -33,6 +33,9 @@ import blog102 from "../assets/Blogs/Blog102.jpeg";
 import blog103 from "../assets/Blogs/Blog103.jpeg";
 import blog111 from "../assets/Blogs/Blog111.jpeg";
 import blog112 from "../assets/Blogs/Blog112.jpeg";
+import blog121 from "../assets/Blogs/Blog121.jpeg";
+import blog122 from "../assets/Blogs/Blog122.jpeg";
+import blog123 from "../assets/Blogs/Blog123.jpeg";
 
 export const blogData = [
   {
@@ -746,6 +749,81 @@ export const blogData = [
     category: "Startup Stories",
     tags: ["WhatsApp", "JanKoum", "BrianActon", "Facebook", "Startup", "Innovation", "Persistence", "BusinessLessons"],
     additionalImages: [blog111, blog112]
+  },
+  {
+    id: 11,
+    slug: "the-snowboard-store-that-became-shopify",
+    title: "The Snowboard Store That Became Shopify: Solving Your Own Problem",
+    img: blog123,
+    desc: "What if you set out to sell snowboards online, but ended up building the infrastructure that powers millions of global businesses? Discover the story of Tobi Lütke and Shopify.",
+    fullContent: `
+      <p class="lead">What if you set out to sell snowboards online, but ended up building the infrastructure that powers millions of global businesses? That’s the story of <strong>Tobi Lütke</strong> and <strong>Shopify</strong>.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog123}" alt="The Snowboard Store That Became Shopify Campaign Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Sometimes the problem you solve for yourself is the business everyone else needs. — Tobi Lütke</small></p>
+      </div>
+
+      <h3>1. It Started With Snowboards</h3>
+      <p>In the mid-2000s, Tobi Lütke wanted to launch an online store for snowboarding gear called <strong>Snowdevil</strong>.</p>
+      <p>The concept seemed straightforward: build a site, list snowboards, and sell to riders. Instead, Tobi hit a massive wall. The existing e-commerce software of the era was clunky, rigid, and expensive. Selling snowboards wasn’t the hardest part—building a functional online store was.</p>
+
+      <div class="text-center my-4">
+        <img src="${blog122}" alt="Tobi Lütke, Founder and CEO of Shopify" class="img-fluid rounded shadow" style="max-height: 320px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Tobi Lütke, Founder & CEO of Shopify</small></p>
+      </div>
+
+      <h3>2. The Problem Behind the Problem</h3>
+      <p>Rather than settling for broken tools, Tobi asked a fundamental question: <strong>“Why should building an online store be this painful?”</strong></p>
+      <p>As a software engineer, he realized this wasn’t just a personal hurdle. Millions of entrepreneurs were facing the exact same roadblock.</p>
+
+      <div class="feature-point">
+        <h5>💡 The Key Realization</h5>
+        <p>When existing tools are broken, building a better alternative isn't just a workaround—it can be a massive business opportunity.</p>
+      </div>
+
+      <h3>3. From Snowdevil to Shopify</h3>
+      <p>Tobi pivoted. He built his own custom software from scratch using Ruby on Rails to run Snowdevil.</p>
+
+      <div class="text-center my-4">
+        <img src="${blog121}" alt="Tobi Lütke at Shopify Headquarters" class="img-fluid rounded shadow" style="max-height: 350px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Building the platform that now powers millions of merchants worldwide.</small></p>
+      </div>
+
+      <p>Once it was up and running, the real breakthrough struck: <strong>the software he built for himself was far more valuable than the snowboards he was selling.</strong></p>
+      
+      <p class="highlight-box">If it solved his headache, it could solve it for every aspiring merchant on earth. That custom code became the foundation of Shopify.</p>
+
+      <h3>4. The Real Lesson</h3>
+      <p>Tobi didn’t start out with a grand plan to build a trillion-dollar e-commerce titan. He was simply scratching his own itch.</p>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>🔍 Real Frustrations</h5>
+          <p>The best business opportunities rarely appear out of thin air; they hide inside real frustrations.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🛠️ Infrastructure Solutions</h5>
+          <p>When existing infrastructure holds you back, building the solution can become your real business.</p>
+        </div>
+      </div>
+
+      <div class="tip-section">
+        <h5>💡 Key Takeaway for Builders</h5>
+        <p>Don’t just look for clever ideas—look for painful problems worth solving.</p>
+      </div>
+
+      <div class="conclusion">
+        <h4>🎯 Final Thought</h4>
+        <p><strong>The obstacle in your path isn’t always a dead end. Sometimes, it’s the blueprint for your greatest breakthrough.</strong></p>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-11",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["Shopify", "TobiLutke", "Startup", "Innovation", "Ecommerce", "Pivot", "BusinessLessons", "StartupJourney"],
+    additionalImages: [blog121, blog122, blog123]
   },
 ];
 
