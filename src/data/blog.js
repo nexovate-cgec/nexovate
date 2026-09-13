@@ -9,6 +9,7 @@ import Blog8 from "../assets/Blogs/Blog91.jpeg";
 import Blog9 from "../assets/Blogs/Blog101.jpeg";
 import Blog10 from "../assets/Blogs/Blog111.jpeg";
 import Blog11 from "../assets/Blogs/Blog121.jpeg";
+import Blog12 from "../assets/Blogs/Blog131.jpg";
 
 export const blogData = [
   {
@@ -242,6 +243,32 @@ export const blogData = [
     `,
     author: "CGEC E-Cell Team",
     date: "2026-09-11",
+    category: "Startup Stories",
+    readTime: "5 min read"
+  },
+  {
+    id: 12,
+    slug: "when-everyone-thought-her-idea-was-weird",
+    title: "When Everyone Thought Her Idea Was Weird: The Story of Sara Blakely & Spanx",
+    img: Blog12,
+    desc: "What if the idea people laughed at and dismissed turned out to be worth a billion dollars? Discover how Sara Blakely turned a $5,000 investment into the global empire known as Spanx.",
+    fullContent: `
+      <p>What if the idea people laughed at and dismissed turned out to be worth a billion dollars? For Sara Blakely, it began with a very ordinary frustration: she wanted to wear white trousers without visible underwear lines.</p>
+      
+      <h3>The Idea Nobody Expected</h3>
+      <p>Sara had zero background in fashion, manufacturing, or product design—she was selling fax machines door-to-door. She invested her entire life savings of $5,000 into prototyping the idea and began pitching hosiery mill owners, receiving laughter and blank stares in response.</p>
+      
+      <h3>Building Against the Odds</h3>
+      <p>Sara didn't mistake rejection for failure. With no investors or marketing budget, she wrote her own patent using a textbook, cold-called manufacturers, and personally demoed the product to department store buyers.</p>
+      
+      <h3>The Breakthrough</h3>
+      <p>That footless pantyhose prototype became Spanx. Word-of-mouth exploded, transforming Spanx into a multi-billion-dollar global empire and making Sara one of the world's youngest self-made female billionaires.</p>
+      
+      <h3>The Real Lesson</h3>
+      <p>Being doubted doesn't mean you're wrong—often, it just means you're first. If you solve a real pain point, the market will find you.</p>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-13",
     category: "Startup Stories",
     readTime: "5 min read"
   },

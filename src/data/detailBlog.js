@@ -36,6 +36,10 @@ import blog112 from "../assets/Blogs/Blog112.jpeg";
 import blog121 from "../assets/Blogs/Blog121.jpeg";
 import blog122 from "../assets/Blogs/Blog122.jpeg";
 import blog123 from "../assets/Blogs/Blog123.jpeg";
+import blog131 from "../assets/Blogs/Blog131.jpg";
+import blog132 from "../assets/Blogs/Blog132.jpg";
+import blog133 from "../assets/Blogs/Blog133.jpg";
+import blog134 from "../assets/Blogs/Blog134.jpg";
 
 export const blogData = [
   {
@@ -824,6 +828,90 @@ export const blogData = [
     category: "Startup Stories",
     tags: ["Shopify", "TobiLutke", "Startup", "Innovation", "Ecommerce", "Pivot", "BusinessLessons", "StartupJourney"],
     additionalImages: [blog121, blog122, blog123]
+  },
+  {
+    id: 12,
+    slug: "when-everyone-thought-her-idea-was-weird",
+    title: "When Everyone Thought Her Idea Was Weird: The Story of Sara Blakely & Spanx",
+    img: blog131,
+    desc: "What if the idea people laughed at and dismissed turned out to be worth a billion dollars? Discover how Sara Blakely turned a $5,000 investment into the global empire known as Spanx.",
+    fullContent: `
+      <p class="lead">What if the idea people laughed at and dismissed turned out to be worth a billion dollars? For <strong>Sara Blakely</strong>, it began with a very ordinary frustration: she wanted to wear a pair of cream pants without visible underwear lines.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog131}" alt="When Everyone Thought Her Idea Was Weird - Sara Blakely Spanx Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Sara Blakely wanted to solve an everyday problem. She asked: What if I could create something better?</small></p>
+      </div>
+
+      <h3>1. The Idea Nobody Expected</h3>
+      <p>Sara wasn’t a fashion designer. She had zero background in manufacturing, retail, or product design. She was selling fax machines door-to-door.</p>
+      <p>She invested her entire life savings of $5,000 into prototyping the idea and began pitching hosiery mill owners.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog132}" alt="No Industry. No Network. No Guarantee. Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Rejection is data, not defeat. Sara didn't mistake rejection for failure.</small></p>
+      </div>
+
+      <div class="feature-point">
+        <h5>⚠️ The Initial Reaction</h5>
+        <p>Laughter and blank stares. Most manufacturers (predominantly male) didn't understand the problem, let alone see the business potential.</p>
+      </div>
+
+      <h3>2. Building Against the Odds</h3>
+      <p>Sara didn't mistake rejection for failure. With no investors, no marketing budget, and no industry connections, she took matters into her own hands:</p>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h5>📜 DIY Patent</h5>
+          <p>Wrote her own patent using a textbook to save legal fees.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>📞 Relentless Cold Calls</h5>
+          <p>Cold-called manufacturers until one agreed to give her a shot.</p>
+        </div>
+        <div class="benefit-item">
+          <h5>🛍️ In-Person Demos</h5>
+          <p>Personally demoed the product to department store buyers.</p>
+        </div>
+      </div>
+
+      <div class="text-center my-5">
+        <img src="${blog133}" alt="She Kept Testing The Idea Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>From Problem → Experiment → Product → Business. Keep testing until it works.</small></p>
+      </div>
+
+      <p class="highlight-box">There was no big team behind her—just relentless belief in solving a real, everyday problem.</p>
+
+      <h3>3. The Breakthrough</h3>
+      <p>That footless pantyhose prototype became <strong>Spanx</strong>.</p>
+      <p>Once women tried it, word-of-mouth exploded. From Oprah’s Favorite Things to luxury department stores, Spanx transformed into a multi-billion-dollar global empire, making Sara one of the world's youngest self-made female billionaires.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog134}" alt="Being Laughed At Doesn't Mean You're Wrong Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Being laughed at doesn't mean you're wrong. Sometimes, it means you're early.</small></p>
+      </div>
+
+      <div class="tip-section">
+        <h5>💡 The Real Lesson</h5>
+        <p>Entrepreneurship doesn’t require a breakthrough in advanced tech. Often, it just requires the courage to solve a simple, overlooked problem that others dismiss.</p>
+      </div>
+
+      <div class="conclusion">
+        <h4>🎯 Final Takeaways</h4>
+        <ul>
+          <li>You don’t need an industry background to disrupt an industry.</li>
+          <li>Being doubted doesn't mean you’re wrong—often, it just means you're first.</li>
+          <li>If you solve a real pain point, the market will find you.</li>
+          <li>The idea everyone calls "weird" today might be the one everyone wishes they backed tomorrow.</li>
+        </ul>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-13",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["Spanx", "SaraBlakely", "Startup", "Innovation", "WomenInBusiness", "Persistence", "BusinessLessons"],
+    additionalImages: [blog131, blog132, blog133, blog134]
   },
 ];
 
