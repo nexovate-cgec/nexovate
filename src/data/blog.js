@@ -10,6 +10,7 @@ import Blog9 from "../assets/Blogs/Blog101.jpeg";
 import Blog10 from "../assets/Blogs/Blog111.jpeg";
 import Blog11 from "../assets/Blogs/Blog121.jpeg";
 import Blog12 from "../assets/Blogs/Blog131.jpg";
+import Blog13 from "../assets/Blogs/Blog142.jpeg";
 
 export const blogData = [
   {
@@ -269,6 +270,37 @@ export const blogData = [
     `,
     author: "CGEC E-Cell Team",
     date: "2026-09-13",
+    category: "Startup Stories",
+    readTime: "5 min read"
+  },
+  {
+    id: 13,
+    slug: "when-everyone-said-no-the-jack-ma-story",
+    title: "When Everyone Said No: The Jack Ma Story",
+    img: Blog13,
+    desc: "What if you were rejected so many times that “no” became normal—yet you still pursued an idea almost nobody understood? Discover how Jack Ma turned endless rejections into Alibaba.",
+    fullContent: `
+      <p>What if you were rejected so many times that “no” became normal—yet you still pursued an idea almost nobody understood?</p>
+      <p>That’s the story of <strong>Jack Ma</strong>.</p>
+
+      <h3>Before Alibaba</h3>
+      <p>Long before becoming a global business icon, Jack Ma was defined by rejection: he failed his college entrance exam multiple times, was turned down for dozens of jobs, and in his most famous story, was the only 1 of 24 applicants rejected by KFC in his city. His early business ventures flopped. Nothing about his early life hinted at a future billionaire.</p>
+
+      <h3>Discovering the Internet</h3>
+      <p>In the mid-1990s, Jack encountered the internet during a trip to the US. When he searched for Chinese beer and found zero results, an insight struck him: China’s manufacturers needed a digital gateway to reach global buyers. At a time when computers and internet access were rare in China, proposing an online B2B marketplace sounded absurd to almost everyone.</p>
+
+      <h3>Building From an Apartment</h3>
+      <p>In 1999, Jack gathered 17 friends in his small Hangzhou apartment and founded Alibaba. There was no established e-commerce infrastructure, no online payment trust, and plenty of venture rejections. For the first three years, Alibaba made zero revenue. Yet, Jack’s long history with rejection became his biggest strength: he was completely immune to hearing "no."</p>
+
+      <h3>The Breakthrough</h3>
+      <p>They built trust step-by-step, created Alipay to solve transaction doubt, and steadily connected local suppliers with buyers worldwide. Alibaba went on to complete one of the largest IPOs in global financial history. The man who couldn’t get hired at a fast-food counter ended up building a digital ecosystem that employs and empowers millions.</p>
+
+      <h3>The Real Lesson</h3>
+      <p>Jack Ma didn't succeed because rejection guarantees a happy ending. He succeeded because he treated rejection as an event, not an identity.</p>
+      <p>Rejection only closes one specific door—not your entire future. You don’t need the crowd to believe in your vision from day one; you just need enough belief to take the next step. Whether a "no" becomes a full stop or just a comma is entirely up to you. They can reject your application. They can doubt your idea. But they can never decide how far you go.</p>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-14",
     category: "Startup Stories",
     readTime: "5 min read"
   },
