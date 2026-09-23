@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Container, Row, Col, Button, Card, Badge } from "react-bootstrap";
 import {
   ArrowLeft, Calendar, GeoAlt, Clock, Share, Instagram, Linkedin, Youtube,
-  CheckCircleFill, LightningChargeFill, TrophyFill, ShieldCheck, TelephoneFill, Check2
+  CheckCircleFill, LightningChargeFill, TrophyFill, ShieldCheck, TelephoneFill, Check2, CashStack, GiftFill
 } from "react-bootstrap-icons";
 import { useTheme } from "../contexts/ThemeContext";
 import { getEventById } from "../data/events";
@@ -104,6 +104,7 @@ const EventDetail = () => {
         </div>
 
         <Row className="g-4">
+          {/* Main Content Column */}
           <Col lg={8}>
             <Card className="mb-4 shadow-sm" style={{ backgroundColor: cardBg, color: textColor, border: `2px solid ${goldenColor}`, borderRadius: "12px" }}>
               <Card.Body className="p-4 p-md-5">
@@ -162,79 +163,105 @@ const EventDetail = () => {
             </Card>
           </Col>
 
+          {/* Sticky Sidebar Column */}
           <Col lg={4}>
-            <Card className="shadow-sm" style={{ backgroundColor: cardBg, color: textColor, border: `2px solid ${goldenColor}`, borderRadius: "12px", position: "sticky", top: "90px" }}>
-              <Card.Body className="p-4">
-                <h5 className="fw-bold border-bottom pb-3 mb-4" style={{ color: goldenColor, borderColor: goldenColor }}>
-                  Quick Action
-                </h5>
+            <div 
+              style={{ 
+                position: "sticky", 
+                top: "90px", 
+                maxHeight: "calc(100vh - 110px)", 
+                overflowY: "auto",
+                paddingRight: "4px"
+              }}
+            >
+              <Card className="shadow-sm mb-4" style={{ backgroundColor: cardBg, color: textColor, border: `2px solid ${goldenColor}`, borderRadius: "12px" }}>
+                <Card.Body className="p-4">
+                  <h5 className="fw-bold border-bottom pb-3 mb-4" style={{ color: goldenColor, borderColor: goldenColor }}>
+                    Quick Action
+                  </h5>
 
-                <div className="mb-4">
-                  <small className="text-uppercase fw-bold" style={{ color: secondaryTextColor, opacity: 0.8, fontSize: "0.75rem" }}>Status</small>
-                  <div className="mt-1">
-                    <Badge style={{ backgroundColor: event.status === "Completed" ? "#28a745" : goldenColor, color: "white", fontWeight: "600", padding: "8px 14px", borderRadius: "8px" }}>
-                      <CheckCircleFill className="me-1" size={13} /> {event.status}
-                    </Badge>
+                  <div className="mb-3 d-flex justify-content-between align-items-center">
+                    <div>
+                      <small className="text-uppercase fw-bold d-block" style={{ color: secondaryTextColor, opacity: 0.8, fontSize: "0.75rem" }}>Status</small>
+                      <Badge style={{ backgroundColor: event.status === "Completed" ? "#28a745" : goldenColor, color: "white", fontWeight: "600", padding: "6px 12px", borderRadius: "8px" }} className="mt-1">
+                        <CheckCircleFill className="me-1" size={12} /> {event.status}
+                      </Badge>
+                    </div>
+
+                    {event.fee && (
+                      <div className="text-end">
+                        <small className="text-uppercase fw-bold d-block" style={{ color: secondaryTextColor, opacity: 0.8, fontSize: "0.75rem" }}>Reg Fee</small>
+                        <span className="fw-bold text-success" style={{ fontSize: "1rem" }}>
+                          <CashStack className="me-1" /> {event.fee}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                </div>
 
-                {event.status.toLowerCase() === "upcoming" ? (
-                  <Link to={`/apply/${event.id}`} state={{ eventTitle: event.title }} className="text-decoration-none">
-                    <Button style={{ backgroundColor: goldenColor, borderColor: goldenColor, color: "white", borderRadius: "20px", padding: "10px", fontWeight: "600", width: "100%" }}>
-                      Register Now
+                  {event.goodies && (
+                    <div className="p-2 mb-3 rounded-2 small fw-semibold text-center" style={{ backgroundColor: innerCardBg, border: `1px solid ${goldenColor}`, color: goldenColor }}>
+                      <GiftFill className="me-1" /> {event.goodies}
+                    </div>
+                  )}
+
+                  {event.status.toLowerCase() === "upcoming" ? (
+                    <Link to={`/apply/${event.id}`} state={{ eventTitle: event.title }} className="text-decoration-none">
+                      <Button style={{ backgroundColor: goldenColor, borderColor: goldenColor, color: "white", borderRadius: "20px", padding: "10px", fontWeight: "600", width: "100%" }}>
+                        Register Now
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button disabled style={{ backgroundColor: "#6c757d", borderColor: "#6c757d", color: "white", borderRadius: "20px", padding: "10px", fontWeight: "600", width: "100%" }}>
+                      {event.compleOrNot || "Event Finished"}
                     </Button>
-                  </Link>
-                ) : (
-                  <Button disabled style={{ backgroundColor: "#6c757d", borderColor: "#6c757d", color: "white", borderRadius: "20px", padding: "10px", fontWeight: "600", width: "100%" }}>
-                    {event.compleOrNot || "Event Finished"}
-                  </Button>
-                )}
+                  )}
 
-                {event.prizes && event.prizes.length > 0 && (
-                  <div className="mt-4 pt-3 border-top" style={{ borderColor: goldenColor }}>
-                    <h6 className="fw-bold mb-3 d-flex align-items-center" style={{ color: goldenColor }}>
-                      <TrophyFill className="me-2" /> Rewards & Perks
-                    </h6>
-                    {event.prizes.map((prize, index) => (
-                      <div key={index} className="p-2 mb-2 rounded-2 small fw-semibold" style={{ backgroundColor: innerCardBg, border: `1px solid ${goldenColor}`, color: textColor }}>
-                        🎁 {prize}
-                      </div>
-                    ))}
+                  {event.prizes && event.prizes.length > 0 && (
+                    <div className="mt-4 pt-3 border-top" style={{ borderColor: goldenColor }}>
+                      <h6 className="fw-bold mb-3 d-flex align-items-center" style={{ color: goldenColor }}>
+                        <TrophyFill className="me-2" /> Rewards & Perks
+                      </h6>
+                      {event.prizes.map((prize, index) => (
+                        <div key={index} className="p-2 mb-2 rounded-2 small fw-semibold" style={{ backgroundColor: innerCardBg, border: `1px solid ${goldenColor}`, color: textColor }}>
+                          🎁 {prize}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {event.contacts && event.contacts.length > 0 && (
+                    <div className="mt-4 pt-3 border-top" style={{ borderColor: goldenColor }}>
+                      <h6 className="fw-bold mb-3 d-flex align-items-center" style={{ color: goldenColor }}>
+                        <TelephoneFill className="me-2" /> Contacts
+                      </h6>
+                      {event.contacts.map((contact, index) => (
+                        <div key={index} className="small mb-2" style={{ color: secondaryTextColor }}>
+                          <strong style={{ color: textColor }}>{contact.name}:</strong> <br /> {contact.number}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </Card.Body>
+              </Card>
+
+              <Card className="shadow-sm" style={{ backgroundColor: cardBg, color: textColor, border: `2px solid ${goldenColor}`, borderRadius: "12px" }}>
+                <Card.Body className="p-3 text-center">
+                  <h6 className="fw-bold mb-1" style={{ color: goldenColor }}>Connect with E-Cell CGEC</h6>
+                  <p className="small mb-2" style={{ color: secondaryTextColor, opacity: 0.8 }}>Stay updated on upcoming opportunities</p>
+                  <div className="d-flex justify-content-center gap-2">
+                    <a href="https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" target="_blank" rel="noopener noreferrer" className="btn btn-sm rounded-circle" style={{ backgroundColor: innerCardBg, color: textColor, border: `1px solid ${goldenColor}` }}>
+                      <Instagram style={{ color: "#e1306c" }} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/nexovate-ecell-041104374" target="_blank" rel="noopener noreferrer" className="btn btn-sm rounded-circle" style={{ backgroundColor: innerCardBg, color: textColor, border: `1px solid ${goldenColor}` }}>
+                      <Linkedin style={{ color: "#0a66c2" }} />
+                    </a>
+                    <a href="https://youtube.com/@nexovatecgec" target="_blank" rel="noopener noreferrer" className="btn btn-sm rounded-circle" style={{ backgroundColor: innerCardBg, color: textColor, border: `1px solid ${goldenColor}` }}>
+                      <Youtube style={{ color: "#ff0000" }} />
+                    </a>
                   </div>
-                )}
-
-                {event.contacts && event.contacts.length > 0 && (
-                  <div className="mt-4 pt-3 border-top" style={{ borderColor: goldenColor }}>
-                    <h6 className="fw-bold mb-3 d-flex align-items-center" style={{ color: goldenColor }}>
-                      <TelephoneFill className="me-2" /> Contacts
-                    </h6>
-                    {event.contacts.map((contact, index) => (
-                      <div key={index} className="small mb-2" style={{ color: secondaryTextColor }}>
-                        <strong style={{ color: textColor }}>{contact.name}:</strong> <br /> {contact.number}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </Card.Body>
-            </Card>
-
-            <Card className="shadow-sm" style={{ backgroundColor: cardBg, color: textColor, border: `2px solid ${goldenColor}`, borderRadius: "12px", marginTop: "1.5rem" }}>
-              <Card.Body className="p-4 text-center">
-                <h6 className="fw-bold mb-1" style={{ color: goldenColor }}>Connect with E-Cell CGEC</h6>
-                <p className="small mb-3" style={{ color: secondaryTextColor, opacity: 0.8 }}>Stay updated on upcoming opportunities</p>
-                <div className="d-flex justify-content-center gap-2">
-                  <a href="https://www.instagram.com/_nexovate_ecell/?igsh=MTNpZTB0N3gzYXRvZg%3D%3D#" target="_blank" rel="noopener noreferrer" className="btn btn-sm rounded-circle" style={{ backgroundColor: innerCardBg, color: textColor, border: `1px solid ${goldenColor}` }}>
-                    <Instagram style={{ color: "#e1306c" }} />
-                  </a>
-                  <a href="https://www.linkedin.com/in/nexovate-ecell-041104374" target="_blank" rel="noopener noreferrer" className="btn btn-sm rounded-circle" style={{ backgroundColor: innerCardBg, color: textColor, border: `1px solid ${goldenColor}` }}>
-                    <Linkedin style={{ color: "#0a66c2" }} />
-                  </a>
-                  <a href="https://youtube.com/@nexovatecgec" target="_blank" rel="noopener noreferrer" className="btn btn-sm rounded-circle" style={{ backgroundColor: innerCardBg, color: textColor, border: `1px solid ${goldenColor}` }}>
-                    <Youtube style={{ color: "#ff0000" }} />
-                  </a>
-                </div>
-              </Card.Body>
-            </Card>
+                </Card.Body>
+              </Card>
+            </div>
           </Col>
         </Row>
       </Container>
