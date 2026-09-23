@@ -231,12 +231,7 @@ export const events = [
     "Startup Kit (Includes Business Model Canvas & more)",
     "Exciting Goodies worth ₹600 for all registered participants"
   ],
-  timeline: [
-    { time: "Session 1", title: "Introduction & Team Formation" },
-    { time: "Session 2", title: "Idea Generation & Business Model Canvas (BMC)" },
-    { time: "Session 3", title: "Finance & Startup Development Insights" },
-    { time: "Session 4", title: "Pitching Workshop, QnA & Certification" }
-  ],
+ 
   rules: [
     "Registration fee is ₹800 per participant.",
     "Open to all students interested in entrepreneurship and startup building.",
