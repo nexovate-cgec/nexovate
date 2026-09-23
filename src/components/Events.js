@@ -5,14 +5,15 @@ import { useTheme } from "../contexts/ThemeContext";
 import { events } from "../data/events";
 
 const truncateWords = (text, wordLimit) => {
+  if (!text) return "";
   const words = text.split(" ");
   return words.length > wordLimit ? words.slice(0, wordLimit).join(" ") + "..." : text;
 };
 
 const Events = () => {
   const { isDark } = useTheme(); 
-  
-  const displayedEvents = events.slice(0, 4);
+
+  const displayedEvents = [...events].reverse().slice(0, 4);
   const totalEvents = events.length;
 
   const sectionBg = isDark ? "var(--dark-bg, #121212)" : "white";
@@ -136,7 +137,7 @@ const Events = () => {
                       style={{ color: textColor, fontSize: "0.85rem", opacity: "0.9" }}
                       className="flex-grow-1"
                     >
-                      {truncateWords(event.description, 15)}
+                      {truncateWords(event.overview || event.description, 15)}
                     </Card.Text>
 
                     <div className="mt-auto">

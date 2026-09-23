@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import "./NoticeSlider.css";
 
 const notices = [
+  
   {
-    title: "🚀 Upcoming Event",
-    message: "EUREKA! 2026.",
+    title: "🚀 Illuminate Workshop 2026",
+    message: "Illuminate 2026.",
     linkText: "Register Now",
-    linkUrl: "/eureka-2026",
+    linkUrl: "/apply/illuminate",
   },
 ];
 
