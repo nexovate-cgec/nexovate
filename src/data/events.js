@@ -34,7 +34,10 @@ export const events = [
       { time: "03:30 PM", title: "Winner Announcement" }
     ],
     prizes: ["Funding Mentorship", "Direct Entry to State Incubation Program"],
-    contacts: [{ name: "E-Cell Lead", number: "+91 747 905 9885" }]
+    contacts: [
+       { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
+    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
+    ]
   },
   {
     id: "eureka2k25",
@@ -60,7 +63,10 @@ export const events = [
       { time: "03:30 PM", title: "Felicitation Ceremony" }
     ],
     prizes: ["Best Hardware Project", "Best Software Solution"],
-    contacts: [{ name: "Event Desk", number: "+91 747 905 9885" }]
+    contacts: [
+       { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
+    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
+    ]
   },
   {
     id: "whats-problem",
@@ -86,7 +92,10 @@ export const events = [
       { time: "04:30 PM", title: "Lightning Pitches & Feedback" }
     ],
     prizes: ["Certificate of Merit", "Exclusive Mentorship Voucher"],
-    contacts: [{ name: "Workshop Host", number: "+91 747 905 9885" }]
+    contacts: [
+       { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
+    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
+    ]
   },
   {
     id: "social-media",
@@ -139,7 +148,10 @@ export const events = [
       { time: "07:45 PM", title: "Open Floor Q&A" }
     ],
     prizes: ["Participation E-Certificates"],
-    contacts: [{ name: "E-Cell CGEC", number: "+91747 905 9885" }]
+    contacts: [
+       { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
+    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
+    ]
   },
   {
     id: "b-plan",
@@ -169,8 +181,8 @@ export const events = [
     ],
     prizes: ["Winner & Runner-up Trophies", "Mentorship Incubation Seat", "Certificates of Excellence"],
     contacts: [
-      { name: "Event Lead", number: "+91 747 905 9885" },
-      { name: "Registration Coordinator", number: "+91 9733091268" }
+       { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
+    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
     ]
   },
   {
@@ -201,8 +213,8 @@ export const events = [
     ],
     prizes: ["Grand Champion Trophy + Cash Prize", "Runner Up Award", "Best Sustainable Innovation Special Prize"],
     contacts: [
-      { name: "Student Coordinator", number: "+91 747 905 9885" },
-      { name: "Tech Lead", number: "+91 9733091268" }
+       { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
+    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
     ]
   },
   
@@ -244,8 +256,8 @@ export const events = [
     "Direct learning and mentorship from experts and real entrepreneurs"
   ],
   contacts: [
-    { name: "E-Cell IIT Bombay Desk", number: "+91 747 905 9885" },
-    { name: "E-Cell CGEC Coordinator", number: "+91 9733091268" }
+    { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
+    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
   ]
 }
 ];
