@@ -11,6 +11,7 @@ import Blog10 from "../assets/Blogs/Blog111.jpeg";
 import Blog11 from "../assets/Blogs/Blog121.jpeg";
 import Blog12 from "../assets/Blogs/Blog131.jpg";
 import Blog13 from "../assets/Blogs/Blog142.jpeg";
+import Blog14 from "../assets/Blogs/Blog151.png";
 
 export const blogData = [
   {
@@ -304,6 +305,35 @@ export const blogData = [
     category: "Startup Stories",
     readTime: "5 min read"
   },
+  {
+    id: 14,
+    slug: "from-a-harvard-dorm-room-to-facebook",
+    title: "From a Harvard Dorm Room to Facebook: The Mark Zuckerberg Story",
+    img: Blog14,
+    desc: "What if a simple campus experiment became a global social network used by billions? Discover how Mark Zuckerberg turned a Harvard dorm room idea into Facebook.",
+    fullContent: `
+      <p>What if a simple campus experiment became a global social network used by billions? That’s the story of Mark Zuckerberg and the rise of Facebook.</p>
+
+      <h3>The Beginning</h3>
+      <p>In 2004, Mark Zuckerberg was just a Harvard student studying computer science and psychology. Like many students, he was experimenting with ideas and writing code in his dorm room. He noticed that students wanted an easier way to know and connect with people around them. That simple observation became the starting point for what would later become Facebook.</p>
+
+      <h3>The First Step</h3>
+      <p>On February 4, 2004, Zuckerberg, along with Eduardo Saverin, Dustin Moskovitz, and Chris Hughes, launched thefacebook.com at Harvard. It was nothing like the massive platform we know today—simply a website where students could create profiles and connect. The response was immediate—students started joining rapidly, showing that the idea solved a real problem.</p>
+
+      <h3>Beyond Harvard & The Turning Point</h3>
+      <p>What started on one campus soon moved beyond it. Facebook expanded to other universities, and by the end of 2004, it had reached around one million active users. In 2006, Facebook opened its doors beyond universities to anyone with a valid email address. The idea transformed from "connecting college students" to "connecting people," introducing news feeds, advertising tools, and developer platforms.</p>
+
+      <h3>The Billion-Dollar Breakthrough</h3>
+      <p>Facebook continued growing rapidly, attracting major investments and expanding its products. In May 2012, Facebook reached a historic milestone by becoming a publicly traded company. Its IPO raised billions of dollars, completing the transformation from a dorm-room experiment to a global tech giant.</p>
+
+      <h3>The Student Entrepreneur Lesson</h3>
+      <p><strong>Don’t wait for the perfect idea. Start with a problem around you.</strong> Your Point A may look small today, but you never know where it can take you[cite: 3].</p>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-20",
+    category: "Startup Stories",
+    readTime: "5 min read"
+  }
 
 ];
 

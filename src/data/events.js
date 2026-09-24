@@ -221,7 +221,7 @@ export const events = [
     {
   id: "illuminate",
   title: "Illuminate Workshop 2026",
-  subtitle: "In Association with E-Cell, IIT Bombay & Nexovate",
+  subtitle: "In Association with E-Cell, IIT Bombay & CGEC E-cell (NEXOVATE)",
   category: "Workshop & Entrepreneurship",
   date: "TBD (To Be Notified Later)",
   time: "To Be Announced",
@@ -257,7 +257,7 @@ export const events = [
   ],
   contacts: [
     { name: "E-Cell Coordinator", number: "+91 9733091268 (Satyajit Roy)" },
-    { name: "E-Cell Coordinator ", number: "+91 747 905 9885 (Rishav Prasad)" },
+    { name: "E-Cell Coordinator ", number: "+91 9907104189 (Debojit Sarkar)" },
   ]
 }
 ];

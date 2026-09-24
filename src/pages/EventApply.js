@@ -285,7 +285,7 @@ const EventApply = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="name@example.com"
+                        placeholder="name@gmail.com"
                         required
                         style={{ backgroundColor: inputBg, color: textColor, borderColor: inputBorder, padding: "13px 16px", borderRadius: "10px" }}
                       />
@@ -369,7 +369,7 @@ const EventApply = () => {
                         name="dept"
                         value={formData.dept}
                         onChange={handleChange}
-                        placeholder="e.g. Computer Science Engineering, ECE, ME"
+                        placeholder="e.g. CSE, ECE, ME"
                         required
                         style={{ backgroundColor: inputBg, color: textColor, borderColor: inputBorder, padding: "13px 16px", borderRadius: "10px" }}
                       />
@@ -383,7 +383,7 @@ const EventApply = () => {
                       </h5>
 
                       <div className="text-center p-3 rounded-3 mb-4 bg-white shadow-sm" style={{ maxWidth: "340px", margin: "0 auto" }}>
-                        <div className="fw-bold text-dark mb-1 fs-5">Satyajit Roy</div>
+                        <div className="fw-bold text-dark mb-1 fs-5">Mr. Satyajit Roy</div>
                         <div className="p-2 border rounded-3 bg-light d-inline-block">
                           <div className="d-flex flex-column align-items-center justify-content-center p-3" style={{ border: "2px dashed #cbd5e1", borderRadius: "8px" }}>
                            <div className="p-2 border rounded-3 bg-light d-inline-block">

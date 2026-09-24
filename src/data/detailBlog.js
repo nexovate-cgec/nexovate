@@ -43,6 +43,9 @@ import blog134 from "../assets/Blogs/Blog134.jpg";
 import blog141 from "../assets/Blogs/Blog141.jpeg";
 import blog142 from "../assets/Blogs/Blog142.jpeg";
 import blog143 from "../assets/Blogs/Blog143.jpeg";
+import blog151 from "../assets/Blogs/Blog151.png";
+import blog152 from "../assets/Blogs/Blog152.jpeg";
+import blog153 from "../assets/Blogs/Blog153.jpeg";
 
 export const blogData = [
   {
@@ -1006,6 +1009,53 @@ export const blogData = [
     tags: ["JackMa", "Alibaba", "Startup", "Business", "Leadership", "Persistence", "Innovation", "StartupJourney"],
     additionalImages: [blog141, blog142, blog143]
   },
+  {
+    id: 14,
+    slug: "from-a-harvard-dorm-room-to-facebook",
+    title: "From a Harvard Dorm Room to Facebook: The Mark Zuckerberg Story",
+    img: blog151,
+    desc: "What if a simple campus experiment became a global social network used by billions? Discover how Mark Zuckerberg turned a Harvard dorm room idea into Facebook.",
+    fullContent: `
+      <p class="lead">What if a simple campus experiment became a global social network used by billions? That’s the story of Mark Zuckerberg and the rise of Facebook.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog151}" alt="From a Harvard Dorm Room to Facebook Campaign Poster" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>A simple idea. A campus problem. A global impact.</small></p>
+      </div>
+
+      <h3>1. The Beginning</h3>
+      <p>In 2004, Mark Zuckerberg was just a Harvard student studying computer science and psychology. Like many students, he was experimenting with ideas and writing code in his dorm room. He noticed that students wanted an easier way to know and connect with people around them. That simple observation became the starting point for what would later become Facebook.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog153}" alt="One Student, One Idea, One Website" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>Point A: A Harvard dorm room. Point B: Facebook — a global technology company.</small></p>
+      </div>
+
+      <h3>2. The First Step</h3>
+      <p>On February 4, 2004, Zuckerberg, along with Eduardo Saverin, Dustin Moskovitz, and Chris Hughes, launched thefacebook.com at Harvard. It was nothing like the massive platform we know today—simply a website where students could create profiles and connect. The response was immediate, proving the idea solved a real problem.</p>
+
+      <h3>3. Beyond Harvard & The Turning Point</h3>
+      <p>What started on one campus quickly expanded to other universities, reaching around one million active users by the end of 2004. In 2006, Facebook opened its doors beyond universities to anyone with a valid email address. The mission shifted from “connecting college students” to “connecting people,” introducing news feeds, advertising tools, and developer platforms.</p>
+
+      <div class="text-center my-5">
+        <img src="${blog152}" alt="The Turning Point - Facebook Opens to Everyone" class="img-fluid rounded shadow" style="max-height: 480px; width: auto; max-width: 100%;" />
+        <p class="text-muted mt-2"><small>The Turning Point: Opening up to the world and scaling features and developer tools.</small></p>
+      </div>
+
+      <h3>4. The Billion-Dollar Breakthrough</h3>
+      <p>In May 2012, Facebook reached a historic milestone by becoming a publicly traded company with a multi-billion-dollar IPO. The humble dorm-room project had fully evolved into a global technology powerhouse.</p>
+
+      <div class="conclusion">
+        <h4>🎯 The Student Entrepreneur Lesson</h4>
+        <p><strong>Don’t wait for the perfect idea. Start with a problem around you.</strong> Your Point A may look small today, but you never know where it can take you[cite: 3].</p>
+      </div>
+    `,
+    author: "CGEC E-Cell Team",
+    date: "2026-09-24",
+    readTime: "5 min read",
+    category: "Startup Stories",
+    tags: ["Facebook", "MarkZuckerberg", "Harvard", "Startup", "SocialMedia", "TechGiants", "StudentEntrepreneur"]
+  }
 ];
 
 // Helper Functions
