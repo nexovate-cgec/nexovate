@@ -330,7 +330,7 @@ export const blogData = [
       <p><strong>Don’t wait for the perfect idea. Start with a problem around you.</strong> Your Point A may look small today, but you never know where it can take you[cite: 3].</p>
     `,
     author: "CGEC E-Cell Team",
-    date: "2026-09-20",
+    date: "2026-09-24",
     category: "Startup Stories",
     readTime: "5 min read"
   }
