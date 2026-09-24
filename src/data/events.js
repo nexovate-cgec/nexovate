@@ -5,7 +5,7 @@ import Entrepreneurship from "../assets/images/Entrepreneurship.jpg";
 import social from "../assets/images/social.png";
 import thinkLikeEnt from "../assets/Events/Think_Like_an_Entrepreneur/1.jpeg";
 import bPlane from "../assets/Events/bPlane.jpeg";
-import illu from "../assets/Events/illuu.png";
+import illu from "../assets/Events/illuu.jpeg";
 
 export const events = [
   {

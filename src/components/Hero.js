@@ -5,7 +5,7 @@ import './Hero.css';
 import heroImage from '../assets/images/full_team.jpg'; 
 import collegeLogo from '../assets/images/cgec.jpeg'; 
 import ecellLogo from '../assets/images/logo.jpeg'; 
-import sihPoster from '../assets/Events/illuu.png'; 
+import sihPoster from '../assets/Events/illuu.jpeg'; 
 
 const Hero = () => {
   const [showPoster, setShowPoster] = useState(true);
