@@ -14,11 +14,15 @@ import {
   ShieldCheck,
   CreditCardFill,
   CloudUploadFill,
-  
+  Download
 } from "react-bootstrap-icons";
+import { jsPDF } from "jspdf";
 import { useTheme } from "../contexts/ThemeContext";
 import { getEventById } from "../data/events";
 import qrCodeImg from "../assets/Events/image.png";
+
+import logoEcell from "../assets/Events/illuu2.jpeg"; 
+import logoNec from "../assets/Events/illuu1.png"; 
 
 const EventApply = () => {
   const { id } = useParams();
@@ -44,6 +48,7 @@ const EventApply = () => {
     fileType: ""
   });
 
+  const [submittedData, setSubmittedData] = useState(null);
   const [fileNameDisplay, setFileNameDisplay] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -86,6 +91,117 @@ const EventApply = () => {
     reader.readAsDataURL(file);
   };
 
+  const generatePDFReceipt = (data) => {
+    const doc = new jsPDF();
+    const currentDate = new Date().toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    // Top Header Background
+    doc.setFillColor(15, 23, 42); // Dark Navy Blue Background
+    doc.rect(0, 0, 210, 42, "F");
+
+    // Left Logo: E-CELL CGEC
+    try {
+      doc.addImage(logoEcell, "JPEG", 12, 6, 30, 30);
+    } catch (err) {
+      console.log("Error loading E-Cell Logo", err);
+    }
+
+    // Right Logo: NEC 2026
+    try {
+      doc.addImage(logoNec, "JPEG", 163, 8, 35, 26);
+    } catch (err) {
+      console.log("Error loading NEC Logo", err);
+    }
+
+    // Header Text (Centered)
+    doc.setTextColor(255, 255, 255);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.text("REGISTRATION RECEIPT", 105, 20, { align: "center" });
+
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(189, 159, 103);
+    doc.text("ILLUMINATE 2026", 105, 28, { align: "center" });
+
+    // Event Info Section
+    doc.setTextColor(15, 23, 42);
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "bold");
+    doc.text("Event Name:", 20, 54);
+    doc.setFont("helvetica", "normal");
+    doc.text(data.eventName || selectedEventTitle, 60, 54);
+
+    doc.setFont("helvetica", "bold");
+    doc.text("Date:", 20, 62);
+    doc.setFont("helvetica", "normal");
+    doc.text(currentDate, 60, 62);
+
+    // Separator Line
+    doc.setDrawColor(226, 232, 240);
+    doc.line(20, 68, 190, 68);
+
+    // Participant Details Table Header
+    doc.setFillColor(241, 245, 249);
+    doc.rect(20, 74, 170, 10, "F");
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.setTextColor(15, 23, 42);
+    doc.text("PARTICIPANT DETAILS", 25, 81);
+
+    // Details Rows
+    const startY = 94;
+    const lineSpacing = 9;
+
+    const details = [
+      { label: "Full Name:", value: data.name },
+      { label: "Roll Number:", value: data.roll },
+      { label: "Department:", value: data.dept },
+      { label: "Academic Year:", value: data.yr },
+      { label: "Email Address:", value: data.email },
+      { label: "Contact Number:", value: data.contact },
+      { label: "Payment Method:", value: data.paymentMethod },
+      { label: "Transaction / UTR ID:", value: data.txnId || "N/A (Cash)" }
+    ];
+
+    details.forEach((item, index) => {
+      const yPos = startY + index * lineSpacing;
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(100, 116, 139);
+      doc.text(item.label, 25, yPos);
+
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(15, 23, 42);
+      doc.text(String(item.value), 75, yPos);
+    });
+
+    // Outer Box Border
+    doc.setDrawColor(200, 200, 200);
+    doc.rect(20, 74, 170, 98);
+
+    // Status Banner
+    doc.setFillColor(240, 253, 244);
+    doc.setDrawColor(34, 197, 94);
+    doc.roundedRect(20, 182, 170, 14, 3, 3, "FD");
+
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(22, 101, 52);
+    doc.setFontSize(10.5);
+    doc.text("Status: Application Received & Pending Verification", 105, 191, { align: "center" });
+
+    // Footer Text
+    doc.setFont("helvetica", "italic");
+    doc.setFontSize(9);
+    doc.setTextColor(148, 163, 184);
+    doc.text("This is an official computer-generated receipt for event registration.", 105, 210, { align: "center" });
+
+    doc.save(`Receipt_${data.roll || "Registration"}.pdf`);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -116,7 +232,7 @@ const EventApply = () => {
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "text/plain;charset=utf-8",
+          "Content-Type": "text/plain;charset=utf-8"
         },
         body: JSON.stringify(formData)
       });
@@ -131,7 +247,9 @@ const EventApply = () => {
         localStorage.setItem("registered_emails", JSON.stringify(submittedEmails));
         localStorage.setItem("registered_contacts", JSON.stringify(submittedContacts));
 
+        setSubmittedData({ ...formData });
         setSubmitted(true);
+
         setFormData({
           eventName: selectedEventTitle,
           name: "",
@@ -194,12 +312,12 @@ const EventApply = () => {
             </div>
 
             {submitted ? (
-              <div className="text-center py-5 my-3">
+              <div className="text-center py-4 my-2">
                 <div
-                  className="d-inline-flex align-items-center justify-content-center rounded-circle mb-4"
-                  style={{ width: "90px", height: "90px", backgroundColor: "rgba(40, 167, 69, 0.12)", color: "#28a745" }}
+                  className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                  style={{ width: "80px", height: "80px", backgroundColor: "rgba(40, 167, 69, 0.12)", color: "#28a745" }}
                 >
-                  <CheckCircleFill size={52} />
+                  <CheckCircleFill size={48} />
                 </div>
                 <h3 className="fw-bold mb-2" style={{ color: textColor }}>
                   Registration Successful!
@@ -207,13 +325,44 @@ const EventApply = () => {
                 <p className="mb-4 mx-auto" style={{ color: subTextColor, maxWidth: "460px" }}>
                   Thank you for submitting your details for <strong>{selectedEventTitle}</strong>. We have received your application.
                 </p>
-                <Button
-                  onClick={() => setSubmitted(false)}
-                  className="px-4 py-2.5 fw-semibold rounded-3 border-0"
-                  style={{ backgroundColor: primaryAccent, color: "#ffffff" }}
-                >
-                  Register Another Participant
-                </Button>
+
+                {submittedData && (
+                  <div
+                    className="p-3 rounded-3 text-start mb-4 mx-auto"
+                    style={{ backgroundColor: inputBg, border: `1px solid ${inputBorder}`, maxWidth: "480px", fontSize: "0.95rem" }}
+                  >
+                    <div className="d-flex justify-content-between py-1 border-bottom" style={{ borderColor: inputBorder }}>
+                      <span className="fw-semibold" style={{ color: subTextColor }}>Name:</span>
+                      <span className="fw-bold" style={{ color: textColor }}>{submittedData.name}</span>
+                    </div>
+                    <div className="d-flex justify-content-between py-1 border-bottom" style={{ borderColor: inputBorder }}>
+                      <span className="fw-semibold" style={{ color: subTextColor }}>Roll Number:</span>
+                      <span className="fw-bold" style={{ color: textColor }}>{submittedData.roll}</span>
+                    </div>
+                    <div className="d-flex justify-content-between py-1">
+                      <span className="fw-semibold" style={{ color: subTextColor }}>Transaction / UTR ID:</span>
+                      <span className="fw-bold" style={{ color: primaryAccent }}>{submittedData.txnId || "N/A (Cash)"}</span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="d-flex flex-wrap justify-content-center gap-3">
+                  <Button
+                    onClick={() => generatePDFReceipt(submittedData)}
+                    className="px-4 py-2.5 fw-semibold rounded-3 border-0 d-inline-flex align-items-center gap-2"
+                    style={{ backgroundColor: "#28a745", color: "#ffffff" }}
+                  >
+                    <Download size={18} /> Download Receipt (PDF)
+                  </Button>
+
+                  <Button
+                    onClick={() => setSubmitted(false)}
+                    className="px-4 py-2.5 fw-semibold rounded-3 border-0"
+                    style={{ backgroundColor: primaryAccent, color: "#ffffff" }}
+                  >
+                    Register Another Participant
+                  </Button>
+                </div>
               </div>
             ) : (
               <Form onSubmit={handleSubmit}>
@@ -386,13 +535,13 @@ const EventApply = () => {
                         <div className="fw-bold text-dark mb-1 fs-5">Mr. Satyajit Roy</div>
                         <div className="p-2 border rounded-3 bg-light d-inline-block">
                           <div className="d-flex flex-column align-items-center justify-content-center p-3" style={{ border: "2px dashed #cbd5e1", borderRadius: "8px" }}>
-                           <div className="p-2 border rounded-3 bg-light d-inline-block">
-    <img 
-      src={qrCodeImg} 
-      alt="Payment QR Code" 
-      style={{ width: "180px", height: "180px", objectFit: "contain" }} 
-    />
-  </div>
+                            <div className="p-2 border rounded-3 bg-light d-inline-block">
+                              <img 
+                                src={qrCodeImg} 
+                                alt="Payment QR Code" 
+                                style={{ width: "180px", height: "180px", objectFit: "contain" }} 
+                              />
+                            </div>
                             <span className="small text-muted fw-semibold">Scan QR Code</span>
                           </div>
                         </div>
