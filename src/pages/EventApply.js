@@ -17,6 +17,7 @@ import {
   Download
 } from "react-bootstrap-icons";
 import { jsPDF } from "jspdf";
+import QRCode from "qrcode";
 import { useTheme } from "../contexts/ThemeContext";
 import { getEventById } from "../data/events";
 import qrCodeImg from "../assets/Events/image.png";
@@ -91,7 +92,7 @@ const EventApply = () => {
     reader.readAsDataURL(file);
   };
 
-  const generatePDFReceipt = (data) => {
+  const generatePDFReceipt = async (data) => {
     const doc = new jsPDF();
     const currentDate = new Date().toLocaleDateString("en-US", {
       year: "numeric",
@@ -183,21 +184,47 @@ const EventApply = () => {
     doc.setDrawColor(200, 200, 200);
     doc.rect(20, 74, 170, 98);
 
+    // Dynamic QR Code Generation for Verification
+    try {
+      const verificationPayload = JSON.stringify({
+        event: data.eventName || selectedEventTitle,
+        name: data.name,
+        roll: data.roll,
+        email: data.email,
+        txnId: data.txnId || "Cash",
+        verified: true
+      });
+
+      const qrDataUrl = await QRCode.toDataURL(verificationPayload, {
+        width: 150,
+        margin: 1
+      });
+
+      doc.addImage(qrDataUrl, "PNG", 85, 180, 40, 40);
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(8);
+      doc.setTextColor(100, 116, 139);
+      doc.text("Scan for Verificatio", 105, 224, { align: "center" });
+    } catch (err) {
+      console.error("Error generating QR code:", err);
+    }
+
     // Status Banner
     doc.setFillColor(240, 253, 244);
     doc.setDrawColor(34, 197, 94);
-    doc.roundedRect(20, 182, 170, 14, 3, 3, "FD");
+    doc.roundedRect(20, 230, 170, 12, 3, 3, "FD");
 
     doc.setFont("helvetica", "bold");
     doc.setTextColor(22, 101, 52);
-    doc.setFontSize(10.5);
-    doc.text("Status: Application Received & Pending Verification", 105, 191, { align: "center" });
+    doc.setFontSize(10);
+    doc.text("Status: Application Received & Pending Verification", 105, 238, { align: "center" });
 
     // Footer Text
     doc.setFont("helvetica", "italic");
-    doc.setFontSize(9);
+    doc.setFontSize(8);
     doc.setTextColor(148, 163, 184);
-    doc.text("This is an official computer-generated receipt for event registration.", 105, 210, { align: "center" });
+    doc.text("This is an official computer-generated receipt for event registration.", 105, 249, { align: "center" });
 
     doc.save(`Receipt_${data.roll || "Registration"}.pdf`);
   };
@@ -545,9 +572,7 @@ const EventApply = () => {
                             <span className="small text-muted fw-semibold">Scan QR Code</span>
                           </div>
                         </div>
-                        <div className="mt-2 fw-semibold text-primary" style={{ fontSize: "0.9rem" }}>
-                          UPI ID: satyajitroy19599@okicici
-                        </div>
+                       
                         <div className="small text-muted mt-1">Scan to pay with any UPI app</div>
                       </div>
 
