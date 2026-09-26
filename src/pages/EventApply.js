@@ -14,7 +14,8 @@ import {
   ShieldCheck,
   CreditCardFill,
   CloudUploadFill,
-  Download
+  Download,
+  Whatsapp
 } from "react-bootstrap-icons";
 import { jsPDF } from "jspdf";
 import QRCode from "qrcode";
@@ -205,7 +206,7 @@ const EventApply = () => {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(8);
       doc.setTextColor(100, 116, 139);
-      doc.text("Scan for Verificatio", 105, 224, { align: "center" });
+      doc.text("Scan for Verification", 105, 224, { align: "center" });
     } catch (err) {
       console.error("Error generating QR code:", err);
     }
@@ -352,6 +353,33 @@ const EventApply = () => {
                 <p className="mb-4 mx-auto" style={{ color: subTextColor, maxWidth: "460px" }}>
                   Thank you for submitting your details for <strong>{selectedEventTitle}</strong>. We have received your application.
                 </p>
+
+                {/* WhatsApp Group Joining Section */}
+                <div 
+                  className="p-3.5 p-md-4 rounded-4 mb-4 mx-auto text-center" 
+                  style={{ 
+                    backgroundColor: isDark ? "rgba(37, 211, 102, 0.1)" : "#e8f5e9", 
+                    border: "1px dashed #25D366", 
+                    maxWidth: "480px" 
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center gap-2 mb-2 text-success fw-bold fs-5">
+                    <Whatsapp size={24} style={{ color: "#25D366" }} />
+                    <span>Join Official WhatsApp Group</span>
+                  </div>
+                  <p className="small mb-3" style={{ color: subTextColor }}>
+                    Please join the event WhatsApp group for instant updates, announcements, and scheduling info.
+                  </p>
+                  <a
+                    href="https://chat.whatsapp.com/CXZrOGqtiWdDVTJyfmZ3Qp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn fw-bold px-4 py-2.5 rounded-3 border-0 d-inline-flex align-items-center gap-2 text-white shadow-sm"
+                    style={{ backgroundColor: "#25D366" }}
+                  >
+                    <Whatsapp size={20} /> Join WhatsApp Group
+                  </a>
+                </div>
 
                 {submittedData && (
                   <div
