@@ -137,7 +137,6 @@ const JoinUs = () => {
         })
       };
 
-      // Google Apps Script এ ডাটা পাঠানো
       await fetch(GOOGLE_SHEETS_URL, {
         method: "POST",
         mode: "no-cors",

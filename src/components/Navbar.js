@@ -34,7 +34,6 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Active Section Highlighting via Scroll Position (Only on Home Page)
   useEffect(() => {
     if (location.pathname === "/") {
       const sections = [
@@ -185,7 +184,6 @@ const NavBar = () => {
               Initiatives
             </Nav.Link>
 
-            {/* EVENTS LINK */}
             <Nav.Link
               as={Link}
               to="/"
@@ -219,7 +217,6 @@ const NavBar = () => {
               Gallery
             </Nav.Link>
 
-            {/* BLOG LINK (FIXED) */}
             <Nav.Link
               as={Link}
               to="/"

@@ -112,7 +112,6 @@ const Hero = () => {
             </Col>
           </Row>
 
-          {/* Hero Content */}
           <Row className="align-items-center">
             <Col md={6} className="text-center text-md-start pe-md-4">
               <h1 className="hero-title mb-3">
@@ -146,7 +145,6 @@ const Hero = () => {
               </div>
             </Col>
 
-            {/* Right Side Image & Stats */}
             <Col md={6} className="text-center mt-4 mt-md-0">
               <div className="hero-image-container">
                 <img src={heroImage} alt="E-Cell Team" className="hero-image rounded shadow" />

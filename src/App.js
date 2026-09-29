@@ -9,6 +9,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Initiatives from "./components/Initiatives";
 import LoginPage from "./components/LoginPage";
+import StudentProfilePage from "./components/StudentProfilePage";
 import ComingSoon from "./components/ComingSoon";
 
 import Events from "./components/Events";
@@ -57,6 +58,7 @@ function App() {
               <Route path="/events/:id" element={<EventDetail />} />
               <Route path="/apply/:id" element={<EventApply />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/student-profile" element={<StudentProfilePage />} />
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/eureka-2026" element={<ComingSoon />} />
