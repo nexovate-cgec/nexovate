@@ -1,0 +1,483 @@
+:root {
+  --gold-primary: #d4af37;
+  --gold-dark: #b8860b;
+  --gold-light: #fff8dc;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+}
+
+.sponsors-section {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.golden-text {
+  color: var(--gold-primary) !important;
+}
+
+.golden-border {
+  border: 1px solid var(--gold-primary) !important;
+}
+
+.sponsorship-banner-title {
+  background: linear-gradient(135deg, #1f1f1f 0%, #0d0d0d 100%);
+  padding: 12px 32px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px var(--gold-glow);
+}
+
+.sponsorship-banner-title h2 {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.sparkle-icon {
+  font-size: 1.2rem;
+  color: var(--gold-primary);
+}
+
+.sponsor-golden-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-golden-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px var(--gold-glow) !important;
+}
+
+.card-header-wrapper {
+  background: linear-gradient(180deg, #2b2b2b 0%, #1a1a1a 100%);
+  padding: 16px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tier-icon-circle {
+  width: 46px;
+  height: 46px;
+  background-color: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.tier-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.price-pill {
+  background-color: var(--gold-primary);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 3px 18px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.card-body-content {
+  font-size: 0.85rem;
+}
+
+.benefits-heading {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.check-icon {
+  color: var(--gold-primary);
+  font-weight: bold;
+  margin-right: 6px;
+  font-size: 0.85rem;
+}
+
+.in-kind-pill {
+  background-color: rgba(212, 175, 55, 0.1);
+  color: var(--gold-primary);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.in-kind-note {
+  font-style: italic;
+  font-size: 0.75rem;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.collab-btn {
+  background-color: transparent !important;
+  color: var(--gold-primary) !important;
+  border-radius: 10px !important;
+  padding: 8px !important;
+  font-size: 0.85rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.collab-btn:hover {
+  background-color: var(--gold-primary) !important;
+  color: #000000 !important;
+}
+
+.collab-card {
+  border-radius: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.qr-box {
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+.contact-support-box {
+  background-color: rgba(212, 175, 55, 0.05);
+  border: 1px dashed var(--gold-primary);
+}
+
+.collab-submit-btn {
+  background-color: var(--gold-primary) !important;
+  color: #000000 !important;
+}
+
+.collab-submit-btn:hover {
+  background-color: var(--gold-dark) !important;
+  color: #ffffff !important;
+}
+
+.receipt-card {
+  border-radius: 12px;
+}
+
+body:not(.dark-mode) .sponsors-section,
+.navbar-light ~ main #sponsors {
+  background-color: #fdfbf7;
+}
+
+body:not(.dark-mode) .sponsor-golden-card,
+body:not(.dark-mode) .collab-card {
+  background-color: #ffffff !important;
+  color: #121212 !important;
+}
+
+body:not(.dark-mode) .form-label-styled,
+body:not(.dark-mode) .name-header-styled {
+  color: #121212 !important;
+}
+
+body:not(.dark-mode) .subtext-styled {
+  color: #495057 !important;
+}
+
+body:not(.dark-mode) .input-styled {
+  background-color: #ffffff !important;
+  color: #121212 !important;
+  border: 1px solid #ced4da !important;
+}
+
+body:not(.dark-mode) .input-styled::placeholder {
+  color: #6c757d !important;
+}
+
+body:not(.dark-mode) .radio-styled label {
+  color: #121212 !important;
+}
+
+body:not(.dark-mode) .contact-numbers {
+  color: #121212 !important;
+}
+
+body:not(.dark-mode) .back-btn-styled {
+  color: #6c757d !important;
+  border-color: #6c757d !important;
+}
+
+body.dark-mode .sponsors-section,
+.navbar-dark ~ main #sponsors {
+  background-color: #121212;
+}
+
+body.dark-mode .sponsor-golden-card,
+body.dark-mode .collab-card {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .form-label-styled,
+body.dark-mode .name-header-styled {
+  color: #ffffff !important;
+}
+
+body.dark-mode .subtext-styled {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode .input-styled {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  border: 1px solid #444444 !important;
+}
+
+body.dark-mode .input-styled::placeholder {
+  color: #888888 !important;
+}
+
+body.dark-mode .radio-styled label {
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact-numbers {
+  color: #ffffff !important;
+}
+
+body.dark-mode .back-btn-styled {
+  color: #cccccc !important;
+  border-color: #666666 !important;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .printable-receipt, 
+  .printable-receipt * {
+    visibility: visible !important;
+  }
+
+  .printable-receipt {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    border: none !important;
+    box-shadow: none !important;:root {
+  --gold-primary: #d4af37;
+  --gold-dark: #b8860b;
+  --gold-light: #fff8dc;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+}
+
+.golden-text {
+  color: var(--gold-primary) !important;
+}
+
+.golden-border {
+  border: 1px solid var(--gold-primary) !important;
+}
+
+.collab-card {
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.qr-box {
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+.contact-support-box {
+  background-color: rgba(212, 175, 55, 0.05);
+  border: 1px dashed var(--gold-primary);
+}
+
+.collab-submit-btn {
+  background-color: var(--gold-primary) !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.collab-submit-btn:hover {
+  background-color: var(--gold-dark) !important;
+  color: #ffffff !important;
+}
+
+.receipt-card {
+  border-radius: 12px;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.receipt-card * {
+  color: #000000 !important;
+}
+
+.receipt-card .text-primary {
+  color: #0d6efd !important;
+}
+
+.receipt-card .text-muted {
+  color: #6c757d !important;
+}
+
+body:not(.dark-mode) .collab-card,
+body:not([data-theme="dark"]) .collab-card {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+body:not(.dark-mode) .form-label-styled,
+body:not(.dark-mode) .name-header-styled,
+body:not([data-theme="dark"]) .form-label-styled,
+body:not([data-theme="dark"]) .name-header-styled {
+  color: #1a1a1a !important;
+}
+
+body:not(.dark-mode) .subtext-styled,
+body:not([data-theme="dark"]) .subtext-styled {
+  color: #4a4a4a !important;
+}
+
+body:not(.dark-mode) .input-styled,
+body:not([data-theme="dark"]) .input-styled {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #cccccc !important;
+}
+
+body:not(.dark-mode) .input-styled::placeholder,
+body:not([data-theme="dark"]) .input-styled::placeholder {
+  color: #888888 !important;
+}
+
+body:not(.dark-mode) .radio-styled .form-check-label,
+body:not([data-theme="dark"]) .radio-styled .form-check-label {
+  color: #1a1a1a !important;
+}
+
+body:not(.dark-mode) .contact-numbers,
+body:not([data-theme="dark"]) .contact-numbers {
+  color: #1a1a1a !important;
+}
+
+body:not(.dark-mode) .back-btn-styled,
+body:not([data-theme="dark"]) .back-btn-styled {
+  color: #555555 !important;
+  border-color: #888888 !important;
+}
+
+body.dark-mode .collab-card,
+body[data-theme="dark"] .collab-card,
+.dark-mode .collab-card {
+  background-color: #181818 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .form-label-styled,
+body.dark-mode .name-header-styled,
+body[data-theme="dark"] .form-label-styled,
+body[data-theme="dark"] .name-header-styled,
+.dark-mode .form-label-styled,
+.dark-mode .name-header-styled {
+  color: #ffffff !important;
+}
+
+body.dark-mode .subtext-styled,
+body[data-theme="dark"] .subtext-styled,
+.dark-mode .subtext-styled {
+  color: #cccccc !important;
+}
+
+body.dark-mode .input-styled,
+body[data-theme="dark"] .input-styled,
+.dark-mode .input-styled {
+  background-color: #262626 !important;
+  color: #ffffff !important;
+  border: 1px solid #444444 !important;
+}
+
+body.dark-mode .input-styled:focus,
+body[data-theme="dark"] .input-styled:focus,
+.dark-mode .input-styled:focus {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
+}
+
+body.dark-mode .input-styled::placeholder,
+body[data-theme="dark"] .input-styled::placeholder,
+.dark-mode .input-styled::placeholder {
+  color: #aaaaaa !important;
+}
+
+body.dark-mode .radio-styled .form-check-label,
+body[data-theme="dark"] .radio-styled .form-check-label,
+.dark-mode .radio-styled .form-check-label {
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact-numbers,
+body[data-theme="dark"] .contact-numbers,
+.dark-mode .contact-numbers {
+  color: #ffffff !important;
+}
+
+body.dark-mode .back-btn-styled,
+body[data-theme="dark"] .back-btn-styled,
+.dark-mode .back-btn-styled {
+  color: #eeeeee !important;
+  border-color: #777777 !important;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .printable-receipt, 
+  .printable-receipt * {
+    visibility: visible !important;
+  }
+
+  .printable-receipt {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .print-hide,
+  .no-print {
+    display: none !important;
+  }
+}
+  }
+
+  .print-hide,
+  .no-print {
+    display: none !important;
+  }
+}

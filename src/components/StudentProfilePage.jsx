@@ -11,7 +11,7 @@ const StudentProfilePage = () => {
   const [submittedChoice, setSubmittedChoice] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const GOOGLE_SHEET_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+  const GOOGLE_SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzL9xE50RoVs6RqvnUu8T_VqgPaRP0tS2I6pkMKaj5Wg_v7t_1IZEzsmz0y6ksoa4Ho/exec";
 
   useEffect(() => {
     const isStudent = localStorage.getItem("isStudent");

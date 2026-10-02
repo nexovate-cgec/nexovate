@@ -16,7 +16,8 @@ import Events from "./components/Events";
 import Blog from "./components/Blog";
 import Gallery from "./components/Gallery";
 import Team from "./components/Team";
-import Testimonials from "./components/Testimonials";
+import Sponsors from "./components/Sponsors"; 
+import SponsorCollab from "./pages/SponsorCollab";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
 import FloatingJoinButton from "./components/FloatingJoinButton";
@@ -48,7 +49,7 @@ function App() {
                     <Gallery />
                     <Blog />
                     <Team />
-                    <Testimonials />
+                    <Sponsors /> {/* REPLACED <Testimonials /> */}
                     <Footer />
                   </>
                 }
@@ -62,6 +63,7 @@ function App() {
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/eureka-2026" element={<ComingSoon />} />
+              <Route path="/sponsorship-collab" element={<SponsorCollab />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
               <Route

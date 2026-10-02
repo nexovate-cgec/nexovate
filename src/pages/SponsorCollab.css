@@ -1,0 +1,24 @@
+.collab-card {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-radius: 16px;
+}
+
+body:not(.dark-mode) .collab-card {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.qr-box {
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+.collab-submit-btn {
+  background-color: #d4af37 !important;
+  color: #000000 !important;
+}
+
+.collab-submit-btn:hover {
+  background-color: #b8860b !important;
+  color: #ffffff !important;
+}
