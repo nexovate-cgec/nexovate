@@ -274,9 +274,9 @@ const SponsorCollab = () => {
                 <div className="text-center p-3 mb-4 contact-support-box rounded">
                   <h6 className="fw-bold golden-text mb-2">For Any Queries or Assistance, Contact:</h6>
                   <div className="d-flex flex-wrap justify-content-center gap-3 contact-numbers font-monospace fw-bold">
-                    <span>📞 +91 98765 43210</span>
-                    <span>📞 +91 91234 56789</span>
-                    <span>📞 +91 90123 45678</span>
+                    <span>📞 +91 8670126325</span>
+                    <span>📞 +91 7479059885</span>
+                    <span>📞 +91 9907104189</span>
                   </div>
                 </div>
 
