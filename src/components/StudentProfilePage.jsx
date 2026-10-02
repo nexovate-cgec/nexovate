@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Card, Row, Col, Button, Badge, Form, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
+import studentPic from "../assets/Events/OIPg.jpeg"
 
 const StudentProfilePage = () => {
   const navigate = useNavigate();
@@ -109,7 +110,7 @@ const StudentProfilePage = () => {
         <Row className="align-items-center">
           <Col md={4} className="text-center mb-4 mb-md-0">
             <img
-              src={student.profilePic}
+              src={studentPic}
               alt={student.name}
               className="rounded-circle img-fluid shadow"
               style={{
