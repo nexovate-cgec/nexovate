@@ -12,6 +12,7 @@ import Blog11 from "../assets/Blogs/Blog121.jpeg";
 import Blog12 from "../assets/Blogs/Blog131.jpg";
 import Blog13 from "../assets/Blogs/Blog142.jpeg";
 import Blog14 from "../assets/Blogs/Blog151.png";
+import Blog15 from "../assets/Blogs/Blog161.png";
 
 export const blogData = [
   {
@@ -333,7 +334,33 @@ export const blogData = [
     date: "2026-09-24",
     category: "Startup Stories",
     readTime: "5 min read"
-  }
+  },
+  {
+  id: 15,
+  slug: "built-by-a-community-how-reddit-started-from-a-small-idea",
+  title: "Built by a Community: How Reddit Started from a Small Idea",
+  img: Blog15,
+  desc: "Big companies often start with a simple idea. Discover how Steve Huffman, Alexis Ohanian, and Aaron Swartz turned a basic link-sharing platform into a global community.",
+  fullContent: `
+    <p>Many of today's tech giants began not with massive resources, but with a simple, focused idea. In 2005, Steve Huffman, Alexis Ohanian, and Aaron Swartz launched Reddit with a simple premise: a website where people could discuss and share links to interesting content across the web.</p>
+    
+    <h3>How Reddit Started</h3>
+    <p>At its core, the original website was a basic tool. Users could easily share links, vote on submitted content, and discuss or comment on other people's links. The genius of the voting system was that popular content naturally floated to the top based on community interaction.</p>
+
+    <h3>The Role of the Community</h3>
+    <p>Reddit quickly grew beyond a basic forum because it relied heavily on its user base. The introduction of 'subreddits' allowed users to form dedicated communities around specific interests, ranging from technology and gaming to movies, sports, education, and everyday life.</p>
+
+    <h3>From Website to Global Community</h3>
+    <p>Over time, Reddit expanded far beyond its original blueprint. It became a global space where millions from all over the world connect, ask questions, exchange insights, and share knowledge on almost any imaginable topic.</p>
+
+    <h3>The Bigger Lesson</h3>
+    <p>Reddit's journey highlights a fundamental truth about entrepreneurship and technology. While Huffman, Ohanian, and Swartz provided the initial spark, transforming a simple idea into a massive platform required both technological execution and social collaboration.</p>
+  `,
+  author: "E-Cell Team",
+  date: "2026-10-02",
+  category: "Case Study",
+  readTime: "4 min read"
+}
 
 ];
 

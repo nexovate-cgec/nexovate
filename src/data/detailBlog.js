@@ -46,6 +46,10 @@ import blog143 from "../assets/Blogs/Blog143.jpeg";
 import blog151 from "../assets/Blogs/Blog151.png";
 import blog152 from "../assets/Blogs/Blog152.jpeg";
 import blog153 from "../assets/Blogs/Blog153.jpeg";
+import blog161 from "../assets/Blogs/Blog161.png";
+import blog162 from "../assets/Blogs/Blog162.png";
+import blog163 from "../assets/Blogs/Blog163.png";
+
 
 export const blogData = [
   {
@@ -1055,7 +1059,88 @@ export const blogData = [
     readTime: "5 min read",
     category: "Startup Stories",
     tags: ["Facebook", "MarkZuckerberg", "Harvard", "Startup", "SocialMedia", "TechGiants", "StudentEntrepreneur"]
-  }
+  },
+  {
+  id: 15,
+  slug: "built-by-a-community-how-reddit-started-from-a-small-idea",
+  title: "Built by a Community: How Reddit Started from a Small Idea",
+  img: blog161,
+  desc: "Big companies often start with a simple idea. Discover how Steve Huffman, Alexis Ohanian, and Aaron Swartz turned a basic link-sharing platform into a global community.",
+  fullContent: `
+    <p class="lead">Big companies don't always start with grand strategies—most begin with a small, well-executed idea. In 2005, Steve Huffman, Alexis Ohanian, and Aaron Swartz created Reddit as a simple platform where people could share links and discuss interesting content online.</p>
+    
+    <div class="text-center my-5">
+      <img src="${blog162}" alt="Built by a community, not just a forum" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>A strong community can turn a simple concept into a global platform</small></p>
+    </div>
+
+    <h3>1. How Reddit Started</h3>
+    <p>In the beginning, Reddit was built around a straightforward concept to make content discovery effortless.</p>
+
+    <div class="feature-point">
+      <h5>🔗 Simple Link Sharing & Voting</h5>
+      <p>Users could post links, vote up or down on content, and jump straight into discussions via comments.</p>
+    </div>
+
+    <div class="feature-point">
+      <h5>📈 Democratic Content Curation</h5>
+      <p>The upvote system ensured that the best and most relevant content naturally rose to the top of the homepage.</p>
+    </div>
+
+    <p class="highlight-box">This minimal setup proved that user engagement, rather than complex design, creates sticky platforms.</p>
+
+    <h3>2. The Role of the Community</h3>
+    <p>Reddit wasn't meant to be just another static forum. It evolved into something bigger when users were empowered to organize themselves.</p>
+    
+    <div class="text-center my-5">
+      <img src="${blog161}" alt="Subreddits: People find their place" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Subreddits brought structure and niche engagement to the web</small></p>
+    </div>
+
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>💻 Specialized Hubs</h5>
+        <p>The concept of <strong>subreddits</strong> allowed users to join micro-communities tailored to their specific interests.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>🎮 Diverse Categories</h5>
+        <p>From <strong>r/technology</strong> and <strong>r/gaming</strong> to <strong>r/movies</strong>, <strong>r/sports</strong>, <strong>r/education</strong>, and <strong>r/everydaylife</strong>, there was a space for everyone.</p>
+      </div>
+    </div>
+
+    <div class="text-center my-5">
+      <img src="${blog163}" alt="Different interests, one big community" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Countless subreddits connected under one global platform</small></p>
+    </div>
+
+    <h3>3. From Website to Global Community</h3>
+    <p>As subreddits multiplied, the website expanded beyond its original scope. It transformed into a global public square where people across continents connect, ask questions, debate, and share knowledge on almost any topic imaginable.</p>
+
+    <h3>4. The Bigger Lesson for Entrepreneurs</h3>
+    <p>Reddit’s growth offers a key takeaway for founders and tech innovators:</p>
+
+    <div class="tip-section">
+      <h5>💡 Innovation meets Social Collaboration</h5>
+      <p>While Huffman, Ohanian, and Swartz had a clear technical concept, true success came from combining technological infrastructure with community power.</p>
+    </div>
+
+    <div class="tip-section">
+      <h5>🤝 Empowering Your Users</h5>
+      <p>Big projects thrive when users are given ownership and tools to contribute, build, and interact organically.</p>
+    </div>
+
+    <div class="conclusion">
+      <h4>🎯 Takeaway</h4>
+      <p><strong>Small ideas can reach incredible heights.</strong> Reddit proved that a simple link-sharing tool, when backed by active user engagement and community-first features, can transform into a platform that shapes internet culture worldwide.</p>
+    </div>
+  `,
+  author: "Entrepreneurship Cell",
+  date: "2026-10-02",
+  readTime: "5 min read",
+  category: "Startup Story",
+  tags: ["Reddit", "Community", "Startup Journey", "Subreddits", "Tech History", "Entrepreneurship"],
+  additionalImages: [blog161, blog162, blog163]
+}
 ];
 
 export const getBlogById = (id) => {
