@@ -51,7 +51,7 @@ export const studentData = [
     id: "2600431",
     rollNumber: "2600431",
     name: "Swapnil Mondal",
-    email: "swapnil.mondal007@@gmail.com",
+    email: "swapnil.mondal007@gmail.com",
     password: "2600431",
     college: "Cooch Behar Government Engineering College",
     department: "Mechanical Engineering",
