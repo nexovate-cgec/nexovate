@@ -165,7 +165,7 @@ export const studentData = [
     email: "debomitanandycgec@gmail.com",
     password: "2600219",
     college: "Cooch Behar Government Engineering College",
-    
+
     department: "Electronics and Communication Engineering",
     year: "1st Year",
     contact: "+91 8293729622",
@@ -344,7 +344,7 @@ export const studentData = [
     college: "Cooch Behar Government Engineering College",
     department: "Electrical Engineering",
     year: "1st Year",
-    contact: "+91 8567035491",
+    contact: "+91 8597035491",
 },
 {
   id: "2600163",
