@@ -165,6 +165,7 @@ export const studentData = [
     email: "debomitanandycgec@gmail.com",
     password: "2600219",
     college: "Cooch Behar Government Engineering College",
+    
     department: "Electronics and Communication Engineering",
     year: "1st Year",
     contact: "+91 8293729622",
@@ -172,7 +173,7 @@ export const studentData = [
   {
     id: "2600319",
     rollNumber: "2600319",
-    name: "RUDRA pratap Chowdhury",
+    name: "Rudra pratap Chowdhury",
     email: "rudraprotapchowdhury@gmail.com",
     password: "2600319",
     college: "Cooch Behar Government Engineering College",
@@ -338,7 +339,7 @@ export const studentData = [
   id: "2600502",
     rollNumber: "2600502",
     name: "DEEBAJYOTI JANA",
-    email: "deebajyotijana41@gmail.com",
+    email: "deebyajyotijana41@gmail.com",
     password: "2600502",
     college: "Cooch Behar Government Engineering College",
     department: "Electrical Engineering",
@@ -564,5 +565,16 @@ export const studentData = [
     department: "Electronics and Communication Engineering",
     year: "2nd Year",
     contact: "+91 6289579055",
-}
+},
+{
+  id: "2600501",
+    rollNumber: "2600501",
+    name: "SAIKATH SUTRADHAR ",
+    email: "sutradharsaikath@gmail.com",
+    password: "2600501",
+    college: "Cooch Behar Government Engineering College",
+    department: "Electrial Engineering",
+    year: "1st Year",
+    contact: "+91 8597887883",
+},
 ];
