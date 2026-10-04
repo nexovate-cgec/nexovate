@@ -1,7 +1,5 @@
 export const studentData = [
  
-
-
 {
     id: "2600202",
     rollNumber:"2600202",
@@ -251,7 +249,7 @@ export const studentData = [
     id: "2600405",
     rollNumber: "2600405",
     name: "RIMA KHECHHE",
-    email: "rimakhechhe@gmail.com",
+    email: "rimakhechhe10@gmail.com",
     password: "2600405",
     college: "Cooch Behar Government Engineering College",
     department: "Mechanical Engineering",
@@ -457,11 +455,11 @@ export const studentData = [
     contact: "+91 6290890512",
 },
 {
-  id: "2600236",
-    rollNumber: "2600236",
+  id: "2600520",
+    rollNumber: "2600520",
     name: "MAYUKH MANDAL",
     email: "mayukhm780@gmail.com",
-    password: "2600236",
+    password: "2600520",
     college: "Cooch Behar Government Engineering College",
     department: "Electrical Engineering",
     year: "1st Year",
