@@ -16,7 +16,7 @@ export const studentData = [
     rollNumber: "2600536",
     name: "SERMA SAREN",
     email: "sarenserma83@gmail.com",
-    password: "S2600536",
+    password: "2600536",
     college: "Cooch Behar Government Engineering College",
     department: " Electrical Engineering",
     year: "1st Year",
