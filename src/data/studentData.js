@@ -245,7 +245,7 @@ export const studentData = [
     year: "2nd Year",
     contact: "+91 8167506619",
   },
-  {
+  { 
     id: "2600405",
     rollNumber: "2600405",
     name: "RIMA KHECHHE",
@@ -585,5 +585,16 @@ export const studentData = [
     department: "Electronics and Communication Engineering",
     year: "1st Year",
     contact: "+91 8695387027",
+},
+{
+  id: "2600530",
+    rollNumber: "2600530",
+    name: "Swastika Sarkar",
+    email: "dollcy01@gmail.com",
+    password: "2600530",
+    college: "Cooch Behar Government Engineering College",
+    department: "Electric Engineering",
+    year: "1st Year",
+    contact: "+91 9476298447",
 },
 ];
