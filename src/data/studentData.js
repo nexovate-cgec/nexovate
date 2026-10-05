@@ -392,7 +392,7 @@ export const studentData = [
   id: "34901325037",
     rollNumber: "34901325037",
     name: "AKASH GUHA",
-    email: "akashguha@gmail.com",
+    email: "akashguha1947@gmail.com",
     password: "34901325037",
     college: "Cooch Behar Government Engineering College",
     department: "Civil Engineering",
