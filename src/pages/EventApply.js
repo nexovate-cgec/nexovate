@@ -15,7 +15,9 @@ import {
   CreditCardFill,
   CloudUploadFill,
   Download,
-  Whatsapp
+  Whatsapp,
+  XCircleFill,
+  ClockHistory
 } from "react-bootstrap-icons";
 import { jsPDF } from "jspdf";
 import QRCode from "qrcode";
@@ -30,6 +32,9 @@ const EventApply = () => {
   const { id } = useParams();
   const location = useLocation();
   const { isDark } = useTheme();
+
+  // Registration Status Flag (Set to true to close registrations)
+  const isRegistrationClosed = true;
 
   const event = getEventById(id);
   const selectedEventTitle = location.state?.eventTitle || event?.title || "Event Registration";
@@ -101,25 +106,21 @@ const EventApply = () => {
       day: "numeric"
     });
 
-    // Top Header Background
-    doc.setFillColor(15, 23, 42); // Dark Navy Blue Background
+    doc.setFillColor(15, 23, 42); 
     doc.rect(0, 0, 210, 42, "F");
 
-    // Left Logo: E-CELL CGEC
     try {
       doc.addImage(logoEcell, "JPEG", 12, 6, 30, 30);
     } catch (err) {
       console.log("Error loading E-Cell Logo", err);
     }
 
-    // Right Logo: NEC 2026
     try {
       doc.addImage(logoNec, "JPEG", 163, 8, 35, 26);
     } catch (err) {
       console.log("Error loading NEC Logo", err);
     }
 
-    // Header Text (Centered)
     doc.setTextColor(255, 255, 255);
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
@@ -130,7 +131,6 @@ const EventApply = () => {
     doc.setTextColor(189, 159, 103);
     doc.text("ILLUMINATE 2026", 105, 28, { align: "center" });
 
-    // Event Info Section
     doc.setTextColor(15, 23, 42);
     doc.setFontSize(11);
     doc.setFont("helvetica", "bold");
@@ -143,11 +143,9 @@ const EventApply = () => {
     doc.setFont("helvetica", "normal");
     doc.text(currentDate, 60, 62);
 
-    // Separator Line
     doc.setDrawColor(226, 232, 240);
     doc.line(20, 68, 190, 68);
 
-    // Participant Details Table Header
     doc.setFillColor(241, 245, 249);
     doc.rect(20, 74, 170, 10, "F");
     doc.setFont("helvetica", "bold");
@@ -155,7 +153,6 @@ const EventApply = () => {
     doc.setTextColor(15, 23, 42);
     doc.text("PARTICIPANT DETAILS", 25, 81);
 
-    // Details Rows
     const startY = 94;
     const lineSpacing = 9;
 
@@ -181,11 +178,9 @@ const EventApply = () => {
       doc.text(String(item.value), 75, yPos);
     });
 
-    // Outer Box Border
     doc.setDrawColor(200, 200, 200);
     doc.rect(20, 74, 170, 98);
 
-    // Dynamic QR Code Generation for Verification
     try {
       const verificationPayload = JSON.stringify({
         event: data.eventName || selectedEventTitle,
@@ -211,7 +206,6 @@ const EventApply = () => {
       console.error("Error generating QR code:", err);
     }
 
-    // Status Banner
     doc.setFillColor(240, 253, 244);
     doc.setDrawColor(34, 197, 94);
     doc.roundedRect(20, 230, 170, 12, 3, 3, "FD");
@@ -221,7 +215,6 @@ const EventApply = () => {
     doc.setFontSize(10);
     doc.text("Status: Application Received & Pending Verification", 105, 238, { align: "center" });
 
-    // Footer Text
     doc.setFont("helvetica", "italic");
     doc.setFontSize(8);
     doc.setTextColor(148, 163, 184);
@@ -232,6 +225,12 @@ const EventApply = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (isRegistrationClosed) {
+      setErrorMsg("Registrations are now officially closed.");
+      return;
+    }
+
     setLoading(true);
     setErrorMsg("");
 
@@ -319,7 +318,7 @@ const EventApply = () => {
             className="badge px-3 py-2 rounded-pill fw-semibold text-uppercase d-inline-flex align-items-center gap-2"
             style={{ backgroundColor: iconBadgeBg, color: primaryAccent, fontSize: "0.75rem" }}
           >
-            <ShieldCheck size={15} /> Verified Registration Form
+            <ShieldCheck size={15} /> Verified Registration Portal
           </span>
         </div>
 
@@ -339,7 +338,70 @@ const EventApply = () => {
               </p>
             </div>
 
-            {submitted ? (
+            {/* REGISTRATION CLOSED UI BLOCK */}
+            {isRegistrationClosed ? (
+              <div className="text-center py-5 my-3">
+                <div
+                  className="d-inline-flex align-items-center justify-content-center rounded-circle mb-4"
+                  style={{ width: "90px", height: "90px", backgroundColor: "rgba(220, 53, 69, 0.12)", color: "#dc3545" }}
+                >
+                  <XCircleFill size={52} />
+                </div>
+
+                <h3 className="fw-bold mb-3" style={{ color: textColor }}>
+                  Registrations Closed!
+                </h3>
+
+                <p className="mb-4 mx-auto lead" style={{ color: subTextColor, maxWidth: "520px", fontSize: "1.05rem" }}>
+                  Thank you for your overwhelming interest in <strong>{selectedEventTitle}</strong>. We have reached maximum capacity and registrations are officially closed.
+                </p>
+
+                <div
+                  className="p-3.5 rounded-3 mb-4 mx-auto d-inline-flex align-items-center gap-2"
+                  style={{ backgroundColor: inputBg, border: `1px solid ${inputBorder}`, color: subTextColor }}
+                >
+                  <ClockHistory size={18} style={{ color: primaryAccent }} />
+                  <span className="small fw-semibold">If you have already registered, check your email for event updates.</span>
+                </div>
+
+                {/* WhatsApp Group Link remains accessible if needed */}
+                <div 
+                  className="p-4 rounded-4 my-4 mx-auto text-center" 
+                  style={{ 
+                    backgroundColor: isDark ? "rgba(37, 211, 102, 0.1)" : "#e8f5e9", 
+                    border: "1px dashed #25D366", 
+                    maxWidth: "480px" 
+                  }}
+                >
+                  <div className="d-flex align-items-center justify-content-center gap-2 mb-2 text-success fw-bold fs-5">
+                    <Whatsapp size={24} style={{ color: "#25D366" }} />
+                    <span>Already Registered? Join Group</span>
+                  </div>
+                  <p className="small mb-3" style={{ color: subTextColor }}>
+                    Join the official event WhatsApp group for announcements, schedules, and live updates.
+                  </p>
+                  <a
+                    href="https://chat.whatsapp.com/CXZrOGqtiWdDVTJyfmZ3Qp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn fw-bold px-4 py-2.5 rounded-3 border-0 d-inline-flex align-items-center gap-2 text-white shadow-sm"
+                    style={{ backgroundColor: "#25D366" }}
+                  >
+                    <Whatsapp size={20} /> Join Official WhatsApp Group
+                  </a>
+                </div>
+
+                <div className="mt-4">
+                  <Link
+                    to="/events"
+                    className="btn px-4 py-2.5 fw-semibold rounded-3 text-white text-decoration-none"
+                    style={{ backgroundColor: primaryAccent }}
+                  >
+                    Explore Other Events
+                  </Link>
+                </div>
+              </div>
+            ) : submitted ? (
               <div className="text-center py-4 my-2">
                 <div
                   className="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
@@ -354,7 +416,6 @@ const EventApply = () => {
                   Thank you for submitting your details for <strong>{selectedEventTitle}</strong>. We have received your application.
                 </p>
 
-                {/* WhatsApp Group Joining Section */}
                 <div 
                   className="p-3.5 p-md-4 rounded-4 mb-4 mx-auto text-center" 
                   style={{ 
