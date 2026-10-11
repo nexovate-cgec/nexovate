@@ -1153,7 +1153,7 @@ export const blogData = [
     <p class="lead">Imagine starting a company with your friend, a few coding skills, and an idea that most people haven't fully understood yet. That's where the story of Microsoft begins in 1975 with Bill Gates and Paul Allen[cite: 1, 2].</p>
     
     <div class="text-center my-5">
-      <img src="\${blog171}" alt="Bill Gates and Paul Allen with Altair 8800" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <img src="${blog171}" alt="Bill Gates and Paul Allen with Altair 8800" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
       <p class="text-muted mt-2"><small>Bill Gates & Paul Allen with the Altair 8800[cite: 2]</small></p>
     </div>
 
@@ -1166,7 +1166,7 @@ export const blogData = [
     </div>
 
     <div class="text-center my-5">
-      <img src="\${blog172}" alt="The Journey of Growth - Microsoft" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <img src="${blog172}" alt="The Journey of Growth - Microsoft" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
       <p class="text-muted mt-2"><small>From MS-DOS to Windows: The Journey of Growth[cite: 1]</small></p>
     </div>
 
