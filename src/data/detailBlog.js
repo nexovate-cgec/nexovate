@@ -49,6 +49,8 @@ import blog153 from "../assets/Blogs/Blog153.jpeg";
 import blog161 from "../assets/Blogs/Blog161.png";
 import blog162 from "../assets/Blogs/Blog162.png";
 import blog163 from "../assets/Blogs/Blog163.png";
+import blog171 from "../assets/Blogs/Blog171.jpeg";
+import blog172 from "../assets/Blogs/Blog172.jpeg";
 
 
 export const blogData = [
@@ -1140,6 +1142,67 @@ export const blogData = [
   category: "Startup Story",
   tags: ["Reddit", "Community", "Startup Journey", "Subreddits", "Tech History", "Entrepreneurship"],
   additionalImages: [blog161, blog162, blog163]
+},
+{
+  id: 16,
+  slug: "from-a-small-coding-team-to-a-global-software-company",
+  title: "From a Small Coding Team to a Global Software Company: Bill Gates & Paul Allen",
+  img: blog171,
+  desc: "Imagine starting a company with your friend, a few coding skills, and a vision. Discover how Bill Gates and Paul Allen built Microsoft from a simple idea.",
+  fullContent: `
+    <p class="lead">Imagine starting a company with your friend, a few coding skills, and an idea that most people haven't fully understood yet. That's where the story of Microsoft begins in 1975 with Bill Gates and Paul Allen[cite: 1, 2].</p>
+    
+    <div class="text-center my-5">
+      <img src="\${blog171}" alt="Bill Gates and Paul Allen with Altair 8800" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Bill Gates & Paul Allen with the Altair 8800[cite: 2]</small></p>
+    </div>
+
+    <h3>1. The 1975 Beginning & The Opportunity</h3>
+    <p>At a time when computers were expensive, bulky machines used mainly by businesses and institutions, two young tech enthusiasts saw a different future—envisioning a world where ordinary people could own and use them[cite: 2].</p>
+
+    <div class="feature-point">
+      <h5>💡 The Altair 8800 Breakthrough</h5>
+      <p>When they learned about the early personal computer, they realized it needed software. They developed a version of the <strong>BASIC programming language</strong> for it, presenting their work to the company behind it[cite: 2].</p>
+    </div>
+
+    <div class="text-center my-5">
+      <img src="\${blog172}" alt="The Journey of Growth - Microsoft" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>From MS-DOS to Windows: The Journey of Growth[cite: 1]</small></p>
+    </div>
+
+    <h3>2. The Big Breakthrough: A New Era of Personal Computing</h3>
+    <p>In 1980, IBM approached Microsoft to develop an operating system for its personal computer. Microsoft provided the operating system that became known as <strong>MS-DOS</strong>, marking a major turning point[cite: 1].</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>🤝 The Power of Partnership</h5>
+        <p>Working with IBM gave Microsoft an opportunity to reach a much wider market by focusing on software that powers hardware[cite: 1].</p>
+      </div>
+      <div class="benefit-item">
+        <h5>🖥️ Introducing Windows (1985)</h5>
+        <p>Microsoft launched its first version of Windows, introducing a <strong>graphical interface</strong> that made computing more visual and accessible[cite: 1].</p>
+      </div>
+    </div>
+
+    <h3>3. Software for Everyone</h3>
+    <p>Microsoft continued developing software for homes, schools, and businesses, making personal computing an essential part of everyday life[cite: 1]. Today, products like Windows, Office, and Azure power organizations across the globe.</p>
+
+    <div class="tip-section">
+      <h5>🚀 Entrepreneurial Lesson</h5>
+      <p>Sometimes, an opportunity is hidden inside a problem that needs solving. You don't have to build something entirely new; you can start by understanding what people need.</p>
+    </div>
+
+    <div class="conclusion">
+      <h4>🎯 Takeaway</h4>
+      <p><strong>Every big journey starts with recognising an opportunity[cite: 2].</strong> Gates and Allen began with a shared interest and the courage to act, shaping the modern software industry.</p>
+    </div>
+  `,
+  author: "Entrepreneurship Cell",
+  date: "2026-10-02",
+  readTime: "5 min read",
+  category: "Startup Story",
+  tags: ["Microsoft", "Bill Gates", "Paul Allen", "Startup Journey", "Innovation", "Technology", "Entrepreneurship"],
+  additionalImages: [blog171, blog172]
 }
 ];
 

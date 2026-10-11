@@ -13,6 +13,7 @@ import Blog12 from "../assets/Blogs/Blog131.jpg";
 import Blog13 from "../assets/Blogs/Blog142.jpeg";
 import Blog14 from "../assets/Blogs/Blog151.png";
 import Blog15 from "../assets/Blogs/Blog161.png";
+import Blog16 from "../assets/Blogs/Blog171.jpeg";
 
 export const blogData = [
   {
@@ -355,6 +356,32 @@ export const blogData = [
 
     <h3>The Bigger Lesson</h3>
     <p>Reddit's journey highlights a fundamental truth about entrepreneurship and technology. While Huffman, Ohanian, and Swartz provided the initial spark, transforming a simple idea into a massive platform required both technological execution and social collaboration.</p>
+  `,
+  author: "E-Cell Team",
+  date: "2026-10-02",
+  category: "Case Study",
+  readTime: "4 min read"
+},
+{
+  id: 16,
+  slug: "from-a-small-coding-team-to-a-global-software-company",
+  title: "From a Small Coding Team to a Global Software Company",
+  img: Blog16,
+  desc: "Imagine starting a company with your friend, a few coding skills, and a vision. Discover how Bill Gates and Paul Allen built Microsoft from a simple idea.",
+  fullContent: `
+    <p>Imagine starting a company with your friend, a few coding skills, and an idea that most people haven't fully understood yet. That's where the story of Microsoft begins. In 1975, Bill Gates and Paul Allen were two young men who shared a strong interest in computers and envisioned a future where ordinary people could own and use them.</p>
+    
+    <h3>The Opportunity</h3>
+    <p>When they learned about the Altair 8800, an early personal computer, they realised it needed software to make it useful. They developed a version of the BASIC programming language for the machine and presented their work to the company behind it, scoring their first big break.</p>
+
+    <h3>The Power of Partnership</h3>
+    <p>In 1980, IBM approached Microsoft to develop an operating system for its personal computer. Providing MS-DOS marked a major turning point, allowing Microsoft to reach a much wider market by focusing on software that powers hardware rather than building computers themselves.</p>
+
+    <h3>A New Way to Use Computers</h3>
+    <p>In 1985, Microsoft launched its first version of Windows, introducing a graphical interface that made computing more visual and accessible. They continued developing software for homes, schools, and businesses, making personal computing an essential part of everyday life.</p>
+
+    <h3>The Bigger Lesson</h3>
+    <p>Microsoft's journey highlights a fundamental truth about entrepreneurship. Sometimes, an opportunity is hidden inside a problem that needs solving. Gates and Allen began with a shared interest in computers and the courage to act, proving that every big journey starts with recognising an opportunity.</p>
   `,
   author: "E-Cell Team",
   date: "2026-10-02",
