@@ -384,7 +384,7 @@ export const blogData = [
     <p>Microsoft's journey highlights a fundamental truth about entrepreneurship. Sometimes, an opportunity is hidden inside a problem that needs solving. Gates and Allen began with a shared interest in computers and the courage to act, proving that every big journey starts with recognising an opportunity.</p>
   `,
   author: "E-Cell Team",
-  date: "2026-10-02",
+  date: "2026-10-11",
   category: "Case Study",
   readTime: "4 min read"
 }
