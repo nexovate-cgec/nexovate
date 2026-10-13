@@ -29,6 +29,7 @@ import AllBlogs from "./pages/AllBlogs";
 import BlogDetails from "./pages/BlogDetails";
 import GalleryPage from "./pages/GalleryPage";
 import VerifyCertificate from "./pages/VerifyCertificate";
+import PastTeam from "./pages/PastTeam"; // 1. PastTeam page import kora holo
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
                     <Gallery />
                     <Blog />
                     <Team />
-                    <Sponsors /> {/* REPLACED <Testimonials /> */}
+                    <Sponsors />
                     <Footer />
                   </>
                 }
@@ -66,10 +67,10 @@ function App() {
               <Route path="/sponsorship-collab" element={<SponsorCollab />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
-              <Route
-                path="/verify-certificate"
-                element={<VerifyCertificate />}
-              />
+              <Route path="/verify-certificate" element={<VerifyCertificate />} />
+              
+              {/* 2. Past Team Route Add Kora Holo */}
+              <Route path="/past-team" element={<PastTeam />} />
             </Routes>
           </main>
 

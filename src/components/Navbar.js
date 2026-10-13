@@ -9,6 +9,7 @@ const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isTeamDropdownOpen, setIsTeamDropdownOpen] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,7 +44,8 @@ const NavBar = () => {
         "gallery",
         "blog",
         "team",
-        "sponsors", // Updated from testimonials
+        "past-team",
+        "sponsors",
       ];
 
       const handleScrollHighlight = () => {
@@ -52,7 +54,7 @@ const NavBar = () => {
           document.documentElement.scrollHeight - 50;
 
         if (isAtBottom) {
-          setActiveSection("sponsors"); // Updated
+          setActiveSection("sponsors");
           return;
         }
 
@@ -80,8 +82,9 @@ const NavBar = () => {
     }
   }, [location.pathname]);
 
-  const handleSectionClick = (sectionId) => {
+ const handleSectionClick = (sectionId) => {
     setIsExpanded(false);
+    setIsTeamDropdownOpen(false);
     setActiveSection(sectionId);
 
     const scrollToSection = () => {
@@ -90,11 +93,8 @@ const NavBar = () => {
       } else {
         const element = document.getElementById(sectionId);
         if (element) {
-          const yOffset = -80;
-          const y =
-            element.getBoundingClientRect().top +
-            window.pageYOffset +
-            yOffset;
+          const yOffset = -70; // Navbar height er sathe adjust korar jonno
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
           window.scrollTo({ top: y, behavior: "smooth" });
         }
@@ -109,7 +109,10 @@ const NavBar = () => {
     }
   };
 
-  const handleNavLinkClick = () => setIsExpanded(false);
+  const handleNavLinkClick = () => {
+    setIsExpanded(false);
+    setIsTeamDropdownOpen(false);
+  };
 
   return (
     <Navbar
@@ -232,21 +235,40 @@ const NavBar = () => {
               Blog
             </Nav.Link>
 
-            <Nav.Link
-              as={Link}
-              to="/"
-              onClick={() => {
-                handleNavLinkClick();
-                handleSectionClick("team");
-              }}
-              className={`nav-link-custom ${
-                activeSection === "team" ? "active-section" : ""
-              }`}
-            >
-              Team
-            </Nav.Link>
+            {/* CUSTOM TEAM DROPDOWN */}
+            <div className="custom-dropdown-wrapper">
+              <div
+                onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
+                className={`nav-link-custom custom-dropdown-toggle ${
+                  activeSection === "team" || activeSection === "past-team"
+                    ? "active-section"
+                    : ""
+                }`}
+              >
+                Team <span className="dropdown-arrow">▼</span>
+              </div>
 
-            {/* SPONSORS LINK (REPLACED TESTIMONIALS) */}
+              {isTeamDropdownOpen && (
+                <div className="custom-dropdown-menu">
+                  <div
+                    onClick={() => handleSectionClick("team")}
+                    className="dropdown-item-custom"
+                  >
+                    Current Team
+                  </div>
+                  <div
+  onClick={() => {
+    handleNavLinkClick();
+    navigate("/past-team"); 
+  }}
+  className="dropdown-item-custom"
+>
+  Past Team
+</div>
+                </div>
+              )}
+            </div>
+
             <Nav.Link
               as={Link}
               to="/"
