@@ -1141,7 +1141,7 @@ export const blogData = [
     </div>
   `,
   author: "Entrepreneurship Cell",
-  date: "2026-10-02",
+  date: "2026-09-29",
   readTime: "5 min read",
   category: "Startup Story",
   tags: ["Reddit", "Community", "Startup Journey", "Subreddits", "Tech History", "Entrepreneurship"],
@@ -1202,7 +1202,7 @@ export const blogData = [
     </div>
   `,
   author: "Entrepreneurship Cell",
-  date: "2026-10-02",
+  date: "2026-10-04",
   readTime: "5 min read",
   category: "Startup Story",
   tags: ["Microsoft", "Bill Gates", "Paul Allen", "Startup Journey", "Innovation", "Technology", "Entrepreneurship"],
@@ -1255,7 +1255,7 @@ export const blogData = [
     </div>
   `,
   author: "E-Cell Team",
-  date: "2026-10-02",
+  date: "2026-10-09",
   readTime: "5 min read",
   category: "Startup Story",
   tags: ["Scale AI", "Alexandr Wang", "Lucy Guo", "Artificial Intelligence", "Startup Journey", "Innovation", "Entrepreneurship"],
@@ -1308,7 +1308,7 @@ export const blogData = [
     </div>
   `,
   author: "E-Cell Team",
-  date: "2026-10-02",
+  date: "2026-10-14",
   readTime: "5 min read",
   category: "Startup Story",
   tags: ["Expedia", "Dara Khosrowshahi", "TravelTech", "Startup Journey", "Innovation", "Business Growth", "Digital Transformation"],
