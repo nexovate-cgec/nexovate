@@ -360,7 +360,7 @@ export const blogData = [
     <p>Reddit's journey highlights a fundamental truth about entrepreneurship and technology. While Huffman, Ohanian, and Swartz provided the initial spark, transforming a simple idea into a massive platform required both technological execution and social collaboration.</p>
   `,
   author: "E-Cell Team",
-  date: "2026-10-01",
+  date: "2026-09-29",
   category: "Case Study",
   readTime: "4 min read"
 },
@@ -386,7 +386,7 @@ export const blogData = [
     <p>Microsoft's journey highlights a fundamental truth about entrepreneurship. Sometimes, an opportunity is hidden inside a problem that needs solving. Gates and Allen began with a shared interest in computers and the courage to act, proving that every big journey starts with recognising an opportunity.</p>
   `,
   author: "E-Cell Team",
-  date: "2026-10-08",
+  date: "2026-10-04",
   category: "Case Study",
   readTime: "4 min read"
 },
@@ -409,7 +409,7 @@ export const blogData = [
     <p>Wang's journey highlights a fundamental truth about entrepreneurship. You don't always need to invent something entirely new to build a successful company. Sometimes, the best opportunities come from solving problems others have overlooked, turning early passions into tomorrow's biggest ventures.</p>
   `,
   author: "E-Cell Team",
-  date: "2026-10-15",
+  date: "2026-10-09",
   category: "Case Study",
   readTime: "4 min read"
 },
@@ -435,7 +435,7 @@ export const blogData = [
     <p>Expedia's journey shows how understanding a simple customer problem can lead to a massive business. You didn't need to reinvent travel; they changed how people planned and booked journeys. Look at everyday problems, find practical solutions, and make ordinary tasks a little simpler.</p>
   `,
   author: "E-Cell Team",
-  date: "2026-10-22",
+  date: "2026-10-14",
   category: "Case Study",
   readTime: "4 min read"
 }
