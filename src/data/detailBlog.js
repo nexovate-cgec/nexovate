@@ -53,6 +53,8 @@ import blog171 from "../assets/Blogs/Blog171.jpeg";
 import blog172 from "../assets/Blogs/Blog172.jpeg";
 import blog181 from "../assets/Blogs/Blog181.png";
 import blog182 from "../assets/Blogs/Blog182.png";
+import blog191 from "../assets/Blogs/Blog192.png";
+import blog192 from "../assets/Blogs/Blog192.png";
 
 
 export const blogData = [
@@ -1258,6 +1260,59 @@ export const blogData = [
   category: "Startup Story",
   tags: ["Scale AI", "Alexandr Wang", "Lucy Guo", "Artificial Intelligence", "Startup Journey", "Innovation", "Entrepreneurship"],
   additionalImages: [blog181, blog182]
+},
+{
+  id: 18,
+  slug: "from-a-college-idea-to-a-global-travel-platform-expedia",
+  title: "From a College Idea to a Global Travel Platform: Dara Khosrowshahi | Expedia",
+  img: blog191,
+  desc: "Discover how Expedia transformed travel planning from traditional agencies into a seamless global digital platform under Dara Khosrowshahi.",
+  fullContent: `
+    <p class="lead">Imagine planning an entire trip from your laptop without visiting a travel agency or making endless phone calls. Today, booking flights and comparing hotels takes just a few clicks, but back in the 1990s, online travel booking was a brand new concept.</p>
+    
+    <div class="text-center my-5">
+      <img src="${blog191}" alt="Expedia Travel Platform" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Making travel planning easier for everyone worldwide</small></p>
+    </div>
+
+    <h3>1. The 1996 Launch & Changing Travel</h3>
+    <p>In 1996, Microsoft launched Expedia with a simple goal: to make travel planning easier. At that time, travellers depended on traditional agents, spending hours comparing options. Expedia changed that by bringing travel information directly to computers.</p>
+
+    <div class="text-center my-5">
+      <img src="${blog192}" alt="Dara Khosrowshahi - Expedia CEO" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Dara Khosrowshahi led Expedia's international expansion from 2005</small></p>
+    </div>
+
+    <h3>2. Scaling and Leadership under Dara Khosrowshahi</h3>
+    <p>As the internet grew, Expedia expanded by acquiring brands like Hotels.com and Travelocity. In 2005, <strong>Dara Khosrowshahi</strong> became Expedia's CEO, strengthening its international presence and solidifying its position globally.</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>🌍 Global Connectivity</h5>
+        <p>Expedia evolved into a massive platform connecting travellers with flights, hotels, and holiday rentals across continents.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>💡 Simplifying Ordinary Tasks</h5>
+        <p>The company proved that changing an entire industry often starts with making one everyday process a little simpler.</p>
+      </div>
+    </div>
+
+    <div class="tip-section">
+      <h5>🚀 The Entrepreneurial Lesson</h5>
+      <p>Sometimes, a successful business begins by asking a simple question: <em>Can this be made easier?</em> Look at everyday problems and build practical solutions.</p>
+    </div>
+
+    <div class="conclusion">
+      <h4>🎯 Takeaway</h4>
+      <p><strong>Expedia didn't need to reinvent travel.</strong> It transformed how people planned and booked their journeys by focusing on user convenience and continuous growth.</p>
+    </div>
+  `,
+  author: "E-Cell Team",
+  date: "2026-10-02",
+  readTime: "5 min read",
+  category: "Startup Story",
+  tags: ["Expedia", "Dara Khosrowshahi", "TravelTech", "Startup Journey", "Innovation", "Business Growth", "Digital Transformation"],
+  additionalImages: [blog191, blog192]
 }
 ];
 

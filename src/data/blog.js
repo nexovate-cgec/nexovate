@@ -15,6 +15,7 @@ import Blog14 from "../assets/Blogs/Blog151.png";
 import Blog15 from "../assets/Blogs/Blog161.png";
 import Blog16 from "../assets/Blogs/Blog171.jpeg";
 import Blog17 from "../assets/Blogs/Blog181.png";
+import Blog18 from "../assets/Blogs/Blog191.png";
 
 export const blogData = [
   {
@@ -409,6 +410,32 @@ export const blogData = [
   `,
   author: "E-Cell Team",
   date: "2026-10-15",
+  category: "Case Study",
+  readTime: "4 min read"
+},
+{
+  id: 18,
+  slug: "from-a-college-idea-to-a-global-travel-platform-expedia",
+  title: "From a College Idea to a Global Travel Platform: Dara Khosrowshahi | Expedia",
+  img: Blog18,
+  desc: "Discover how Expedia transformed travel planning from traditional agencies into a seamless global digital platform under Dara Khosrowshahi.",
+  fullContent: `
+    <p>Imagine planning an entire trip from your laptop without visiting a travel agency or making endless phone calls. Today, you can book flights, compare hotel prices, and plan your holiday in just a few clicks. But back in the 1990s, booking a trip online was still a new idea.</p>
+    
+    <h3>The 1996 Launch</h3>
+    <p>In 1996, Microsoft launched Expedia, an online travel booking service with a simple goal: make travel planning easier for everyone. At that time, most travellers depended on traditional travel agents, spending hours comparing options. Expedia saw an opportunity to change that by bringing travel information directly to people's computers.</p>
+
+    <h3>Scaling and Leadership</h3>
+    <p>As the internet grew, Expedia expanded its services and acquired other travel businesses, including Hotels.com and Travelocity, helping it reach more customers around the world. Then came Dara Khosrowshahi, who became Expedia's CEO in 2005, strengthening its international presence and digital ecosystem.</p>
+
+    <h3>A Global Travel Platform</h3>
+    <p>What started as an online booking service gradually became a global platform connecting travellers with flights, hotels, holiday rentals, and other travel services worldwide.</p>
+
+    <h3>The Bigger Lesson</h3>
+    <p>Expedia's journey shows how understanding a simple customer problem can lead to a massive business. You didn't need to reinvent travel; they changed how people planned and booked journeys. Look at everyday problems, find practical solutions, and make ordinary tasks a little simpler.</p>
+  `,
+  author: "E-Cell Team",
+  date: "2026-10-22",
   category: "Case Study",
   readTime: "4 min read"
 }
