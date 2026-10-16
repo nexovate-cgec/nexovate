@@ -14,6 +14,7 @@ import Blog13 from "../assets/Blogs/Blog142.jpeg";
 import Blog14 from "../assets/Blogs/Blog151.png";
 import Blog15 from "../assets/Blogs/Blog161.png";
 import Blog16 from "../assets/Blogs/Blog171.jpeg";
+import Blog17 from "../assets/Blogs/Blog181.png";
 
 export const blogData = [
   {
@@ -358,7 +359,7 @@ export const blogData = [
     <p>Reddit's journey highlights a fundamental truth about entrepreneurship and technology. While Huffman, Ohanian, and Swartz provided the initial spark, transforming a simple idea into a massive platform required both technological execution and social collaboration.</p>
   `,
   author: "E-Cell Team",
-  date: "2026-10-02",
+  date: "2026-10-01",
   category: "Case Study",
   readTime: "4 min read"
 },
@@ -384,7 +385,30 @@ export const blogData = [
     <p>Microsoft's journey highlights a fundamental truth about entrepreneurship. Sometimes, an opportunity is hidden inside a problem that needs solving. Gates and Allen began with a shared interest in computers and the courage to act, proving that every big journey starts with recognising an opportunity.</p>
   `,
   author: "E-Cell Team",
-  date: "2026-10-11",
+  date: "2026-10-08",
+  category: "Case Study",
+  readTime: "4 min read"
+},
+{
+  id: 17,
+  slug: "from-a-dorm-room-to-a-billion-dollar-startup-alexandr-wang",
+  title: "From a Dorm Room to a Billion-Dollar Startup: Alexandr Wang | Scale AI",
+  img: Blog17, 
+  desc: "Discover how Alexandr Wang left MIT to found Scale AI, turning an overlooked data preparation problem into a multi-billion-dollar tech powerhouse.",
+  fullContent: `
+    <p>In 2016, Alexandr Wang was studying at MIT when he noticed a problem that many people in the AI industry were overlooking. Everyone was excited about artificial intelligence, but few were talking about the huge amount of data needed to train AI models properly. Preparing that data was expensive, time-consuming, and complicated.</p>
+    
+    <h3>Find and Double-Down on an Interest</h3>
+    <p>As a child, Wang developed a strong interest in mathematics and coding, participating in competitions like MATHCOUNTS and the USA Computing Olympiad (USACO). These competitions helped him develop the analytical thinking and problem-solving skills that would later prove valuable in his entrepreneurial journey.</p>
+
+    <h3>Turning a Problem into a Business</h3>
+    <p>While studying at MIT, Wang recognised an opportunity in the growing AI industry. Along with Lucy Guo, he co-founded Scale AI to help companies prepare and organise the data needed to train AI systems. Instead of building another AI model, they focused on helping other companies build better ones.</p>
+
+    <h3>The Bigger Lesson</h3>
+    <p>Wang's journey highlights a fundamental truth about entrepreneurship. You don't always need to invent something entirely new to build a successful company. Sometimes, the best opportunities come from solving problems others have overlooked, turning early passions into tomorrow's biggest ventures.</p>
+  `,
+  author: "E-Cell Team",
+  date: "2026-10-15",
   category: "Case Study",
   readTime: "4 min read"
 }

@@ -51,6 +51,8 @@ import blog162 from "../assets/Blogs/Blog162.png";
 import blog163 from "../assets/Blogs/Blog163.png";
 import blog171 from "../assets/Blogs/Blog171.jpeg";
 import blog172 from "../assets/Blogs/Blog172.jpeg";
+import blog181 from "../assets/Blogs/Blog181.png";
+import blog182 from "../assets/Blogs/Blog182.png";
 
 
 export const blogData = [
@@ -1203,6 +1205,59 @@ export const blogData = [
   category: "Startup Story",
   tags: ["Microsoft", "Bill Gates", "Paul Allen", "Startup Journey", "Innovation", "Technology", "Entrepreneurship"],
   additionalImages: [blog171, blog172]
+},
+{
+  id: 17,
+  slug: "from-a-dorm-room-to-a-billion-dollar-startup-alexandr-wang",
+  title: "From a Dorm Room to a Billion-Dollar Startup: Alexandr Wang & Lucy Guo | Scale AI",
+  img: blog181,
+  desc: "Discover how Alexandr Wang and Lucy Guo founded Scale AI, turning an overlooked data preparation problem into a multi-billion-dollar tech powerhouse.",
+  fullContent: `
+    <p class="lead">In 2016, Alexandr Wang was studying at MIT when he noticed a critical problem that many people in the AI industry were overlooking. While everyone was excited about artificial intelligence, few were talking about the huge amount of data needed to train AI models properly.</p>
+    
+    <div class="text-center my-5">
+      <img src="${blog182}" alt="Lucy Guo and Alexandr Wang - Scale AI" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>Lucy Guo & Alexandr Wang: Scaling AI to over $1 billion valuation</small></p>
+    </div>
+
+    <h3>1. Find and Double-Down on an Interest</h3>
+    <p>As a child, Wang developed a strong interest in mathematics and coding, participating in competitive events like MATHCOUNTS and the USA Computing Olympiad (USACO). These early experiences helped shape the analytical thinking and problem-solving skills that proved invaluable later on.</p>
+
+    <div class="text-center my-5">
+      <img src="${blog181}" alt="Scale AI Founders and Workspace" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; max-width: 100%;" />
+      <p class="text-muted mt-2"><small>From early building days to a massive AI infrastructure company</small></p>
+    </div>
+
+    <h3>2. Turning a Problem into a Business</h3>
+    <p>While studying at MIT, Wang recognised a major gap in the growing AI industry. Along with Lucy Guo, he co-founded <strong>Scale AI</strong> to help companies prepare, label, and organise the data needed to train AI systems.</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <h5>🚀 Empowering Others</h5>
+        <p>Instead of building another AI model themselves, they focused on providing the critical data infrastructure to help other companies build better ones.</p>
+      </div>
+      <div class="benefit-item">
+        <h5>📈 Rapid Growth & Valuation</h5>
+        <p>As AI advanced rapidly, the surging demand for high-quality training data propelled Scale AI past a <strong>$1 billion valuation</strong>.</p>
+      </div>
+    </div>
+
+    <div class="tip-section">
+      <h5>💡 The Entrepreneurial Lesson</h5>
+      <p>You don't always need to invent something entirely new to build a successful company. Sometimes, the best opportunities come from solving tedious, overlooked problems that others avoid.</p>
+    </div>
+
+    <div class="conclusion">
+      <h4>🎯 Takeaway</h4>
+      <p><strong>Explore your interests and pay attention to the challenges around you.</strong> Alexandr Wang and Lucy Guo's journey reminds us that today's small technical passions can become tomorrow's biggest ventures.</p>
+    </div>
+  `,
+  author: "E-Cell Team",
+  date: "2026-10-02",
+  readTime: "5 min read",
+  category: "Startup Story",
+  tags: ["Scale AI", "Alexandr Wang", "Lucy Guo", "Artificial Intelligence", "Startup Journey", "Innovation", "Entrepreneurship"],
+  additionalImages: [blog181, blog182]
 }
 ];
 
