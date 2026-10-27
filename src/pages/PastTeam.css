@@ -2,6 +2,8 @@
   min-height: 100vh;
   padding-top: 40px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .past-team-page.light-theme {
@@ -27,7 +29,6 @@
   margin-top: 10px;
 }
 
-/* Developer Banner Styles */
 .developer-banner {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
@@ -38,6 +39,7 @@
 .dark-theme .developer-banner {
   background: rgba(22, 22, 22, 0.9) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(189, 159, 103, 0.4);
 }
 
 .developer-img-container {
@@ -49,6 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
 }
 
 .developer-avatar {
@@ -66,6 +69,7 @@
   background: transparent;
   transition: all 0.2s ease;
   display: inline-block;
+  word-break: break-word;
 }
 
 .social-btn:hover {
@@ -73,7 +77,6 @@
   color: #D4AF37;
 }
 
-/* 🌟 HORIZONTAL SLIDER CONTAINER (Side Slide Effect) */
 .team-slider-container {
   display: flex;
   overflow-x: auto;
@@ -81,9 +84,9 @@
   padding-bottom: 15px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
 
-/* Hide scrollbar for a clean look */
 .team-slider-container::-webkit-scrollbar {
   height: 8px;
 }
@@ -99,16 +102,18 @@
 }
 
 .team-slide-item {
-  flex: 0 0 300px; /* Prottek carder fixed width */
+  flex: 0 0 300px;
   min-width: 300px;
 }
 
-/* Team Card Styles */
 .team-card {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .dark-theme .team-card {
@@ -131,6 +136,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
 }
 
 .member-img {
@@ -143,10 +149,34 @@
 .member-name {
   font-size: 1.25rem;
   margin-top: 10px;
+  word-break: break-word;
 }
 
 .dark-theme .member-name {
   color: #ffffff;
+}
+
+.light-theme .team-card .text-muted,
+.light-theme .developer-banner .text-muted,
+.light-theme .lead {
+  color: #4a5568 !important;
+}
+
+.dark-theme .team-card .text-muted,
+.dark-theme .developer-banner .text-muted,
+.dark-theme .lead {
+  color: #b0b0b0 !important;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme .year-title {
+  color: #ffffff;
+}
+
+.social-links {
+  width: 100%;
 }
 
 .social-icon-btn {
@@ -159,6 +189,7 @@
   text-decoration: none;
   border: 1px solid rgba(189, 159, 103, 0.3);
   transition: all 0.2s ease;
+  word-break: break-word;
 }
 
 .social-icon-btn:hover {
@@ -168,4 +199,19 @@
 
 .year-title {
   border-left-color: rgb(189, 159, 103) !important;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .developer-banner {
+    text-align: center !important;
+  }
+  
+  .developer-banner .row {
+    flex-direction: column;
+  }
+
+  .developer-banner .d-flex {
+    justify-content: center !important;
+  }
 }
