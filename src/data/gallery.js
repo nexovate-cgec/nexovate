@@ -293,7 +293,7 @@ export const galleryDataIlluminate2026 = [
   },
   {
     id: 35,
-    src: require("../assets/Events/illuminate2026/35.jpg"),
+    src: require("../assets/Events/illuminate2026/35.jpeg"),
     caption: "A memorable day of learning, innovation and entrepreneurship",
     event: "ILLUMINATE 2026",
     category: "group-photo",
