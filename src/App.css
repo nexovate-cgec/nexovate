@@ -27,16 +27,15 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: all 0.3s ease;
-  padding-top: 80px; /* Adjust based on your navbar height */
+  padding-top: 80px; 
 }
 
-/* Ensure all sections use theme colors */
+
 section {
   background-color: var(--bg-color) !important;
   color: var(--text-color) !important;
 }
 
-/* Bootstrap component overrides for dark mode */
 [data-theme="dark"] .card {
   background-color: var(--card-bg);
   border-color: var(--border-color);
@@ -51,7 +50,6 @@ section {
   background-color: var(--navbar-bg) !important;
 }
 
-/* Blog content styles */
 .blog-content p {
   margin-bottom: 1.5rem;
   text-align: justify;
