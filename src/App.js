@@ -68,8 +68,6 @@ function App() {
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
               <Route path="/verify-certificate" element={<VerifyCertificate />} />
-              
-              {/* 2. Past Team Route Add Kora Holo */}
               <Route path="/past-team" element={<PastTeam />} />
             </Routes>
           </main>

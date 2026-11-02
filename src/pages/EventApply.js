@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Container, Card, Form, Button, Alert, Row, Col } from "react-bootstrap";
 import {
   ArrowLeft,
@@ -17,12 +17,13 @@ import {
   Download,
   Whatsapp,
   XCircleFill,
-  ClockHistory
+  ClockHistory,
+  LockFill,
+  HouseDoorFill
 } from "react-bootstrap-icons";
 import { jsPDF } from "jspdf";
 import QRCode from "qrcode";
 import { useTheme } from "../contexts/ThemeContext";
-import { getEventById } from "../data/events";
 import qrCodeImg from "../assets/Events/image.png";
 
 import logoEcell from "../assets/Events/illuu2.jpeg"; 
@@ -30,23 +31,21 @@ import logoNec from "../assets/Events/illuu1.png";
 
 const EventApply = () => {
   const { id } = useParams();
-  const location = useLocation();
   const { isDark } = useTheme();
 
-  // Registration Status Flag (Set to true to close registrations)
-  const isRegistrationClosed = true;
+  const isRegistrationClosed = false;
 
-  const event = getEventById(id);
-  const selectedEventTitle = location.state?.eventTitle || event?.title || "Event Registration";
 
   const [formData, setFormData] = useState({
-    eventName: selectedEventTitle,
+    eventName: "E-Submit",
     name: "",
     roll: "",
     yr: "",
     dept: "",
     contact: "",
     email: "",
+    password: "",
+    accommodation: "No",
     isIlluminate: "Yes",
     paymentMethod: "UPI",
     txnId: "",
@@ -61,7 +60,7 @@ const EventApply = () => {
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzne2gvqEC8ebcgPFlXkiEgBouF48cBec2nQcKiRJ-riXhwHZo4OqsH2YAvcvbVWq9-yQ/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyJQAK6q7LGSJY2NkjS712GjF1bgk4LiSzBPlSnyB9sVkEf2OQAwflUVSzNVB51VcD/exec";
 
   const primaryAccent = "rgb(189, 159, 103)";
   const pageBg = isDark ? "#080a0f" : "#f1f5f9";
@@ -129,14 +128,14 @@ const EventApply = () => {
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.setTextColor(189, 159, 103);
-    doc.text("ILLUMINATE 2026", 105, 28, { align: "center" });
+    doc.text("E-SUBMIT 2026", 105, 28, { align: "center" });
 
     doc.setTextColor(15, 23, 42);
     doc.setFontSize(11);
     doc.setFont("helvetica", "bold");
     doc.text("Event Name:", 20, 54);
     doc.setFont("helvetica", "normal");
-    doc.text(data.eventName || selectedEventTitle, 60, 54);
+    doc.text(data.eventName || "E-Submit", 60, 54);
 
     doc.setFont("helvetica", "bold");
     doc.text("Date:", 20, 62);
@@ -163,6 +162,7 @@ const EventApply = () => {
       { label: "Academic Year:", value: data.yr },
       { label: "Email Address:", value: data.email },
       { label: "Contact Number:", value: data.contact },
+      { label: "Accommodation:", value: data.accommodation },
       { label: "Payment Method:", value: data.paymentMethod },
       { label: "Transaction / UTR ID:", value: data.txnId || "N/A (Cash)" }
     ];
@@ -183,10 +183,11 @@ const EventApply = () => {
 
     try {
       const verificationPayload = JSON.stringify({
-        event: data.eventName || selectedEventTitle,
+        event: data.eventName || "E-Submit",
         name: data.name,
         roll: data.roll,
         email: data.email,
+        accommodation: data.accommodation,
         txnId: data.txnId || "Cash",
         verified: true
       });
@@ -240,21 +241,6 @@ const EventApply = () => {
       return;
     }
 
-    const submittedEmails = JSON.parse(localStorage.getItem("registered_emails") || "[]");
-    const submittedContacts = JSON.parse(localStorage.getItem("registered_contacts") || "[]");
-
-    if (submittedEmails.includes(formData.email.toLowerCase().trim())) {
-      setErrorMsg("This Email address has already been registered from this device.");
-      setLoading(false);
-      return;
-    }
-
-    if (submittedContacts.includes(formData.contact.trim())) {
-      setErrorMsg("This Contact Number has already been registered from this device.");
-      setLoading(false);
-      return;
-    }
-
     try {
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
@@ -269,22 +255,19 @@ const EventApply = () => {
       if (resData.status === "error") {
         setErrorMsg(resData.message);
       } else {
-        submittedEmails.push(formData.email.toLowerCase().trim());
-        submittedContacts.push(formData.contact.trim());
-        localStorage.setItem("registered_emails", JSON.stringify(submittedEmails));
-        localStorage.setItem("registered_contacts", JSON.stringify(submittedContacts));
-
         setSubmittedData({ ...formData });
         setSubmitted(true);
 
         setFormData({
-          eventName: selectedEventTitle,
+          eventName: "E-Submit",
           name: "",
           roll: "",
           yr: "",
           dept: "",
           contact: "",
           email: "",
+          password: "",
+          accommodation: "No",
           isIlluminate: "Yes",
           paymentMethod: "UPI",
           txnId: "",
@@ -331,14 +314,13 @@ const EventApply = () => {
           <Card.Body className="p-4 p-md-5">
             <div className="mb-4 pb-3 border-bottom" style={{ borderColor: inputBorder }}>
               <h2 className="fw-bold mb-1" style={{ color: textColor }}>
-                Event Application Form
+                E-Submit Pass & Accommodation for IIT BOMBAY
               </h2>
               <p className="mb-0 fw-medium" style={{ color: primaryAccent, fontSize: "1.1rem" }}>
-                {selectedEventTitle}
+                Registrations are live—apply now!
               </p>
             </div>
 
-            {/* REGISTRATION CLOSED UI BLOCK */}
             {isRegistrationClosed ? (
               <div className="text-center py-5 my-3">
                 <div
@@ -353,7 +335,7 @@ const EventApply = () => {
                 </h3>
 
                 <p className="mb-4 mx-auto lead" style={{ color: subTextColor, maxWidth: "520px", fontSize: "1.05rem" }}>
-                  Thank you for your overwhelming interest in <strong>{selectedEventTitle}</strong>. We have reached maximum capacity and registrations are officially closed.
+                  Thank you for your overwhelming interest in <strong>E-Submit</strong>. We have reached maximum capacity and registrations are officially closed.
                 </p>
 
                 <div
@@ -364,7 +346,6 @@ const EventApply = () => {
                   <span className="small fw-semibold">If you have already registered, check your email for event updates.</span>
                 </div>
 
-                {/* WhatsApp Group Link remains accessible if needed */}
                 <div 
                   className="p-4 rounded-4 my-4 mx-auto text-center" 
                   style={{ 
@@ -413,7 +394,7 @@ const EventApply = () => {
                   Registration Successful!
                 </h3>
                 <p className="mb-4 mx-auto" style={{ color: subTextColor, maxWidth: "460px" }}>
-                  Thank you for submitting your details for <strong>{selectedEventTitle}</strong>. We have received your application.
+                  Thank you for submitting your details for <strong>E-Submit</strong>. We have received your application.
                 </p>
 
                 <div 
@@ -455,6 +436,10 @@ const EventApply = () => {
                       <span className="fw-semibold" style={{ color: subTextColor }}>Roll Number:</span>
                       <span className="fw-bold" style={{ color: textColor }}>{submittedData.roll}</span>
                     </div>
+                    <div className="d-flex justify-content-between py-1 border-bottom" style={{ borderColor: inputBorder }}>
+                      <span className="fw-semibold" style={{ color: subTextColor }}>Accommodation:</span>
+                      <span className="fw-bold" style={{ color: textColor }}>{submittedData.accommodation}</span>
+                    </div>
                     <div className="d-flex justify-content-between py-1">
                       <span className="fw-semibold" style={{ color: subTextColor }}>Transaction / UTR ID:</span>
                       <span className="fw-bold" style={{ color: primaryAccent }}>{submittedData.txnId || "N/A (Cash)"}</span>
@@ -492,7 +477,7 @@ const EventApply = () => {
                   <Col md={12}>
                     <Form.Group className="p-3 rounded-3" style={{ backgroundColor: inputBg, border: `1px solid ${inputBorder}` }}>
                       <Form.Label className="fw-semibold mb-2 d-block" style={{ color: textColor }}>
-                        Are you registering for ILLUMINATE 2026? <span className="text-danger">*</span>
+                        Did You participate in Illuminate or Eureka? <span className="text-danger">*</span>
                       </Form.Label>
                       <div className="d-flex gap-4">
                         <Form.Check
@@ -551,6 +536,26 @@ const EventApply = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="name@gmail.com"
+                        required
+                        style={{ backgroundColor: inputBg, color: textColor, borderColor: inputBorder, padding: "13px 16px", borderRadius: "10px" }}
+                      />
+                    </Form.Group>
+                  </Col>
+
+                  <Col md={6}>
+                    <Form.Group>
+                      <Form.Label className="fw-semibold small d-flex align-items-center gap-2" style={{ color: textColor }}>
+                        <div className="p-1.5 rounded" style={{ backgroundColor: iconBadgeBg, color: primaryAccent }}>
+                          <LockFill size={15} />
+                        </div>
+                        Password
+                      </Form.Label>
+                      <Form.Control
+                        type="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        placeholder="Enter your password"
                         required
                         style={{ backgroundColor: inputBg, color: textColor, borderColor: inputBorder, padding: "13px 16px", borderRadius: "10px" }}
                       />
@@ -621,7 +626,7 @@ const EventApply = () => {
                     </Form.Group>
                   </Col>
 
-                  <Col md={12}>
+                  <Col md={6}>
                     <Form.Group>
                       <Form.Label className="fw-semibold small d-flex align-items-center gap-2" style={{ color: textColor }}>
                         <div className="p-1.5 rounded" style={{ backgroundColor: iconBadgeBg, color: primaryAccent }}>
@@ -638,6 +643,37 @@ const EventApply = () => {
                         required
                         style={{ backgroundColor: inputBg, color: textColor, borderColor: inputBorder, padding: "13px 16px", borderRadius: "10px" }}
                       />
+                    </Form.Group>
+                  </Col>
+
+                  <Col md={12}>
+                    <Form.Group className="p-3 rounded-3" style={{ backgroundColor: inputBg, border: `1px solid ${inputBorder}` }}>
+                      <Form.Label className="fw-semibold mb-2 d-flex align-items-center gap-2" style={{ color: textColor }}>
+                        <div className="p-1.5 rounded" style={{ backgroundColor: iconBadgeBg, color: primaryAccent }}>
+                          <HouseDoorFill size={15} />
+                        </div>
+                        Do you need Accommodation? <span className="text-danger">*</span>
+                      </Form.Label>
+                      <div className="d-flex gap-4">
+                        <Form.Check
+                          type="radio"
+                          id="accommodation-yes"
+                          label="Yes"
+                          name="accommodation"
+                          value="Yes"
+                          checked={formData.accommodation === "Yes"}
+                          onChange={handleChange}
+                        />
+                        <Form.Check
+                          type="radio"
+                          id="accommodation-no"
+                          label="No"
+                          name="accommodation"
+                          value="No"
+                          checked={formData.accommodation === "No"}
+                          onChange={handleChange}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
 
