@@ -7,8 +7,8 @@ import "./NoticeSlider.css";
 const notices = [
   
   {
-    title: "🚀 Illuminate Workshop 2026",
-    message: "Illuminate 2026.",
+    title: "🚀 E-Submit 2026",
+    message: "E-Submit & Accommodation 2026.",
     linkText: "Register Now",
     linkUrl: "/apply/illuminate",
   },
