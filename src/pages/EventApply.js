@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import { Container, Card, Form, Button, Alert, Row, Col } from "react-bootstrap";
 import {
   ArrowLeft,
@@ -30,7 +30,6 @@ import logoEcell from "../assets/Events/illuu2.jpeg";
 import logoNec from "../assets/Events/illuu1.png"; 
 
 const EventApply = () => {
-  const { id } = useParams();
   const { isDark } = useTheme();
 
   const isRegistrationClosed = false;
@@ -289,12 +288,12 @@ const EventApply = () => {
       <Container style={{ maxWidth: "920px" }}>
         <div className="d-flex align-items-center justify-content-between mb-4">
           <Link
-            to={id ? `/events/${id}` : "/events"}
+            to={"/"}
             className="text-decoration-none d-inline-flex align-items-center fw-semibold px-3 py-2 rounded-3"
             style={{ color: textColor, backgroundColor: cardBg, border: `1px solid ${inputBorder}` }}
           >
             <ArrowLeft className="me-2" style={{ color: primaryAccent }} size={18} />
-            Back to Event Details
+            Back 
           </Link>
 
           <span
@@ -362,7 +361,7 @@ const EventApply = () => {
                     Join the official event WhatsApp group for announcements, schedules, and live updates.
                   </p>
                   <a
-                    href="https://chat.whatsapp.com/CXZrOGqtiWdDVTJyfmZ3Qp"
+                    href="https://chat.whatsapp.com/G2LycnNzJ0P2xlENQ8SxeS"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn fw-bold px-4 py-2.5 rounded-3 border-0 d-inline-flex align-items-center gap-2 text-white shadow-sm"
@@ -413,7 +412,7 @@ const EventApply = () => {
                     Please join the event WhatsApp group for instant updates, announcements, and scheduling info.
                   </p>
                   <a
-                    href="https://chat.whatsapp.com/CXZrOGqtiWdDVTJyfmZ3Qp"
+                    href="https://chat.whatsapp.com/G2LycnNzJ0P2xlENQ8SxeS"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn fw-bold px-4 py-2.5 rounded-3 border-0 d-inline-flex align-items-center gap-2 text-white shadow-sm"
@@ -528,7 +527,7 @@ const EventApply = () => {
                         <div className="p-1.5 rounded" style={{ backgroundColor: iconBadgeBg, color: primaryAccent }}>
                           <EnvelopeFill size={15} />
                         </div>
-                        Email Address
+                        Email Address(Email id used in e-summit website)
                       </Form.Label>
                       <Form.Control
                         type="email"
@@ -548,7 +547,7 @@ const EventApply = () => {
                         <div className="p-1.5 rounded" style={{ backgroundColor: iconBadgeBg, color: primaryAccent }}>
                           <LockFill size={15} />
                         </div>
-                        Password
+                        Password (Password used in e-summit website)
                       </Form.Label>
                       <Form.Control
                         type="password"
