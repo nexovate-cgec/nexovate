@@ -8,7 +8,7 @@ const notices = [
   
   {
     title: "🚀 E-Submit 2026",
-    message: "E-Submit & Accommodation 2026.",
+    message: "E-Summit & Accommodation 2026.",
     linkText: "Register Now",
     linkUrl: "/apply/illuminate",
   },
