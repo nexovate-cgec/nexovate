@@ -24,7 +24,7 @@ import {
 import { jsPDF } from "jspdf";
 import QRCode from "qrcode";
 import { useTheme } from "../contexts/ThemeContext";
-import qrCodeImg from "../assets/Events/image.png";
+import qrCodeImg from "../assets/Events/image.jpeg";
 
 import logoEcell from "../assets/Events/illuu2.jpeg"; 
 import logoNec from "../assets/Events/illuu1.png"; 
