@@ -36,7 +36,7 @@ const EventApply = () => {
 
 
   const [formData, setFormData] = useState({
-    eventName: "E-Submit",
+    eventName: "E-Summit",
     name: "",
     roll: "",
     yr: "",
@@ -134,7 +134,7 @@ const EventApply = () => {
     doc.setFont("helvetica", "bold");
     doc.text("Event Name:", 20, 54);
     doc.setFont("helvetica", "normal");
-    doc.text(data.eventName || "E-Submit", 60, 54);
+    doc.text(data.eventName || "E-summit", 60, 54);
 
     doc.setFont("helvetica", "bold");
     doc.text("Date:", 20, 62);
@@ -182,7 +182,7 @@ const EventApply = () => {
 
     try {
       const verificationPayload = JSON.stringify({
-        event: data.eventName || "E-Submit",
+        event: data.eventName || "E-summit",
         name: data.name,
         roll: data.roll,
         email: data.email,
@@ -258,7 +258,7 @@ const EventApply = () => {
         setSubmitted(true);
 
         setFormData({
-          eventName: "E-Submit",
+          eventName: "E-summit",
           name: "",
           roll: "",
           yr: "",
@@ -313,7 +313,7 @@ const EventApply = () => {
           <Card.Body className="p-4 p-md-5">
             <div className="mb-4 pb-3 border-bottom" style={{ borderColor: inputBorder }}>
               <h2 className="fw-bold mb-1" style={{ color: textColor }}>
-                E-Submit Pass & Accommodation for IIT BOMBAY
+                E-Summit Pass & Accommodation for IIT BOMBAY
               </h2>
               <p className="mb-0 fw-medium" style={{ color: primaryAccent, fontSize: "1.1rem" }}>
                 Registrations are live—apply now!
@@ -334,7 +334,7 @@ const EventApply = () => {
                 </h3>
 
                 <p className="mb-4 mx-auto lead" style={{ color: subTextColor, maxWidth: "520px", fontSize: "1.05rem" }}>
-                  Thank you for your overwhelming interest in <strong>E-Submit</strong>. We have reached maximum capacity and registrations are officially closed.
+                  Thank you for your overwhelming interest in <strong>E-Summit</strong>. We have reached maximum capacity and registrations are officially closed.
                 </p>
 
                 <div
@@ -393,7 +393,7 @@ const EventApply = () => {
                   Registration Successful!
                 </h3>
                 <p className="mb-4 mx-auto" style={{ color: subTextColor, maxWidth: "460px" }}>
-                  Thank you for submitting your details for <strong>E-Submit</strong>. We have received your application.
+                  Thank you for submitting your details for <strong>E-Summit</strong>. We have received your application.
                 </p>
 
                 <div 
