@@ -104,7 +104,6 @@ const EventDetail = () => {
         </div>
 
         <Row className="g-4">
-          {/* Main Content Column */}
           <Col lg={8}>
             <Card className="mb-4 shadow-sm" style={{ backgroundColor: cardBg, color: textColor, border: `2px solid ${goldenColor}`, borderRadius: "12px" }}>
               <Card.Body className="p-4 p-md-5">
@@ -163,7 +162,6 @@ const EventDetail = () => {
             </Card>
           </Col>
 
-          {/* Sticky Sidebar Column */}
           <Col lg={4}>
             <div 
               style={{ 

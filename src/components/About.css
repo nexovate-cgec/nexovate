@@ -3,7 +3,6 @@
   transition: background 0.3s ease;
 }
 
-/* Image এবং Video দুটোর জন্যই স্টাইল */
 .about-image,
 .about-video {
   max-height: 400px;

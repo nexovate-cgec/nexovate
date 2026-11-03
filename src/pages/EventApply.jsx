@@ -6,7 +6,6 @@ import {
   Card,
   Form,
   Button,
-  // Spinner
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getEventById } from "../data/events";

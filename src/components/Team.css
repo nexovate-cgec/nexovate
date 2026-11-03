@@ -23,8 +23,8 @@
   height: 140px;
   overflow: hidden;
   border-radius: 50%;
-  border: 4px solid rgb(189, 159, 103); /* Changed from #ffc107 to golden */
-  box-shadow: 0 0 15px rgba(189, 159, 103, 0.2); /* Updated shadow color */
+  border: 4px solid rgb(189, 159, 103); 
+  box-shadow: 0 0 15px rgba(189, 159, 103, 0.2); 
   margin-bottom: 1rem;
 }
 
@@ -42,17 +42,17 @@
 .team-card h5 {
   font-weight: 600;
   margin-bottom: 0.3rem;
-  color: var(--text-color, #2c3e50); /* Updated to use CSS variable */
+  color: var(--text-color, #2c3e50); 
 }
 
 .team-card p {
   margin-bottom: 0.3rem;
   font-size: 0.9rem;
-  color: var(--text-color, #2c3e50); /* Added color */
+  color: var(--text-color, #2c3e50); 
 }
 
 .team-card .designation {
-  color: rgb(189, 159, 103) !important; /* Golden color for designation */
+  color: rgb(189, 159, 103) !important; 
   font-weight: 600;
 }
 
@@ -60,7 +60,7 @@
   display: block;
   margin-bottom: 1rem;
   font-size: 0.8rem;
-  color: var(--secondary-color, #666); /* Updated to use CSS variable */
+  color: var(--secondary-color, #666);
 }
 
 .contact-icon {
@@ -70,35 +70,33 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--section-bg, #f0f0f0); /* Updated to use CSS variable */
+  background: var(--section-bg, #f0f0f0);
   font-size: 1.2rem;
   transition: all 0.3s ease;
-  border: 2px solid rgb(189, 159, 103); /* Added golden border */
-  color: rgb(189, 159, 103) !important; /* Golden color for icons */
+  border: 2px solid rgb(189, 159, 103);
+  color: rgb(189, 159, 103) !important; 
   text-decoration: none;
 }
 
 .contact-icon:hover {
-  background: rgb(189, 159, 103); /* Golden background on hover */
+  background: rgb(189, 159, 103);
   color: #fff !important;
   transform: scale(1.2);
   border-color: rgb(189, 159, 103);
 }
 
-/* Remove individual social media colors since we're using golden theme */
 .contact-icon.linkedin,
 .contact-icon.instagram,
 .contact-icon.email {
-  color: rgb(189, 159, 103) !important; /* All icons golden */
+  color: rgb(189, 159, 103) !important;
 }
 
 .contact-icon:hover.linkedin,
 .contact-icon:hover.instagram,
 .contact-icon:hover.email {
-  color: #fff !important; /* White on hover */
+  color: #fff !important; 
 }
 
-/* Dark Mode Styles */
 [data-theme="dark"] .team-card {
   background: var(--dark-card-bg, #1a1a1a);
   color: var(--light-text, #ffffff);

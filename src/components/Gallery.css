@@ -3,7 +3,6 @@
   font-weight: 700;
 }
 
-/* Swiper Pagination Customization */
 .swiper-pagination-bullet {
   background: #ccc;
   opacity: 0.6;
@@ -16,7 +15,6 @@
   opacity: 1;
 }
 
-/* Swiper Navigation Customization */
 .swiper-button-next,
 .swiper-button-prev {
   color: rgb(189, 159, 103) !important;
@@ -28,7 +26,6 @@
   font-weight: bold;
 }
 
-/* Dark Mode Styles */
 [data-theme="dark"] .gallery-card {
   background-color: var(--dark-card-bg, #1a1a1a);
   border: 2px solid rgb(189, 159, 103);
@@ -53,7 +50,6 @@
   color: rgb(189, 159, 103) !important;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .gallery-heading {
     font-size: 2rem;

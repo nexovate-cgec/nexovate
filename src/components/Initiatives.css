@@ -106,7 +106,6 @@
   color: white;
 }
 
-/* Dark Mode Styles */
 [data-theme="dark"] .digital-initiative-card,
 [data-theme="dark"] .initiative-card {
   background-color: var(--dark-card-bg, #1a1a1a);
