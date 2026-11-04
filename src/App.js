@@ -17,6 +17,7 @@ import Blog from "./components/Blog";
 import Gallery from "./components/Gallery";
 import Team from "./components/Team";
 import Sponsors from "./components/Sponsors"; 
+import Sponsorses from "./pages/Sponsors"; 
 import SponsorCollab from "./pages/SponsorCollab";
 import JoinUs from "./components/JoinUs";
 import Footer from "./components/Footer";
@@ -29,7 +30,7 @@ import AllBlogs from "./pages/AllBlogs";
 import BlogDetails from "./pages/BlogDetails";
 import GalleryPage from "./pages/GalleryPage";
 import VerifyCertificate from "./pages/VerifyCertificate";
-import PastTeam from "./pages/PastTeam"; // 1. PastTeam page import kora holo
+import PastTeam from "./pages/PastTeam";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
               <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/eureka-2026" element={<ComingSoon />} />
               <Route path="/sponsorship-collab" element={<SponsorCollab />} />
+              <Route path="/sponsors" element={<Sponsorses />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/join" element={<JoinUs />} />
               <Route path="/verify-certificate" element={<VerifyCertificate />} />

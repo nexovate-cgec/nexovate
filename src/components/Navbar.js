@@ -45,19 +45,9 @@ const NavBar = () => {
         "blog",
         "team",
         "past-team",
-        "sponsors",
       ];
 
       const handleScrollHighlight = () => {
-        const isAtBottom =
-          window.innerHeight + window.scrollY >=
-          document.documentElement.scrollHeight - 50;
-
-        if (isAtBottom) {
-          setActiveSection("sponsors");
-          return;
-        }
-
         const scrollPosition = window.scrollY + 180;
 
         for (let id of sections) {
@@ -82,7 +72,7 @@ const NavBar = () => {
     }
   }, [location.pathname]);
 
- const handleSectionClick = (sectionId) => {
+  const handleSectionClick = (sectionId) => {
     setIsExpanded(false);
     setIsTeamDropdownOpen(false);
     setActiveSection(sectionId);
@@ -93,7 +83,7 @@ const NavBar = () => {
       } else {
         const element = document.getElementById(sectionId);
         if (element) {
-          const yOffset = -70; // Navbar height er sathe adjust korar jonno
+          const yOffset = -70;
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
           window.scrollTo({ top: y, behavior: "smooth" });
@@ -235,7 +225,6 @@ const NavBar = () => {
               Blog
             </Nav.Link>
 
-            {/* CUSTOM TEAM DROPDOWN */}
             <div className="custom-dropdown-wrapper">
               <div
                 onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
@@ -257,27 +246,24 @@ const NavBar = () => {
                     Current Team
                   </div>
                   <div
-  onClick={() => {
-    handleNavLinkClick();
-    navigate("/past-team"); 
-  }}
-  className="dropdown-item-custom"
->
-  Past Team
-</div>
+                    onClick={() => {
+                      handleNavLinkClick();
+                      navigate("/past-team");
+                    }}
+                    className="dropdown-item-custom"
+                  >
+                    Past Team
+                  </div>
                 </div>
               )}
             </div>
 
             <Nav.Link
               as={Link}
-              to="/"
-              onClick={() => {
-                handleNavLinkClick();
-                handleSectionClick("sponsors");
-              }}
+              to="/sponsors"
+              onClick={handleNavLinkClick}
               className={`nav-link-custom ${
-                activeSection === "sponsors" ? "active-section" : ""
+                location.pathname === "/sponsors" ? "active-section" : ""
               }`}
             >
               Sponsors
